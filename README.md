@@ -1,3 +1,3 @@
-# Team7AkshayTejasVinay
+## Team-5 Akshay, Tejas, Vinay and Thirupathi
 
-Group 7 for Healthcare Project at StackRoute
+This is Group-5 for Healthcare Project at StackRoute
