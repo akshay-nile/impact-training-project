@@ -1,0 +1,15 @@
+
+Patient can also propose any changes to his/her captured data------------
+Is patient supposed to change his details taken by nurse, 
+like weight, height, BP etc? But why?
+
+Patient's medications and diagnoses for a visit are recorded------------
+Recorded by whome? Doctor or nurse.
+because medication and diagnoses can we given by doctors only.
+nurses don't write these things.
+
+For the first visit, Nurse also validates the data entered by patient while registration---------
+Patient's registration is approved by Admin only, then why this step is needed?
+
+
+

@@ -1,0 +1,68 @@
+
+
+1) Employees Table (Doctors and Nurses)
+
+	- Employee Id	(PK)
+	- Title
+	- First Name
+	- Last Name
+	- Email Id 	(UK)
+	- Date of Birth
+	- Role (Doctor, Nurse, Admin)
+	- Username 	(PK)
+	- Password	(NN)
+	- Status (Active, Inactive, Blocked)
+
+
+2) Patients Table (Patients)
+
+	- Patient Id	(PK)
+	- Title
+	- First Name
+	- Last Name
+	- Date of Birth
+	- Email Id	(UK)
+	- Phone No.	(UK)
+	- Username 	(PK)
+	- Password	(NN)
+	- Status (Active, Inactive, Blocked)
+
+
+3.1) Employee_PreRegistration Table		3.2) Patient_PreRegistration Table
+
+	- OTP 		(PK)				- OTP 		(PK)
+	- Title						- Title
+	- First Name					- First Name
+	- Last Name					- Last Name
+	- Email Id 	(UK)				- Date of Birth
+	- Date of Birth					- Email Id 	(UK)
+	- Role (Doctor, Nurse) 				- Phone No. 	(UK)
+
+
+4) Demographics (Patients)			5) Languages
+	
+	- Patient Id 	(PK) (FK)			- Language Id	(PK)
+	- Age 		(AC)				- Language	(UK)
+	- Gender				
+	- Race
+	- Ethnicity
+	- Languages 
+	- Address
+	- Nominee (List) (Emergency Contact)
+
+
+6) Nominees (Emergency Contact)							
+
+	- Nominee Id 	(PK)
+	- Patient Id	(FK)			
+	- Title						
+	- First Name
+	- Last Name
+	- Relationship (from Patient's perspective)
+	- Email Id 	(UK)
+	- Phone No. 	(UK)
+	- Address
+	- Allow Access to Patient's Portal
+
+
+

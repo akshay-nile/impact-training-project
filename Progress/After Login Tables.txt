@@ -1,0 +1,83 @@
+
+1) Appointments 
+
+	- Appointment Id 	(PK)
+	- Meeting Title		(NN)
+	- Description
+	- Date
+	- Time
+	- Patient Id 		(FK)
+	- Employee To		(FK)
+	- Employee From		(FK)
+	- Status (Pending, Approved, Cancelled)
+	- Reason
+
+
+2) Visits
+
+	- Visit Id 		(PK)
+	- Employee Id		(FK)
+	- Patient Id		(FK) (NN)
+	- Appointment Id	(FK)
+	- Height
+	- Weight
+	- BP
+	- BT
+	- Respiration Rate
+
+
+3) Notes
+
+	- Note Id		(PK)
+	- Description		
+	- Date
+	- Employee To		(FK)
+	- Employee From 	(FK)
+	
+
+4) Diagnosis
+
+	- Diagnosis Id	(PK)
+	- Description
+	- Patient Id 	(FK)
+	- Employee Id	(FK)
+	- Diagnosis Code
+	- Is Depricate
+
+
+5) Procedures 
+
+	- Procedure Id	(PK)
+	- Description
+	- Patient Id 	(FK)
+	- Employee Id	(FK)
+	- Procedure Code
+	- Is Depricate
+
+
+6) Medication 
+	
+	- Medication Id	(PK)
+	- Drug Id 	(FK)
+	- Drud Strength
+
+
+7) Drugs 
+
+	- Drug Id	(PK)
+	- Name
+	- Generic Name
+	- Brand Name
+	- Drug Form
+	
+
+8) Allergies
+
+	- Allergy Id	(PK)
+	- Patient Id	(FK)
+	- Allergy Type 	(Food, Drugs, Environment)
+	- Allergy Name 	(Fish, Soy, Peanuts)
+	- Description
+	- Clinical Information
+
+
