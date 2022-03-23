@@ -1,0 +1,16 @@
+<h2>Patient Login</h2>
+
+<form [formGroup]="loginForm">
+    <div>
+        <label for="email">Email Id: </label>
+        <input type="email" id="email" formControlName="email" placeholder="Enter email id...">
+    </div>
+    
+    <div>
+        <label for="pass">Password: </label>
+        <input type="password" id="pass" formControlName="password" placeholder="Enter password...">
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Login</button> &nbsp;&nbsp;
+    <a routerLink="../forget-password">Forget Password?</a>
+</form>
