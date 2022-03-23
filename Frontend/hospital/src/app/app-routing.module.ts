@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { PatientForgetPasswordComponent } from './patient-forget-password/patient-forget-password.component';
-import { PatientLoginComponent } from './patient-login/patient-login.component';
-import { PatientRegisterComponent } from './patient-register/patient-register.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { LoginComponent } from './components/login/login.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  {path:'patient/login', component: PatientLoginComponent},
-  {path:'patient/register', component: PatientRegisterComponent},
-  {path:'patient/forget-password', component: PatientForgetPasswordComponent},
+  {path:'login', component: LoginComponent},
+  {path:'forgot-password', component: ForgotPasswordComponent},
   {path:'**', component: PageNotFoundComponent}
 ];
 

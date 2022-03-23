@@ -1,0 +1,27 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-3">
+                <div class="logo">
+                    <img src="assets/ct-logo.png" alt="CT Hospital">
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9 col-9 text-end">
+                <div class="menu_icon" [class.menu_icon_Class]="menu_icon_variable" (click)="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu" [class.menuClass]="menuVariable">
+                    <ul>
+                        <li>Gallery</li>
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                        <li><a routerLink="/login">Login</a></li>
+                        <li><a routerLink="/register">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

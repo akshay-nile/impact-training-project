@@ -3,20 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PatientLoginComponent } from './patient-login/patient-login.component';
-import { PatientRegisterComponent } from './patient-register/patient-register.component';
-import { PatientForgetPasswordComponent } from './patient-forget-password/patient-forget-password.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ForgotPasswordService } from './services/forgot-password.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PatientLoginComponent,
-    PatientRegisterComponent,
-    PatientForgetPasswordComponent,
+    LoginComponent,
+    ForgotPasswordComponent,
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent
@@ -24,9 +24,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ForgotPasswordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,4 +12,9 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  hospitalName: string = "CT Hospital";
+  location: string = "Mahalashmi Towers, Prabadevi, Mumbai";
+  phoneNumber: string = "+91 8998367378";
+  email: string = "info@ct.com";
+  specialization: string[] = ["Cardiology", "ENT", "Orthopaedics", "Neurology" ,"Others"]
 }

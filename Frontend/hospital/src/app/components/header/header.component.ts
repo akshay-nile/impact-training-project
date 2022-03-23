@@ -12,4 +12,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  menu_icon_variable: boolean = false;
+  menuVariable:boolean = false;
+  toggleMenu(){
+    this.menuVariable = !this.menuVariable;
+    this.menu_icon_variable = !this.menu_icon_variable;
+  }
+
 }
