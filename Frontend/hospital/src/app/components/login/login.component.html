@@ -11,10 +11,10 @@
                         <div class="form-group mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input autocomplete="off" formControlName="email" name="email" id="email" type="text"
-                                class="form-control">
-                            <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
-                                <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
-                                <div *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email
+                                class="form-control"(blur)="onEmailEntered()">
+                            <div *ngIf="f['email'].touched && f['email'].invalid" >
+                                <div *ngIf="f['email'].errors && f['email'].errors['required']" class="text-danger">This field cannot be empty</div>
+                                <div *ngIf="f['email'].errors && f['email'].errors['email']" class="text-danger">Please, enter valid email
                                     address.</div>
                             </div>
                         </div>
@@ -22,13 +22,13 @@
                             <label for="password" class="form-label">Password</label>
                             <input autocomplete="off" formControlName="password" name="password" id="password" type="password"
                                 class="form-control">
-                            <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
-                                <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
-                                <div *ngIf="f['password'].errors!['pattern']">Enter valid password.</div>
+                            <div *ngIf="f['password'].touched && f['password'].invalid">
+                                <div *ngIf="f['password'].errors && f['password'].errors['required']" class="text-danger">This field cannot be empty</div>
+                                <div *ngIf="f['password'].errors!['pattern']" class="text-danger">Password entry does not meet criteria</div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-info otp" [disabled]="form.invalid">Login</button>
-                        <div *ngIf="messageFlag" class="errorMessage bg-success text-light">
+                        <button type="submit" class="btn btn-info otp" [disabled]="form.invalid || !this.emailFound">Login</button>
+                        <div *ngIf="messageFlag" class="errorMessage bg-light text-danger">
                             {{customMessage}}
                         </div>
                         <div class="row">

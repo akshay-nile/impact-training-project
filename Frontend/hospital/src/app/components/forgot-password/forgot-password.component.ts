@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ForgotPasswordService } from 'src/app/services/forgot-password.service';
+import { MembershipService } from 'src/app/services/membership.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ForgotPasswordComponent implements OnInit {
   messageFlag: boolean = false;
   emailSent: boolean = false;
 
-  constructor(private router: Router, private forgotPasswordService: ForgotPasswordService) { }
+  constructor(private router: Router, private membershipService: MembershipService) { }
 
   ngOnInit(): void {
   }
@@ -36,18 +37,18 @@ export class ForgotPasswordComponent implements OnInit {
 
   submit() {
     this.email = this.form.value.email;
-    // this.forgotPasswordService.getOtp(this.email).subscribe(
-    //   (result) => {
-    //     if (result == true) {
-    //       this.messageFlag = true;
-    //       this.emailSent = result;
-    //       this.successMessage = "OTP has been sent to registered Email Id";
-    //     }
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
+    this.membershipService.getOtp(this.email).subscribe(
+      (result) => {
+        if (result == true) {
+          this.messageFlag = true;
+          this.emailSent = result;
+          this.successMessage = "OTP has been sent to registered Email Id";
+        }
+      },
+      error => {
+        console.log(error);
+      }
 
-    // );
+    );
   }
 }

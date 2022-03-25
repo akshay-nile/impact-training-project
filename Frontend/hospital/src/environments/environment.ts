@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: "http://127.0.0.1:3000",
-  headers: {"Content-Type":"application/json"}
+  baseUrl: "http://127.0.0.1:8080",
+  headers: { "Content-Type": "application/json" }
 };
 
 /*

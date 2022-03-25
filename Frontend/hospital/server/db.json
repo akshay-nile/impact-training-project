@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users":[
+    {
+      "id":1,
+      "email":"tejas.gaikar@citiustech.com",
+      "password":"Tejasgaikar123",
+      "role": "admin"
+    },
+    {
+      "id":1,
+      "email":"akshay.nile@citiustech.com",
+      "password":"Akshaynile123",
+      "role": "nurse"
+    },
+    {
+      "id":1,
+      "email":"thirupathi.vemireddy@citiustech.com",
+      "password":"Thirupathi123",
+      "role": "doctor"
+    },
+    {
+      "id":1,
+      "email":"vinay.billa@citiustech.com",
+      "password":"Vinaybilla123"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
