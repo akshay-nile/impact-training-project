@@ -1,8 +1,5 @@
 package com.citiustech.hospital.services;
 
-import java.text.DecimalFormat;
-import java.util.Random;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -12,28 +9,24 @@ import org.springframework.stereotype.Service;
 public class EmailSenderService {
 
 	@Autowired
-	private JavaMailSender mailSender;
+	private JavaMailSender javaMailSender;
 
-	public boolean sendEmail(String toEmail) {
-		boolean flag=false;
+	public boolean sendEmail(String toEmail, String subject, String body) {
 		SimpleMailMessage message = new SimpleMailMessage();
 
 		message.setFrom("taxdeptofind@gmail.com");
 		message.setTo(toEmail);
-		message.setText("Please find One Time Password : " + generateOtp());
-		message.setSubject("One Time Password");
-			try {
-				mailSender.send(message);
-				System.out.println("Mail Send...");
-			flag=true;
-			return flag;
-		} catch (Exception e) {
-		}
-		return flag;
-	}
+		message.setSubject(subject);
+		message.setText(body);
 
-	private String generateOtp() {
-		return new DecimalFormat("000000").format(new Random().nextInt(999999));
+		try {
+			javaMailSender.send(message);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return false;
 	}
 
 }

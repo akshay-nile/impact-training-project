@@ -12,12 +12,12 @@ import com.citiustech.hospital.models.constants.Relation;
 @RestController
 @RequestMapping("/api/enums")
 public class EnumController {
-	
+
 	@GetMapping("/languages")
 	public Language[] getLanguages() {
 		return Language.values();
 	}
-	
+
 	@GetMapping("/relations")
 	public Relation[] getRelations() {
 		return Relation.values();
