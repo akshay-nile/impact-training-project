@@ -10,18 +10,17 @@ import com.citiustech.hospital.repositories.PatientRepository;
 
 @Service
 public class RegistrationService {
-	
+
 	@Autowired
 	private PatientRepository patientRepo;
-	
+
 	@Autowired
 	private EmployeeRepository employeeRepo;
-	
-	
+
 	public Patient register(Patient patient) {
 		return patientRepo.save(patient);
 	}
-	
+
 	public Employee register(Employee employee) {
 		return employeeRepo.save(employee);
 	}

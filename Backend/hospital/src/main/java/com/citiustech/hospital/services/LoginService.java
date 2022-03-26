@@ -8,6 +8,7 @@ import com.citiustech.hospital.models.Patient;
 import com.citiustech.hospital.models.constants.Role;
 import com.citiustech.hospital.models.constants.Status;
 import com.citiustech.hospital.models.templates.Credential;
+import com.citiustech.hospital.models.templates.PasswordUpdate;
 import com.citiustech.hospital.repositories.EmployeeRepository;
 import com.citiustech.hospital.repositories.PatientRepository;
 
