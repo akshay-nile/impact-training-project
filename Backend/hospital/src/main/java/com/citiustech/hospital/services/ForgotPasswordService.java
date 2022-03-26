@@ -81,6 +81,7 @@ public class ForgotPasswordService {
 			if (patient != null) {
 				patient.setPassword(passUpdate.getNewPassword().hashCode());
 				patientRepo.save(patient);
+				verifyRepo.delete(record);
 				return "success";
 			}
 
@@ -88,6 +89,7 @@ public class ForgotPasswordService {
 			if (employee != null) {
 				employee.setPassword(passUpdate.getNewPassword().hashCode());
 				employeeRepo.save(employee);
+				verifyRepo.delete(record);
 				return "success";
 			}
 		}

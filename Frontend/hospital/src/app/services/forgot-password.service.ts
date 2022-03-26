@@ -1,18 +1,29 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ForgotPasswordService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  baseUrl: string = 'http://localhost:9000/getOtp';
+  baseUrl: string = environment.baseUrl + '/api/forgot-password';
 
-  getOtp(email: string): Observable<boolean> {
-    return this.httpClient.get<boolean>(`${this.baseUrl}/${email}`)
+  checkEmailExist(email: string): Observable<boolean> {
+    return this.http.post<boolean>(this.baseUrl + '/exist', email)
+      .pipe(catchError(this.handleError));
+  }
+
+  sendOtp(email: string): Observable<boolean> {
+    return this.http.post<boolean>(this.baseUrl + '/send-otp', email)
+      .pipe(catchError(this.handleError));
+  }
+
+  resetPassword(passUpdate: any): Observable<string> {
+    return this.http.post<string>(this.baseUrl + '/reset', passUpdate)
       .pipe(catchError(this.handleError));
   }
 

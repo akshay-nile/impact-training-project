@@ -8,22 +8,22 @@ import { environment } from 'src/environments/environment';
 })
 export class LoginService {
 
-    constructor(private httpClient: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
     baseUrl: string = environment.baseUrl + '/api/login';
 
     checkEmailExist(email: string): Observable<boolean> {
-        return this.httpClient.post<boolean>(this.baseUrl + '/exist', email)
+        return this.http.post<boolean>(this.baseUrl + '/exist', email)
             .pipe(catchError(this.handleError));
     }
 
     loginUser(user: any): Observable<any> {
-        return this.httpClient.post<any>(this.baseUrl + '/', user)
+        return this.http.post<any>(this.baseUrl + '/', user)
             .pipe(catchError(this.handleError));
     }
 
     blockAccount(email: string): Observable<void> {
-        return this.httpClient.post<void>(this.baseUrl + '/block', email)
+        return this.http.post<void>(this.baseUrl + '/block', email)
             .pipe(catchError(this.handleError));
     }
 

@@ -39,6 +39,6 @@ public class ForgotPasswordController {
 	@PostMapping("/reset")
 	public ResponseEntity<?> resetPasswordByOtp(@RequestBody PasswordUpdate passUpdate) {
 		String message = forgotPasswordService.resetPasswordByOtp(passUpdate);
-		return new ResponseEntity<>(message, HttpStatus.OK);
+		return new ResponseEntity<>("\"" + message + "\"", HttpStatus.OK);
 	}
 }
