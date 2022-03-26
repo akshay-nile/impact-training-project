@@ -6,10 +6,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { RegisterPatientComponent } from './components/patient-register/register-patient.component';
 
 const routes: Routes = [
-  {path:'login', component: LoginComponent},
-  {path:'forgot-password', component: ForgotPasswordComponent},
-  {path:'register', component: RegisterPatientComponent},
-  {path:'**', component: PageNotFoundComponent}
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'register', component: RegisterPatientComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

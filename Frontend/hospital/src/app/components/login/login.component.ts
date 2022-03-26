@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MembershipService } from 'src/app/services/membership.service';
+import { LoginService } from 'src/app/services/login.service';
+import { passwordValidator } from 'src/app/validators/password.validator';
 
 @Component({
   selector: 'app-login',
@@ -10,78 +11,68 @@ import { MembershipService } from 'src/app/services/membership.service';
 })
 export class LoginComponent implements OnInit {
 
-  form!: FormGroup;
-  attempts: number = 3;
+  form?: FormGroup;
   user: any;
-  customMessage: string = '';
-  messageFlag: boolean = false;
-  emailFound: boolean = false;
+  attempts: number = 3;
+  message: string = '';
+  emailExist: boolean = false;
 
-  constructor(private router: Router, private membershipService: MembershipService) { }
+  constructor(private router: Router, private loginService: LoginService) { }
+
+  get pass() {
+    return this.form.controls.password;
+  }
+
+  get email() {
+    return this.form.controls.email;
+  }
 
   ngOnInit(): void {
     this.form = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])[A-Za-z0-9]{8,}$')])
+      password: new FormControl('', [Validators.required, passwordValidator])
     });
   }
 
-  get f() {
-    return this.form.controls;
-  }
-
   onEmailEntered() {
-    if (this.form.controls.email.valid) {
+    if (this.email.valid) {
       this.attempts = 3;
-      this.membershipService.checkEmailExist(this.form.value.email).subscribe(res => {
-        this.emailFound = res;
-        if (!this.emailFound) {
-          this.messageFlag = true;
-          this.customMessage = "No records found for this email";
-        } else {
-          this.messageFlag = false;
-          this.customMessage = "";
-        }
+      this.loginService.checkEmailExist(this.form.value.email).subscribe(res => {
+        this.emailExist = res;
       });
     }
   }
 
-  submit() {
-    if (this.emailFound) {
-      this.membershipService.login(this.form.value).subscribe(res => {
-        if (res === null) {
-          this.messageFlag = true;
-          if (--this.attempts == 0) {
-            this.membershipService.block(this.form.value.email).subscribe(res => this.customMessage = "Your account is blocked!");
-          } else {
-            this.form.controls.password.reset();
-            this.customMessage = "Wrong Password! " + this.attempts + " login attempts remaining.";
-          }
+  onLoginClicked() {
+    this.loginService.loginUser(this.form.value).subscribe(res => {
+      this.user = res;
+      if (this.user === null) {
+        if (--this.attempts == 0) {
+          this.loginService.blockAccount(this.form.value.email).subscribe(res =>
+            this.message = "Account is Blocked!"
+          );
         } else {
-          this.attempts = 3;
-          this.user = res;
-          this.form.reset();
-          if (this.user.status !== "ACTIVE") {
-            this.messageFlag = true;
-            this.customMessage = "Your account is locked!";
-          } else {
-            console.log(this.user);
+          this.pass.reset();
+          this.message = "Wrong Password! " + this.attempts + " attempts left";
+        }
+      } else {
+        this.attempts = 3;
+        switch (this.user.status as string) {
+          case "ACTIVE":
+            this.form.reset();
             let role = !this.user.role ? 'patient' : this.user.role.toLowerCase();
             this.router.navigate([role, 'dashboard']);
-          }
+            break;
+          case "BLOCKED":
+            this.message = "Account was Locked!";
+            break;
+          case "INACTIVE":
+            this.message = "Account was Deleted!";
+            break;
+          default:
+            this.message = "Unexpected status: " + this.user.status;
         }
-      },
-        (err: Error) => {
-          this.messageFlag = true;
-          this.customMessage = err.message;
-          this.form.reset();
-        });
-    }
+      }
+    }, (err: Error) => this.message = err.message);
   }
-
-  forgotPassword() {
-    console.log('Inside ')
-    this.router.navigate(['forgot-password']);
-  }
-
 }

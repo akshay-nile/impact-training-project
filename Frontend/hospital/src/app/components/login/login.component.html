@@ -1,46 +1,47 @@
 <div class="container-fluid">
     <div class="row mt-5">
-        <div class="col"></div>
+        <div class="col-4"></div>
         <div class="col-4">
             <div class="card shadow">
-                <div class="card-body">
-                    <form [formGroup]="form" (ngSubmit)="submit()">
-                        <div class="mb-3">
+                <div class="card-body mt-4 mb-4">
+                    <form [formGroup]="form" (ngSubmit)="onLoginClicked()">
+                        <div class="mb-4">
                             <h4 class="text-dark text-muted">Login</h4>
                         </div>
-                        <div class="form-group mb-3">
+
+                        <div class="form-group mb-4">
                             <label for="email" class="form-label">Email</label>
-                            <input autocomplete="off" formControlName="email" name="email" id="email" type="text"
-                                class="form-control"(blur)="onEmailEntered()">
-                            <div *ngIf="f['email'].touched && f['email'].invalid" >
-                                <div *ngIf="f['email'].errors && f['email'].errors['required']" class="text-danger">This field cannot be empty</div>
-                                <div *ngIf="f['email'].errors && f['email'].errors['email']" class="text-danger">Please, enter valid email
-                                    address.</div>
-                            </div>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input autocomplete="off" formControlName="password" name="password" id="password" type="password"
-                                class="form-control">
-                            <div *ngIf="f['password'].touched && f['password'].invalid">
-                                <div *ngIf="f['password'].errors && f['password'].errors['required']" class="text-danger">This field cannot be empty</div>
-                                <div *ngIf="f['password'].errors!['pattern']" class="text-danger">Password entry does not meet criteria</div>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-info otp" [disabled]="form.invalid || !this.emailFound">Login</button>
-                        <div *ngIf="messageFlag" class="errorMessage bg-light text-danger">
-                            {{customMessage}}
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <button type="button" class="btn btn-link login" (click)="forgotPassword()">Forgot Password?</button>
+                            <input type="text" formControlName="email" id="email" class="form-control" (blur)="onEmailEntered()">
+                            <div *ngIf="email.touched && email.errors || !emailExist">
+                                <small *ngIf="email.touched && email.errors?.required" class="text-danger">Email is required for login</small>
+                                <small *ngIf="!email.errors?.required && email.errors?.email" class="text-danger">Not a valid email address</small>
+                                <small *ngIf="!email.errors && !emailExist" class="text-danger">No account is linked to this email id</small>
                             </div>
                         </div>
 
+                        <div class="form-group mb-4">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" formControlName="password" id="password" autocomplete="off" class="form-control">
+                            <div *ngIf="pass.touched && pass.invalid">
+                                <small *ngIf="pass.errors.required" class="text-danger">Password is required for login</small>
+                                <small *ngIf="!pass.errors.required && pass.errors?.isValid" class="text-danger">Password does not meet required criteria</small>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <a type="button" class="btn btn-link login" routerLink="/forgot-password">Forgot Password?</a>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-success" [disabled]="form.invalid || !this.emailExist">Login</button>
+                            </div>
+                        </div>
+
+                        <div *ngIf="message !== ''" class="errorMessage text-danger mt-4">{{message}}</div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col"></div>
+        <div class="col-4"></div>
     </div>
 </div>

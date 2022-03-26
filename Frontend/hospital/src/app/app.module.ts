@@ -11,7 +11,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ForgotPasswordService } from './services/forgot-password.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MembershipService } from './services/membership.service';
+import { LoginService } from './services/login.service';
 import { RegisterPatientComponent } from './components/patient-register/register-patient.component';
 
 @NgModule({
@@ -30,7 +30,7 @@ import { RegisterPatientComponent } from './components/patient-register/register
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ForgotPasswordService, MembershipService],
+  providers: [ForgotPasswordService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
