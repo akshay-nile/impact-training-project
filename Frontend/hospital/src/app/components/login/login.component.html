@@ -15,7 +15,7 @@
                             <div *ngIf="email.touched && email.errors || !emailExist">
                                 <small *ngIf="email.touched && email.errors?.required" class="text-danger">Email is required for login</small>
                                 <small *ngIf="!email.errors?.required && email.errors?.email" class="text-danger">Not a valid email address</small>
-                                <small *ngIf="!email.errors && !emailExist" class="text-danger">No account is linked to this email id</small>
+                                <small *ngIf="pass.touched && !email.errors && !emailExist" class="text-danger">No account is linked to this email id</small>
                             </div>
                         </div>
 
