@@ -29,10 +29,10 @@ public class Patient {
 	@Column
 	private String lastName;
 
-	@Column
+	@Column(unique = true)
 	private String email;
 
-	@Column
+	@Column(unique = true)
 	private String phone;
 
 	@Column

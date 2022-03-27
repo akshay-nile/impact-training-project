@@ -9,8 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.beans.factory.annotation.Value;
-
 import com.citiustech.hospital.models.constants.Role;
 import com.citiustech.hospital.models.constants.Status;
 
@@ -34,10 +32,10 @@ public class Employee {
 	@Column
 	private LocalDate birthdate;
 
-	@Column
+	@Column(unique = true)
 	private String email;
 
-	@Column
+	@Column(nullable = false)
 	private Role role;
 
 	@Column

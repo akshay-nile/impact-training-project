@@ -10,6 +10,22 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'register', component: RegisterPatientComponent },
+  {
+    path:'patient',
+    loadChildren: () => import('./modules/patient/patient.module').then(m => m.PatientModule)
+  },
+  {
+    path:'doctor',
+    loadChildren: () => import('./modules/doctor/doctor.module').then(m => m.DoctorModule)
+  },
+  {
+    path:'nurse',
+    loadChildren: () => import('./modules/nurse/nurse.module').then(m => m.NurseModule)
+  },
+  {
+    path:'admin',
+    loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
+  },
   { path: '**', component: PageNotFoundComponent }
 ];
 
