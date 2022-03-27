@@ -25,9 +25,6 @@ public class ForgotPasswordService {
 	private EmailSenderService emailSenderService;
 
 	@Autowired
-	private LoginService loginService;
-
-	@Autowired
 	private VerificationRepository verifyRepo;
 
 	@Autowired
@@ -37,7 +34,7 @@ public class ForgotPasswordService {
 	private EmployeeRepository employeeRepo;
 
 	public boolean sendOtpEmail(String toEmail) {
-		if (!loginService.isEmailExist(toEmail)) {
+		if (patientRepo.findByEmail(toEmail) == null && employeeRepo.findByEmail(toEmail) == null) {
 			return false;
 		}
 

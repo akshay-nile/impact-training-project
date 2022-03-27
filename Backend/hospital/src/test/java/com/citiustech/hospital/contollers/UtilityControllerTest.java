@@ -19,18 +19,17 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @ExtendWith(MockitoExtension.class)
-class EnumControllerTest {
+class UtilityControllerTest {
 
 	@Autowired
 	private MockMvc mockMvc;
 
 	@InjectMocks
-	private EnumController enumController;
+	private UtilityController utilityController;
 
 	@BeforeEach
 	public void setUp() {
-		mockMvc = MockMvcBuilders.standaloneSetup(enumController).build();
-
+		mockMvc = MockMvcBuilders.standaloneSetup(utilityController).build();
 	}
 
 	@AfterEach
@@ -39,18 +38,25 @@ class EnumControllerTest {
 	}
 
 	@Test
-	@DisplayName("Test Method to get All Languages")
+	@DisplayName("Test method to get all Languages")
 	public void getAllLanguages() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.get("/api/enums/languages").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 	}
 
 	@Test
-	@DisplayName("Test Method to get All Relations")
+	@DisplayName("Test method to get all Relations")
 	public void getAllRelations() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.get("/api/enums/relations").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 	}
+	
+//	@Test
+//	@DisplayName("Test method to check if email exists")
+//	public void checkEmailExists() throws Exception {
+//		mockMvc.perform(MockMvcRequestBuilders.post("/api/exists/email").content("noemail@gmail.com".getBytes()))
+//				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
+//	}
 
 	public static String asJsonString(final Object obj) {
 		try {

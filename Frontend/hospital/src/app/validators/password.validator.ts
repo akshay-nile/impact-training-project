@@ -6,7 +6,7 @@ export function passwordValidator(control: AbstractControl): any {
         chars.filter(c => c.match('[a-z]')).length >= 1 &&
         chars.filter(c => c.match('[A-Z]')).length >= 1 &&
         chars.filter(c => c.match('[0-9]')).length >= 1;
-    return !isValid ? { isValid: { value: control.value } } : null;
+    return !control.errors?.required && !isValid ? { isValid: { value: control.value } } : null;
 }
 
 export function confirmPassword(field1: string, field2: string): ValidatorFn {

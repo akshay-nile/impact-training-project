@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import { UtilityService } from 'src/app/services/utility.service';
 import { passwordValidator } from 'src/app/validators/password.validator';
 
 @Component({
@@ -17,7 +18,11 @@ export class LoginComponent implements OnInit {
   message: string = '';
   emailExist: boolean = false;
 
-  constructor(private router: Router, private loginService: LoginService) { }
+  constructor(
+    private router: Router,
+    private loginService: LoginService,
+    private utilityService: UtilityService
+  ) { }
 
   get pass() {
     return this.form.controls.password;
@@ -37,7 +42,7 @@ export class LoginComponent implements OnInit {
   onEmailEntered() {
     if (this.email.valid) {
       this.attempts = 3;
-      this.loginService.checkEmailExist(this.form.value.email).subscribe(res => {
+      this.utilityService.emailExists(this.form.value.email).subscribe(res => {
         this.emailExist = res;
       });
     }

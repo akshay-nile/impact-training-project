@@ -12,11 +12,6 @@ export class ForgotPasswordService {
 
   baseUrl: string = environment.baseUrl + '/api/forgot-password';
 
-  checkEmailExist(email: string): Observable<boolean> {
-    return this.http.post<boolean>(this.baseUrl + '/exist', email)
-      .pipe(catchError(this.handleError));
-  }
-
   sendOtp(email: string): Observable<boolean> {
     return this.http.post<boolean>(this.baseUrl + '/send-otp', email)
       .pipe(catchError(this.handleError));
