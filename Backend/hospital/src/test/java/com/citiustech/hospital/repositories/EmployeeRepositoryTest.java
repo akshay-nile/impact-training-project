@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.citiustech.hospital.models.Employee;
+import com.citiustech.hospital.models.constants.Role;
 import com.citiustech.hospital.models.templates.Credential;
 
 @ExtendWith(SpringExtension.class)
@@ -33,6 +34,7 @@ class EmployeeRepositoryTest {
 		employee.setFirstName("Tejas");
 		employee.setLastName("Gaikar");
 		employee.setEmail(email);
+		employee.setRole(Role.DOCTOR);
 		employee.setPassword(credential.getPassword());
 	}
 
