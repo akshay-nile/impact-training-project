@@ -11,8 +11,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ForgotPasswordService } from './services/forgot-password.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MembershipService } from './services/membership.service';
-import { RegisterPatientComponent } from './components/patient-register/register-patient.component';
+import { LoginService } from './services/login.service';
+import { MainBodyComponent } from './components/main-body/main-body.component';
+import { RegisterPatientComponent } from './components/register-patient/register-patient.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RegisterPatientComponent } from './components/patient-register/register
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
-    RegisterPatientComponent
+    RegisterPatientComponent,
+    MainBodyComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,7 @@ import { RegisterPatientComponent } from './components/patient-register/register
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ForgotPasswordService, MembershipService],
+  providers: [ForgotPasswordService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

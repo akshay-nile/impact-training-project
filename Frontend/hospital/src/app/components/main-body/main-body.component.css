@@ -1,0 +1,93 @@
+main{
+background-repeat: no-repeat;
+background-size: cover;
+padding : 5%;
+ width: 100%;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+main .right-sec{
+ padding-right: 70px;
+}
+
+main .left-sec{
+ padding-left: 100px;
+}
+
+.left-sec h2{
+ font-size: 20px;
+ text-transform: capitalize;
+ font-weight: normal;
+ color: #242424;
+ margin-top: 100px;
+}
+
+.left-sec h1{
+ font-size: 55px;
+ text-transform: capitalize;
+ font-weight: 700;
+ margin: 15px 0;
+}
+
+.left-sec p{
+ margin-bottom: 20px;
+}
+
+.left-sec button{
+ padding: 15px 45px;
+ text-align: center;
+ font-size: 14px;
+ color: #fff;
+ border: none;
+ background-image: linear-gradient(to right,#649bff,#0070fa,#649bff);
+ border-radius: 10px;
+}
+
+
+
+
+
+/* Carousel separations */
+.details{
+    margin: 20px 0px;
+    background-color: #fff; 
+    padding : 30px 20px;
+    position: relative;
+    z-index: 0;
+}
+.details h2{
+    font-size: 22px;
+    text-transform: uppercase;
+    transition: 0.6s all;
+    text-align: center;
+}
+.details p{
+    font-size: 14px;
+    transition: 0.6s all;
+}
+.details::before{
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: skyblue;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 0.6s all;
+}
+.details:hover::before{
+    width: 100%;
+}
+.details:hover h2{
+    color: #fff;
+}
+.container h1{
+    font-size: 50px;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-items: center;
+    justify-content: center;
+}

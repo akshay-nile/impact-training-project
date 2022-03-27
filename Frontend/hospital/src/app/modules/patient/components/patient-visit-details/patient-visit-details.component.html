@@ -1,0 +1,46 @@
+<div class="container pt-5">
+  <div class="row justify-content-sm-center pt-5">
+
+    <div class="col-sm-6 shadow round pb-3">
+      <h1 class="text-center pt-3 text-secondary">Patient visit details Form</h1>
+      <form [formGroup]="patientVisitForm">
+        <div class="form-group">
+          <label class="col-form-label">Height:</label>
+          <input formControlName="height" type="number" class="form-control">
+          <small *ngIf="height?.invalid && height?.touched" class="text-danger">height is Required</small>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label">Weight:</label>
+          <input formControlName="weight" type="number" class="form-control">
+          <small *ngIf="weight?.invalid && weight?.touched" class="text-danger">weight is Required</small>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label">Blood Pressure:</label>
+          <input formControlName="blood_pressure" type="number" class="form-control">
+          <small *ngIf="blood_pressure?.invalid && blood_pressure?.touched" class="text-danger">blood pressure is
+            Required</small>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label">Body Temperature:</label>
+          <input formControlName="body_temperature" type="number" class="form-control">
+          <small *ngIf="body_temperature?.invalid && body_temperature?.touched" class="text-danger">body temperature is
+            Required</small>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label">Respiration rate:</label>
+          <input formControlName="respiration_rate" type="number" class="form-control">
+          <small *ngIf="respiration_rate?.invalid && respiration_rate?.touched" class="text-danger">body temperature is
+            Required</small>
+        </div>
+        <br>
+        <div>
+          <button (click)="cancel()" type="button" class="btn btn-success">cancel</button>&nbsp;&nbsp;
+          <button [disabled]="patientVisitForm.invalid" type="button" class="btn btn-primary">submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div>
+  {{patientVisitForm.value|json}}
+</div>

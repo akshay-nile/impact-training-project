@@ -6,31 +6,25 @@ import { environment } from 'src/environments/environment';
 @Injectable({
     providedIn: 'root'
 })
-export class MembershipService {
-    
-    constructor(private httpClient: HttpClient) { }
-    
+export class LoginService {
+
+    constructor(private http: HttpClient) { }
+
     baseUrl: string = environment.baseUrl + '/api/login';
-    
-    getOtp(email: string): Observable<boolean> {
-        return of(true);
-        // return this.httpClient.get<boolean>(this.baseUrl+'/otps')
-        //     .pipe(catchError(this.handleError));
-    }
-    
+
     checkEmailExist(email: string): Observable<boolean> {
-        return this.httpClient.post<boolean>(this.baseUrl + '/exist', email)
-        .pipe(catchError(this.handleError));
+        return this.http.post<boolean>(this.baseUrl + '/exist', email)
+            .pipe(catchError(this.handleError));
     }
-    
-    login(user: any): Observable<any> {
-        return this.httpClient.post<any>(this.baseUrl + '/', user)
-        .pipe(catchError(this.handleError));
+
+    loginUser(user: any): Observable<any> {
+        return this.http.post<any>(this.baseUrl + '/', user)
+            .pipe(catchError(this.handleError));
     }
-    
-    block(email: string): Observable<void> {
-        return this.httpClient.post<void>(this.baseUrl + '/block', email)
-        .pipe(catchError(this.handleError));
+
+    blockAccount(email: string): Observable<void> {
+        return this.http.post<void>(this.baseUrl + '/block', email)
+            .pipe(catchError(this.handleError));
     }
 
     private handleError(errorResponse: HttpErrorResponse) {

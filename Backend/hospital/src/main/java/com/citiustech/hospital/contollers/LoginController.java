@@ -14,7 +14,6 @@ import com.citiustech.hospital.models.Patient;
 import com.citiustech.hospital.models.templates.Credential;
 import com.citiustech.hospital.services.LoginService;
 
-
 @CrossOrigin
 @RestController
 @RequestMapping("/api/login")

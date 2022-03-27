@@ -15,7 +15,7 @@ import com.citiustech.hospital.models.constants.Relation;
 @Entity
 @Table(name = "nominees")
 public class Nominee {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int nomineeId;
@@ -23,7 +23,7 @@ public class Nominee {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "patient_id")
 	private Patient patient;
-	
+
 	@Column
 	private String title;
 
@@ -35,27 +35,27 @@ public class Nominee {
 
 	@Column
 	private Relation relation;
-	
-	@Column
-	private String email;	
+
+	@Column(unique = true)
+	private String email;
+
+	@Column(unique = true)
+	private String phone;
 
 	@Column
-	private String phone;
-	
-	@Column
 	private String address;
-	
+
 	@Column(name = "access_allowed")
 	private boolean isAccessAllowed;
 
 	public int getNomineeId() {
 		return nomineeId;
 	}
-	
+
 	public void setNomineeId(int nomineeId) {
 		this.nomineeId = nomineeId;
 	}
-	
+
 	public Patient getPatient() {
 		return patient;
 	}
@@ -127,5 +127,5 @@ public class Nominee {
 	public void setAccessAllowed(boolean isAccessAllowed) {
 		this.isAccessAllowed = isAccessAllowed;
 	}
-	
+
 }

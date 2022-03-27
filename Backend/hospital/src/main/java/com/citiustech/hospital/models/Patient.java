@@ -11,6 +11,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.citiustech.hospital.models.constants.Status;
+import com.citiustech.hospital.models.constants.Title;
 
 @Entity
 @Table(name = "patients")
@@ -21,7 +22,7 @@ public class Patient {
 	private int patientId;
 
 	@Column
-	private String title;
+	private Title title;
 
 	@Column
 	private String firstName;
@@ -29,16 +30,16 @@ public class Patient {
 	@Column
 	private String lastName;
 
-	@Column
+	@Column(unique = true)
 	private String email;
 
-	@Column
+	@Column(unique = true)
 	private String phone;
 
 	@Column
 	private LocalDate birthdate;
 
-	@Column
+	@Column(nullable = false)
 	private int password;
 
 	@Column
@@ -66,11 +67,11 @@ public class Patient {
 		this.patientId = patientId;
 	}
 
-	public String getTitle() {
+	public Title getTitle() {
 		return title;
 	}
 
-	public void setTitle(String title) {
+	public void setTitle(Title title) {
 		this.title = title;
 	}
 
