@@ -12,11 +12,6 @@ export class LoginService {
 
     baseUrl: string = environment.baseUrl + '/api/login';
 
-    checkEmailExist(email: string): Observable<boolean> {
-        return this.http.post<boolean>(this.baseUrl + '/exist', email)
-            .pipe(catchError(this.handleError));
-    }
-
     loginUser(user: any): Observable<any> {
         return this.http.post<any>(this.baseUrl + '/', user)
             .pipe(catchError(this.handleError));

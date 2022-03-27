@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.citiustech.hospital.models.templates.PasswordUpdate;
 import com.citiustech.hospital.services.ForgotPasswordService;
-import com.citiustech.hospital.services.LoginService;
 
 @CrossOrigin
 @RestController
@@ -21,19 +20,10 @@ public class ForgotPasswordController {
 	@Autowired
 	private ForgotPasswordService forgotPasswordService;
 
-	@Autowired
-	private LoginService loginService;
-
 	@PostMapping("/send-otp")
 	public ResponseEntity<?> sendOtpEmail(@RequestBody String email) {
 		boolean isOtpSent = forgotPasswordService.sendOtpEmail(email);
 		return new ResponseEntity<>(isOtpSent, HttpStatus.OK);
-	}
-
-	@PostMapping("/exist")
-	public ResponseEntity<?> isEmailExist(@RequestBody String email) {
-		boolean exists = loginService.isEmailExist(email);
-		return new ResponseEntity<>(exists, HttpStatus.OK);
 	}
 
 	@PostMapping("/reset")

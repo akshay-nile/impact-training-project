@@ -22,12 +22,6 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 
-	@PostMapping("/exist")
-	public ResponseEntity<?> isEmailExist(@RequestBody String email) {
-		boolean exists = loginService.isEmailExist(email);
-		return new ResponseEntity<>(exists, HttpStatus.OK);
-	}
-
 	@PostMapping("/")
 	public ResponseEntity<?> login(@RequestBody Credential credential) {
 		Object object = loginService.login(credential);

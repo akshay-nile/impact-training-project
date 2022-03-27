@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ForgotPasswordService } from 'src/app/services/forgot-password.service';
+import { UtilityService } from 'src/app/services/utility.service';
 import { confirmPassword, passwordValidator } from 'src/app/validators/password.validator';
 
 @Component({
@@ -17,7 +18,11 @@ export class ForgotPasswordComponent implements OnInit {
   message = '';
   buttonLabel = 'Send OTP';
 
-  constructor(private router: Router, private forgotPassService: ForgotPasswordService) { }
+  constructor(
+    private router: Router,
+    private forgotPassService: ForgotPasswordService,
+    private utilityService: UtilityService
+  ) { }
 
   get email() {
     return this.form.controls.email;
@@ -45,7 +50,7 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   onSendOtpClick() {
-    this.forgotPassService.checkEmailExist(this.form.value.email).subscribe(res => {
+    this.utilityService.emailExists(this.form.value.email).subscribe(res => {
       this.emailExist = res;
       if (this.emailExist) {
         this.message = '';
@@ -72,7 +77,7 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   resetPassword() {
-    if(this.form.invalid) {
+    if (this.form.invalid) {
       return;
     }
     const passUpdate = {
