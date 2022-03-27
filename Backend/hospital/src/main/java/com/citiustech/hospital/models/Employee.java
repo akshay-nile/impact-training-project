@@ -11,6 +11,7 @@ import javax.persistence.Table;
 
 import com.citiustech.hospital.models.constants.Role;
 import com.citiustech.hospital.models.constants.Status;
+import com.citiustech.hospital.models.constants.Title;
 
 @Entity
 @Table(name = "employees")
@@ -21,7 +22,7 @@ public class Employee {
 	private int employeeId;
 
 	@Column
-	private String title;
+	private Title title;
 
 	@Column
 	private String firstName;
@@ -41,7 +42,7 @@ public class Employee {
 	@Column
 	private String specialization;
 
-	@Column
+	@Column(nullable = false)
 	private int password;
 
 	@Column
@@ -55,11 +56,11 @@ public class Employee {
 		this.status = status;
 	}
 
-	public String getTitle() {
+	public Title getTitle() {
 		return title;
 	}
 
-	public void setTitle(String title) {
+	public void setTitle(Title title) {
 		this.title = title;
 	}
 
