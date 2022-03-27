@@ -81,14 +81,13 @@ export class ForgotPasswordComponent implements OnInit {
       newPassword: this.form.value.newPass as string
     };
     this.forgotPassService.resetPassword(passUpdate).subscribe(res => {
-      console.log(res);
-      this.form.reset();
-      this.isOtpSent = false;
-      this.emailExist = false;
-      this.buttonLabel = 'Send OTP';
       switch (res as string) {
         case 'success':
           alert("Your password has been successfully reset.");
+          this.form.reset();
+          this.isOtpSent = false;
+          this.emailExist = false;
+          this.buttonLabel = 'Send OTP';
           this.router.navigate(['login']);
           break;
         case 'expired':

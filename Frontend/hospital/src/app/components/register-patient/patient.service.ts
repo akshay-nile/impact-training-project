@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { catchError } from 'rxjs/internal/operators/catchError';
+import { environment } from 'src/environments/environment';
 import { Patient } from './patient';
 
 @Injectable({
@@ -9,17 +9,12 @@ import { Patient } from './patient';
 })
 export class PatientService {
 
-  baseUrl='http://localhost:3000/patients';
-  errorMsg: string ='';
+  baseUrl = environment.baseUrl + '/api/register';
 
   constructor(private httpClient: HttpClient) { }
 
-  addPatient(patient: Patient) : Observable<Patient> {
-    return this.httpClient.post<Patient>(this.baseUrl, patient, {
-      headers: new HttpHeaders ({
-        'Content-Type' : 'application/json'
-      })
-    })
+  addPatient(patient: any): Observable<any> {
+    return this.httpClient.post<any>(this.baseUrl + '/patient', patient);
   }
 
   getAllPatients(): Observable<Patient[]> {

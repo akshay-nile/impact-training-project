@@ -12,7 +12,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { ForgotPasswordService } from './services/forgot-password.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './services/login.service';
-import { RegisterPatientComponent } from './components/patient-register/register-patient.component';
+import { MainBodyComponent } from './components/main-body/main-body.component';
+import { RegisterPatientComponent } from './components/register-patient/register-patient.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RegisterPatientComponent } from './components/patient-register/register
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
-    RegisterPatientComponent
+    RegisterPatientComponent,
+    MainBodyComponent
   ],
   imports: [
     BrowserModule,

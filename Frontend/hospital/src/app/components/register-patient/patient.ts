@@ -3,7 +3,7 @@ export class Patient {
     firstName: string;
     lastName: string;
     email: string;
-    dateOfBirth: Date;
+    dateOfBirth: string;
     contactNumber: number;
     password: string;
     confirmPassword: string;
@@ -13,7 +13,7 @@ export class Patient {
         this.firstName = '';
         this.lastName = '';
         this.email = '';
-        this.dateOfBirth = new Date();
+        this.dateOfBirth = '';
         this.contactNumber = 0;
         this.password = '';
         this.confirmPassword = '';

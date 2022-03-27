@@ -1,0 +1,20 @@
+.card{
+    border: none;
+    width: 80%;
+    padding: 40px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    position: relative;
+    box-shadow: 20px 20px 10px lightgray;
+    /* background-color: rgb(199, 199, 255); */
+    /* background: hsla(205, 46%, 35%, 1); */
+    /* background: linear-gradient(90deg, hsla(205, 46%, 35%,1) 0%, hsla(205, 29%, 36%, 1), 100%)  */
+}
+
+.card h1, h6{
+    color: black;
+}
+
+label{
+    color: black;
+}
