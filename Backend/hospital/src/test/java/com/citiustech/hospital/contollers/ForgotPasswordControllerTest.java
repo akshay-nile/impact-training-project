@@ -67,15 +67,6 @@ class ForgotPasswordControllerTest {
 	}
 
 	@Test
-	@DisplayName("Test Method to check Email")
-	public void givenEmailToCheckIfExist() throws Exception {
-		when(loginService.isEmailExist(any())).thenReturn(true);
-		mockMvc.perform(post("/api/forgot-password/exist").contentType(MediaType.APPLICATION_JSON).content(email))
-				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
-		verify(loginService).isEmailExist(email);
-	}
-
-	@Test
 	@DisplayName("Test Method to reset Password")
 	public void testMethodToResetPassword() throws Exception {
 		when(forgotPasswordService.resetPasswordByOtp(any())).thenReturn("Password Changed Successfully");

@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
+        <div class="col col-md-2"></div>
         <div class="card">
-            <div class="text-center">
-                <h1>Register</h1>
-                <h6>For Users !</h6>
+            <div class="text-dark text-muted text-center mb-5 mt-2">
+                <h2>Registration for Patient</h2>
             </div>
             <form [formGroup]="registerForm" (ngSubmit)="registerPatient()">
                 <div class="row">
@@ -11,10 +11,10 @@
                         <div class="mb-3 radioClass">
                             <label>Title</label> <br>
                             <input class="form-control-input" formControlName="title" type="radio"
-                                 id="flexRadioDefault1" value="Mr" checked>
+                                id="flexRadioDefault1" value="Mr" checked>
                             <label class="form-control-label" for="flexRadioDefault1"> Mr.</label>
-                            <input class="form-control-input" formControlName="title" type="radio"
-                                 value="Ms" id="flexRadioDefault2">
+                            <input class="form-control-input" formControlName="title" type="radio" value="Ms"
+                                id="flexRadioDefault2">
                             <label class="form-control-label" for="flexRadioDefault2"> Miss.</label>
                         </div>
                     </div>
@@ -93,6 +93,7 @@
                         <div *ngIf="registerForm.controls['confirmPassword'].errors?.['m']">Confirm password not
                             matched with the above password</div>
                     </div>
+
                 </div>
                 <div>
                     <button [disabled]="!registerForm.valid" type="submit"
@@ -101,5 +102,6 @@
             </form>
             <a style="color:white;" routerLink="/login" href="#">Already registered? Click here to Login</a>
         </div>
+        <div class="col col-md-4"></div>
     </div>
 </div>
