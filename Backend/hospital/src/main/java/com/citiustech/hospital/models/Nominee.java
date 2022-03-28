@@ -1,6 +1,5 @@
 package com.citiustech.hospital.models;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +19,7 @@ public class Nominee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int nomineeId;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "patient_id")
 	private Patient patient;
 

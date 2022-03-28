@@ -2,6 +2,7 @@ package com.citiustech.hospital.models;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -45,10 +46,10 @@ public class Patient {
 	@Column
 	private Status status = Status.ACTIVE;
 
-	@OneToOne(mappedBy = "patient")
+	@OneToOne(cascade = CascadeType.ALL)
 	private Nominee nominee;
 
-	@OneToOne(mappedBy = "patient")
+	@OneToOne(mappedBy="patient", cascade = CascadeType.ALL)
 	private Demographics demographics;
 
 	public Nominee getNominee() {

@@ -66,7 +66,8 @@ export class LoginComponent implements OnInit {
           case "ACTIVE":
             this.form.reset();
             let role = !this.user.role ? 'patient' : this.user.role.toLowerCase();
-            this.router.navigate([role, 'dashboard']);
+            localStorage.setItem('user', JSON.stringify(this.user));
+            this.router.navigate([role, 'demographics']);
             break;
           case "BLOCKED":
             this.message = "Account was Locked!";

@@ -1,0 +1,36 @@
+image: java:11-jdk
+
+stages:
+  - clean
+  - install
+  - test
+  - build
+
+maven-clean:
+  image: maven:3-jdk-11
+  stage: clean
+  script: 'mvn clean'
+
+maven-install:
+  image: maven:3-jdk-11
+  stage: install
+  script: 'mvn install'
+
+maven-test:
+  image: maven:3-jdk-11
+  stage: test
+  script: 'mvn test'
+
+maven-build:
+  image: maven:3-jdk-11
+  stage: build
+  script: 'mvn package'
+
+services:
+  - postgres
+
+variables:
+  POSTGRES_DB: postgres
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: root
+  DB_POSTGRES: jdbc:postgresql://postgres:5432/postgres

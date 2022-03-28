@@ -1,0 +1,9 @@
+
+input[type=radio] {
+    margin-left: 1em;
+    margin-right: 0.5em;
+}
+
+button[type=submit], button[type=reset] {
+    margin-right: 1em;
+}
