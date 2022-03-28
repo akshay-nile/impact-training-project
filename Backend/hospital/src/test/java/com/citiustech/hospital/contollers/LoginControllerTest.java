@@ -62,15 +62,6 @@ class LoginControllerTest {
 	}
 
 	@Test
-	@DisplayName("Test Method to check email is valid")
-	public void givenEmailToCheckIfValid() throws Exception {
-		when(loginService.isEmailExist(any())).thenReturn(true);
-		mockMvc.perform(post("/api/login/exist").contentType(MediaType.APPLICATION_JSON).content(email))
-				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
-		verify(loginService).isEmailExist(email);
-	}
-
-	@Test
 	@DisplayName("Test Method to check Patient login Credentials")
 	public void givenEmailAndPasswordToCheckIfPatientIsValid() throws Exception {
 		when(loginService.login(any())).thenReturn(patient);

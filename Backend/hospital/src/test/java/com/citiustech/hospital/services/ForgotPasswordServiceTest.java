@@ -54,7 +54,6 @@ class ForgotPasswordServiceTest {
 
 	@BeforeEach
 	public void setUp() {
-
 		email = "tejas.gaikar@gmail.com";
 		patient = new Patient();
 		employee = new Employee();
@@ -79,13 +78,11 @@ class ForgotPasswordServiceTest {
 	@Test
 	@DisplayName("Test Method to send OTP")
 	public void givenEmailToSendOTP() {
-		when(loginService.isEmailExist(any())).thenReturn(true);
+		when(patientRepo.findByEmail(any())).thenReturn(patient);
 		when(emailSenderService.sendEmail(any(), any(), any())).thenReturn(true);
-		when(verifyRepo.save(any())).thenReturn(record);
 		assertTrue(forgotPasswordService.sendOtpEmail(email));
-		verify(loginService, times(1)).isEmailExist(email);
 		verify(emailSenderService, times(1)).sendEmail(any(), any(), any());
-		verify(verifyRepo, times(1)).save(any());
+		verify(patientRepo, times(1)).findByEmail(any());
 	}
 
 	@Test

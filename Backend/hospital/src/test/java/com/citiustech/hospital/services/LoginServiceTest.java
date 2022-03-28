@@ -55,22 +55,6 @@ class LoginServiceTest {
 	}
 
 	@Test
-	@DisplayName("Test Method to check Patient email")
-	public void givenPatientEmailThenShouldReturntrue() {
-		when(patientRepo.findByEmail(any())).thenReturn(patient);
-		assertTrue(loginService.isEmailExist(email));
-		verify(patientRepo, times(1)).findByEmail(email);
-	}
-
-	@Test
-	@DisplayName("Test Method to check Employee email")
-	public void givenEmployeeEmailThenShouldReturntrue() {
-		when(employeeRepo.findByEmail(any())).thenReturn(employee);
-		assertTrue(loginService.isEmailExist(email));
-		verify(employeeRepo, times(1)).findByEmail(email);
-	}
-
-	@Test
 	@DisplayName("Test Method to check get patient by Email and Password")
 	public void givenPatientEmailAndPasswordThenShouldReturnPatient() {
 		when(patientRepo.findByEmailAndPassword(credential.getEmail(), credential.getPassword().hashCode()))
