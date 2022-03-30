@@ -5,7 +5,7 @@
       <div class="card shadow">
         <div class="card-body mt-4 mb-4">
           <h3 class="text-center text-muted text-dark">Demographic Details Form</h3>
-          <form [formGroup]="patientdetailsForm">
+          <form [formGroup]="demographicsForm">
             <div class="form-group">
               <label class="col-form-label">FirstName:</label>
               <input formControlName="firstname" type="text" class="form-control">
@@ -79,7 +79,7 @@
             </div>
             <div>
               <br>
-              <button (click)="onSubmit()" type="submit" [disabled]="patientdetailsForm.invalid || language.value == ''" 
+              <button (click)="onSubmit()" type="submit" [disabled]="demographicsForm.invalid || language.value == ''" 
               class="btn btn-success">Save</button>
               <button (click)="clear()" class="btn btn-danger">Clear</button>&nbsp;&nbsp;
             </div>

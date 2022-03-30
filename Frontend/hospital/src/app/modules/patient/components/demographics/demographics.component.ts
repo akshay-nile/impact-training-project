@@ -7,11 +7,11 @@ import { PatientDetailsService } from '../../services/patient-details.service';
 
 @Component({
   selector: 'patient-demographics',
-  templateUrl: './patient-details.component.html',
-  styleUrls: ['./patient-details.component.css']
+  templateUrl: './demographics.component.html',
+  styleUrls: ['./demographics.component.css']
 })
 export class DemographicsComponent implements OnInit {
-  patientdetailsForm!: FormGroup;
+  demographicsForm!: FormGroup;
   patientdetails!: PatientDetails[];
   pd!: PatientDetails;
   error!: string;
@@ -27,9 +27,11 @@ export class DemographicsComponent implements OnInit {
 
   ngOnInit(): void {
     this.utilityService.getLanguages().subscribe(res => this.languages = res);
+    
     this.user = JSON.parse(localStorage.getItem('user'));
+    localStorage.clear();
 
-    this.patientdetailsForm = <FormGroup>this.formBuilder.group({
+    this.demographicsForm = <FormGroup>this.formBuilder.group({
       firstname: new FormControl(this.user.firstName, [Validators.required]),
       lastname: new FormControl(this.user.lastName, [Validators.required]),
       gender: new FormControl(this.user.title === 'Mr' ? 'Male' : 'Female', [Validators.required]),
@@ -45,42 +47,43 @@ export class DemographicsComponent implements OnInit {
     });
 
     for (let control of 'firstname lastname dob email phone age'.split(' ')) {
-      this.patientdetailsForm.controls[control].disable();
+      this.demographicsForm.controls[control].disable();
     }
+    this.demographicsForm.setValue(this.user.demographics);
   }
 
   get firstname() {
-    return this.patientdetailsForm.get('firstname');
+    return this.demographicsForm.get('firstname');
   }
   get lastname() {
-    return this.patientdetailsForm.get('lastname');
+    return this.demographicsForm.get('lastname');
   }
   get gender() {
-    return this.patientdetailsForm.get('gender');
+    return this.demographicsForm.get('gender');
   }
   get dob() {
-    return this.patientdetailsForm.get('dob');
+    return this.demographicsForm.get('dob');
   }
   get age() {
-    return this.patientdetailsForm.controls.age;
+    return this.demographicsForm.controls.age;
   }
   get email() {
-    return this.patientdetailsForm.get('email');
+    return this.demographicsForm.get('email');
   }
   get phone() {
-    return this.patientdetailsForm.get('phone');
+    return this.demographicsForm.get('phone');
   }
   get language() {
-    return this.patientdetailsForm.controls.language;
+    return this.demographicsForm.controls.language;
   }
   get race() {
-    return this.patientdetailsForm.get('race');
+    return this.demographicsForm.get('race');
   }
   get ethnicity() {
-    return this.patientdetailsForm.get('ethnicity');
+    return this.demographicsForm.get('ethnicity');
   }
   get address() {
-    return this.patientdetailsForm.get('address');
+    return this.demographicsForm.get('address');
   }
 
   calcAge(birthdate: Date) {
@@ -95,33 +98,30 @@ export class DemographicsComponent implements OnInit {
   }
 
   onSubmit() {
-    const demographics = {};
+    if(!this.user.demographics) this.user.demographics = {};
     for (let control of 'age gender race ethnicity language address'.split(' ')) {
       let wasDisabled = this.age.disabled;
       this.age.enable()
-      demographics[control] = this.patientdetailsForm.value[control];
+      this.user.demographics[control] = this.demographicsForm.value[control];
       if (wasDisabled) this.age.disable();
     }
-    this.user['demographics'] = demographics;
-    console.log(this.user);
     this.patientDetailsService.updateDemographicDetails(this.user).subscribe(res => {
       if (!res) return;
       alert('Successfully Updated!')
-      this.patientdetailsForm.reset();
+      this.demographicsForm.reset();
       this.router.navigate(['patient', 'nominee']);
     }, err => alert(err));
   }
 
   clear() {
     for (let control of 'language race ethnicity address'.split(' ')) {
-      this.patientdetailsForm.controls[control].reset();
+      this.demographicsForm.controls[control].reset();
     }
   }
 
   updatePatientDetails(id: number = 1) {
     this.patientDetailsService.getPatientDetailsById(id).subscribe(data => this.pd = data);
   }
-
 
 }
 

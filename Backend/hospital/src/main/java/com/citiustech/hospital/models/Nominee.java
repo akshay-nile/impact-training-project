@@ -10,6 +10,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.citiustech.hospital.models.constants.Relation;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "nominees")
@@ -21,6 +22,7 @@ public class Nominee {
 
 	@OneToOne
 	@JoinColumn(name = "patient_id")
+	@JsonBackReference
 	private Patient patient;
 
 	@Column

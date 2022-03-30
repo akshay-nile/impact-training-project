@@ -2,26 +2,24 @@ package com.citiustech.hospital.models;
 
 import java.time.LocalDate;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.citiustech.hospital.models.constants.Role;
 import com.citiustech.hospital.models.constants.Status;
 import com.citiustech.hospital.models.constants.Title;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-@Table(name = "patients")
-public class Patient {
+@Table(name = "employees")
+public class Employee {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int patientId;
+	private int employeeId;
 
 	@Column
 	private Title title;
@@ -32,14 +30,17 @@ public class Patient {
 	@Column
 	private String lastName;
 
+	@Column
+	private LocalDate birthdate;
+
 	@Column(unique = true)
 	private String email;
 
-	@Column(unique = true)
-	private String phone;
+	@Column(nullable = false)
+	private Role role;
 
 	@Column
-	private LocalDate birthdate;
+	private String specialization;
 
 	@Column(nullable = false)
 	private int password;
@@ -47,28 +48,12 @@ public class Patient {
 	@Column
 	private Status status = Status.ACTIVE;
 
-	@OneToOne(mappedBy="patient", cascade = CascadeType.ALL)
-	@JsonManagedReference
-	private Nominee nominee;
-
-	@OneToOne(mappedBy="patient", cascade = CascadeType.ALL)
-	@JsonManagedReference
-	private Demographics demographics;
-
-	public Nominee getNominee() {
-		return nominee;
+	public Status getStatus() {
+		return status;
 	}
 
-	public void setNominee(Nominee nominee) {
-		this.nominee = nominee;
-	}
-
-	public int getPatientId() {
-		return patientId;
-	}
-
-	public void setPatientId(int patientId) {
-		this.patientId = patientId;
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
 	public Title getTitle() {
@@ -95,6 +80,14 @@ public class Patient {
 		this.lastName = lastName;
 	}
 
+	public LocalDate getBirthdate() {
+		return birthdate;
+	}
+
+	public void setBirthdate(LocalDate birthdate) {
+		this.birthdate = birthdate;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -103,20 +96,12 @@ public class Patient {
 		this.email = email;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getSpecialization() {
+		return specialization;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public LocalDate getBirthdate() {
-		return birthdate;
-	}
-
-	public void setBirthdate(LocalDate birthdate) {
-		this.birthdate = birthdate;
+	public void setSpecialization(String specialization) {
+		this.specialization = specialization;
 	}
 
 	public int getPassword() {
@@ -133,20 +118,19 @@ public class Patient {
 		}
 	}
 
-	public Status getStatus() {
-		return status;
+	public Role getRole() {
+		return role;
 	}
 
-	public void setStatus(Status status) {
-		this.status = status;
+	public void setRole(Role role) {
+		this.role = role;
 	}
 
-	public Demographics getDemographics() {
-		return demographics;
+	public int getEmployeeId() {
+		return employeeId;
 	}
 
-	public void setDemographics(Demographics demographics) {
-		this.demographics = demographics;
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
 	}
-
 }

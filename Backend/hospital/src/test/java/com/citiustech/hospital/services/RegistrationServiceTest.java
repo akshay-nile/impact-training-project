@@ -57,12 +57,4 @@ class RegistrationServiceTest {
 		verify(patientRepo, times(1)).save(patient);
 	}
 	
-	@Test
-	@DisplayName("Test Method to add new Employee ")
-	public void givenEmployeeDetailsThenShouldReturnEmployee() {
-		when(employeeRepo.save(any())).thenReturn(employee);
-		registrationService.register(employee);
-		verify(employeeRepo, times(1)).save(employee);
-	}
-	
 }

@@ -10,6 +10,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.citiustech.hospital.models.constants.Language;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "demographics")
@@ -21,6 +22,7 @@ public class Demographics {
 	
 	@OneToOne
 	@JoinColumn(name = "patient_id")
+	@JsonBackReference
 	private Patient patient;
 	
 	@Column
