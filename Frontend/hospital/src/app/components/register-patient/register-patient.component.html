@@ -60,7 +60,7 @@
 
                         <div class="form-group">
                             <label class="col-form-label">Date of Birth:</label>
-                            <input formControlName="birthdate" type="date" class="form-control" [max]="today">
+                            <input formControlName="birthdate" type="date" class="form-control" max="{{today}}">
                             <small *ngIf="dob.touched && dob.errors?.required" class="text-danger">Date of Birth is
                                 required</small>
                         </div>

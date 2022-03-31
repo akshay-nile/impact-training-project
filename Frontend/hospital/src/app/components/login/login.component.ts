@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   user: any;
   attempts: number = 3;
   message: string = '';
-  emailExist: boolean = false;
+  emailExist: boolean = true;
 
   constructor(
     private router: Router,

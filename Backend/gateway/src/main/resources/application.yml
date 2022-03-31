@@ -13,8 +13,6 @@ spring:
             allowedMethods:
             - GET
             - POST
-            - PUT
-            - DELETE
       routes:
       - id: admin-microservice
         uri: http://localhost:8081

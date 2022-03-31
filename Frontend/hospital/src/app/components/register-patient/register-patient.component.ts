@@ -1,6 +1,6 @@
 import { formatDate } from '@angular/common';
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { UtilityService } from 'src/app/services/utility.service';
@@ -18,7 +18,6 @@ export class RegisterPatientComponent implements OnInit {
   phoneExists = false;
   titles = 'Mr Ms Mrs Dr'.split(' ');
   message = '';
-  today = formatDate(new Date(Date.now().valueOf() - 18*365*24*60*60*1000), 'yyyy-MM-dd', this.locale);;
 
   constructor(
     private router: Router,
@@ -26,7 +25,13 @@ export class RegisterPatientComponent implements OnInit {
     private registrationService: RegistrationService,
     @Inject(LOCALE_ID) private locale: string,
   ) { }
-  
+
+  get today() {
+    let miliSeconds = Math.ceil(18 * 365.25 * 24 * 60 * 60 * 1000);
+    let date = new Date(Date.now().valueOf() - miliSeconds);
+    return formatDate(date, 'yyyy-MM-dd', this.locale);
+  }
+
   get email() {
     return this.form.controls.email;
   }
@@ -65,21 +70,21 @@ export class RegisterPatientComponent implements OnInit {
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      phone: new FormControl('+91 ' , [Validators.required, Validators.pattern(/^\+\d+\s?\d{10}$/)]),
+      phone: new FormControl('+91 ', [Validators.required, Validators.pattern(/^\+\d+\s?\d{10}$/)]),
       birthdate: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required, passwordValidator]),
       confirmPass: new FormControl('', [Validators.required])
-    }, confirmPassword('password','confirmPass'));
+    }, confirmPassword('password', 'confirmPass'));
   }
 
   onEmailEntered() {
-    if(this.email.valid) {
+    if (this.email.valid) {
       this.utilityService.emailExists(this.form.value.email).subscribe(res => this.emailExists = res);
     }
   }
 
   onPhoneEntered() {
-    if(this.phone.valid) {
+    if (this.phone.valid) {
       this.utilityService.phoneExists(this.form.value.phone).subscribe(res => this.phoneExists = res);
     }
   }
@@ -87,7 +92,7 @@ export class RegisterPatientComponent implements OnInit {
   registerPatient() {
     console.log(this.form.value);
     this.registrationService.registerPatient(this.form.value).subscribe(res => {
-      if(res != null) {
+      if (res != null) {
         this.form.reset();
         alert('Registration was successful !');
         this.router.navigate(['login']);

@@ -89,8 +89,8 @@ export class DemographicsComponent implements OnInit {
   }
 
   calcAge() {
-    let miliSeconds = (Date.now().valueOf() - new Date(this.user.birthdate).valueOf()).valueOf();
-    return Math.floor(miliSeconds / 1000 / 60 / 60 / 24 / 30 / 12);
+    let miliSeconds = Date.now().valueOf() - new Date(this.user.birthdate).valueOf();
+    return Math.floor(miliSeconds / 1000 / 60 / 60 / 24 / 365.25);
   }
 
   updateDemographics() {
