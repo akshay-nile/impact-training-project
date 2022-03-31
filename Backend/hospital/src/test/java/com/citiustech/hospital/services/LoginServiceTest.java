@@ -40,7 +40,6 @@ class LoginServiceTest {
 
 	@BeforeEach
 	public void setUp() {
-
 		email = "tejas.gaikar@gmail.com";
 		credential = new Credential();
 		credential.setEmail("tejas.gaikar@gmail.com");

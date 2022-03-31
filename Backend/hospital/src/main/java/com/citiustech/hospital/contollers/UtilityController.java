@@ -14,7 +14,7 @@ import com.citiustech.hospital.services.UtilityService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/hospital")
 public class UtilityController {
 
 	@Autowired

@@ -61,7 +61,7 @@ class ForgotPasswordControllerTest {
 	@DisplayName("Test Method to send otp")
 	public void givenEmailToSendOTP() throws Exception {
 		when(forgotPasswordService.sendOtpEmail(any())).thenReturn(true);
-		mockMvc.perform(post("/api/forgot-password/send-otp").contentType(MediaType.APPLICATION_JSON).content(email))
+		mockMvc.perform(post("/hospital/send-otp").contentType(MediaType.APPLICATION_JSON).content(email))
 				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 		verify(forgotPasswordService).sendOtpEmail(email);
 	}
@@ -69,8 +69,8 @@ class ForgotPasswordControllerTest {
 	@Test
 	@DisplayName("Test Method to reset Password")
 	public void testMethodToResetPassword() throws Exception {
-		when(forgotPasswordService.resetPasswordByOtp(any())).thenReturn("Password Changed Successfully");
-		mockMvc.perform(post("/api/forgot-password/reset").contentType(MediaType.APPLICATION_JSON)
+		when(forgotPasswordService.resetPasswordByOtp(any())).thenReturn("success");
+		mockMvc.perform(post("/hospital/reset-password").contentType(MediaType.APPLICATION_JSON)
 				.content(asJsonString(passUpdate))).andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 		verify(forgotPasswordService).resetPasswordByOtp(any());
 	}

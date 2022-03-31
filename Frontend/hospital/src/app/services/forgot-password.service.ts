@@ -10,7 +10,7 @@ export class ForgotPasswordService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl: string = environment.baseUrl + '/api/forgot-password';
+  baseUrl: string = environment.baseUrl + '/hospital';
 
   sendOtp(email: string): Observable<boolean> {
     return this.http.post<boolean>(this.baseUrl + '/send-otp', email)
@@ -18,15 +18,14 @@ export class ForgotPasswordService {
   }
 
   resetPassword(passUpdate: any): Observable<string> {
-    return this.http.post<string>(this.baseUrl + '/reset', passUpdate)
+    return this.http.post<string>(this.baseUrl + '/reset-password', passUpdate)
       .pipe(catchError(this.handleError));
   }
 
   private handleError(errorResponse: HttpErrorResponse) {
     if (errorResponse.error instanceof ErrorEvent) {
       console.error("Client Side Error", errorResponse.error.message)
-    }
-    else {
+    } else {
       console.error("Server Side Error", errorResponse);
     }
     return throwError("There is problem with service. Please try again");

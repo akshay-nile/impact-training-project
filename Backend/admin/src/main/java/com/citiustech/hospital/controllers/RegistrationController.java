@@ -13,18 +13,18 @@ import com.citiustech.hospital.models.Employee;
 import com.citiustech.hospital.services.RegistrationService;
 
 @RestController
-@RequestMapping("/api/register")
+@RequestMapping("/admin")
 public class RegistrationController {
 	
 	@Autowired
 	private RegistrationService registrationService;
 
-	@GetMapping("/test-message")
+	@GetMapping("/message")
 	public String getMessage() {
 		return "<h1>Admin Microservice is working...!</h1>";
 	}
 	
-	@PostMapping("/employee")
+	@PostMapping("/register")
 	public ResponseEntity<?> registerEmployee(@RequestBody Employee employee) {
 		Employee registeredEmployee = registrationService.register(employee);
 		return new ResponseEntity<>(registeredEmployee, HttpStatus.CREATED);

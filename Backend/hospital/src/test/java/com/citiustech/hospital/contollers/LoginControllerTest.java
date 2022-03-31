@@ -65,7 +65,7 @@ class LoginControllerTest {
 	@DisplayName("Test Method to check Patient login Credentials")
 	public void givenEmailAndPasswordToCheckIfPatientIsValid() throws Exception {
 		when(loginService.login(any())).thenReturn(patient);
-		mockMvc.perform(post("/api/login/").contentType(MediaType.APPLICATION_JSON).content(asJsonString(credential)))
+		mockMvc.perform(post("/hospital/login/").contentType(MediaType.APPLICATION_JSON).content(asJsonString(credential)))
 				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 		verify(loginService).login(any());
 	}
@@ -74,7 +74,7 @@ class LoginControllerTest {
 	@DisplayName("Test Method to check Employee login Credentials")
 	public void givenEmailAndPasswordToCheckIfEmployeeIsValid() throws Exception {
 		when(loginService.login(any())).thenReturn(employee);
-		mockMvc.perform(post("/api/login/").contentType(MediaType.APPLICATION_JSON).content(asJsonString(credential)))
+		mockMvc.perform(post("/hospital/login/").contentType(MediaType.APPLICATION_JSON).content(asJsonString(credential)))
 				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 		verify(loginService).login(any());
 	}
@@ -83,7 +83,7 @@ class LoginControllerTest {
 	@DisplayName("Test Method to block User by Email")
 	public void givenEmailIdToBlockUser() throws Exception {
 
-		mockMvc.perform(post("/api/login/block").contentType(MediaType.APPLICATION_JSON).content(email))
+		mockMvc.perform(post("/hospital/block-account").contentType(MediaType.APPLICATION_JSON).content(email))
 				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 		verify(loginService).blockAccountByEmail(email);
 	}

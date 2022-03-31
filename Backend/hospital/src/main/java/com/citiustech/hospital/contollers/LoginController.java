@@ -16,13 +16,13 @@ import com.citiustech.hospital.services.LoginService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/login")
+@RequestMapping("/hospital")
 public class LoginController {
 
 	@Autowired
 	private LoginService loginService;
 
-	@PostMapping("/")
+	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody Credential credential) {
 		Object object = loginService.login(credential);
 		if (object instanceof Employee) {
@@ -34,7 +34,7 @@ public class LoginController {
 		return new ResponseEntity<>(null, HttpStatus.OK);
 	}
 	
-	@PostMapping("/block")
+	@PostMapping("/block-account")
 	public ResponseEntity<?> blockAccountByEmail(@RequestBody String email) {
 		loginService.blockAccountByEmail(email);
 		return new ResponseEntity<>(null, HttpStatus.OK);

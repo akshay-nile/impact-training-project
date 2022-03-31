@@ -1,24 +1,19 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError, of } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
-export class LoginService {
+export class RegistrationService {
 
     constructor(private http: HttpClient) { }
 
     baseUrl: string = environment.baseUrl + '/hospital';
 
-    loginUser(user: any): Observable<any> {
-        return this.http.post<any>(this.baseUrl + '/login', user)
-            .pipe(catchError(this.handleError));
-    }
-
-    blockAccount(email: string): Observable<void> {
-        return this.http.post<void>(this.baseUrl + '/block-account', email)
+    public registerPatient(user: any): Observable<any> {
+        return this.http.post<any>(this.baseUrl + '/register', user)
             .pipe(catchError(this.handleError));
     }
 

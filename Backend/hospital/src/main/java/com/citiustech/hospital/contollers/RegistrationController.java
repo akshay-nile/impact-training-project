@@ -15,13 +15,13 @@ import com.citiustech.hospital.services.RegistrationService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/register")
+@RequestMapping("/hospital")
 public class RegistrationController {
 
 	@Autowired
 	private RegistrationService registrationService;
 
-	@PostMapping("/patient")
+	@PostMapping("/register")
 	private ResponseEntity<?> registerPatient(@RequestBody Patient patient) {
 		Patient registeredPatient = registrationService.register(patient);
 		return new ResponseEntity<>(registeredPatient, HttpStatus.CREATED);

@@ -32,16 +32,13 @@ class RegistrationServiceTest {
 
 	private Credential credential;
 	private Patient patient;
-	private Employee employee;
 
 	@BeforeEach
 	public void setUp() {
-
 		credential = new Credential();
 		credential.setEmail("tejas.gaikar@gmail.com");
 		credential.setPassword("Tejas123");
 		patient = new Patient();
-		employee = new Employee();
 	}
 
 	@AfterEach

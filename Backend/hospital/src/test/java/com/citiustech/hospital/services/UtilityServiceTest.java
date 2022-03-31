@@ -65,7 +65,7 @@ class UtilityServiceTest {
 	}
 
 	@Test
-	@DisplayName("Test Method to check Patient phone")
+	@DisplayName("Test Method to check Patient's phone exists")
 	public void givenPatientPhoneThenShouldReturntrue() {
 		when(patientRepo.findByPhone(any())).thenReturn(patient);
 		assertTrue(utilityService.phoneExists(phone));

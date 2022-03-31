@@ -14,7 +14,7 @@ import com.citiustech.hospital.services.ForgotPasswordService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/forgot-password")
+@RequestMapping("/hospital")
 public class ForgotPasswordController {
 
 	@Autowired
@@ -26,7 +26,7 @@ public class ForgotPasswordController {
 		return new ResponseEntity<>(isOtpSent, HttpStatus.OK);
 	}
 
-	@PostMapping("/reset")
+	@PostMapping("/reset-password")
 	public ResponseEntity<?> resetPasswordByOtp(@RequestBody PasswordUpdate passUpdate) {
 		String message = forgotPasswordService.resetPasswordByOtp(passUpdate);
 		return new ResponseEntity<>("\"" + message + "\"", HttpStatus.OK);

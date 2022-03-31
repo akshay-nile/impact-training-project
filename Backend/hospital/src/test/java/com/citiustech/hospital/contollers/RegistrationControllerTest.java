@@ -87,16 +87,7 @@ class RegistrationControllerTest {
 	@DisplayName("Test Method to register new patient")
 	public void testMethodToRegisterNewPatient() throws Exception {
 		mockMvc.perform(
-				post("/api/register/patient").contentType(MediaType.APPLICATION_JSON).content(asJsonString(patient)))
-				.andExpect(status().isCreated()).andDo(MockMvcResultHandlers.print());
-
-	}
-
-	@Test
-	@DisplayName("Test Method to register new Employee")
-	public void testMethodToRegisterNewEmployee() throws Exception {
-		mockMvc.perform(
-				post("/api/register/employee").contentType(MediaType.APPLICATION_JSON).content(asJsonString(employee)))
+				post("/hospital/register").contentType(MediaType.APPLICATION_JSON).content(asJsonString(patient)))
 				.andExpect(status().isCreated()).andDo(MockMvcResultHandlers.print());
 
 	}

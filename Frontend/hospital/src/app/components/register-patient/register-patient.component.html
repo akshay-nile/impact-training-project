@@ -1,107 +1,102 @@
-<div class="container">
-    <div class="row">
-        <div class="col col-md-2"></div>
-        <div class="card">
-            <div class="text-dark text-muted text-center mb-5 mt-2">
-                <h2>Registration for Patient</h2>
-            </div>
-            <form [formGroup]="registerForm" (ngSubmit)="registerPatient()">
-                <div class="row">
-                    <div class="col col-md-2">
-                        <div class="mb-3 radioClass">
-                            <label>Title</label> <br>
-                            <input class="form-control-input" formControlName="title" type="radio"
-                                id="flexRadioDefault1" value="Mr" checked>
-                            <label class="form-control-label" for="flexRadioDefault1"> Mr.</label>
-                            <input class="form-control-input" formControlName="title" type="radio" value="Ms"
-                                id="flexRadioDefault2">
-                            <label class="form-control-label" for="flexRadioDefault2"> Miss.</label>
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card shadow">
+                <div class="card-body mt-4">
+                    <h3 class="text-center text-muted text-dark">Patient Registration Form</h3>
+                    <form [formGroup]="form">
+                        <div class="form-group">
+                            <label class="col-form-label">Title:</label>
+                            <select class="dropdown-toggle" formControlName="title">
+                                <option value='' selected>Title</option>
+                                <option *ngFor="let title of titles" value="{{title}}">{{title | titlecase}}
+                                </option>
+                            </select>
+                            <small *ngIf="title.touched && title.value === ''" class="text-danger">Please select
+                                title</small>
                         </div>
-                    </div>
-                    <div class="col col-md-5">
-                        <div class="mb-3">
-                            <label for="firstName" class="form-label">First Name</label>
-                            <input type="text" formControlName="firstName" class="form-control" id="firstName">
-                            <div style="color:gray; text-decoration: italic; font-size: 10px;">Required</div>
-                            <div *ngIf="registerForm.controls['firstName'].touched && registerForm.controls['firstName'].invalid"
-                                class="alert text-danger">First Name cannot be empty</div>
-                        </div>
-                    </div>
-                    <div class="col col-md-5">
-                        <div class="mb-3">
-                            <label for="lastName" class="form-label">Last Name</label>
-                            <input type="text" formControlName="lastName" class="form-control" id="lastName">
-                            <div style="color:gray; text-decoration: italic; font-size: 10px;">Required</div>
-                            <div *ngIf="registerForm.controls['lastName'].touched && registerForm.controls['lastName'].invalid"
-                                class="alert text-danger">Last Name cannot be empty</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" formControlName="email" class="form-control" id="email">
-                    <div style="color:gray; text-decoration: italic; font-size: 10px;">Enter a valid Email ID</div>
-                    <div *ngIf="registerForm.controls['email'].touched && registerForm.controls['email'].invalid"
-                        class="alert text-danger">
-                        <div *ngIf="registerForm.controls['email'].errors?.['required']">Email cannot be blank</div>
-                        <div *ngIf="registerForm.controls['email'].errors?.['email']">Incorrect email format</div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="dateOfBirth" class="form-label">Date Of Birth</label>
-                    <input type="date" formControlName="dateOfBirth" class="form-control" id="dateOfBirth"
-                        max="2005-01-01" min="1900-01-01">
-                </div>
-                <div class="mb-3">
-                    <label for="contactNumber" class="form-label">Contact Number</label>
-                    <input type="number" formControlName="contactNumber" class="form-control" id="contactNumber">
-                    <div style="color:gray; text-decoration: italic; font-size: 10px;">Enter 10 digit valid contact
-                        number</div>
-                    <div *ngIf="registerForm.controls['contactNumber'].touched && registerForm.controls['contactNumber'].invalid"
-                        class="alert text-danger">
-                        <div *ngIf="registerForm.controls['contactNumber'].errors?.['required']">Contact Number
-                            cannot be blank</div>
-                        <div *ngIf="registerForm.controls['contactNumber'].errors?.['pattern']">Enter 10 digits
-                            contact number</div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" formControlName="password" class="form-control" id="password">
-                    <div style="color:gray; text-decoration: italic; font-size: 10px;">Pattern : Minimum 8
-                        alphanumeric characters, with at least 1 number, 1 uppercase letter, and 1 lowercase letter
-                    </div>
-                    <div *ngIf="registerForm.controls['password'].touched && registerForm.controls['password'].invalid"
-                        class="alert text-danger">
-                        <div *ngIf="registerForm.controls['password'].errors?.['required']">Password cannot be blank
-                        </div>
-                        <div *ngIf="registerForm.controls['password'].errors?.['minlength']">Minimum 8 alpha-numeric
-                            characters required</div>
-                        <div *ngIf="registerForm.controls['password'].errors?.['pattern']">Kindly match the Pattern
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="confirmPassword" class="form-label">Confirm Password</label>
-                    <input type="password" formControlName="confirmPassword" class="form-control" id="confirmPassword">
-                    <div style="color:gray; text-decoration: italic; font-size: 10px;">Confirm password not matched
-                        with the above password</div>
-                    <div *ngIf="registerForm.controls['confirmPassword'].touched && registerForm.controls['confirmPassword'].invalid"
-                        class="alert text-danger">
-                        <div *ngIf="registerForm.controls['confirmPassword'].errors?.['required']">Confirm Password
-                            cannot be blank</div>
-                        <div *ngIf="registerForm.controls['confirmPassword'].errors?.['m']">Confirm password not
-                            matched with the above password</div>
-                    </div>
 
+                        <div class="form-group">
+                            <label class="col-form-label">First Name:</label>
+                            <input formControlName="firstName" type="text" class="form-control">
+                            <small *ngIf="first.touched && first.errors.required" class="text-danger">First name
+                                is required</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label">Last Name:</label>
+                            <input formControlName="lastName" type="text" class="form-control">
+                            <small *ngIf="last.touched && last.errors.required" class="text-danger">Last name is
+                                required</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="col-form-label">Email</label>
+                            <input type="text" formControlName="email" id="email" class="form-control"
+                                (blur)="onEmailEntered()">
+                            <div *ngIf="email.touched && email.errors">
+                                <small *ngIf="email.errors?.required" class="text-danger">Email is required</small>
+                                <small *ngIf="email.errors?.email" class="text-danger">Not a valid email id</small>
+                            </div>
+                            <small *ngIf="email.dirty && !email.errors && emailExists" class="text-danger">Email is
+                                already used</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="col-form-label">Phone:</label>
+                            <input formControlName="phone" type="text" class="form-control">
+                            <div *ngIf="phone.touched && phone.errors">
+                                <small *ngIf="phone.errors?.required" class="text-danger">Phone number is
+                                    required</small>
+                                <small *ngIf="phone.errors?.pattern" class="text-danger">Not a valid phone
+                                    number</small>
+                            </div>
+                            <small *ngIf="phone.dirty && !phone.errors && phoneExists" class="text-danger">Phone
+                                No. is
+                                already used</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label">Date of Birth:</label>
+                            <input formControlName="birthdate" type="date" class="form-control" [max]="today">
+                            <small *ngIf="dob.touched && dob.errors?.required" class="text-danger">Date of Birth is
+                                required</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="col-form-label">Password:</label>
+                            <input formControlName="password" id="password" autocomplete="off" class="form-control">
+                            <div *ngIf="pass.touched && pass.errors">
+                                <small *ngIf="pass.errors?.required" class="text-danger">Password is
+                                    required</small>
+                                <small *ngIf="pass.errors?.isValid" class="text-danger">Password does not meet
+                                    required criteria
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPass" class="col-form-label">Confirm Password:</label>
+                            <input formControlName="confirmPass" id="confirmPass" autocomplete="off"
+                                class="form-control">
+                            <div *ngIf="cpass.touched && cpass.invalid">
+                                <small *ngIf="cpass.errors?.required" class="text-danger">Password confirmation is
+                                    required</small>
+                                <small *ngIf="!cpass.errors.required && form.errors?.areEqual"
+                                    class="text-danger">Password entries don’t match</small>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button (click)="registerPatient()" type="submit" [disabled]="form.invalid"
+                                class="btn btn-success">Register</button>
+                            <button type="reset" class="btn btn-danger">Clear</button>&nbsp;&nbsp;
+                        </div>
+                    </form>
                 </div>
-                <div>
-                    <button [disabled]="!registerForm.valid" type="submit"
-                        class="btn btn-primary mb-2">Register</button>
-                </div>
-            </form>
-            <a style="color:white;" routerLink="/login" href="#">Already registered? Click here to Login</a>
+            </div>
         </div>
-        <div class="col col-md-4"></div>
+        <div class="col-3"></div>
     </div>
 </div>

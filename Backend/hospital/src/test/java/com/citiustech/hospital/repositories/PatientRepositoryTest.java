@@ -27,7 +27,6 @@ class PatientRepositoryTest {
 
 	@BeforeEach
 	public void setUp() {
-
 		email = "tejas.gaikar@gmail.com";
 		credential = new Credential();
 		credential.setEmail("tejas.gaikar@gmail.com");
@@ -44,7 +43,6 @@ class PatientRepositoryTest {
 		credential = null;
 		patient = null;
 	}
-
 	
 	@Test
 	@DisplayName("Test Method to get Patient by Email")
