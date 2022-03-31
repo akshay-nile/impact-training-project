@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { UtilityService } from 'src/app/services/utility.service';
 import { PatientDetails } from '../../models/patient-details';
-import { PatientDetailsService } from '../../services/patient-details.service';
+import { DemographicsService } from '../../services/demographics.service';
 
 @Component({
   selector: 'patient-demographics',
@@ -11,7 +11,7 @@ import { PatientDetailsService } from '../../services/patient-details.service';
   styleUrls: ['./demographics.component.css']
 })
 export class DemographicsComponent implements OnInit {
-  demographicsForm!: FormGroup;
+  form!: FormGroup;
   patientdetails!: PatientDetails[];
   pd!: PatientDetails;
   error!: string;
@@ -20,107 +20,99 @@ export class DemographicsComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private patientDetailsService: PatientDetailsService,
+    private demographicsService: DemographicsService,
     private utilityService: UtilityService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
     this.utilityService.getLanguages().subscribe(res => this.languages = res);
+    this.user = JSON.parse(sessionStorage.getItem('user'));
     
-    this.user = JSON.parse(localStorage.getItem('user'));
-    localStorage.clear();
-
-    this.demographicsForm = <FormGroup>this.formBuilder.group({
-      firstname: new FormControl(this.user.firstName, [Validators.required]),
-      lastname: new FormControl(this.user.lastName, [Validators.required]),
-      gender: new FormControl(this.user.title === 'Mr' ? 'Male' : 'Female', [Validators.required]),
-      dob: new FormControl(this.user.birthdate, [Validators.required]),
-      age: new FormControl(this.calcAge(this.user.birthdate), [Validators.required]),
+    this.form = <FormGroup>this.formBuilder.group({
+      firstName: new FormControl(this.user.firstName, [Validators.required]),
+      lastName: new FormControl(this.user.lastName, [Validators.required]),
+      gender: new FormControl(this.guessGender(), [Validators.required]),
+      birthdate: new FormControl(this.user.birthdate, [Validators.required]),
+      age: new FormControl(this.calcAge(), [Validators.required]),
       email: new FormControl(this.user.email, [Validators.required]),
-      phone: new FormControl(this.user.phone, [Validators.required,
-      Validators.pattern('^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\s*$')]),
+      phone: new FormControl(this.user.phone, [Validators.required, Validators.pattern(/^\+\d+\s?\d{10}$/)]),
       race: new FormControl('', [Validators.required]),
       ethnicity: new FormControl('', [Validators.required]),
       language: new FormControl('', [Validators.required]),
       address: new FormControl('', [Validators.required])
     });
 
-    for (let control of 'firstname lastname dob email phone age'.split(' ')) {
-      this.demographicsForm.controls[control].disable();
+    for (let control of 'firstName lastName birthdate email phone age'.split(' ')) {
+      this.form.controls[control].disable();
     }
-    this.demographicsForm.setValue(this.user.demographics);
   }
 
-  get firstname() {
-    return this.demographicsForm.get('firstname');
+  get firstName() {
+    return this.form.controls.firstName;
   }
-  get lastname() {
-    return this.demographicsForm.get('lastname');
+  get lastName() {
+    return this.form.controls.lastName;
   }
   get gender() {
-    return this.demographicsForm.get('gender');
+    return this.form.controls.gender;
   }
   get dob() {
-    return this.demographicsForm.get('dob');
+    return this.form.controls.birthdate;
   }
   get age() {
-    return this.demographicsForm.controls.age;
+    return this.form.controls.age;
   }
   get email() {
-    return this.demographicsForm.get('email');
+    return this.form.controls.email;
   }
   get phone() {
-    return this.demographicsForm.get('phone');
+    return this.form.controls.phone;
   }
   get language() {
-    return this.demographicsForm.controls.language;
+    return this.form.controls.language;
   }
   get race() {
-    return this.demographicsForm.get('race');
+    return this.form.controls.race;
   }
   get ethnicity() {
-    return this.demographicsForm.get('ethnicity');
+    return this.form.controls.ethnicity;
   }
   get address() {
-    return this.demographicsForm.get('address');
+    return this.form.controls.address;
   }
 
-  calcAge(birthdate: Date) {
-    let miliSeconds = (Date.now().valueOf() - new Date(birthdate).valueOf()).valueOf();
+  guessGender() {
+    if (this.user.title === 'Mr') return 'MALE';
+    if (this.user.title === 'Ms' || this.user.title === 'Mrs') return 'FEMALE'
+    return '';
+  }
+
+  calcAge() {
+    let miliSeconds = (Date.now().valueOf() - new Date(this.user.birthdate).valueOf()).valueOf();
     return Math.floor(miliSeconds / 1000 / 60 / 60 / 24 / 30 / 12);
   }
 
-  getAllPatientDetails() {
-    this.patientDetailsService.getPatientDetails().subscribe(
-      (data: PatientDetails[]) => this.patientdetails = data, error => this.error = error)
-    console.log(this.patientdetails);
-  }
-
-  onSubmit() {
-    if(!this.user.demographics) this.user.demographics = {};
+  updateDemographics() {
+    if (!this.user.demographics) this.user.demographics = {};
     for (let control of 'age gender race ethnicity language address'.split(' ')) {
       let wasDisabled = this.age.disabled;
       this.age.enable()
-      this.user.demographics[control] = this.demographicsForm.value[control];
+      this.user.demographics[control] = this.form.value[control];
       if (wasDisabled) this.age.disable();
     }
-    this.patientDetailsService.updateDemographicDetails(this.user).subscribe(res => {
+    this.demographicsService.updateDemographics(this.user).subscribe(res => {
       if (!res) return;
       alert('Successfully Updated!')
-      this.demographicsForm.reset();
+      this.form.reset();
       this.router.navigate(['patient', 'nominee']);
     }, err => alert(err));
   }
 
   clear() {
     for (let control of 'language race ethnicity address'.split(' ')) {
-      this.demographicsForm.controls[control].reset();
+      this.form.controls[control].reset();
     }
-  }
-
-  updatePatientDetails(id: number = 1) {
-    this.patientDetailsService.getPatientDetailsById(id).subscribe(data => this.pd = data);
   }
 
 }

@@ -10,7 +10,7 @@ export class ForgotPasswordService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl: string = environment.baseUrl + '/hospital';
+  baseUrl: string = environment.hospital + '/hospital';
 
   sendOtp(email: string): Observable<boolean> {
     return this.http.post<boolean>(this.baseUrl + '/send-otp', email)

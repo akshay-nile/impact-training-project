@@ -6,6 +6,15 @@ spring:
     name: gateway-microservice
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://127.0.0.1:4200"
+            allowedMethods:
+            - GET
+            - POST
+            - PUT
+            - DELETE
       routes:
       - id: admin-microservice
         uri: http://localhost:8081

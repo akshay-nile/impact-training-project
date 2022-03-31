@@ -10,7 +10,7 @@ export class UtilityService {
 
     constructor(private http: HttpClient) { }
 
-    baseUrl: string = environment.baseUrl + '/hospital';
+    baseUrl: string = environment.hospital + '/hospital';
 
     getRelations(): Observable<string[]> {
         return this.http.get<string[]>(this.baseUrl + '/enums/relations')

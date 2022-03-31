@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { formatDate } from '@angular/common';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
+import {FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { UtilityService } from 'src/app/services/utility.service';
@@ -17,13 +18,13 @@ export class RegisterPatientComponent implements OnInit {
   phoneExists = false;
   titles = 'Mr Ms Mrs Dr'.split(' ');
   message = '';
-  today = '2004-03-31';
+  today = formatDate(new Date(Date.now().valueOf() - 18*365*24*60*60*1000), 'yyyy-MM-dd', this.locale);;
 
   constructor(
     private router: Router,
-    private formBuilder: FormBuilder,
     private utilityService: UtilityService,
     private registrationService: RegistrationService,
+    @Inject(LOCALE_ID) private locale: string,
   ) { }
   
   get email() {
@@ -58,17 +59,16 @@ export class RegisterPatientComponent implements OnInit {
     return this.form.controls.confirmPass;
   }
 
-
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      title: [''],
-      firstName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['+91 ' ,[Validators.required, Validators.pattern(/^\+\d+\s?\d{10}$/)]],
-      birthdate: ['', [Validators.required]],
-      password: ['', [Validators.required, passwordValidator]],
-      confirmPass: ['', [Validators.required]],
+    this.form = new FormGroup({
+      title: new FormControl(''),
+      firstName: new FormControl('', [Validators.required]),
+      lastName: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      phone: new FormControl('+91 ' , [Validators.required, Validators.pattern(/^\+\d+\s?\d{10}$/)]),
+      birthdate: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required, passwordValidator]),
+      confirmPass: new FormControl('', [Validators.required])
     }, confirmPassword('password','confirmPass'));
   }
 
@@ -85,8 +85,10 @@ export class RegisterPatientComponent implements OnInit {
   }
 
   registerPatient() {
+    console.log(this.form.value);
     this.registrationService.registerPatient(this.form.value).subscribe(res => {
       if(res != null) {
+        this.form.reset();
         alert('Registration was successful !');
         this.router.navigate(['login']);
       } else {

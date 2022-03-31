@@ -1,5 +1,5 @@
 Frontend/hospital/node_modules
-Backend/hospital/target
-Backend/hospital/bin
+Backend/*/target
+Backend/*/bin
 
 

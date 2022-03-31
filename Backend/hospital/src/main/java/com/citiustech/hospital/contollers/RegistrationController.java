@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.citiustech.hospital.models.Employee;
 import com.citiustech.hospital.models.Patient;
 import com.citiustech.hospital.services.RegistrationService;
 
