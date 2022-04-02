@@ -4,9 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: "http://127.0.0.1:8080",
-  hospital: "http://127.0.0.1:8082",
-  admin: "http://127.0.0.1:8081"
+  baseUrl: "http://127.0.0.1:8080"
 };
 
 /*

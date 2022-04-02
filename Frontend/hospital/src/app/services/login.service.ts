@@ -10,7 +10,7 @@ export class LoginService {
 
     constructor(private http: HttpClient) { }
 
-    baseUrl: string = environment.hospital + '/hospital';
+    baseUrl: string = environment.baseUrl + '/hospital';
 
     loginUser(user: any): Observable<any> {
         return this.http.post<any>(this.baseUrl + '/login', user)

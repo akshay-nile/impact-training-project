@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class DemographicsService {
-  private baseUrl = environment.hospital + '/hospital'
+  private baseUrl = environment.baseUrl + '/hospital'
 
   constructor(private http: HttpClient) { }
 

@@ -6,13 +6,13 @@ spring:
     name: gateway-microservice
   cloud:
     gateway:
+      default-filters:      - DedupeResponseHeader=Access-Control-Allow-Origin
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "http://127.0.0.1:4200"
-            allowedMethods:
-            - GET
-            - POST
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
       routes:
       - id: admin-microservice
         uri: http://localhost:8081

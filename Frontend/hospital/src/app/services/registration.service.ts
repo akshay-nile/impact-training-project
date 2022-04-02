@@ -10,7 +10,7 @@ export class RegistrationService {
 
     constructor(private http: HttpClient) { }
 
-    baseUrl: string = environment.hospital + '/hospital';
+    baseUrl: string = environment.baseUrl + '/hospital';
 
     public registerPatient(user: any): Observable<any> {
         return this.http.post<any>(this.baseUrl + '/register', user).pipe(catchError(this.handleError));
