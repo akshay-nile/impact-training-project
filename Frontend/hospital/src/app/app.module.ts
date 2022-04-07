@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './services/login.service';
 import { MainBodyComponent } from './components/main-body/main-body.component';
 import { RegisterPatientComponent } from './components/register-patient/register-patient.component';
+import { MaterialModule } from './material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { RegisterPatientComponent } from './components/register-patient/register
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [ForgotPasswordService, LoginService],
   bootstrap: [AppComponent]
