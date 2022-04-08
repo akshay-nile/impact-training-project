@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { LoginService } from 'src/app/services/login.service';
 import { UtilityService } from 'src/app/services/utility.service';
 import { passwordValidator } from 'src/app/validators/password.validator';
@@ -21,6 +22,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private loginService: LoginService,
+    private authenticationService: AuthenticationService,
     private utilityService: UtilityService
   ) { }
 
@@ -67,7 +69,11 @@ export class LoginComponent implements OnInit {
             this.form.reset();
             let role = !this.user.role ? 'patient' : this.user.role.toLowerCase();
             sessionStorage.setItem('user', JSON.stringify(this.user));
-            this.router.navigate(role === 'patient' ? [role, 'demographics'] : [role]);
+            this.authenticationService.authenticate(this.user).subscribe(res => {
+              console.log(res);
+              sessionStorage.setItem('token', res);
+              this.router.navigate(role === 'patient' ? [role, 'demographics'] : [role]);
+            });
             break;
           case "BLOCKED":
             this.message = "Account was Locked!";
