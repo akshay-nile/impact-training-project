@@ -1,16 +1,24 @@
 package com.citiustech.hospital.services;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.citiustech.hospital.models.Employee;
+import com.citiustech.hospital.models.Patient;
 import com.citiustech.hospital.repositories.EmployeeRepository;
+import com.citiustech.hospital.repositories.PatientRepository;
 
 @Service
-public class RegistrationService {
+public class AdminService {
 
 	@Autowired
 	private EmployeeRepository employeeRepo;
+	
+	@Autowired
+	private PatientRepository patientRepo;
 	
 	@Autowired
 	private EmailSenderService emailSender;
@@ -28,6 +36,16 @@ public class RegistrationService {
 			}
 		}
 		return savedEmployee;
+	}
+
+	public List<Employee> getAllEmployees(Integer adminId) {
+		return employeeRepo.findAll().stream()
+				.filter(e -> e.getEmployeeId() != adminId)
+				.collect(Collectors.toList());
+	}
+
+	public List<Patient> getAllPatients() {
+		return patientRepo.findAll();
 	}
 	
 }
