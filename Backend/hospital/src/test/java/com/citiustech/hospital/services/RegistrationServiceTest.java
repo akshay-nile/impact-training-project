@@ -5,6 +5,9 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -14,11 +17,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.citiustech.hospital.models.Employee;
 import com.citiustech.hospital.models.Patient;
-import com.citiustech.hospital.models.templates.Credential;
 import com.citiustech.hospital.repositories.EmployeeRepository;
 import com.citiustech.hospital.repositories.PatientRepository;
+
 @ExtendWith(MockitoExtension.class)
 class RegistrationServiceTest {
 	@Mock
@@ -30,14 +32,14 @@ class RegistrationServiceTest {
 	@InjectMocks
 	private RegistrationService registrationService;
 
-	private Credential credential;
+	private Map<String, String> credential;
 	private Patient patient;
 
 	@BeforeEach
 	public void setUp() {
-		credential = new Credential();
-		credential.setEmail("tejas.gaikar@gmail.com");
-		credential.setPassword("Tejas123");
+		credential = new HashMap<>();
+		credential.put("email", "tejas.gaikar@gmail.com");
+		credential.put("password", "Tejas123");
 		patient = new Patient();
 	}
 
@@ -53,5 +55,5 @@ class RegistrationServiceTest {
 		registrationService.register(patient);
 		verify(patientRepo, times(1)).save(patient);
 	}
-	
+
 }

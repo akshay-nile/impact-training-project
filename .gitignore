@@ -1,4 +1,4 @@
-Frontend/hospital/node_modules
+Frontend/*/node_modules
 Backend/*/target
 Backend/*/bin
 

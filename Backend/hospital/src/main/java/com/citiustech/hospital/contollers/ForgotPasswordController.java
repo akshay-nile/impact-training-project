@@ -1,5 +1,7 @@
 package com.citiustech.hospital.contollers;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.citiustech.hospital.models.templates.PasswordUpdate;
 import com.citiustech.hospital.services.ForgotPasswordService;
 
 @CrossOrigin
@@ -27,7 +28,7 @@ public class ForgotPasswordController {
 	}
 
 	@PostMapping("/reset-password")
-	public ResponseEntity<?> resetPasswordByOtp(@RequestBody PasswordUpdate passUpdate) {
+	public ResponseEntity<?> resetPasswordByOtp(@RequestBody Map<String, String> passUpdate) {
 		String message = forgotPasswordService.resetPasswordByOtp(passUpdate);
 		return new ResponseEntity<>("\"" + message + "\"", HttpStatus.OK);
 	}

@@ -1,10 +1,12 @@
 package com.citiustech.hospital.services;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +19,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.citiustech.hospital.models.Employee;
 import com.citiustech.hospital.models.Patient;
-import com.citiustech.hospital.models.templates.Credential;
 import com.citiustech.hospital.repositories.EmployeeRepository;
 import com.citiustech.hospital.repositories.PatientRepository;
 
@@ -34,16 +35,16 @@ class LoginServiceTest {
 	private LoginService loginService;
 
 	private String email;
-	private Credential credential;
+	private Map<String, String> credential;
 	private Patient patient;
 	private Employee employee;
 
 	@BeforeEach
 	public void setUp() {
 		email = "tejas.gaikar@gmail.com";
-		credential = new Credential();
-		credential.setEmail("tejas.gaikar@gmail.com");
-		credential.setPassword("Tejas123");
+		credential = new HashMap<>();
+		credential.put("email", "tejas.gaikar@gmail.com");
+		credential.put("password", "Tejas123");
 		patient = new Patient();
 		employee = new Employee();
 	}
@@ -56,21 +57,21 @@ class LoginServiceTest {
 	@Test
 	@DisplayName("Test Method to check get patient by Email and Password")
 	public void givenPatientEmailAndPasswordThenShouldReturnPatient() {
-		when(patientRepo.findByEmailAndPassword(credential.getEmail(), credential.getPassword().hashCode()))
+		when(patientRepo.findByEmailAndPassword(credential.get("email"), credential.get("password").hashCode()))
 				.thenReturn(patient);
 		loginService.login(credential);
-		verify(patientRepo, times(1)).findByEmailAndPassword(credential.getEmail(),
-				credential.getPassword().hashCode());
+		verify(patientRepo, times(1)).findByEmailAndPassword(credential.get("email"),
+				credential.get("password").hashCode());
 	}
 
 	@Test
 	@DisplayName("Test Method to check get Employee by Email and Password")
 	public void givenEmployeeEmailAndPasswordThenShouldReturnEmployeet() {
-		when(employeeRepo.findByEmailAndPassword(credential.getEmail(), credential.getPassword().hashCode()))
+		when(employeeRepo.findByEmailAndPassword(credential.get("email"), credential.get("password").hashCode()))
 				.thenReturn(employee);
 		loginService.login(credential);
-		verify(employeeRepo, times(1)).findByEmailAndPassword(credential.getEmail(),
-				credential.getPassword().hashCode());
+		verify(employeeRepo, times(1)).findByEmailAndPassword(credential.get("email"),
+				credential.get("password").hashCode());
 	}
 
 	@Test

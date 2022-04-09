@@ -1,5 +1,7 @@
 package com.citiustech.hospital.contollers;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.citiustech.hospital.models.Employee;
 import com.citiustech.hospital.models.Patient;
-import com.citiustech.hospital.models.templates.Credential;
 import com.citiustech.hospital.services.LoginService;
 
 @CrossOrigin
@@ -23,8 +24,8 @@ public class LoginController {
 	private LoginService loginService;
 
 	@PostMapping("/login")
-	public ResponseEntity<?> login(@RequestBody Credential credential) {
-		Object object = loginService.login(credential);
+	public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
+		Object object = loginService.login(credentials);
 		if (object instanceof Employee) {
 			return new ResponseEntity<>((Employee) object, HttpStatus.OK);
 		}

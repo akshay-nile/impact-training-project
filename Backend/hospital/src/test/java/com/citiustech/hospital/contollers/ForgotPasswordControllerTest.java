@@ -6,6 +6,9 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -20,7 +23,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.citiustech.hospital.models.templates.PasswordUpdate;
 import com.citiustech.hospital.services.ForgotPasswordService;
 import com.citiustech.hospital.services.LoginService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -40,16 +42,16 @@ class ForgotPasswordControllerTest {
 	private ForgotPasswordController forgotPasswordController;
 
 	private String email;
-	private PasswordUpdate passUpdate;
+	private Map<String, String> passUpdate;
 
 	@BeforeEach
 	public void setUp() {
 		mockMvc = MockMvcBuilders.standaloneSetup(forgotPasswordController).build();
 		email = "tejas.gaikar@gmail.com";
-		passUpdate = new PasswordUpdate();
-		passUpdate.setEmail(email);
-		passUpdate.setOldPassword("Tejas123");
-		passUpdate.setOldPassword("Tejas@123");
+		passUpdate = new HashMap<>();
+		passUpdate.put("email", email);
+		passUpdate.put("oldPassword", "Tejas123");
+		passUpdate.put("newPassword", "Tejas@123");
 	}
 
 	@AfterEach

@@ -31,7 +31,7 @@ class UtilityControllerTest {
 
 	@Mock
 	private UtilityService utilityService;
-	
+
 	@BeforeEach
 	public void setUp() {
 		mockMvc = MockMvcBuilders.standaloneSetup(utilityController).build();
@@ -55,14 +55,14 @@ class UtilityControllerTest {
 		mockMvc.perform(MockMvcRequestBuilders.get("/hospital/enums/relations").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 	}
-	
+
 	@Test
 	@DisplayName("Test method to check if email exists")
 	public void checkEmailExists() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.post("/hospital/exists/email").content("noemail@gmail.com"))
 				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 	}
-	
+
 	@Test
 	@DisplayName("Test method to check if phone exists")
 	public void checkPhoneExists() throws Exception {

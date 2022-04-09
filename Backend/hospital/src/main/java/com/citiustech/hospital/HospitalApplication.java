@@ -14,10 +14,10 @@ import org.springframework.web.filter.CorsFilter;
 
 @EnableEurekaClient
 @SpringBootApplication
-public class Application {
+public class HospitalApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(HospitalApplication.class, args);
 	}
 
 	@Bean
