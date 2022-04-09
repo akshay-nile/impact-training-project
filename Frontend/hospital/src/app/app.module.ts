@@ -16,6 +16,12 @@ import { MainBodyComponent } from './components/main-body/main-body.component';
 import { RegisterPatientComponent } from './components/register-patient/register-patient.component';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UtilityService } from './services/utility.service';
+import {  DatePipe } from '@angular/common';
+import { NoteService } from './services/notes.service';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { ChangePasswordComponent } from './components/change-password/change-password.component'; 
+
 
 @NgModule({
   declarations: [
@@ -26,7 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     PageNotFoundComponent,
     RegisterPatientComponent,
-    MainBodyComponent
+    MainBodyComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +41,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpClientModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FullCalendarModule
   ],
-  providers: [ForgotPasswordService, LoginService],
+  providers: [DatePipe,ForgotPasswordService, LoginService,UtilityService,NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

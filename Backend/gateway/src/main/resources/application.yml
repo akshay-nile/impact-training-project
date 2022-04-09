@@ -26,6 +26,18 @@ spring:
         uri: http://localhost:8082
         predicates:
         - Path=/hospital/**
+      - id: appointment-microservice
+        uri: http://localhost:8083
+        predicates:
+        - Path=/appointments/**
+      - id: notes-microservice
+        uri: http://localhost:8084
+        predicates:
+        - Path=/notes/**
+      - id: patient-visits-microservice
+        uri: http://localhost:8085
+        predicates:
+        - Path=/patient-visits/**
 
 eureka:
   client:

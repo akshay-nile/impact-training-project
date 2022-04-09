@@ -68,9 +68,9 @@ export class LoginComponent implements OnInit {
           case "ACTIVE":
             this.form.reset();
             let role = !this.user.role ? 'patient' : this.user.role.toLowerCase();
-            sessionStorage.setItem('user', JSON.stringify(this.user));
             this.authenticationService.authenticate(this.user).subscribe(res => {
               console.log(res);
+              sessionStorage.setItem('user', JSON.stringify(this.user));
               sessionStorage.setItem('token', res);
               this.router.navigate(role === 'patient' ? [role, 'demographics'] : [role]);
             });
