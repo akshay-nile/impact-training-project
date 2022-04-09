@@ -10,15 +10,15 @@ export class LoginService {
 
     constructor(private http: HttpClient) { }
 
-    baseUrl: string = environment.baseUrl + '/api/login';
+    baseUrl: string = environment.baseUrl + '/hospital';
 
     loginUser(user: any): Observable<any> {
-        return this.http.post<any>(this.baseUrl + '/', user)
+        return this.http.post<any>(this.baseUrl + '/login', user)
             .pipe(catchError(this.handleError));
     }
 
     blockAccount(email: string): Observable<void> {
-        return this.http.post<void>(this.baseUrl + '/block', email)
+        return this.http.post<void>(this.baseUrl + '/block-account', email)
             .pipe(catchError(this.handleError));
     }
 

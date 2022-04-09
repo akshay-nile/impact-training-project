@@ -5,6 +5,7 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.citiustech.hospital.models.Employee;
 import com.citiustech.hospital.models.Patient;
-import com.citiustech.hospital.models.templates.PasswordUpdate;
-import com.citiustech.hospital.models.templates.Verification;
+import com.citiustech.hospital.models.Verification;
 import com.citiustech.hospital.repositories.EmployeeRepository;
 import com.citiustech.hospital.repositories.PatientRepository;
 import com.citiustech.hospital.repositories.VerificationRepository;
@@ -56,8 +56,8 @@ public class ForgotPasswordService {
 		return false;
 	}
 
-	public String resetPasswordByOtp(PasswordUpdate passUpdate) {
-		Verification record = verifyRepo.findById(passUpdate.getEmail()).orElse(null);
+	public String resetPasswordByOtp(Map<String, String> passUpdate) {
+		Verification record = verifyRepo.findById(passUpdate.get("email")).orElse(null);
 		if (record == null) {
 			return "failed";
 		}
@@ -68,23 +68,23 @@ public class ForgotPasswordService {
 			verifyRepo.delete(record);
 		}
 
-		boolean isCorrect = passUpdate.getOldPassword().equals(record.getOtp());
+		boolean isCorrect = passUpdate.get("oldPassword").equals(record.getOtp());
 		if (isCorrect && isExpired) {
 			return "expired";
 		}
 
 		if (isCorrect && !isExpired) {
-			Patient patient = patientRepo.findByEmail(passUpdate.getEmail());
+			Patient patient = patientRepo.findByEmail(passUpdate.get("email"));
 			if (patient != null) {
-				patient.setPassword(passUpdate.getNewPassword().hashCode());
+				patient.setPassword(passUpdate.get("newPassword").hashCode());
 				patientRepo.save(patient);
 				verifyRepo.delete(record);
 				return "success";
 			}
 
-			Employee employee = employeeRepo.findByEmail(passUpdate.getEmail());
+			Employee employee = employeeRepo.findByEmail(passUpdate.get("email"));
 			if (employee != null) {
-				employee.setPassword(passUpdate.getNewPassword().hashCode());
+				employee.setPassword(passUpdate.get("newPassword").hashCode());
 				employeeRepo.save(employee);
 				verifyRepo.delete(record);
 				return "success";

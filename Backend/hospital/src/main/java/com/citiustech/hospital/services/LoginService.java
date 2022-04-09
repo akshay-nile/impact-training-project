@@ -1,5 +1,7 @@
 package com.citiustech.hospital.services;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,7 +9,6 @@ import com.citiustech.hospital.models.Employee;
 import com.citiustech.hospital.models.Patient;
 import com.citiustech.hospital.models.constants.Role;
 import com.citiustech.hospital.models.constants.Status;
-import com.citiustech.hospital.models.templates.Credential;
 import com.citiustech.hospital.repositories.EmployeeRepository;
 import com.citiustech.hospital.repositories.PatientRepository;
 
@@ -30,9 +31,9 @@ public class LoginService {
 		return false;
 	}
 
-	public Object login(Credential credential) {
-		String email = credential.getEmail();
-		int password = credential.getPassword().hashCode();
+	public Object login(Map<String, String> credentials) {
+		String email = credentials.get("email");
+		int password = credentials.get("password").hashCode();
 		Object object;
 
 		if ((object = patientRepo.findByEmailAndPassword(email, password)) != null) {

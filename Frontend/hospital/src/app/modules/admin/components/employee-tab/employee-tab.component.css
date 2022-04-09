@@ -1,0 +1,28 @@
+label.col-form-label {
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+select.dropdown-toggle{
+    padding: 0.55em 0.4em;
+    margin-right: 1em;
+    width: 99%;
+}
+
+button {
+    margin: 2em 1em 2em 0em;
+}
+
+h2{
+    margin: 1em;
+    margin-bottom: 0;
+}
+
+input {
+    border: 1px solid gray;
+}
+
+
+.emp-register-form {
+background-color: #fafafa;
+}

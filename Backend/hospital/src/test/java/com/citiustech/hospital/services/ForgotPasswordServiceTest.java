@@ -7,6 +7,8 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 import org.junit.jupiter.api.AfterEach;
@@ -20,8 +22,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.citiustech.hospital.models.Employee;
 import com.citiustech.hospital.models.Patient;
-import com.citiustech.hospital.models.templates.PasswordUpdate;
-import com.citiustech.hospital.models.templates.Verification;
+import com.citiustech.hospital.models.Verification;
 import com.citiustech.hospital.repositories.EmployeeRepository;
 import com.citiustech.hospital.repositories.PatientRepository;
 import com.citiustech.hospital.repositories.VerificationRepository;
@@ -50,7 +51,7 @@ class ForgotPasswordServiceTest {
 	private Patient patient;
 	private Employee employee;
 	private Verification record;
-	private PasswordUpdate passUpdate;
+	private Map<String, String> passUpdate;
 
 	@BeforeEach
 	public void setUp() {
@@ -61,10 +62,10 @@ class ForgotPasswordServiceTest {
 		record.setEmail(email);
 		record.setOtp("123456");
 		record.setExpiresAt(System.currentTimeMillis() + 10 * 60 * 1000);
-		passUpdate = new PasswordUpdate();
-		passUpdate.setEmail(email);
-		passUpdate.setOldPassword("123456");
-		passUpdate.setNewPassword("Tejas@123");
+		passUpdate = new HashMap<>();
+		passUpdate.put("email", email);
+		passUpdate.put("oldPassword", "123456");
+		passUpdate.put("newPassword", "Tejas@123");
 	}
 
 	@AfterEach

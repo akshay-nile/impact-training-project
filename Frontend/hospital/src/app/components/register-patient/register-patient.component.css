@@ -1,22 +1,17 @@
-.card{
-    border: none;
-    width: 66%;
-    padding: 40px;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: 4%;
-    position: relative;
-    box-shadow: 20px 20px 10px lightgray;
-    /* background-color: rgb(199, 199, 255); */
-    /* background: hsla(205, 46%, 35%, 1); */
-    /* background: linear-gradient(90deg, hsla(205, 46%, 35%,1) 0%, hsla(205, 29%, 36%, 1), 100%)  */
+label.col-form-label {
+    margin-top: 1em;
+    margin-right: 1em;
 }
 
-.card h1, h6{
-    color: black;
+select.dropdown-toggle{
+    padding: 0.25em;
+    margin-right: 1em;
 }
 
-label{
-    color: black;
+button {
+    margin: 2em 1em 2em 0em;
 }
 
+h3 {
+    margin-bottom: 1em;
+}
