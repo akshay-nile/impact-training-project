@@ -37,23 +37,7 @@ export class UtilityService {
         return this.http.post<boolean>(this.baseUrl + '/exists/phone', phone)
             .pipe(catchError(this.handleError));
     }
-
-    addVitals(vital: any): Observable<boolean> {
-        return this.http.post<boolean>(this.vitalsUrl, vital)
-            .pipe(catchError(this.handleError));
-    }
-    updateVitals(vital: any): Observable<boolean> {
-        return this.http.put<boolean>(this.vitalsUrl, vital)
-            .pipe(catchError(this.handleError));
-    }
-    deleteVitals(id: any): Observable<boolean> {
-        return this.http.delete<boolean>(this.vitalsUrl + '/' + id)
-            .pipe(catchError(this.handleError));
-    }
-    getVitalByPatientId(id: any): Observable<Vitals> {
-        return this.http.get<Vitals>(this.vitalsUrl + `/aptId/${id}`)
-            .pipe(catchError(this.handleError));
-    }
+    
     getEmpIdByEmail(email: string): Observable<any> {
         return this.http.get<any>(this.baseUrl + `/physicianEmail/${email}`)
             .pipe(catchError(this.handleError));
@@ -62,40 +46,7 @@ export class UtilityService {
         return this.http.put<Patient>(this.baseUrl + '/patientDetails/', patient)
             .pipe(catchError(this.handleError));
     }
-    getVitalDetails(): Observable<Vitals[]> {
-        return this.http.get<Vitals[]>(this.vitalsUrl + '/getAllVitalDetails')
-            .pipe(catchError(this.handleError));
-    }
 
-    addAppointmentDetails(appointment: any): Observable<boolean> {
-        return this.http.post<boolean>(this.apptUrl, appointment)
-            .pipe(catchError(this.handleError));
-    }
-
-    updateAppointmentDetails(appointment: any): Observable<boolean> {
-        return this.http.put<boolean>(this.apptUrl, appointment)
-            .pipe(catchError(this.handleError));
-    }
-    deleteAppointmentDetails(id: any): Observable<boolean> {
-        return this.http.delete<boolean>(this.apptUrl + `/${id}`)
-            .pipe(catchError(this.handleError));
-    }
-    getAppointmentDetails(id: any): Observable<Appointment> {
-        return this.http.get<Appointment>(this.apptUrl + `/${id}`)
-            .pipe(catchError(this.handleError));
-    }
-    getCalendarAppointment(): Observable<any> {
-        return this.http.get<any>(this.apptUrl + '/getCalendarAppointments')
-            .pipe(catchError(this.handleError));
-    }
-    getAvailableTimeSlots(physician: string, date: string): Observable<string[]> {
-        return this.http.get<string[]>(this.apptUrl + `/timeslots/${physician}/${date}`)
-            .pipe(catchError(this.handleError));
-    }
-    getAllAppointmentDetails(): Observable<Appointment[]> {
-        return this.http.get<Appointment[]>(this.apptUrl + '/getAllAppointments')
-            .pipe(catchError(this.handleError));
-    }
 
     getAllPhysicianNames(): Observable<string[]> {
         return this.http.get<string[]>(this.baseUrl + '/employee/names')
@@ -120,7 +71,6 @@ export class UtilityService {
         return this.http.post<any>(this.baseUrl + '/api/user/change-password/employee', userCredentials)
             .pipe(catchError(this.handleError));
     }
-
 
     private handleError(errorResponse: HttpErrorResponse) {
         if (errorResponse.error instanceof ErrorEvent) {

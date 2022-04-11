@@ -3,6 +3,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AppointmentService } from 'src/app/services/appointment.service';
 import { UtilityService } from 'src/app/services/utility.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { UtilityService } from 'src/app/services/utility.service';
   styleUrls: ['./appointment-dialog.component.css']
 })
 export class AppointmentDialogComponent implements OnInit {
-  registerForm!: FormGroup;
+  appointmentForm!: FormGroup;
   physicians: string[];
   timeSlots: string[];
   patientEmails: string[];
@@ -19,13 +20,18 @@ export class AppointmentDialogComponent implements OnInit {
   date: string;
   next3months: string;
   user: any;
-  constructor(private snackbar: MatSnackBar, public utilityService: UtilityService, public dialogRef: MatDialogRef<AppointmentDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, private datePipe: DatePipe, private formBuilder: FormBuilder) {
+  constructor(private snackbar: MatSnackBar,
+    private utilityService: UtilityService,
+    private appointmentService:AppointmentService,
+    private dialogRef: MatDialogRef<AppointmentDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private datePipe: DatePipe,
+    private formBuilder: FormBuilder) {
     this.user = data.user;
     this.date = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
     let currentdate = new Date();
     this.next3months = this.datePipe.transform(new Date(currentdate.setMonth(currentdate.getMonth() + 3)), 'yyyy-MM-dd');
-    this.registerForm = formBuilder.group(
+    this.appointmentForm = formBuilder.group(
       {
         aptDate: [this.date, [Validators.required]],
         meetingTitle: ['', [Validators.required]],
@@ -57,39 +63,36 @@ export class AppointmentDialogComponent implements OnInit {
   }
 
   getPhysicianEmployeeId() {
-    if(this.registerForm.value.physician == '') return;
-    this.utilityService.getEmpIdByEmail(this.registerForm.value.physician).subscribe(
+    if (this.appointmentForm.value.physician == '') return;
+    this.utilityService.getEmpIdByEmail(this.appointmentForm.value.physician).subscribe(
       (result) => {
-        console.log(result);
         this.empId = result;
-
       }
     );
   }
 
   bookAppointment() {
-    console.log(this.registerForm.value);
-
-    this.registerForm.value.editHistory = "Edited by Nurse with Employee Id " + this.user + " on " + this.registerForm.value.aptDate;
-    this.utilityService.addAppointmentDetails(this.registerForm.value).subscribe((result) => {
+    this.appointmentForm.value.editHistory = "Edited by Nurse with Employee Id " + this.user + " on " + this.appointmentForm.value.aptDate;
+    this.appointmentService.addAppointmentDetails(this.appointmentForm.value).subscribe((result) => {
 
       this.dialogRef.close();
     });
     this.snackbar.open("Appointment is successfully created", "", { duration: 3000 });
   }
   getAvailableTimeSlots() {
-    if(this.registerForm.value.physician == '') return;
-    if (this.registerForm.value.aptDate == null || !this.registerForm.value.aptDate) {
-      this.registerForm.value.aptDate = this.date;
+    if (this.appointmentForm.value.physician == '') return;
+    if (this.appointmentForm.value.aptDate == null || !this.appointmentForm.value.aptDate) {
+      this.appointmentForm.value.aptDate = this.date;
     }
-    this.utilityService.
-      getAvailableTimeSlots(this.registerForm.value.physician, this.registerForm.value.aptDate).subscribe(
+    this.appointmentService.
+      getAvailableTimeSlots(this.appointmentForm.value.physician, this.appointmentForm.value.aptDate).subscribe(
         (result) => {
           this.timeSlots = result;
         });
   }
+
   close() {
-    this.registerForm.reset();
+    this.appointmentForm.reset();
     this.dialogRef.close();
   }
 

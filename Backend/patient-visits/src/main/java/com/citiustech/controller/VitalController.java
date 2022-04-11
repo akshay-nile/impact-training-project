@@ -54,7 +54,7 @@ public class VitalController {
 	}
 	
 
-	@PostMapping("/")
+	@PostMapping("")
 	public ResponseEntity<?> saveVitalDetails(@RequestBody Vital vital) {
 		Vital vitalObj = vitalService.saveVitalDetails(vital);
 		if (vitalObj != null) {
@@ -63,7 +63,7 @@ public class VitalController {
 		return new ResponseEntity<>(null, HttpStatus.OK);
 	}
 	
-	@PutMapping("/")
+	@PutMapping("")
 	public ResponseEntity<?> updateVitalDetails(@RequestBody Vital vital) {
 		System.out.println(vital.getVitalId());
 

@@ -13,17 +13,21 @@ import { UtilityService } from 'src/app/services/utility.service';
 })
 export class NoteDialogComponent implements OnInit {
 
-  registerForm!: FormGroup;
+  noteForm!: FormGroup;
   submitted: boolean = false;
   date: string;
 
   designationValue: String = '';
   physicians: any[] ;
 
-  constructor(private snackbar: MatSnackBar,public utilityService: UtilityService,private datePipe: DatePipe, public dialogRef: MatDialogRef<NoteDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, private router: Router, private formBuilder: FormBuilder) {
+  constructor(private snackbar: MatSnackBar,
+    private utilityService: UtilityService,
+    private datePipe: DatePipe, 
+    private dialogRef: MatDialogRef<NoteDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any, 
+    private router: Router, private formBuilder: FormBuilder) {
     this.date = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
-    this.registerForm = formBuilder.group(
+    this.noteForm = formBuilder.group(
       {
         urgencyLevel: new FormControl('Urgent'),
         date: [this.date, [Validators.required]],
@@ -39,7 +43,7 @@ export class NoteDialogComponent implements OnInit {
     });
   }
   sendNote() {
-    console.log(this.registerForm.value);
+    console.log(this.noteForm.value);
     this.snackbar.open("Note is successfully sent", "", { duration: 3000 });
   }
 
@@ -49,8 +53,8 @@ export class NoteDialogComponent implements OnInit {
   viewPatientDetails() {
   }
   dropDownSelected() {
-    if (this.registerForm.value.sendTo == 'akshay.nile@citiustech.com') {
-      this.registerForm.controls.designation.setValue('Consultant Ophtho');
+    if (this.noteForm.value.sendTo == 'akshay.nile@citiustech.com') {
+      this.noteForm.controls.designation.setValue('Consultant Ophtho');
     }
   }
   ngOnInit(): void {

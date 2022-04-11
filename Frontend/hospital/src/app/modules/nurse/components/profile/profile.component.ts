@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { confirmPassword, passwordValidator } from 'src/app/validators/password.validator';
 import { AuthenticationService } from 'src/app/services/Authentication.servic';
@@ -7,11 +7,11 @@ import { UtilityService } from 'src/app/services/utility.service';
 import { UserCredential } from 'src/app/models/UserCredential';
 
 @Component({
-  selector: 'app-change-password',
-  templateUrl: './change-password.component.html',
-  styleUrls: ['./change-password.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class ChangePasswordComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   registerForm!: FormGroup;
   customMessage: string = '';
   messageFlag: boolean = false;
@@ -28,7 +28,7 @@ export class ChangePasswordComponent implements OnInit {
     oldpassword: new FormControl('', [Validators.required, passwordValidator, Validators.minLength(8)]),
     password: new FormControl('', [Validators.required, passwordValidator, Validators.minLength(8)]),
     confirmPassword: new FormControl('', [Validators.required])
-  }, confirmPassword('password','confirmPassword'));
+  }, confirmPassword('password', 'confirmPassword'));
 
   get f() {
     return this.form.controls;
@@ -56,8 +56,7 @@ export class ChangePasswordComponent implements OnInit {
 
   }
   isPasswordCorrect() {
-
     return false;
-
   }
+
 }

@@ -2,25 +2,22 @@
     <div class="text-center">
         <h1 class="text-dark text-muted mb-4">Book Appointment</h1>
     </div>
-    <form autofocus="off" [formGroup]="registerForm" (ngSubmit)="bookAppointment()">        
+    <form autofocus="off" [formGroup]="appointmentForm" (ngSubmit)="bookAppointment()">        
         <div class="mb-3">
-
             <label for="meetingTitle" class="form-label">Meeting Title</label>
             <input type="text" formControlName="meetingTitle" class="form-control" id="meetingTitle">
-            <div *ngIf="registerForm.controls['meetingTitle'].touched && registerForm.controls['meetingTitle'].invalid"
+            <div *ngIf="appointmentForm.controls['meetingTitle'].touched && appointmentForm.controls['meetingTitle'].invalid"
                 class="alert text-danger">
-                <div *ngIf="registerForm.controls['meetingTitle'].errors?.['required']">Meeting Title cannot be blank
+                <div *ngIf="appointmentForm.controls['meetingTitle'].errors?.['required']">Meeting Title cannot be blank
                 </div>
-
             </div>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
             <textarea type="text" formControlName="description" class="form-control" id="description"></textarea>
-            <div *ngIf="registerForm.controls['description'].touched && registerForm.controls['description'].invalid"
+            <div *ngIf="appointmentForm.controls['description'].touched && appointmentForm.controls['description'].invalid"
                 class="alert text-danger">
-                <div *ngIf="registerForm.controls['description'].errors?.['required']">Description cannot be blank</div>
-
+                <div *ngIf="appointmentForm.controls['description'].errors?.['required']">Description cannot be blank</div>
             </div>
         </div>
         <div class="mb-3">
@@ -29,16 +26,15 @@
                 <option value=''>Choose Physician</option>
                 <option *ngFor="let physician of physicians">{{physician}}</option>
             </select>
-            <div *ngIf="registerForm.controls['physician'].touched && registerForm.controls['physician'].invalid"
+            <div *ngIf="appointmentForm.controls['physician'].touched && appointmentForm.controls['physician'].invalid"
                 class="alert text-danger">Physician cannot be empty</div>
         </div>
-
         <div class="mb-3">
             <label for="empId" class="form-label">Physician Employee Id</label>
             <input type="text" formControlName="empId" class="form-control" id="empId" [(ngModel)]="empId"
                 >
                 
-            <div *ngIf="registerForm.controls['empId'].touched && registerForm.controls['empId'].invalid"
+            <div *ngIf="appointmentForm.controls['empId'].touched && appointmentForm.controls['empId'].invalid"
                 class="alert text-danger">Physician cannot be empty</div>
         </div>
 
@@ -52,7 +48,7 @@
                 <option>Choose Time Slot</option>
                 <option *ngFor="let timeSlot of timeSlots">{{timeSlot}}</option>
             </select>
-            <div *ngIf="registerForm.controls['time'].touched && registerForm.controls['time'].invalid"
+            <div *ngIf="appointmentForm.controls['time'].touched && appointmentForm.controls['time'].invalid"
                 class="alert text-danger">Time Slot cannot be empty</div>
         </div>
         <div class="mb-3">
@@ -61,7 +57,7 @@
                 <option>Choose Patient Email</option>
                 <option *ngFor="let patientEmail of patientEmails">{{patientEmail}}</option>
             </select>
-            <div *ngIf="registerForm.controls['patientEmail'].touched && registerForm.controls['patientEmail'].invalid"
+            <div *ngIf="appointmentForm.controls['patientEmail'].touched && appointmentForm.controls['patientEmail'].invalid"
                 class="alert text-danger">Patient Email cannot be empty</div>
         </div>
         <div class="mb-3">
@@ -71,7 +67,7 @@
         <div class="row">
             <div class="col-md-6"></div>
             <div class="col-md-3">
-                <button type="submit" class="btn btn-success mb-2" [disabled]="registerForm.invalid">Add</button>
+                <button type="submit" class="btn btn-success mb-2" [disabled]="appointmentForm.invalid">Add</button>
             </div>
             <div class="col-md-3">
                 <button type="button" class="btn btn-warning mb-2" (click)="close()">Close</button>

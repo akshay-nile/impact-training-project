@@ -10,8 +10,9 @@ import { NoteService } from 'src/app/services/notes.service';
 })
 export class NoteViewComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<NoteViewComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, private noteService: NoteService) {
+  constructor(private dialogRef: MatDialogRef<NoteViewComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any, 
+    private noteService: NoteService) {
   }
   note=new Note();
   ngOnInit(): void {

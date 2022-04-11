@@ -21,6 +21,8 @@ import {  DatePipe } from '@angular/common';
 import { NoteService } from './services/notes.service';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { ChangePasswordComponent } from './components/change-password/change-password.component'; 
+import { AppointmentService } from './services/appointment.service';
+import { VitalService } from './services/vital.service';
 
 
 @NgModule({
@@ -46,7 +48,7 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
     BrowserAnimationsModule,
     FullCalendarModule
   ],
-  providers: [DatePipe,ForgotPasswordService, LoginService,UtilityService,NoteService],
+  providers: [DatePipe,ForgotPasswordService, LoginService,UtilityService,NoteService,AppointmentService,VitalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
