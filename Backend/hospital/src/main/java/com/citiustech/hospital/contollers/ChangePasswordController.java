@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,21 +15,15 @@ import com.citiustech.hospital.services.ChangePasswordService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/hospital/api/change-password")
+@RequestMapping("/hospital/api")
 public class ChangePasswordController {
 
 	@Autowired
 	private ChangePasswordService changePasswordService;
 
-	@PostMapping("/employee")
+	@PostMapping("/change-password")
 	public ResponseEntity<?> changeEmployeePassword(@RequestBody Map<String, String> credentials) {
-		boolean isPasswordChanged = changePasswordService.changeEmployeePassword(credentials);
+		boolean isPasswordChanged = changePasswordService.changePassword(credentials);
 		return new ResponseEntity<>(isPasswordChanged, HttpStatus.OK);
-	}
-
-	@GetMapping("/employee/{userId}/{password}")
-	public ResponseEntity<?> checkEmployeePassword(@PathVariable int userId, @PathVariable String password) {
-		boolean isPasswordValid = changePasswordService.checkEmployeePassword(userId, password);
-		return new ResponseEntity<>(isPasswordValid, HttpStatus.OK);
 	}
 }
