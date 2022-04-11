@@ -1,5 +1,4 @@
-Frontend/hospital/node_modules
-Backend/hospital/target
-Backend/hospital/bin
-
-
+Frontend/*/node_modules
+Backend/*/target
+Backend/*/bin
+Backend/.metadata

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { LoginService } from 'src/app/services/login.service';
 import { UtilityService } from 'src/app/services/utility.service';
 import { passwordValidator } from 'src/app/validators/password.validator';
@@ -16,12 +17,13 @@ export class LoginComponent implements OnInit {
   user: any;
   attempts: number = 3;
   message: string = '';
-  emailExist: boolean = false;
+  emailExist: boolean = true;
 
   constructor(
     private router: Router,
     private loginService: LoginService,
-    private utilityService: UtilityService
+    private authenticationService: AuthenticationService,
+    private utilityService: UtilityService,
   ) { }
 
   get pass() {
@@ -66,7 +68,11 @@ export class LoginComponent implements OnInit {
           case "ACTIVE":
             this.form.reset();
             let role = !this.user.role ? 'patient' : this.user.role.toLowerCase();
-            this.router.navigate([role, 'dashboard']);
+            this.authenticationService.authenticate(this.user).subscribe(res => {
+              sessionStorage.setItem('user', JSON.stringify(this.user));
+              sessionStorage.setItem('token', res);
+              this.router.navigate(role === 'patient' ? [role, 'demographics'] : [role]);
+            });
             break;
           case "BLOCKED":
             this.message = "Account was Locked!";

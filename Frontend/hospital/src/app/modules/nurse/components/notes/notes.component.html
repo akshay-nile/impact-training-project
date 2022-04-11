@@ -1,0 +1,35 @@
+<div class="content mat-elevation-z8">
+    <div class="card-wrapper">
+        <div class="row">
+            <div class="text-dark col-md-10" style="font-size: 20px;margin-top: 2%;margin-bottom: 2%;">
+                Notes</div>
+            <div class="col-md-2" style="margin-right: 0%;padding-right: 0%;"><button mat-raised-button color="primary"
+                    (click)="sendNote()">Send Note</button> </div>
+        </div>
+        <mat-tab-group>
+            <mat-tab label="All">
+                <ng-container *ngFor="let note of notes">
+                    <mat-card class="example-card mb-5">
+                        <mat-card-content>
+                            <h2>
+                                Note Sent To : {{note.sendTo}}
+                            </h2>
+                            <p>
+                                Designation : {{note.designation}}
+                            </p>
+                            <p>
+                                Message : {{note.message}}
+                            </p>
+                            <p>
+                                Urgency Level : {{note.urgencyLevel}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-raised-button class="btn-success" (click)="viewNote(note.noteId)">View</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </ng-container>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

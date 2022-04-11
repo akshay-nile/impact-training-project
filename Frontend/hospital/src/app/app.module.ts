@@ -14,6 +14,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './services/login.service';
 import { MainBodyComponent } from './components/main-body/main-body.component';
 import { RegisterPatientComponent } from './components/register-patient/register-patient.component';
+import { MaterialModule } from './material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UtilityService } from './services/utility.service';
+import {  DatePipe } from '@angular/common';
+import { NoteService } from './services/notes.service';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { ChangePasswordComponent } from './components/change-password/change-password.component'; 
+import { AppointmentService } from './services/appointment.service';
+import { VitalService } from './services/vital.service';
+
 
 @NgModule({
   declarations: [
@@ -24,15 +34,21 @@ import { RegisterPatientComponent } from './components/register-patient/register
     FooterComponent,
     PageNotFoundComponent,
     RegisterPatientComponent,
-    MainBodyComponent
+    MainBodyComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FullCalendarModule
   ],
-  providers: [ForgotPasswordService, LoginService],
+  providers: [DatePipe,ForgotPasswordService, LoginService,UtilityService,NoteService,AppointmentService,VitalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

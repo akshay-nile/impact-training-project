@@ -31,7 +31,7 @@ class UtilityControllerTest {
 
 	@Mock
 	private UtilityService utilityService;
-	
+
 	@BeforeEach
 	public void setUp() {
 		mockMvc = MockMvcBuilders.standaloneSetup(utilityController).build();
@@ -45,28 +45,28 @@ class UtilityControllerTest {
 	@Test
 	@DisplayName("Test method to get all Languages")
 	public void getAllLanguages() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/api/enums/languages").contentType(MediaType.APPLICATION_JSON))
+		mockMvc.perform(MockMvcRequestBuilders.get("/hospital/enums/languages").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 	}
 
 	@Test
 	@DisplayName("Test method to get all Relations")
 	public void getAllRelations() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/api/enums/relations").contentType(MediaType.APPLICATION_JSON))
+		mockMvc.perform(MockMvcRequestBuilders.get("/hospital/enums/relations").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 	}
-	
+
 	@Test
 	@DisplayName("Test method to check if email exists")
 	public void checkEmailExists() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.post("/api/exists/email").content("noemail@gmail.com"))
+		mockMvc.perform(MockMvcRequestBuilders.post("/hospital/exists/email").content("noemail@gmail.com"))
 				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 	}
-	
+
 	@Test
 	@DisplayName("Test method to check if phone exists")
 	public void checkPhoneExists() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.post("/api/exists/phone").content("+91 7676767676"))
+		mockMvc.perform(MockMvcRequestBuilders.post("/hospital/exists/phone").content("+91 7676767676"))
 				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 	}
 
