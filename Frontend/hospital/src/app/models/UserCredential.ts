@@ -1,5 +1,5 @@
 export class UserCredential{
-    userId:number;
+    email:string;
     oldPassword:string;
     newPassword:string;
 }

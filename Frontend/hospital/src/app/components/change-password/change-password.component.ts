@@ -42,9 +42,8 @@ export class ChangePasswordComponent implements OnInit {
   submit() {
     console.log(this.userId);
 
-    this.userCredential.userId = this.userId;
-    this.userCredential.oldPassword = this.form.value.oldpassword;
-    this.userCredential.newPassword = this.form.value.confirmPassword;
+    // this.userCredential.employeeId = this.userId;
+    // this.userCredential.password = this.form.value.confirmPassword;
     if (!this.isPasswordCorrect()) {
       this.customMessage = "Enter correct Old Password";
     }

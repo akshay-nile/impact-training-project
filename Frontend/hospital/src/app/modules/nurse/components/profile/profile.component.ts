@@ -99,7 +99,7 @@ export class ProfileComponent implements OnInit {
 
   confirmPasswordForm = new FormGroup({
     oldpassword: new FormControl('', [Validators.required, passwordValidator, Validators.minLength(8)]),
-    password: new FormControl('', [Validators.required, passwordValidator, Validators.minLength(8)]),
+    password: new FormControl('', [Validators.required, passwordValidator]),
     confirmPassword: new FormControl('', [Validators.required])
   }, confirmPassword('password', 'confirmPassword'));
 
@@ -107,30 +107,28 @@ export class ProfileComponent implements OnInit {
     return this.confirmPasswordForm.controls;
   }
 
+  get cpass() {
+    return this.confirmPasswordForm.controls.confirmPassword;
+  }
+
+
   backToLogin() {
     this.router.navigate(['login']);
   }
 
   submit() {
-    this.userCredential.userId = this.userId;
-    this.userCredential.oldPassword = this.confirmPasswordForm.value.oldpassword;
-    this.userCredential.newPassword = this.confirmPasswordForm.value.confirmPassword;
-    if (!this.checkIfPasswordCorrect()) {
-      this.message = "Kindly provide correct old password";
-    }
+    this.userCredential.email=this.employee.email;
+    this.userCredential.oldPassword=this.confirmPasswordForm.value.oldpassword;
+    this.userCredential.newPassword=this.confirmPasswordForm.value.confirmPassword;
     this.utilityService.changeUserPassword(this.userCredential).subscribe((result) => {
-      this.message = 'Password changed successfully';
+      if(!result){
+        this.message = "Kindly provide correct old password";
+        return;
+      }
       this.snackbar.open("Your password has been successfully updated. You may now login your account", "", { duration: 3000 });
-      this.messageFlag = true;
       this.router.navigate(['login']);
     });
-    
   }
-  checkIfPasswordCorrect() {
-    return this.utilityService.checkOldPassword(this.employee.employeeId,this.confirmPasswordForm.value.oldpassword).subscribe((result)=>{
-      console.log(result);
-      
-    })
-  }
+
 
 }
