@@ -47,5 +47,9 @@ public class AdminService {
 	public List<Patient> getAllPatients() {
 		return patientRepo.findAll();
 	}
+
+	public Employee updateEmployee(Employee employee) {
+		return employeeRepo.save(employee);
+	}
 	
 }

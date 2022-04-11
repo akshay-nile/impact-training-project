@@ -19,7 +19,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	public List<String> getAllEmployeeName();
 
 	@Query("SELECT e  FROM Employee e WHERE e.employeeId=?1 AND e.password=?2")
-	public boolean checkEmployeePassword(int userId, String password);
+	public Employee checkEmployeePassword(int userId, int i);
 
 	@Query("SELECT e.employeeId FROM Employee e WHERE e.email=?1")
 	public int getEmployeeId(String email);

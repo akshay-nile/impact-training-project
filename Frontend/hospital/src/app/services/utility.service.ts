@@ -11,7 +11,7 @@ import { Vitals } from '../models/Vitals';
     providedIn: 'root'
 })
 export class UtilityService {
-
+    
     constructor(private http: HttpClient) { }
 
     baseUrl: string = environment.baseUrl + '/hospital';
@@ -72,6 +72,11 @@ export class UtilityService {
             .pipe(catchError(this.handleError));
     }
 
+    checkOldPassword(userId:any,password: any): Observable<any>  {
+        return this.http.get<any>(this.baseUrl + `/api/change-password/employee/${userId}/${password}`)
+        .pipe(catchError(this.handleError));
+      }
+  
     private handleError(errorResponse: HttpErrorResponse) {
         if (errorResponse.error instanceof ErrorEvent) {
             console.error("Client Side Error", errorResponse.error.message)

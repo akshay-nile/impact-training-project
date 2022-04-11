@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,6 +39,12 @@ public class AdminController {
 	@PostMapping({"/register", "/update"})
 	public ResponseEntity<?> registerEmployee(@RequestBody Employee employee) {
 		Employee registeredEmployee = adminService.register(employee);
+		return new ResponseEntity<>(registeredEmployee, HttpStatus.CREATED);
+	}
+	
+	@PutMapping({"/api/updateEmployee"})
+	public ResponseEntity<?> updateEmployee(@RequestBody Employee employee) {
+		Employee registeredEmployee = adminService.updateEmployee(employee);
 		return new ResponseEntity<>(registeredEmployee, HttpStatus.CREATED);
 	}
 

@@ -5,6 +5,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.citiustech.hospital.models.Employee;
 import com.citiustech.hospital.repositories.EmployeeRepository;
 
 @Service
@@ -18,7 +19,8 @@ public class ChangePasswordService {
 	}
 
 	public boolean checkEmployeePassword(int userId, String password) {
-		return employeeRepo.checkEmployeePassword(userId, password);
+		Employee emp= employeeRepo.checkEmployeePassword(userId, password.hashCode());
+		return emp!=null?true:false;
 	}
 
 }

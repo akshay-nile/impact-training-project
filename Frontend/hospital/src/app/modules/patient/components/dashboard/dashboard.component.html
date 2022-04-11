@@ -1,29 +1,51 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+        <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/patient/dashboard">Dashboard <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/patient/demographics">Demographics</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/patient/nominee">Nominee</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/patient/visit-details">Visit Details</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+    <a *ngIf="showProfile" style="margin-left: 20%;text-decoration: none;" routerLink="/patient/dashboard/appointment"
+        routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Appointments</a>
+    <a *ngIf="showProfile" style="margin-left: 5%;text-decoration: none;" routerLink="/patient/dashboard/visit-history"
+        routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Visit History</a>
+        <a *ngIf="!showProfile" style="margin-left: 20%;text-decoration: none;" routerLink="/patient/dashboard/profile"
+        routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Profile</a>
+        <span class="flexExpand"></span>
+    <div style="margin-right: 3%;">
+        <mat-icon matBadge="0">notifications</mat-icon>
     </div>
-</nav>
-<h1>Welcome to Patient's Dashboard !</h1>
+    <div>
+        <button mat-raised-button class="logout" (click)="logout()">Logout</button>
+    </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <img class="avatar mat-elevation-z8" src="assets/profileImg.png" />
+        <h4 class="name">{{userName}}</h4>
+        <p class="designation">Patient</p>
+        <mat-divider></mat-divider>
+        <button *ngIf="showProfile"  mat-button class="menu-button" routerLink="/patient/dashboard/profile"
+        (click)="updateProfile()">
+            <mat-icon>account_circle</mat-icon>
+            <span>Profile</span>
+        </button>
+        <button *ngIf="!showProfile" mat-button class="menu-button" routerLink="/patient/dashboard/appointment"
+            (click)="updateProfile()">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </button>
+        <button *ngIf="!showProfile" mat-button class="menu-button" routerLink="/patient/dashboard/visit-history"
+            (click)="updateProfile()">
+            <mat-icon>history</mat-icon>
+            <span>Visit-history</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button" routerLink="/help">
+            <mat-icon>help</mat-icon>
+            <span>Help</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
