@@ -1,80 +1,103 @@
-<div class="card mb-4" style="width:600px">
+<div class="card mb-4" style="padding: 1em; border: none;">
     <div class="text-center">
         <h1 class="text-dark text-muted mb-4">Book Appointment</h1>
     </div>
-    <form autofocus="off" [formGroup]="registerForm" (ngSubmit)="bookAppointment()">        
-        <div class="mb-3">
-
+    <form autofocus="off" [formGroup]="form">
+        <div class="mb-4">
             <label for="meetingTitle" class="form-label">Meeting Title</label>
             <input type="text" formControlName="meetingTitle" class="form-control" id="meetingTitle">
-            <div *ngIf="registerForm.controls['meetingTitle'].touched && registerForm.controls['meetingTitle'].invalid"
-                class="alert text-danger">
-                <div *ngIf="registerForm.controls['meetingTitle'].errors?.['required']">Meeting Title cannot be blank
-                </div>
-
+            <div *ngIf="form.controls['meetingTitle'].touched && form.controls['meetingTitle'].invalid">
+                <small *ngIf="form.controls['meetingTitle'].errors?.['required']" class="text-danger">Meeting Title
+                    cannot be blank</small>
             </div>
         </div>
-        <div class="mb-3">
+
+        <div class="mb-4">
             <label for="description" class="form-label">Description</label>
             <textarea type="text" formControlName="description" class="form-control" id="description"></textarea>
-            <div *ngIf="registerForm.controls['description'].touched && registerForm.controls['description'].invalid"
-                class="alert text-danger">
-                <div *ngIf="registerForm.controls['description'].errors?.['required']">Description cannot be blank</div>
-
+            <div *ngIf="form.controls['description'].touched && form.controls['description'].invalid">
+                <small *ngIf="form.controls['description'].errors?.['required']" class="text-danger">Description cannot
+                    be blank</small>
             </div>
         </div>
-        <div class="mb-3">
-            <label for="physician" class="form-label">Physician</label>
-            <select formControlName="physician" class="form-control" (blur)="getAvailableTimeSlots()" (blur)="getPhysicianEmployeeId()">
-                <option value=''>Choose Physician</option>
-                <option *ngFor="let physician of physicians">{{physician}}</option>
-            </select>
-            <div *ngIf="registerForm.controls['physician'].touched && registerForm.controls['physician'].invalid"
-                class="alert text-danger">Physician cannot be empty</div>
+
+        <div class="row mb-4">
+            <div class="col col-md-8">
+                <label for="physician" class="form-label">Physician Name</label>
+                <select formControlName="physician" class="form-control"
+                    (change)="getAvailabilityWindows(); showPhysicianId();">
+                    <option value=''>Select Physician</option>
+                    <option *ngFor="let ph of physicians" [value]="ph.email">{{ph.name}}</option>
+                </select>
+                <small *ngIf="form.controls['physician'].touched && form.controls['physician'].invalid"
+                    class="text-danger">Physician cannot be empty</small>
+            </div>
+            <div class="col col-md-4">
+                <label for="employeeId" class="form-label">Physician ID</label>
+                <input type="text" formControlName="employeeId" class="form-control" [value]="employeeId">
+            </div>
         </div>
 
-        <div class="mb-3">
-            <label for="empId" class="form-label">Physician Employee Id</label>
-            <input type="text" formControlName="empId" class="form-control" id="empId" [(ngModel)]="empId"
-                >
-                
-            <div *ngIf="registerForm.controls['empId'].touched && registerForm.controls['empId'].invalid"
-                class="alert text-danger">Physician cannot be empty</div>
+        <div class="row mb-4">
+            <div class="col col-md-8">
+                <label for="patient" class="form-label">Patient Name</label>
+                <select formControlName="patient" class="form-control"
+                    (change)="getAvailabilityWindows(); showPatientId();">
+                    <option value="">Select Patient</option>
+                    <option *ngFor="let p of patients" [value]="p.email">{{p.name}}</option>
+                </select>
+                <small *ngIf="form.controls['patient'].touched && form.controls['patient'].invalid"
+                    class="text-danger">Patient cannot be empty</small>
+            </div>
+            <div class="col col-md-4">
+                <label for="employeeId" class="form-label">Patient ID</label>
+                <input type="text" formControlName="patientId" class="form-control" [value]="patientId">
+            </div>
         </div>
 
-        <div class="mb-3">
-            <label for="aptDate" class="form-label">Date</label>
-            <input type="date" formControlName="aptDate" class="form-control" id="aptDate" [min]="date" [max]="next3months" (blur)="getAvailableTimeSlots()">
+        <div class="mb-4">
+            <label for="aptDate" class="form-label">Date of Appointment</label>
+            <input type="date" formControlName="aptDate" class="form-control" [min]="today" [max]="next3months"
+                (change)="getAvailabilityWindows()">
         </div>
-        <div class="mb-3">
-            <label for="time" class="form-label">Time Slot</label>
-            <select formControlName="time" class="form-control">
-                <option>Choose Time Slot</option>
-                <option *ngFor="let timeSlot of timeSlots">{{timeSlot}}</option>
+
+        <div class="mb-4">
+            <label for="window" class="form-label">Availability Window</label>
+            <select class="form-control" formControlName="window" (change)="populateTimes()">
+                <option *ngIf="windows.length == 0" [value]="-1">No Window Available</option>
+                <option *ngIf="windows.length > 0" [value]="-1">Select Window</option>
+                <option *ngFor="let w of windows; let i=index;" [value]="i">{{w.label}}</option>
             </select>
-            <div *ngIf="registerForm.controls['time'].touched && registerForm.controls['time'].invalid"
-                class="alert text-danger">Time Slot cannot be empty</div>
+            <small *ngIf="form.controls.window.touched && form.controls.window.value == -1" class="text-danger">
+                Availability window is required</small>
         </div>
-        <div class="mb-3">
-            <label for="patientEmail" class="form-label">Patient Email</label>
-            <select formControlName="patientEmail" class="form-control">
-                <option>Choose Patient Email</option>
-                <option *ngFor="let patientEmail of patientEmails">{{patientEmail}}</option>
-            </select>
-            <div *ngIf="registerForm.controls['patientEmail'].touched && registerForm.controls['patientEmail'].invalid"
-                class="alert text-danger">Patient Email cannot be empty</div>
+
+        <div class="row mb-4" *ngIf="windows.length > 0 && form.controls.window.value != -1">
+            <div class="col col-md-6">
+                <label for="startsAt" class="form-label">Start Time</label>
+                <select formControlName="startsAt" class="form-control" (change)="updateEndTimes()">
+                    <option *ngIf="startTimes.length > 0" [value]="-1">Select Start Time</option>
+                    <option *ngFor="let st of startTimes; let i=index;" [value]="i">{{st | uppercase}}</option>
+                </select>
+            </div>
+            <div class="col col-md-6">
+                <label for="endsAt" class="form-label">End Time</label>
+                <select formControlName="endsAt" class="form-control">
+                    <option *ngIf="endTimes.length == 0" [value]="-1">Select End Time</option>
+                    <option *ngFor="let et of endTimes; let i=index;" [value]="i">{{et | uppercase}}</option>
+                </select>
+            </div>
         </div>
-        <div class="mb-3">
+
+        <div class="mb-4">
             <label for="editHistory" class="form-label">Edit History</label>
             <input type="text" class="form-control" id="editHistory" readonly="readonly" value="Not Applicable">
         </div>
-        <div class="row">
-            <div class="col-md-6"></div>
-            <div class="col-md-3">
-                <button type="submit" class="btn btn-success mb-2" [disabled]="registerForm.invalid">Add</button>
-            </div>
-            <div class="col-md-3">
-                <button type="button" class="btn btn-warning mb-2" (click)="close()">Close</button>
+
+        <div class="row mt-4 mb-2">
+            <div class="col-md-12 text-center">
+                <button class="btn btn-success me-3" (click)="bookAppointment()" [disabled]="form.invalid">Add</button>
+                <button class="btn btn-warning ms-3" (click)="close()">Close</button>
             </div>
         </div>
     </form>

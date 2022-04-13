@@ -27,9 +27,14 @@ public class TimeSlot {
 		return slot;
 	}
 	
-	public static List<TimeSlot> getDayLine(long intervalInMinutes) {
-		LocalTime hospitalOpen = LocalTime.parse("09:00 am", timeFormat);
+	public static List<TimeSlot> getDayLine(long intervalInMinutes, boolean isTodaysAppt) {
+		LocalTime hospitalOpen =LocalTime.parse("09:00 am", timeFormat); 
 		LocalTime hospitalClose = LocalTime.parse("06:00 pm", timeFormat);
+		if(isTodaysAppt) {
+			LocalTime now = LocalTime.now();
+			hospitalOpen = now.minusMinutes(now.getMinute()%30).plusMinutes(30);
+		}
+
 		List<TimeSlot> list = new ArrayList<>();
 		for(LocalTime t = hospitalOpen; t.isBefore(hospitalClose); ) {
 			TimeSlot slot = new TimeSlot();
@@ -37,6 +42,7 @@ public class TimeSlot {
 			slot.endsAt = (t = t.plusMinutes(intervalInMinutes));
 			list.add(slot);
 		}
+		
 		return list;
 	}
 

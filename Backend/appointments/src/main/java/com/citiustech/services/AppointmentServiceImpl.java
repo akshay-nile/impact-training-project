@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,8 +32,7 @@ public class AppointmentServiceImpl implements AppointmentService {
 	}
 
 	@Override
-	public Appointment saveAppointment(Appointment apt) {
-		// TODO Auto-generated method stub
+	public Appointment addAppointment(Appointment apt) {
 		return appointmentRepo.save(apt);
 	}
 
@@ -46,14 +44,6 @@ public class AppointmentServiceImpl implements AppointmentService {
 
 		}
 		return appintment;
-	}
-
-	@Override
-	public List<String> getAvailableTimeSlots(String physicianEmail, LocalDate aptDate) {
-		List<String> timeSlots = new ArrayList<String>(Arrays.asList("9-11", "11-1", "2-4", "4-6"));
-		List<String> aptList = appointmentRepo.getAvailableTimeSlots(physicianEmail, aptDate);
-		timeSlots.removeAll(aptList);
-		return timeSlots;
 	}
 
 	@Override
@@ -69,8 +59,8 @@ public class AppointmentServiceImpl implements AppointmentService {
 		for (Appointment apt : appointmentList) {
 			Map<String, String> mapEvent = new HashMap<>();
 			mapEvent.put("title", apt.getMeetingTitle());
-			mapEvent.put("start", formatTimeslot(apt.getAptDate(), apt.getTime().split(" to ")[0]));
-			mapEvent.put("end", formatTimeslot(apt.getAptDate(), apt.getTime().split(" to ")[1]));
+			mapEvent.put("start", formatTimeslot(apt.getAptDate(), apt.getTime().split(" to ")[0].trim()));
+			mapEvent.put("end", formatTimeslot(apt.getAptDate(), apt.getTime().split(" to ")[1].trim()));
 			eventList.add(mapEvent);
 		}
 

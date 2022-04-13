@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './authgurds/authguard.guard';
+import { AdminGuard } from './authgurds/admin.guard';
+import { DoctorGuard } from './authgurds/doctor.guard';
+import { NurseGuard } from './authgurds/nurse.guard';
+import { PatientGuard } from './authgurds/patient.guard';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { LoginComponent } from './components/login/login.component';
@@ -17,22 +20,22 @@ const routes: Routes = [
   { path: 'change-password', component: ChangePasswordComponent },
   {
     path: 'patient',
-    canActivate: [AuthGuard],
+    canActivate: [PatientGuard],
     loadChildren: () => import('./modules/patient/patient.module').then(m => m.PatientModule)
   },
   {
     path: 'doctor',
-    canActivate: [AuthGuard],
+    canActivate: [DoctorGuard],
     loadChildren: () => import('./modules/doctor/doctor.module').then(m => m.DoctorModule)
   },
   {
     path: 'nurse',
-    canActivate: [AuthGuard],
+    canActivate: [NurseGuard],
     loadChildren: () => import('./modules/nurse/nurse.module').then(m => m.NurseModule)
   },
   {
     path: 'admin',
-    canActivate: [AuthGuard],
+    canActivate: [AdminGuard],
     loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
   },
   { path: '**', component: PageNotFoundComponent }

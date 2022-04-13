@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class AdminGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(
@@ -14,8 +14,9 @@ export class AuthGuard implements CanActivate {
     let isTokenAvailable = sessionStorage.getItem('token') !== null;
     if(!isTokenAvailable) {
       this.router.navigate(['login']);
-    }
-    return isTokenAvailable;
+      return false;
+    } 
+    return JSON.parse(sessionStorage.getItem("user")).role === 'ADMIN';;
   }
   
 }

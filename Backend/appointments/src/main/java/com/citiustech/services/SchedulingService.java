@@ -1,7 +1,6 @@
 package com.citiustech.services;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,11 +24,12 @@ public class SchedulingService {
 		return appts.stream().map(Appointment::getTime).map(TimeSlot::from).collect(Collectors.toList());
 	}
 
-	private List<TimeSlot> getFreeSlots(List<TimeSlot> doctorSlots, List<TimeSlot> patientSlots) {
-		List<TimeSlot> dayLine = TimeSlot.getDayLine(30);
+	private List<TimeSlot> getFreeSlots(LocalDate aptDate, String physician, String patientEmail) {
+		List<TimeSlot> doctorSlots = getTimeSlots(aptDate, physician, true);
+		List<TimeSlot> patientSlots = getTimeSlots(aptDate, patientEmail, false);
+		List<TimeSlot> dayLine = TimeSlot.getDayLine(30, aptDate.equals(LocalDate.now()));
 		for(int i = 0; i < dayLine.size(); i++) {
-			TimeSlot timeSlot = dayLine.get(i);
-			if(timeSlot.overlapsAny(doctorSlots) || timeSlot.overlapsAny(patientSlots)) {
+			if(dayLine.get(i).overlapsAny(doctorSlots) || dayLine.get(i).overlapsAny(patientSlots)) {
 				dayLine.set(i, null);
 			}
 		}
@@ -44,10 +44,11 @@ public class SchedulingService {
 	}
 
 	public List<Window> getAvailabilityWindows(LocalDate aptDate, String patientEmail, String physician) {
-		List<TimeSlot> doctorSlots = getTimeSlots(aptDate, physician, true);
-		List<TimeSlot> patientSlots = getTimeSlots(aptDate, patientEmail, false);
-		List<TimeSlot> freeSlots = getFreeSlots(doctorSlots, patientSlots);
+		if(aptDate.isBefore(LocalDate.now())) {
+			return List.of();
+		} 
 		
+		List<TimeSlot> freeSlots = getFreeSlots(aptDate, physician, patientEmail);
 		List<Window> windows = new ArrayList<>();
 		Window window = null;
 		

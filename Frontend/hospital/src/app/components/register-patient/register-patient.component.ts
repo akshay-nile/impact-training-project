@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { UtilityService } from 'src/app/services/utility.service';
 import { confirmPassword, passwordValidator } from 'src/app/validators/password.validator';
+import { noSpaceValidator } from 'src/app/validators/text-field.validator';
 
 @Component({
   selector: 'app-register-patient',
@@ -67,8 +68,8 @@ export class RegisterPatientComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       title: new FormControl(''),
-      firstName: new FormControl('', [Validators.required]),
-      lastName: new FormControl('', [Validators.required]),
+      firstName: new FormControl('', [Validators.required, noSpaceValidator]),
+      lastName: new FormControl('', [Validators.required, noSpaceValidator]),
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('+91 ', [Validators.required, Validators.pattern(/^\+\d+\s?\d{10}$/)]),
       birthdate: new FormControl('', [Validators.required]),

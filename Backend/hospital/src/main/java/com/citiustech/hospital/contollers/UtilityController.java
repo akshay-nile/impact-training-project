@@ -47,14 +47,14 @@ public class UtilityController {
 		return utilityService.phoneExists(phone);
 	}
 
-	@GetMapping("/employee/names")
-	public List<String> getAllEmployeeName() {
+	@GetMapping("/physician/names")
+	public List<?> getAllEmployeeName() {
 		return utilityService.getAllEmployeeNames();
 	}
 
-	@GetMapping("/patient/emails")
-	public List<String> getPatientEmails() {
-		return utilityService.getPatientEmails();
+	@GetMapping("/patient/names")
+	public List<?> getPatientNames() {
+		return utilityService.getPatientNames();
 	}
 
 	@GetMapping("/patient/email/{email}")

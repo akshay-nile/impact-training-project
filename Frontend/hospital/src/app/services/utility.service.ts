@@ -97,13 +97,13 @@ export class UtilityService {
             .pipe(catchError(this.handleError));
     }
 
-    getAllPhysicianNames(): Observable<string[]> {
-        return this.http.get<string[]>(this.baseUrl + '/employee/names')
+    getAllPhysicianNames(): Observable<any[]> {
+        return this.http.get<any[]>(this.baseUrl + '/physician/names')
             .pipe(catchError(this.handleError));
     }
 
-    getAllPatientEmail(): Observable<string[]> {
-        return this.http.get<string[]>(this.baseUrl + '/patient/emails')
+    getAllPatientEmail(): Observable<any[]> {
+        return this.http.get<any[]>(this.baseUrl + '/patient/names')
             .pipe(catchError(this.handleError));
     }
     getPatientByEmail(email: string): Observable<number> {

@@ -21,22 +21,33 @@
                             <div class="form-group col col-6">
                                 <label class="col-form-label">First Name:</label>
                                 <input formControlName="firstName" type="text" class="form-control">
-                                <small *ngIf="first.touched && first.errors?.required" class="text-danger">First
-                                    name
-                                    is required</small>
+                                <div *ngIf="first.touched">
+                                    <small *ngIf="first.errors?.required" class="text-danger">First
+                                        name is
+                                        required</small>
+                                    <small *ngIf="!first.errors?.required && first.errors?.isEmpty"
+                                        class="text-danger">Blank spaces
+                                        not allowed</small>
+                                </div>
                             </div>
                             <div class="form-group col col-6">
                                 <label class="col-form-label">Last Name:</label>
                                 <input formControlName="lastName" type="text" class="form-control">
-                                <small *ngIf="last.touched && last.errors?.required" class="text-danger">Last
-                                    name is
-                                    required</small>
+                                <div *ngIf="last.touched">
+                                    <small *ngIf="last.errors?.required" class="text-danger">Last
+                                        name is
+                                        required</small>
+                                    <small *ngIf="!last.errors?.required && last.errors?.isEmpty"
+                                        class="text-danger">Blank spaces
+                                        not allowed</small>
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="email" class="col-form-label">Email Id:</label>
-                            <input type="text" formControlName="email" id="email" class="form-control" (blur)="onEmailEntered()">
+                            <input type="text" formControlName="email" id="email" class="form-control"
+                                (blur)="onEmailEntered()">
                             <div *ngIf="email.touched && email.errors">
                                 <small *ngIf="email.errors?.required" class="text-danger">Email is required</small>
                                 <small *ngIf="email.errors?.email" class="text-danger">Not a valid email id</small>
@@ -84,7 +95,8 @@
                             <div *ngIf="cpass.touched && (cpass.errors || form.errors)">
                                 <small *ngIf="cpass.errors?.required" class="text-danger">Password confirmation is
                                     required</small>
-                                <small *ngIf="!cpass.errors?.required && form.errors?.areEqual" class="text-danger">Password entries do not
+                                <small *ngIf="!cpass.errors?.required && form.errors?.areEqual"
+                                    class="text-danger">Password entries do not
                                     match</small>
                             </div>
                         </div>

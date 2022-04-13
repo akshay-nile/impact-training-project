@@ -1,13 +1,10 @@
 package com.citiustech.models;
 
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Window {
-
-	public static final transient DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm a");
-
+	
 	private String label;
 	private List<String> startTimes;
 	private List<String> endTimes;

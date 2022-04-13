@@ -63,38 +63,32 @@ public class AppointmentController {
 		return new ResponseEntity<>(appointmentService.getEmployeeId(email), HttpStatus.OK);
 	}
 
-	@GetMapping("/timeslots/{physicianEmail}/{aptDate}")
-	public ResponseEntity<?> geAppointmentById(@PathVariable String physicianEmail, @PathVariable String aptDate)
-			throws ParseException {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH);
-		LocalDate date = LocalDate.parse(aptDate, formatter);
-		System.out.println(physicianEmail);
-		System.out.println(date);
-		List<String> appointment = appointmentService.getAvailableTimeSlots(physicianEmail, date);
-		System.out.println(appointment);
-		if (appointment.size() != 0) {
-			return new ResponseEntity<>(appointment, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
+//	@GetMapping("/timeslots/{physicianEmail}/{aptDate}")
+//	public ResponseEntity<?> geAppointmentById(@PathVariable String physicianEmail, @PathVariable String aptDate)
+//			throws ParseException {
+//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH);
+//		LocalDate date = LocalDate.parse(aptDate, formatter);
+//		System.out.println(physicianEmail);
+//		System.out.println(date);
+//		List<String> appointment = appointmentService.getAvailableTimeSlots(physicianEmail, date);
+//		System.out.println(appointment);
+//		if (appointment.size() != 0) {
+//			return new ResponseEntity<>(appointment, HttpStatus.OK);
+//		}
+//		return new ResponseEntity<>(null, HttpStatus.OK);
+//	}
+
+	@PostMapping({"", "/add-appointment"})
+	public ResponseEntity<?> addAppointment(@RequestBody Appointment appointment) {
+		Appointment addedAppointment = appointmentService.addAppointment(appointment);
+		return new ResponseEntity<>(addedAppointment, HttpStatus.OK);
 	}
 
-	@PostMapping("")
-	public ResponseEntity<?> saveAppointment(@RequestBody Appointment appointment) {
-		Appointment appointmentObj = appointmentService.saveAppointment(appointment);
-		if (appointmentObj != null) {
-			return new ResponseEntity<>(appointmentObj, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
-	}
-
-	@PutMapping("")
+	@PutMapping({"", "/update-appointment"})
 	public ResponseEntity<?> updateAppointment(@RequestBody Appointment appointment) {
 		System.out.println(appointment.getTime());
-		Appointment appointmentObj = appointmentService.saveAppointment(appointment);
-		if (appointmentObj != null) {
-			return new ResponseEntity<>(appointmentObj, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
+		Appointment updatedAppointment = appointmentService.addAppointment(appointment);
+		return new ResponseEntity<>(updatedAppointment, HttpStatus.OK);
 	}
 
 	@DeleteMapping("/{aptId}")

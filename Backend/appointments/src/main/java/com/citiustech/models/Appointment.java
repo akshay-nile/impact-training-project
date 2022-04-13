@@ -31,6 +31,25 @@ public class Appointment {
 	private LocalDate aptDate;
 
 	private int empId;
+	
+	private boolean isDataCollectionAppt = false;
+	private boolean dataCollectionStatus = false;
+
+	public boolean isDataCollectionAppt() {
+		return isDataCollectionAppt;
+	}
+
+	public void setDataCollectionAppt(boolean isDataCollectionAppt) {
+		this.isDataCollectionAppt = isDataCollectionAppt;
+	}
+
+	public boolean isDataCollectionStatus() {
+		return dataCollectionStatus;
+	}
+
+	public void setDataCollectionStatus(boolean dataCollectionStatus) {
+		this.dataCollectionStatus = dataCollectionStatus;
+	}
 
 	public Appointment(int aptId, String meetingTitle, String description, String patientEmail, String physician,
 			String editHistory, String patientName, String time, LocalDate aptDate, int empId) {

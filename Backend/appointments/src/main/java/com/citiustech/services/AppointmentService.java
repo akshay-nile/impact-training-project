@@ -1,6 +1,5 @@
 package com.citiustech.services;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
@@ -12,11 +11,9 @@ public interface AppointmentService {
 	
 	public List<Appointment> getAppointments();
 	
-	public Appointment saveAppointment(Appointment apt);
+	public Appointment addAppointment(Appointment apt);
 	
 	public Appointment deleteAppointment(int aptId);
-	
-	public List<String> getAvailableTimeSlots(String physicianEmail,LocalDate aptDate);
 	
 	public int getEmployeeId(String physicianEmail);
 
