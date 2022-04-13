@@ -1,6 +1,7 @@
-package com.citiustech.service;
+package com.citiustech.services;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,8 +12,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.citiustech.model.Appointment;
-import com.citiustech.repository.AppointmentRepository;
+import com.citiustech.models.Appointment;
+import com.citiustech.models.TimeSlot;
+import com.citiustech.repositories.AppointmentRepository;
 
 @Service
 public class AppointmentServiceImpl implements AppointmentService {
@@ -67,22 +69,18 @@ public class AppointmentServiceImpl implements AppointmentService {
 		for (Appointment apt : appointmentList) {
 			Map<String, String> mapEvent = new HashMap<>();
 			mapEvent.put("title", apt.getMeetingTitle());
-
-			mapEvent.put("start", formatTimeslot(apt.getAptDate(), apt.getTime().split("-")[0]));
-			mapEvent.put("end", formatTimeslot(apt.getAptDate(), apt.getTime().split("-")[1]));
+			mapEvent.put("start", formatTimeslot(apt.getAptDate(), apt.getTime().split(" to ")[0]));
+			mapEvent.put("end", formatTimeslot(apt.getAptDate(), apt.getTime().split(" to ")[1]));
 			eventList.add(mapEvent);
 		}
 
 		return eventList;
 	}
 
-	private String formatTimeslot(LocalDate localDate, String string) {
-		String formatTimeSlot = localDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) + "T%02d:00:00";
-		if (string.equalsIgnoreCase("1") || string.equalsIgnoreCase("2") || string.equalsIgnoreCase("4")
-				|| string.equalsIgnoreCase("6")) {
-			return String.format(formatTimeSlot, Integer.parseInt(string) + 12);
-		}
-		return String.format(formatTimeSlot, Integer.parseInt(string));
+	private String formatTimeslot(LocalDate localDate, String localTime) {
+		String dateTime = localDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) + "T";
+		dateTime += LocalTime.parse(localTime, TimeSlot.timeFormat).format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+		return dateTime;
 	}
 
 }

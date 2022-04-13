@@ -1,10 +1,10 @@
-package com.citiustech.service;
+package com.citiustech.services;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
-import com.citiustech.model.Appointment;
+import com.citiustech.models.Appointment;
 
 public interface AppointmentService {
 

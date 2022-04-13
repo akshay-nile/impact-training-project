@@ -1,4 +1,4 @@
-package com.citiustech.controller;
+package com.citiustech.controllers;
 
 import java.text.ParseException;
 import java.time.LocalDate;
@@ -20,13 +20,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.citiustech.model.Appointment;
-import com.citiustech.service.AppointmentService;
+import com.citiustech.models.Appointment;
+import com.citiustech.services.AppointmentService;
 
 @CrossOrigin
 @RestController
 @RequestMapping("/appointments/api")
 public class AppointmentController {
+
 	@Autowired
 	private AppointmentService appointmentService;
 

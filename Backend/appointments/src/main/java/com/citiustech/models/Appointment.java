@@ -1,4 +1,4 @@
-package com.citiustech.model;
+package com.citiustech.models;
 
 import java.time.LocalDate;
 
