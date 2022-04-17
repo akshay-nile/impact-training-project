@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { confirmPassword, passwordValidator } from 'src/app/validators/password.validator';
-import { AuthenticationService } from 'src/app/services/Authentication.servic';
 import { UtilityService } from 'src/app/services/utility.service';
 import { UserCredential } from 'src/app/models/UserCredential';
 
@@ -19,10 +18,8 @@ export class ChangePasswordComponent implements OnInit {
   isOldPasswordCorrect: boolean = false;
   userId: number;
   constructor(private router: Router,
-    private authenticationService: AuthenticationService,
     private utilityService: UtilityService) {
-    this.userId = this.authenticationService.getUserId();
-    console.log(this.userId)
+      this.userId = JSON.parse(sessionStorage.getItem('user')).employeeId;
   }
 
   form = new FormGroup({
@@ -43,9 +40,8 @@ export class ChangePasswordComponent implements OnInit {
   submit() {
     console.log(this.userId);
 
-    this.userCredential.userId = this.userId;
-    this.userCredential.oldPassword = this.form.value.oldpassword;
-    this.userCredential.newPassword = this.form.value.confirmPassword;
+    // this.userCredential.employeeId = this.userId;
+    // this.userCredential.password = this.form.value.confirmPassword;
     if (!this.isPasswordCorrect()) {
       this.customMessage = "Enter correct Old Password";
     }

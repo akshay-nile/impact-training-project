@@ -1,10 +1,7 @@
 package com.citiustech.controllers;
 
 import java.text.ParseException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,12 +45,30 @@ public class AppointmentController {
 		}
 		return new ResponseEntity<>(null, HttpStatus.OK);
 	}
+	
+	@GetMapping("/getCalendarAppointmentsByPatientEmail/{email}")
+	public ResponseEntity<?> getCalendarAppointmentsByPatientId(@PathVariable String email) {
+		List<Map<String, String>> appointments = appointmentService.getCalendarAppointmentsByPatientEmail(email);
+		if (appointments.size() != 0) {
+			return new ResponseEntity<>(appointments, HttpStatus.OK);
+		}
+		return new ResponseEntity<>(null, HttpStatus.OK);
+	}
 
 	@GetMapping("/{aptId}")
-	public ResponseEntity<?> geAppointmentById(@PathVariable int aptId) {
+	public ResponseEntity<?> getAppointmentById(@PathVariable int aptId) {
 		Appointment appointment = appointmentService.getAppointmentByAptId(aptId);
 		if (appointment != null) {
 			return new ResponseEntity<>(appointment, HttpStatus.OK);
+		}
+		return new ResponseEntity<>(null, HttpStatus.OK);
+	}
+	
+	@GetMapping("/meetingTitleByPatientEmail/{patientEmail}")
+	public ResponseEntity<?> getAppointmentsMeetingTitle(@PathVariable String patientEmail) {
+		List<String> meetingTitles = appointmentService.getAppointmentsMeetingTitle(patientEmail);
+		if (meetingTitles.size()!=0) {
+			return new ResponseEntity<>(meetingTitles, HttpStatus.OK);
 		}
 		return new ResponseEntity<>(null, HttpStatus.OK);
 	}
@@ -63,30 +78,34 @@ public class AppointmentController {
 		return new ResponseEntity<>(appointmentService.getEmployeeId(email), HttpStatus.OK);
 	}
 
-//	@GetMapping("/timeslots/{physicianEmail}/{aptDate}")
-//	public ResponseEntity<?> geAppointmentById(@PathVariable String physicianEmail, @PathVariable String aptDate)
-//			throws ParseException {
-//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH);
-//		LocalDate date = LocalDate.parse(aptDate, formatter);
-//		System.out.println(physicianEmail);
-//		System.out.println(date);
-//		List<String> appointment = appointmentService.getAvailableTimeSlots(physicianEmail, date);
-//		System.out.println(appointment);
-//		if (appointment.size() != 0) {
-//			return new ResponseEntity<>(appointment, HttpStatus.OK);
-//		}
-//		return new ResponseEntity<>(null, HttpStatus.OK);
-//	}
+	@GetMapping("/pastAppointments/{patientEmail}")
+	public ResponseEntity<?> getpastAppointments(@PathVariable String patientEmail) throws ParseException {
+		List<Appointment> appointments = appointmentService.getpastAppointments(patientEmail);
+		System.out.println(appointments);
+		if (appointments.size() != 0) {
+			return new ResponseEntity<>(appointments, HttpStatus.OK);
+		}
+		return new ResponseEntity<>(null, HttpStatus.OK);
+	}
+	
+	@GetMapping("/upcomingAppointments/{patientEmail}")
+	public ResponseEntity<?> upcomingAppointments(@PathVariable String patientEmail) throws ParseException {
+		List<Appointment> appointments = appointmentService.upcomingAppointments(patientEmail);
+		System.out.println(appointments);
+		if (appointments.size() != 0) {
+			return new ResponseEntity<>(appointments, HttpStatus.OK);
+		}
+		return new ResponseEntity<>(null, HttpStatus.OK);
+	}
 
-	@PostMapping({"", "/add-appointment"})
+	@PostMapping({ "", "/add-appointment" })
 	public ResponseEntity<?> addAppointment(@RequestBody Appointment appointment) {
 		Appointment addedAppointment = appointmentService.addAppointment(appointment);
 		return new ResponseEntity<>(addedAppointment, HttpStatus.OK);
 	}
 
-	@PutMapping({"", "/update-appointment"})
+	@PutMapping({ "", "/update-appointment" })
 	public ResponseEntity<?> updateAppointment(@RequestBody Appointment appointment) {
-		System.out.println(appointment.getTime());
 		Appointment updatedAppointment = appointmentService.addAppointment(appointment);
 		return new ResponseEntity<>(updatedAppointment, HttpStatus.OK);
 	}

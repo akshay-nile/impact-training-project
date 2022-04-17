@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
     providedIn: 'root'
 })
 export class AdminService {
-
+ 
     constructor(private http: HttpClient) { }
 
     baseUrl: string = environment.baseUrl + '/admin';
@@ -16,6 +16,9 @@ export class AdminService {
         return this.http.post<any>(this.baseUrl + '/register', user).pipe(catchError(this.handleError));
     }
 
+    public updateEmployee(user: any): Observable<any> {
+        return this.http.put<any>(this.baseUrl + '/api/updateEmployee', user).pipe(catchError(this.handleError));
+    }
     private handleError(errorResponse: HttpErrorResponse) {
         if (errorResponse.error instanceof ErrorEvent) {
             console.error("Client Side Error", errorResponse.error.message)

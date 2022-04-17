@@ -11,7 +11,7 @@ import { Vitals } from '../models/Vitals';
     providedIn: 'root'
 })
 export class UtilityService {
-
+    
     constructor(private http: HttpClient) { }
 
     baseUrl: string = environment.baseUrl + '/hospital';
@@ -37,91 +37,42 @@ export class UtilityService {
         return this.http.post<boolean>(this.baseUrl + '/exists/phone', phone)
             .pipe(catchError(this.handleError));
     }
-
-    addVitals(vital: any): Observable<boolean> {
-        return this.http.post<boolean>(this.vitalsUrl, vital)
-            .pipe(catchError(this.handleError));
-    }
-    updateVitals(vital: any): Observable<boolean> {
-        return this.http.put<boolean>(this.vitalsUrl, vital)
-            .pipe(catchError(this.handleError));
-    }
-    deleteVitals(id: any): Observable<boolean> {
-        return this.http.delete<boolean>(this.vitalsUrl + '/' + id)
-            .pipe(catchError(this.handleError));
-    }
-    getVitalByPatientId(id: any): Observable<Vitals> {
-        return this.http.get<Vitals>(this.vitalsUrl + `/aptId/${id}`)
-            .pipe(catchError(this.handleError));
-    }
+    
     getEmpIdByEmail(email: string): Observable<any> {
         return this.http.get<any>(this.baseUrl + `/physicianEmail/${email}`)
             .pipe(catchError(this.handleError));
     }
-    updatePatientDetails(patient: any): Observable<Patient> {
-        return this.http.put<Patient>(this.baseUrl + '/patientDetails/', patient)
-            .pipe(catchError(this.handleError));
-    }
-    getVitalDetails(): Observable<Vitals[]> {
-        return this.http.get<Vitals[]>(this.vitalsUrl + '/getAllVitalDetails')
+
+    updatePatientDetails(patient: any): Observable<any> {
+        return this.http.put<any>(this.baseUrl + '/patientDetails/', patient)
             .pipe(catchError(this.handleError));
     }
 
-    addAppointmentDetails(appointment: any): Observable<boolean> {
-        return this.http.post<boolean>(this.apptUrl, appointment)
-            .pipe(catchError(this.handleError));
-    }
 
-    updateAppointmentDetails(appointment: any): Observable<boolean> {
-        return this.http.put<boolean>(this.apptUrl, appointment)
-            .pipe(catchError(this.handleError));
-    }
-    deleteAppointmentDetails(id: any): Observable<boolean> {
-        return this.http.delete<boolean>(this.apptUrl + `/${id}`)
-            .pipe(catchError(this.handleError));
-    }
-    getAppointmentDetails(id: any): Observable<Appointment> {
-        return this.http.get<Appointment>(this.apptUrl + `/${id}`)
-            .pipe(catchError(this.handleError));
-    }
-    getCalendarAppointment(): Observable<any> {
-        return this.http.get<any>(this.apptUrl + '/getCalendarAppointments')
-            .pipe(catchError(this.handleError));
-    }
-    getAvailableTimeSlots(physician: string, date: string): Observable<string[]> {
-        return this.http.get<string[]>(this.apptUrl + `/timeslots/${physician}/${date}`)
-            .pipe(catchError(this.handleError));
-    }
-    getAllAppointmentDetails(): Observable<Appointment[]> {
-        return this.http.get<Appointment[]>(this.apptUrl + '/getAllAppointments')
-            .pipe(catchError(this.handleError));
-    }
-
-    getAllPhysicianNames(): Observable<any[]> {
+    getAllPhysicians(): Observable<any[]> {
         return this.http.get<any[]>(this.baseUrl + '/physician/names')
             .pipe(catchError(this.handleError));
     }
 
-    getAllPatientEmail(): Observable<any[]> {
+    getAllPatientNames(): Observable<any[]> {
         return this.http.get<any[]>(this.baseUrl + '/patient/names')
             .pipe(catchError(this.handleError));
     }
-    getPatientByEmail(email: string): Observable<number> {
-        return this.http.get<number>(this.baseUrl + `/patient/email/${email}`)
-            .pipe(catchError(this.handleError));
-    }
-
-    getPatientByPatientId(id: number): Observable<any> {
-        return this.http.get<any>(this.baseUrl + `/patient/id/${id}`)
+    getPatientByEmail(email: string): Observable<any> {
+        return this.http.get<any>(this.baseUrl + `/patientByEmail/${email}`)
             .pipe(catchError(this.handleError));
     }
 
     changeUserPassword(userCredentials: any): Observable<any> {
-        return this.http.post<any>(this.baseUrl + '/api/user/change-password/employee', userCredentials)
+        return this.http.post<any>(this.baseUrl + '/api/change-password', userCredentials)
             .pipe(catchError(this.handleError));
     }
 
-
+    checkOldPassword(userId:any,password: any): Observable<any>  {
+        return this.http.get<any>(this.baseUrl + `/api/change-password/${userId}/${password}`)
+        .pipe(catchError(this.handleError));
+      }
+  
     private handleError(errorResponse: HttpErrorResponse) {
         if (errorResponse.error instanceof ErrorEvent) {
             console.error("Client Side Error", errorResponse.error.message)

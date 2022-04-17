@@ -1,0 +1,225 @@
+<mat-tab-group>
+    <mat-tab label="Appointment Details">
+        <mat-card class="example-card">
+            <form autofocus="off" [formGroup]="appointmentForm">
+                <div class="mb-3">
+                    <label for="meetingTitle" class="form-label">Meeting Title</label>
+                    <input type="text" formControlName="meetingTitle" class="form-control" id="meetingTitle"
+                        [(ngModel)]="appointment.meetingTitle">
+                    <div *ngIf="appointmentForm.controls['meetingTitle'].touched && appointmentForm.controls['meetingTitle'].invalid"
+                        class="alert text-danger">
+                        <div *ngIf="appointmentForm.controls['meetingTitle'].errors?.['required']">Meeting Title cannot
+                            be blank</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea type="text" formControlName="description" class="form-control" id="description"
+                        [(ngModel)]="appointment.description"></textarea>
+                    <div *ngIf="appointmentForm.controls['description'].touched && appointmentForm.controls['description'].invalid"
+                        class="alert text-danger">
+                        <div *ngIf="appointmentForm.controls['description'].errors?.['required']">Description cannot be
+                            blank</div>
+
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="physician" class="form-label">Physician</label>
+                    <select formControlName="physician" class="form-control" [(ngModel)]="appointment.physician">
+                        <option>Choose Physician</option>
+                        <option *ngFor="let physician of physicians">{{physician}}</option>
+                    </select>
+                    <div *ngIf="appointmentForm.controls['physician'].touched && appointmentForm.controls['physician'].invalid"
+                        class="alert text-danger">Physician cannot be empty</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="aptDate" class="form-label">Date</label>
+                    <input type="aptDate" formControlName="date" class="form-control" id="aptDate" [min]="date">
+                </div>
+                <div class="mb-3">
+                    <label for="time" class="form-label">Time Slot</label>
+                    <select formControlName="time" class="form-control" [(ngModel)]="appointment.time">
+                        <option *ngFor="let timeSlot of time">{{timeSlot}}</option>
+                    </select>
+                    <div *ngIf="appointmentForm.controls['time'].touched && appointmentForm.controls['time'].invalid"
+                        class="alert text-danger">Time Slot cannot be empty</div>
+                </div>
+                <div class="mb-3">
+                    <label for="patientEmail" class="form-label">Patient Email</label>
+                    <select formControlName="patientEmail" class="form-control" [(ngModel)]="appointment.patientEmail">
+
+                        <option *ngFor="let patientEmail of patientEmails">{{patientEmail}}</option>
+                    </select>
+                    <div *ngIf="appointmentForm.controls['patientEmail'].touched && appointmentForm.controls['patientEmail'].invalid"
+                        class="alert text-danger">Patient Email cannot be empty</div>
+                </div>
+                <div class="mb-3">
+                    <label for="editHistory" class="form-label">Edit History</label>
+                    <input type="text" formControlName="editHistory" class="form-control" id="editHistory"
+                        readonly="readonly" value="NA">
+                </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-success mb-2" (click)="editAppointment()">Edit</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-danger mb-2" (click)="deleteAppointment()">Delete</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-warning mb-2" (click)="close()">Close</button>
+                    </div>
+                </div>
+            </form>
+        </mat-card>
+    </mat-tab>
+    <mat-tab label="Visit Details">
+        <mat-card class="example-card">
+            <mat-card-title-group>
+                <mat-card-title>Patient Visit Details : </mat-card-title>
+                <mat-card-subtitle>Patient Details : {{appointment.description}}</mat-card-subtitle>
+            </mat-card-title-group>
+            <mat-card-content>
+                <div *ngIf="!showInformation">
+                    <button type="button" mat-raised-button class=" mb-2" (click)="showPatientInformation()">Show
+                        Patient
+                        Information</button>
+                </div>
+                <div *ngIf="showInformation">
+                    Patient FirstName : {{appointment.patientName}}
+                    <br><br>
+                    Patient LastName : {{appointment.patientName}}
+                    <br><br>
+                    Patient Email : {{appointment.physician}}
+                    <br><br>
+                    Patient DOB : {{appointment.date}}
+                    <br><br>
+                    <b>Demographics details</b>
+                    <br><br>
+                    City : {{appointment.time}}
+                    <br><br>
+                    State : {{appointment.time}}
+                    <br><br>
+                    Country : {{appointment.time}}
+                    <br><br>
+                    Postal Code : {{appointment.time}}
+                    <br><br>
+                    <b>Nominee details</b>
+                    <br><br>
+                    Name : {{appointment.time}}
+                    <br><br>
+                    Relation : {{appointment.time}}
+                    <br><br>
+                    Contact No : {{appointment.time}}
+                    <br><br>
+                </div>
+                <div *ngIf="showInformation">
+                    <button type="button" mat-raised-button class="mb-2" (click)="hidePatientInformation()">Hide Patient
+                    </button>
+                </div>
+            </mat-card-content>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-2" *ngIf="showInformation">
+                    <button type="button" class="btn btn-success mb-2">Edit</button>
+                </div>
+                <div class="col-md-2" *ngIf="showInformation">
+                    <button type="button" class="btn btn-danger mb-2"
+                        (click)="deletePatientDetails(appointment.aptId)">Delete</button>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-warning mb-2" (click)="close()">Close</button>
+                </div>
+            </div>
+        </mat-card>
+    </mat-tab>
+    <mat-tab label=" Prescription Details">
+        <mat-card class="example-card">
+            <form autofocus="off" [formGroup]="prescriptionForm">
+                <mat-card-title-group>
+                    <mat-card-title>Medication Details : </mat-card-title>
+                </mat-card-title-group>
+                <mat-card-content>
+                    <div>
+                        <div class="mb-3">
+                            <label for="medicationName" class="form-label">Medication Name</label>
+                            <select formControlName="medicationName" class="form-control" [(ngModel)]="medicationObj.medicationName">
+                                <option>Choose Medicine</option>
+                                <option *ngFor="let medicine of medications">{{medicine}}</option>
+                            </select>
+                            <div *ngIf="prescriptionForm.controls['medicationName'].touched && prescriptionForm.controls['medicationName'].invalid"
+                                class="alert text-danger">Medicine Name cannot be empty</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dosage" class="form-label">Dosage</label>
+                            <select formControlName="dosage" class="form-control" [(ngModel)]="medicationObj.dosage">
+                                <option>Choose Dosage</option>
+                                <option *ngFor="let dosage of medicationDosages">{{dosage}}</option>
+                            </select>
+                            <div *ngIf="prescriptionForm.controls['dosage'].touched && prescriptionForm.controls['dosage'].invalid"
+                                class="alert text-danger">Dosage cannot be empty</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="medicationDescription" class="form-label">Description</label>
+                            <select formControlName="medicationDescription" class="form-control" [(ngModel)]="medicationObj.medicationDescription">
+                                <option>Choose Description</option>
+                                <option *ngFor="let d of medicationDescriptions">{{d}}</option>
+                            </select>
+                            <div *ngIf="prescriptionForm.controls['medicationDescription'].touched && prescriptionForm.controls['medicationDescription'].invalid"
+                                class="alert text-danger">Description cannot be empty</div>
+                        </div>
+                        <mat-card-title-group>
+                            <mat-card-title>Diagnosis Details : </mat-card-title>
+                        </mat-card-title-group>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Diagnosis Title</label>
+                            <select formControlName="title" class="form-control" [(ngModel)]="diagnosisObj.title">
+                                <option>Choose Title</option>
+                                <option *ngFor="let t of diagnosisTitles">{{t}}</option>
+                            </select>
+                            <div *ngIf="prescriptionForm.controls['title'].touched && prescriptionForm.controls['title'].invalid"
+                                class="alert text-danger">Title cannot be empty</div>
+                        </div>
+                        <mat-card-title-group>
+                            <mat-card-title>Procedure Details : </mat-card-title>
+                        </mat-card-title-group>
+                        <div class="mb-3">
+                            <label for="procedureName" class="form-label">Procedure Name</label>
+                            <select formControlName="procedureName" class="form-control" [(ngModel)]="procedureObj.procedureName">
+                                <option>Choose Name</option>
+                                <option *ngFor="let p of procedureNames">{{p}}</option>
+                            </select>
+                            <div *ngIf="prescriptionForm.controls['procedureName'].touched && prescriptionForm.controls['procedureName'].invalid"
+                                class="alert text-danger">Name cannot be empty</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="procedureDescription" class="form-label">Description</label>
+                            <select formControlName="procedureDescription" class="form-control" [(ngModel)]="procedureObj.procedureDescription">
+                                <option>Choose Description</option>
+                                <option *ngFor="let pd of procedureDescriptions">{{pd}}</option>
+                            </select>
+                            <div *ngIf="prescriptionForm.controls['procedureDescription'].touched && prescriptionForm.controls['procedureDescription'].invalid"
+                                class="alert text-danger">Description cannot be empty</div>
+                        </div>
+                    </div>
+                </mat-card-content>
+                <div class="row">
+                    <div class="col-md-4">
+                        <button *ngIf="result.vitalId==0" type="button" mat-raised-button (click)="saveVitalSigns()">Save Vital
+                            Signs</button>
+                    </div>
+                    <div class="col-md-2" *ngIf="result.vitalId!=0">
+                        <button type="button" class="btn btn-success mb-2" (click)="editVitalSigns()">Save</button>
+                    </div>
+                    <div class="col-md-2" *ngIf="result.vitalId!=0">
+                        <button type="button" class="btn btn-danger mb-2" (click)="deleteVitalDetails()">Delete</button>
+                    </div>
+                    <div class="col-md-2" >
+                        <button type="button" class="btn btn-warning mb-2" (click)="close()">Close</button>
+                    </div>
+                </div>
+            </form>
+        </mat-card>
+    </mat-tab>
+</mat-tab-group>

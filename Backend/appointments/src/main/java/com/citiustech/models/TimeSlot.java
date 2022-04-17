@@ -4,10 +4,11 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class TimeSlot {
 
-	public static final transient DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm a");
+	public static final transient DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm a",Locale.ENGLISH);
 
 	public LocalTime startsAt;
 	public LocalTime endsAt;
@@ -22,14 +23,14 @@ public class TimeSlot {
 	public static TimeSlot from(String str) {
 		String[] times = str.split("to");
 		TimeSlot slot = new TimeSlot();
-		slot.startsAt = LocalTime.parse(times[0].trim().toLowerCase(), timeFormat);
-		slot.endsAt = LocalTime.parse(times[1].trim().toLowerCase(), timeFormat);
+		slot.startsAt = LocalTime.parse(times[0].trim().toUpperCase(), timeFormat);
+		slot.endsAt = LocalTime.parse(times[1].trim().toUpperCase(), timeFormat);
 		return slot;
 	}
 	
 	public static List<TimeSlot> getDayLine(long intervalInMinutes, boolean isTodaysAppt) {
-		LocalTime hospitalOpen =LocalTime.parse("09:00 am", timeFormat); 
-		LocalTime hospitalClose = LocalTime.parse("06:00 pm", timeFormat);
+		LocalTime hospitalOpen =LocalTime.parse("09:00 AM", timeFormat); 
+		LocalTime hospitalClose = LocalTime.parse("06:00 PM", timeFormat);
 		if(isTodaysAppt) {
 			LocalTime now = LocalTime.now();
 			hospitalOpen = now.minusMinutes(now.getMinute()%30).plusMinutes(30);

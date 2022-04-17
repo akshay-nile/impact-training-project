@@ -8,9 +8,9 @@ import { Appointment } from '../models/Appointment';
   providedIn: 'root'
 })
 export class AppointmentService {
-  
+
   apptUrl = environment.baseUrl + '/appointments/api';
-  
+
   constructor(private http: HttpClient) { }
 
   addAppointmentDetails(appointment: any): Observable<boolean> {
@@ -33,13 +33,24 @@ export class AppointmentService {
       .pipe(catchError(this.handleError));
   }
 
-  getAppointmentByPatientId(id: any): Observable<Appointment[]> {
-    return this.http.get<Appointment[]>(this.apptUrl + `/visits/${id}`)
+  getPastAppointmentByPatientEmail(email: any): Observable<Appointment[]> {
+    return this.http.get<Appointment[]>(this.apptUrl + `/pastAppointments/${email}`)
       .pipe(catchError(this.handleError));
   }
 
+  getUpcomingAppointmentByPatientEmail(email: any): Observable<Appointment[]> {
+    return this.http.get<Appointment[]>(this.apptUrl + `/upcomingAppointments/${email}`)
+      .pipe(catchError(this.handleError));
+  }
+
+
   getCalendarAppointment(): Observable<any> {
     return this.http.get<any>(this.apptUrl + '/getCalendarAppointments')
+      .pipe(catchError(this.handleError));
+  }
+
+  getCalendarAppointmentByPatientEmail(email: string): Observable<any> {
+    return this.http.get<any>(this.apptUrl + `/getCalendarAppointmentsByPatientEmail/${email}`)
       .pipe(catchError(this.handleError));
   }
 
@@ -47,12 +58,17 @@ export class AppointmentService {
     return this.http.post<any[]>(this.apptUrl + '/get-windows', params)
       .pipe(catchError(this.handleError));
   }
-  
+
   getAllAppointmentDetails(): Observable<Appointment[]> {
     return this.http.get<Appointment[]>(this.apptUrl + '/getAllAppointments')
       .pipe(catchError(this.handleError));
   }
-  
+
+  getMeetingTitle(email:string): Observable<any> {
+    return this.http.get<any>(this.apptUrl + `/meetingTitleByPatientEmail/${email}`)
+      .pipe(catchError(this.handleError));
+  }
+
   private handleError(errorResponse: HttpErrorResponse) {
     if (errorResponse.error instanceof ErrorEvent) {
       console.error("Client Side Error", errorResponse.error.message)

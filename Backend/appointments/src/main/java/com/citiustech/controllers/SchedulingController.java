@@ -29,7 +29,12 @@ public class SchedulingController {
 		String patientEmail = map.get("patientEmail");
 		String physician = map.get("physician");
 		
-		List<Window> windows = schedulingService.getAvailabilityWindows(aptDate, patientEmail, physician);
+		int skip = -1;
+		if(map.containsKey("skip")) {
+			skip = Integer.parseInt(map.get("skip"));
+		}
+		
+		List<Window> windows = schedulingService.getAvailabilityWindows(aptDate, patientEmail, physician, skip);
 		return new ResponseEntity<>(windows, HttpStatus.OK);
 	}
 }

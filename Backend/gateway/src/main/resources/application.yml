@@ -38,6 +38,18 @@ spring:
         uri: http://localhost:8085
         predicates:
         - Path=/patient-visits/**
+      - id: diagnosis-microservice
+        uri: http://localhost:8086
+        predicates:
+        - Path=/diagnosis/**
+      - id: medication-microservice
+        uri: http://localhost:8087
+        predicates:
+        - Path=/medication/**
+      - id: procedure-microservice
+        uri: http://localhost:8089
+        predicates:
+        - Path=/procedure/**
 
 eureka:
   client:

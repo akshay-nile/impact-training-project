@@ -28,7 +28,16 @@ public class AppointmentServiceImpl implements AppointmentService {
 
 	@Override
 	public List<Appointment> getAppointments() {
-		return (List<Appointment>) appointmentRepo.findByOrderByAptDate();
+		List<Appointment> appointments = appointmentRepo.findByOrderByAptDate();
+		List<Appointment> aptList = new ArrayList<>();
+		for (Appointment apt : appointments) {
+			if (apt.getAptDate().isAfter(java.time.LocalDate.now())
+					|| apt.getAptDate().equals(java.time.LocalDate.now())) {
+				aptList.add(apt);
+			}
+		}
+		return aptList;
+
 	}
 
 	@Override
@@ -71,6 +80,53 @@ public class AppointmentServiceImpl implements AppointmentService {
 		String dateTime = localDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) + "T";
 		dateTime += LocalTime.parse(localTime, TimeSlot.timeFormat).format(DateTimeFormatter.ofPattern("HH:mm:ss"));
 		return dateTime;
+	}
+
+	@Override
+	public List<Appointment> getpastAppointments(String patientEmail) {
+		List<Appointment> appointments = appointmentRepo.findByPatientEmailAndIsDataCollectionApptAndDataStatus(patientEmail,false,true);
+		List<Appointment> aptList = new ArrayList<>();
+		for (Appointment apt : appointments) {
+			if (apt.getAptDate().isBefore(java.time.LocalDate.now())) {
+				aptList.add(apt);
+			}
+		}
+		return aptList;
+
+	}
+
+	@Override
+	public List<Appointment> upcomingAppointments(String patientEmail) {
+		List<Appointment> appointments = appointmentRepo.findByPatientEmail(patientEmail);
+		List<Appointment> aptList = new ArrayList<>();
+		for (Appointment apt : appointments) {
+			if (apt.getAptDate().isAfter(java.time.LocalDate.now())
+					|| apt.getAptDate().equals(java.time.LocalDate.now())) {
+				aptList.add(apt);
+			}
+		}
+		return aptList;
+	}
+
+	@Override
+	public List<Map<String, String>> getCalendarAppointmentsByPatientEmail(String email) {
+		List<Appointment> appointmentList = (List<Appointment>) appointmentRepo.findByPatientEmail(email);
+
+		List<Map<String, String>> eventList = new ArrayList<>();
+		for (Appointment apt : appointmentList) {
+			Map<String, String> mapEvent = new HashMap<>();
+			mapEvent.put("title", apt.getMeetingTitle());
+			mapEvent.put("start", formatTimeslot(apt.getAptDate(), apt.getTime().split(" to ")[0].trim()));
+			mapEvent.put("end", formatTimeslot(apt.getAptDate(), apt.getTime().split(" to ")[1].trim()));
+			eventList.add(mapEvent);
+		}
+
+		return eventList;
+	}
+
+	@Override
+	public List<String> getAppointmentsMeetingTitle(String patientEmail) {
+		return appointmentRepo.getAppointmentsMeetingTitle(patientEmail,true,false);
 	}
 
 }

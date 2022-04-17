@@ -1,0 +1,104 @@
+<h1>Nominee Details</h1>
+
+<!-- <mat-card class="example-card mb-5">
+    <mat-card-content>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3 col-sm-2"></div>
+          <div class="col col-md-6 col-sm-6 emp-register-form">
+            <div class="card shadow">
+              <div class="card-body">
+                <form [formGroup]="form" (submit)="editPatient()">
+                  <div class="row">
+                    <div class="form-group col col-3">
+                      <label class="col-form-label">Title:</label>
+                      <select class="dropdown-toggle" formControlName="nomineeTitle"
+                        [(ngModel)]="patient.nominee.title">
+                        <option value="" selected></option>
+                        <option *ngFor="let t of titles" value="{{ t }}">
+                          {{ t | titlecase }}
+                        </option>
+                      </select>
+                      <small *ngIf="nomineeTitle.touched && nomineeTitle.value === ''" class="text-danger">Please
+                        select title</small>
+                    </div>
+                    <div class="form-group col col-4">
+                      <label class="col-form-label">First Name:</label>
+                      <input formControlName="nomineeFirstName" type="text" class="form-control"
+                        [(ngModel)]="patient.nominee.firstName">
+                      <small *ngIf="nomineeFirstName.touched && nomineeFirstName.errors?.required"
+                        class="text-danger">First name is required</small>
+                    </div>
+                    <div class="form-group col col-5">
+                      <label class="col-form-label">Last Name:</label>
+                      <input formControlName="nomineeLastName" type="text" class="form-control"
+                      [(ngModel)]="patient.nominee.lastName">
+                      <small *ngIf="nomineeLastName.touched && nomineeLastName.errors?.required"
+                        class="text-danger">Last name is required</small>
+                    </div>
+                    <div class="form-group col col-5">
+                      <label class="col-form-label">Email Id:</label>
+                      <input type="email" formControlName="nomineeEmail" class="form-control"
+                        [(ngModel)]="patient.nominee.email">
+                      
+                      <div *ngIf="nomineeEmail.touched && nomineeEmail.errors">
+                        <small *ngIf="nomineeEmail.errors?.required" class="text-danger">Email is required</small>
+                        <small *ngIf="nomineeEmail.errors?.email" class="text-danger">Not a valid email id</small>
+                      </div>
+                    </div>
+
+                    <div class="form-group col col-5">
+                      <label class="col-form-label">Relationship:</label>
+                      <select formControlName="relationship" class="dropdown-toggle"
+                        [(ngModel)]="patient.nominee.relation">
+                        <option value="" selected>Select an option</option>
+                        <option value="Mother">Mother</option>
+                        <option value="Father">Father</option>
+                        <option value="Brother">Brother</option>
+                        <option value="Sister">Sister</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <small *ngIf="relationship?.invalid && relationship?.touched" class="text-danger">
+                        Relationship is Required</small>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-form-label">Phone Number:</label>
+                      <input formControlName="nomineePhone" type="text" class="form-control"
+                      [(ngModel)]="patient.nominee.phone">
+                      <small *ngIf="nomineePhone.touched && nomineePhone.errors?.required"
+                        class="text-danger">Phone Number is required</small>
+                      <small *ngIf="nomineePhone.touched && nomineePhone.errors?.pattern"
+                        class="text-danger">Enter 10 digit phone number</small>
+                    </div>
+                    <div class="form-group col col-5">
+                      <label class="col-form-label">Address:</label>
+                      <textarea formControlName="nomineeAddress" class="form-control"
+                        [(ngModel)]="patient.nominee.address"></textarea>
+                      <small *ngIf="nomineeAddress.touched && nomineeAddress.errors?.required"
+                        class="text-danger"> Address is Required(minimum length 10)
+                      </small>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="row">
+        <div class="col-md-4 col-sm-2"></div>
+        <div class="col-md-5 col-sm-6">
+          <button type="button" [disabled]="
+              form.invalid ||
+              title.value === '' ||
+              buttonLabel !== 'Edit' ||
+              emailExists"
+              class="btn btn-success" (click)="editPatient()">
+            {{ buttonLabel }}</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="reset" class="btn btn-danger">Clear</button>
+        </div>
+      </div>
+    </mat-card-actions>
+  </mat-card> -->

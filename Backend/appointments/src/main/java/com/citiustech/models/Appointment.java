@@ -24,35 +24,23 @@ public class Appointment {
 
 	private String editHistory;
 
-	private String patientName;
-
 	private String time;
 
 	private LocalDate aptDate;
 
 	private int empId;
-	
-	private boolean isDataCollectionAppt = false;
-	private boolean dataCollectionStatus = false;
 
-	public boolean isDataCollectionAppt() {
-		return isDataCollectionAppt;
-	}
+	private boolean isDataCollectionAppt=false;
 
-	public void setDataCollectionAppt(boolean isDataCollectionAppt) {
-		this.isDataCollectionAppt = isDataCollectionAppt;
-	}
+	private boolean dataStatus=false;
 
-	public boolean isDataCollectionStatus() {
-		return dataCollectionStatus;
-	}
-
-	public void setDataCollectionStatus(boolean dataCollectionStatus) {
-		this.dataCollectionStatus = dataCollectionStatus;
+	public Appointment() {
+		super();
 	}
 
 	public Appointment(int aptId, String meetingTitle, String description, String patientEmail, String physician,
-			String editHistory, String patientName, String time, LocalDate aptDate, int empId) {
+			String editHistory, String time, LocalDate aptDate, int empId, boolean isDataCollectionAppt,
+			boolean dataStatus) {
 		super();
 		this.aptId = aptId;
 		this.meetingTitle = meetingTitle;
@@ -60,22 +48,11 @@ public class Appointment {
 		this.patientEmail = patientEmail;
 		this.physician = physician;
 		this.editHistory = editHistory;
-		this.patientName = patientName;
 		this.time = time;
 		this.aptDate = aptDate;
 		this.empId = empId;
-	}
-
-	public Appointment() {
-		super();
-	}
-
-	public int getEmpId() {
-		return empId;
-	}
-
-	public void setEmpId(int empId) {
-		this.empId = empId;
+		this.isDataCollectionAppt = isDataCollectionAppt;
+		this.dataStatus = dataStatus;
 	}
 
 	public int getAptId() {
@@ -126,14 +103,6 @@ public class Appointment {
 		this.editHistory = editHistory;
 	}
 
-	public String getPatientName() {
-		return patientName;
-	}
-
-	public void setPatientName(String patientName) {
-		this.patientName = patientName;
-	}
-
 	public String getTime() {
 		return time;
 	}
@@ -148,6 +117,30 @@ public class Appointment {
 
 	public void setAptDate(LocalDate aptDate) {
 		this.aptDate = aptDate;
+	}
+
+	public int getEmpId() {
+		return empId;
+	}
+
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+
+	public boolean isDataCollectionAppt() {
+		return isDataCollectionAppt;
+	}
+
+	public void setDataCollectionAppt(boolean isDataCollectionAppt) {
+		this.isDataCollectionAppt = isDataCollectionAppt;
+	}
+
+	public boolean isDataStatus() {
+		return dataStatus;
+	}
+
+	public void setDataStatus(boolean dataStatus) {
+		this.dataStatus = dataStatus;
 	}
 
 }

@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private loginService: LoginService,
     private authenticationService: AuthenticationService,
-    private utilityService: UtilityService
+    private utilityService: UtilityService,
   ) { }
 
   get pass() {
@@ -69,10 +69,9 @@ export class LoginComponent implements OnInit {
             this.form.reset();
             let role = !this.user.role ? 'patient' : this.user.role.toLowerCase();
             this.authenticationService.authenticate(this.user).subscribe(res => {
-              console.log(res);
               sessionStorage.setItem('user', JSON.stringify(this.user));
-              sessionStorage.setItem('token', res);
-              this.router.navigate(role === 'patient' ? [role, 'demographics'] : [role]);
+              sessionStorage.setItem('token', res);              
+              this.router.navigate([role]);
             });
             break;
           case "BLOCKED":

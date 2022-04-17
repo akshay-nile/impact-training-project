@@ -18,4 +18,12 @@ public interface AppointmentService {
 	public int getEmployeeId(String physicianEmail);
 
 	public List<Map<String, String>> getCalendarAppointments();
+
+	public List<Appointment> getpastAppointments(String patientEmail);
+
+	public List<Appointment> upcomingAppointments(String patientEmail);
+
+	public List<Map<String, String>> getCalendarAppointmentsByPatientEmail(String email);
+
+	public List<String> getAppointmentsMeetingTitle(String patientEmail);
 }

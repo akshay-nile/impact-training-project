@@ -3,13 +3,13 @@
         <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
         <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
     </button>
-    <a style="margin-left: 20%;color: white;text-decoration: none;" routerLink="/nurse/dashboard"
-        routerLinkActive="active-link">Appointments</a>
-    <a style="margin-left: 5%;text-decoration: none;" routerLink="/nurse/notes" routerLinkActive="active-link">Notes</a>
+    <a *ngIf="showProfile" style="margin-left: 20%;text-decoration: none;" routerLink="/nurse/dashboard/appointment"
+        routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Appointments</a>
+    <a *ngIf="showProfile" style="margin-left: 5%;text-decoration: none;" routerLink="/nurse/dashboard/notes"
+        routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Notes</a>
+    <a *ngIf="!showProfile" style="margin-left: 20%;text-decoration: none;" routerLink="/nurse/dashboard/profile"
+        routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Profile</a>
     <span class="flexExpand"></span>
-    <div style="margin-right: 3%;">
-        <mat-icon matBadge="0">notifications</mat-icon>
-    </div>
     <div>
         <button mat-raised-button class="logout" (click)="logout()">Logout</button>
     </div>
@@ -18,20 +18,23 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
         <img class="avatar mat-elevation-z8" src="assets/profileImg.png" />
-
         <h4 class="name">{{userName}}</h4>
         <p class="designation">Nurse</p>
-
         <mat-divider></mat-divider>
-
-
-        <button mat-button class="menu-button" routerLink="/nurse/notes">
-            <mat-icon>note</mat-icon>
-            <span>Notes</span>
+        <button *ngIf="showProfile" mat-button class="menu-button" routerLink="/nurse/dashboard/profile"
+            (click)="updateProfile()">
+            <mat-icon>account_circle</mat-icon>
+            <span>Profile</span>
         </button>
-        <button mat-button class="menu-button" routerLink="/change-password">
-            <mat-icon>password</mat-icon>
-            <span>Change Password</span>
+        <button *ngIf="!showProfile" mat-button class="menu-button" routerLink="/nurse/dashboard/appointment"
+            (click)="updateProfile()">
+            <mat-icon style="margin-right: 1em;">home</mat-icon>
+            <span>Home</span>
+        </button>
+        <button *ngIf="!showProfile" mat-button class="menu-button" routerLink="/nurse/dashboard/notes"
+            (click)="updateProfile()">
+            <mat-icon style="margin-right: 1em;">note</mat-icon>
+            <span>Note</span>
         </button>
         <mat-divider></mat-divider>
 
@@ -41,70 +44,6 @@
         </button>
     </mat-sidenav>
     <mat-sidenav-content>
-        <div class="content mat-elevation-z8">
-            <div class="card-wrapper">
-                <div class="row">
-                    <div class="text-dark col-sm-9" style="font-size: 20px;margin-top: 2%;margin-bottom: 2%;">
-                        Appointments</div>
-                    <div class="col-sm-3" style="margin-right: 0%;padding-right: 0%;"><button mat-raised-button
-                            color="primary" (click)="bookAppointment()">Book an Appointment</button> </div>
-                    <mat-tab-group>
-                        <mat-tab label="Calender">
-                            <full-calendar *ngIf="initialise" [options]="calendarOptions"></full-calendar>
-                        </mat-tab>
-                        <mat-tab label="Upcoming Appointments">
-                            <mat-form-field appearance="standard">
-                                <mat-label>Search</mat-label>
-                                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Patient Name" #input>
-                            </mat-form-field>
-
-                            <div class="mat-elevation-z8">
-                                <table mat-table [dataSource]="dataSource" matSort class="table table-striped">
-                                    <ng-container matColumnDef="title">
-                                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
-                                        <td mat-cell *matCellDef="let row"> {{row.meetingTitle}} </td>
-                                    </ng-container>
-                                    <ng-container matColumnDef="physician">
-                                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Physician </th>
-                                        <td mat-cell *matCellDef="let row"> {{row.physician}} </td>
-                                    </ng-container>
-                                    <ng-container matColumnDef="patientEmail">
-                                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Patient </th>
-                                        <td mat-cell *matCellDef="let row"> {{row.patientEmail}} &nbsp;&nbsp;</td>
-                                    </ng-container>
-                                    <ng-container matColumnDef="date">
-                                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
-                                        <td mat-cell *matCellDef="let row">{{row.aptDate}} </td>
-                                    </ng-container>
-                                    <ng-container matColumnDef="action">
-                                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
-                                        <td mat-cell *matCellDef="let row"> <button class="btn btn-success"
-                                                (click)="viewDetails(row.aptId,row.patientEmail)">View</button>
-                                        </td>
-                                    </ng-container>
-                                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-                                        [ngClass]="{'todaysAppointment': row.aptDate==date }"></tr>
-                                    <!-- Row shown when there is no matching data. -->
-                                    <tr class="mat-row" *matNoDataRow>
-                                        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"
-                                        </td>
-                                    </tr>
-                                </table>
-                                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users">
-                                </mat-paginator>
-                            </div>
-                        </mat-tab>
-
-                    </mat-tab-group>
-
-
-
-
-
-                </div>
-            </div>
-            <router-outlet></router-outlet>
-        </div>
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

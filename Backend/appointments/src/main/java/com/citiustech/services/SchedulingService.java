@@ -19,14 +19,14 @@ public class SchedulingService {
 	@Autowired
 	private AppointmentRepository apptRepo;
 	
-	private List<TimeSlot> getTimeSlots(LocalDate aptDate, String email, boolean isDoctor) {
+	private List<TimeSlot> getTimeSlots(LocalDate aptDate, String email, int skip, boolean isDoctor) {
 		List<Appointment> appts = isDoctor ? apptRepo.findByAptDateAndPhysician(aptDate, email) : apptRepo.findByAptDateAndPatientEmail(aptDate, email);
-		return appts.stream().map(Appointment::getTime).map(TimeSlot::from).collect(Collectors.toList());
+		return appts.stream().filter(a -> a.getAptId() != skip).map(Appointment::getTime).map(TimeSlot::from).collect(Collectors.toList());
 	}
 
-	private List<TimeSlot> getFreeSlots(LocalDate aptDate, String physician, String patientEmail) {
-		List<TimeSlot> doctorSlots = getTimeSlots(aptDate, physician, true);
-		List<TimeSlot> patientSlots = getTimeSlots(aptDate, patientEmail, false);
+	private List<TimeSlot> getFreeSlots(LocalDate aptDate, String physician, String patientEmail, int skip) {
+		List<TimeSlot> doctorSlots = getTimeSlots(aptDate, physician, skip, true);
+		List<TimeSlot> patientSlots = getTimeSlots(aptDate, patientEmail, skip, false);
 		List<TimeSlot> dayLine = TimeSlot.getDayLine(30, aptDate.equals(LocalDate.now()));
 		for(int i = 0; i < dayLine.size(); i++) {
 			if(dayLine.get(i).overlapsAny(doctorSlots) || dayLine.get(i).overlapsAny(patientSlots)) {
@@ -43,12 +43,12 @@ public class SchedulingService {
 		return window;
 	}
 
-	public List<Window> getAvailabilityWindows(LocalDate aptDate, String patientEmail, String physician) {
+	public List<Window> getAvailabilityWindows(LocalDate aptDate, String patientEmail, String physician, int skip) {
 		if(aptDate.isBefore(LocalDate.now())) {
 			return List.of();
 		} 
 		
-		List<TimeSlot> freeSlots = getFreeSlots(aptDate, physician, patientEmail);
+		List<TimeSlot> freeSlots = getFreeSlots(aptDate, physician, patientEmail, skip);
 		List<Window> windows = new ArrayList<>();
 		Window window = null;
 		
