@@ -20,7 +20,6 @@ public class Medication {
 	
 	public Medication() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Medication(int medicationId, String medicationName, String dosage, String description) {

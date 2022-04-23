@@ -14,6 +14,13 @@ public class Window {
 		this.endTimes = new ArrayList<>();
 	}
 
+	public String getLabel() {
+		return label;
+	}
+	public void setLabel(String label) {
+		this.label = label;
+	}
+	
 	public List<String> getStartTimes() {
 		return startTimes;
 	}
@@ -22,10 +29,4 @@ public class Window {
 		return endTimes;
 	}
 
-	public String getLabel() {
-		return label;
-	}
-	public void setLabel(String label) {
-		this.label = label;
-	}
 }

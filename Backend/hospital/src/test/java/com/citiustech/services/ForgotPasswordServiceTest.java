@@ -26,9 +26,6 @@ import com.citiustech.models.Verification;
 import com.citiustech.repositories.EmployeeRepository;
 import com.citiustech.repositories.PatientRepository;
 import com.citiustech.repositories.VerificationRepository;
-import com.citiustech.services.EmailSenderService;
-import com.citiustech.services.ForgotPasswordService;
-import com.citiustech.services.LoginService;
 
 @ExtendWith(MockitoExtension.class)
 class ForgotPasswordServiceTest {
@@ -83,7 +80,7 @@ class ForgotPasswordServiceTest {
 	@DisplayName("Test Method to send OTP")
 	public void givenEmailToSendOTP() {
 		when(patientRepo.findByEmail(any())).thenReturn(patient);
-		when(emailSenderService.sendEmail(any(), any(), any())).thenReturn(true);
+		when(emailSenderService.sendEmail(any(), any(), any())).thenReturn(any());
 		assertTrue(forgotPasswordService.sendOtpEmail(email));
 		verify(emailSenderService, times(1)).sendEmail(any(), any(), any());
 		verify(patientRepo, times(1)).findByEmail(any());

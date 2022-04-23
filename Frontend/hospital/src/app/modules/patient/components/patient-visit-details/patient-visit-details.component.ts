@@ -20,7 +20,7 @@ export class PatientVisitDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.user.demographics == null || this.user.nominee == null) {
+    if (this.user.demographics == null || this.user.nominee == null || this.user.allergy == null) {
       setTimeout(() => {
         alert("Please complete your profile first !")
         this.router.navigate(['patient', 'dashboard', 'profile']);

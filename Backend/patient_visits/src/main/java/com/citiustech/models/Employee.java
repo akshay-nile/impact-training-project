@@ -9,7 +9,7 @@ import com.citiustech.models.constants.Title;
 
 public class Employee {
 
-	private int employeeId;
+	private String employeeId;
 
 	private Title title;
 
@@ -107,11 +107,11 @@ public class Employee {
 		this.role = role;
 	}
 
-	public int getEmployeeId() {
+	public String getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(int employeeId) {
+	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
 	}
 }

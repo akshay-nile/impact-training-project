@@ -18,17 +18,14 @@ import { LoginService } from 'src/app/services/login.service';
 export class ProfileComponent implements OnInit {
   message: string = '';
   messageFlag: boolean = false;
-  userCredential = new UserCredential();
-  isOldPasswordCorrect: boolean = false;
   userId: number;
   form!: FormGroup;
-  emailExists = false;
   buttonLabel = "Edit";
   titles = 'Mr Ms Mrs Dr'.split(' ');
   roles = 'NURSE DOCTOR ADMIN'.split(' ');
   employee = new Employee();
   isDisable = true;
-  attempts = 3;
+  
   constructor(private snackbar: MatSnackBar,
     private router: Router,
     private loginService: LoginService,
@@ -73,21 +70,16 @@ export class ProfileComponent implements OnInit {
       title: new FormControl(''),
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.email]),
+      email: new FormControl({ value: '', disabled: true }),
       birthdate: new FormControl('', [Validators.required]),
       specialization: new FormControl('', [Validators.maxLength(10)]),
-      role: new FormControl({ value: 'NURSE', disabled: true }, [Validators.required]),
+      role: new FormControl({ value: 'NURSE', disabled: true }),
     });
-  }
-
-  onEmailEntered() {
-    if (this.email.valid) {
-      this.utilityService.emailExists(this.form.value.email).subscribe(res => this.emailExists = res);
-    }
   }
 
   editEmployee() {
     this.buttonLabel = "Updating..."
+    console.log(this.employee);
     this.adminService.updateEmployee(this.employee).subscribe(res => {
       this.buttonLabel = 'Edit';
       if (res != null && res.employeeId > 0) {
@@ -95,48 +87,4 @@ export class ProfileComponent implements OnInit {
       }
     });
   }
-
-  confirmPasswordForm = new FormGroup({
-    oldpassword: new FormControl('', [Validators.required, passwordValidator, Validators.minLength(8)]),
-    password: new FormControl('', [Validators.required, passwordValidator]),
-    confirmPassword: new FormControl('', [Validators.required])
-  }, confirmPassword('password', 'confirmPassword'));
-
-  get f() {
-    return this.confirmPasswordForm.controls;
-  }
-
-  get cpass() {
-    return this.confirmPasswordForm.controls.confirmPassword;
-  }
-
-
-  backToLogin() {
-    this.router.navigate(['login']);
-  }
-
-  submit() {
-    this.userCredential.email = this.employee.email;
-    this.userCredential.oldPassword = this.confirmPasswordForm.value.oldpassword;
-    this.userCredential.newPassword = this.confirmPasswordForm.value.confirmPassword;
-    this.utilityService.changeUserPassword(this.userCredential).subscribe((result) => {
-      if (!result) {
-        if (--this.attempts == 0) {
-          this.loginService.blockAccount(this.form.value.email).subscribe(res =>
-            this.message = "Account is Blocked!"
-          );
-        } else {
-          this.confirmPasswordForm.reset();
-          this.message = "Kindly provide correct old password";
-        }
-      }
-      else{
-        this.snackbar.open("Your password has been successfully updated. You may now login your account", "", { duration: 3000 });
-        sessionStorage.clear();
-        this.router.navigate(['login']);  
-      }
-    }
-      , (err: Error) => this.message = err.message);
-  }
-
 }

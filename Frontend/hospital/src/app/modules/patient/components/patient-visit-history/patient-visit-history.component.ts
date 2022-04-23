@@ -15,6 +15,7 @@ import { PatientVisitService } from 'src/app/services/Patient-visit.service';
 import { Vitals } from 'src/app/models/Vitals';
 import { VisitReport } from 'src/app/models/VisitReport';
 import { Procedure } from 'src/app/models/Procedure';
+import { UtilityService } from 'src/app/services/utility.service';
 
 @Component({
   selector: 'app-patient-visit-history',
@@ -23,14 +24,14 @@ import { Procedure } from 'src/app/models/Procedure';
 })
 export class PatientVisitHistoryComponent implements OnInit {
 
-  displayedColumns: string[] = ['title', 'physician', 'patientEmail', 'date', 'action'];
+  displayedColumns: string[] = ['title', 'employeeName', 'date', 'time', 'action'];
   dataSource: MatTableDataSource<Appointment>;
   date: string;
   todaysAppointment = "todaysAppointment";
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  appointment = new Appointment();
+  appointment: any;
   appointments: Appointment[] = [];
   patientId1: number;
   showReport: boolean;
@@ -41,12 +42,14 @@ export class PatientVisitHistoryComponent implements OnInit {
   vital = new Vitals();
   apt = new Appointment();
   procedures: Procedure[];
+  allEmployeeNames = [];
 
   constructor(
     private datePipe: DatePipe,
     private appointmentService: AppointmentService,
     private patientVisitService: PatientVisitService,
     private router: Router,
+    private utilityService: UtilityService,
     private dialog: MatDialog
   ) {
     this.user = JSON.parse(sessionStorage.getItem('user'));
@@ -64,14 +67,23 @@ export class PatientVisitHistoryComponent implements OnInit {
   }
 
   getAllAppointments() {
-    this.appointmentService.getPastAppointmentByPatientEmail(this.user.email).subscribe((result) => {
-      this.dataSource = new MatTableDataSource(result);
-      if (this.dataSource != null) {
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-      }
+    this.appointmentService.getPastAppointmentByPatientId(this.user.patientId).subscribe(appts => {
+      this.utilityService.getAllPhysicians().subscribe(employees => {
+        this.allEmployeeNames = employees;
+        for (let a of appts) {
+          a['employeeName'] = this.allEmployeeNames.find(e => e.employeeId == a.employeeId).name
+          a['employeeEmail'] = this.allEmployeeNames.find(e => e.employeeId == a.employeeId).email
+          a['patientEmail'] = this.user.email;
+        }
+        this.dataSource = new MatTableDataSource(appts);
+        if (this.dataSource != null) {
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+        }
+      });
     })
   }
+
   viewDetails(appointment: any) {
     this.showReport = true;
     this.patientVisitService.getVisitReportDetails(appointment).subscribe((result) => {
@@ -99,7 +111,7 @@ export class PatientVisitHistoryComponent implements OnInit {
       var doc = new jspdf();
       var imgHeight = canvas.height * 208 / canvas.width;
       doc.addImage(imgData, 0, 0, 208, 250);
-      doc.save("Report.pdf");
+      doc.save("Report_"+Date.now()+".pdf");
     });
     this.showReport = false;
   }

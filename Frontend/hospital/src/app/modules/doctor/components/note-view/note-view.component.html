@@ -1,0 +1,21 @@
+<div class="card mb-4 mt-4" style="width: 600px">
+  <div class="text-center">
+    <h1 class="text-dark text-muted mb-3 mt-4"> Note Details</h1>
+  </div>
+
+  <mat-card class="example-card">
+    <mat-card-title-group>
+      <mat-card-title>{{data.nameToOrFrom}}</mat-card-title>
+    </mat-card-title-group>
+
+    <mat-card-content>
+      <br>
+      Message : {{data.note.message}}
+      <br><br>
+      Sent On : {{data.note.date}}
+      <br><br>
+      Urgency Level : <b>{{data.note.urgencyLevel}}</b>
+      <br><br>
+    </mat-card-content>
+  </mat-card>
+</div>

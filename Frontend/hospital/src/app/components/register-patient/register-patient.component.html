@@ -78,7 +78,7 @@
 
                         <div class="form-group">
                             <label for="password" class="col-form-label">Password:</label>
-                            <input formControlName="password" id="password" autocomplete="off" class="form-control">
+                            <input formControlName="password" type="password" id="password" autocomplete="off" class="form-control">
                             <div *ngIf="pass.touched && pass.errors">
                                 <small *ngIf="pass.errors?.required" class="text-danger">Password is
                                     required</small>
@@ -90,7 +90,7 @@
 
                         <div class="form-group">
                             <label for="confirmPass" class="col-form-label">Confirm Password:</label>
-                            <input formControlName="confirmPass" id="confirmPass" autocomplete="off"
+                            <input formControlName="confirmPass" type="password" id="confirmPass" autocomplete="off"
                                 class="form-control">
                             <div *ngIf="cpass.touched && (cpass.errors || form.errors)">
                                 <small *ngIf="cpass.errors?.required" class="text-danger">Password confirmation is

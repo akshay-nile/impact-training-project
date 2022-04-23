@@ -1,0 +1,14 @@
+{
+	"appointmentId": 2,
+	"dataCollectionStatus": true,
+	"description": "def",
+	"editHistory": "Requested by Mr. Tejas Gaikar (Patient) on 2022-04-21",
+	"editedBy": "P0005",
+	"employeeEmail": "tom@gmail.com",
+	"employeeId": "2",
+	"patientEmail": "tejas.gaikar@citiustech.com",
+	"patientId": "P0005",
+	"status": "ATTENDED",
+	"time": "05:00 PM to 06:00 PM",
+	"title": "abc"
+}

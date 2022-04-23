@@ -3,15 +3,19 @@
     <div class="row"></div>
     <mat-tab-group>
       <mat-tab label="Profile Details">
-        <patient-profile-details [user]="user"></patient-profile-details>
+        <patient-profile-details [user]="user" (update)="updatePatientDetails($event)"></patient-profile-details>
       </mat-tab>
 
       <mat-tab label="Demographic Details">
-        <patient-demographic-details [user]="user"></patient-demographic-details>
+        <patient-demographic-details [user]="user" (update)="updateDemographicDetails($event)"></patient-demographic-details>
       </mat-tab>
 
       <mat-tab label="Nominee Details">
-        <patient-nominee-details [user]="user"></patient-nominee-details>
+        <patient-nominee-details [user]="user" (update)="updateNomineeDetails($event)"></patient-nominee-details>
+      </mat-tab>
+
+      <mat-tab label="Allergy Details">
+        <patient-allergy-details [user]="user" (update)="updateAllergyDetails($event)"></patient-allergy-details>
       </mat-tab>
 
       <mat-tab label="Change Password">

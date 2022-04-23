@@ -7,7 +7,7 @@ import com.citiustech.models.constants.Title;
 
 public class Patient {
 
-	private int patientId;
+	private String patientId;
 
 	private Title title;
 
@@ -37,11 +37,11 @@ public class Patient {
 		this.nominee = nominee;
 	}
 
-	public int getPatientId() {
+	public String getPatientId() {
 		return patientId;
 	}
 
-	public void setPatientId(int patientId) {
+	public void setPatientId(String patientId) {
 		this.patientId = patientId;
 	}
 

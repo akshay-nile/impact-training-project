@@ -4,67 +4,50 @@ import java.time.LocalDate;
 
 public class Appointment {
 
-	private int aptId;
+	private int appointmentId;
 
-	private String meetingTitle;
-
+	private String title;
 	private String description;
 
 	private String patientEmail;
+	private String employeeEmail;
+	private String patientId;
+	private String employeeId;
+	private String employeeName;
 
-	private String physician;
-
-	private String editHistory;
-
-	private String patientName;
-
+	private LocalDate date;
 	private String time;
 
-	private LocalDate aptDate;
-
-	private int empId;
-
-	public Appointment(int aptId, String meetingTitle, String description, String patientEmail, String physician,
-			String editHistory, String patientName, String time, LocalDate aptDate, int empId) {
-		super();
-		this.aptId = aptId;
-		this.meetingTitle = meetingTitle;
-		this.description = description;
-		this.patientEmail = patientEmail;
-		this.physician = physician;
-		this.editHistory = editHistory;
-		this.patientName = patientName;
-		this.time = time;
-		this.aptDate = aptDate;
-		this.empId = empId;
+	public String getEmployeeName() {
+		return employeeName;
 	}
 
-	public Appointment() {
-		super();
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
 	}
 
-	public int getEmpId() {
-		return empId;
+	private String status;
+
+	private String editHistory;
+	private String editedBy;
+
+	private boolean isDataCollectionAppt = false;
+	private boolean dataCollectionStatus = false;
+
+	public int getAppointmentId() {
+		return appointmentId;
 	}
 
-	public void setEmpId(int empId) {
-		this.empId = empId;
+	public void setAppointmentId(int appointmentId) {
+		this.appointmentId = appointmentId;
 	}
 
-	public int getAptId() {
-		return aptId;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setAptId(int aptId) {
-		this.aptId = aptId;
-	}
-
-	public String getMeetingTitle() {
-		return meetingTitle;
-	}
-
-	public void setMeetingTitle(String meetingTitle) {
-		this.meetingTitle = meetingTitle;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getDescription() {
@@ -83,28 +66,35 @@ public class Appointment {
 		this.patientEmail = patientEmail;
 	}
 
-	public String getPhysician() {
-		return physician;
+	public String getEmployeeEmail() {
+		return employeeEmail;
+	}
+	public String getPatientId() {
+		return patientId;
 	}
 
-	public void setPhysician(String physician) {
-		this.physician = physician;
+	public void setPatientId(String patientId) {
+		this.patientId = patientId;
 	}
 
-	public String getEditHistory() {
-		return editHistory;
+	public String getEmployeeId() {
+		return employeeId;
 	}
 
-	public void setEditHistory(String editHistory) {
-		this.editHistory = editHistory;
+	public void setEmployeeId(String employeeId) {
+		this.employeeId = employeeId;
 	}
 
-	public String getPatientName() {
-		return patientName;
+	public void setEmployeeEmail(String employeeEmail) {
+		this.employeeEmail = employeeEmail;
 	}
 
-	public void setPatientName(String patientName) {
-		this.patientName = patientName;
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
 	}
 
 	public String getTime() {
@@ -115,12 +105,43 @@ public class Appointment {
 		this.time = time;
 	}
 
-	public LocalDate getAptDate() {
-		return aptDate;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setAptDate(LocalDate aptDate) {
-		this.aptDate = aptDate;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
+	public String getEditHistory() {
+		return editHistory;
+	}
+
+	public void setEditHistory(String editHistory) {
+		this.editHistory = editHistory;
+	}
+
+	public String getEditedBy() {
+		return editedBy;
+	}
+
+	public void setEditedBy(String editedBy) {
+		this.editedBy = editedBy;
+	}
+
+	public boolean isDataCollectionAppt() {
+		return isDataCollectionAppt;
+	}
+
+	public void setDataCollectionAppt(boolean isDataCollectionAppt) {
+		this.isDataCollectionAppt = isDataCollectionAppt;
+	}
+
+	public boolean isDataCollectionStatus() {
+		return dataCollectionStatus;
+	}
+
+	public void setDataCollectionStatus(boolean dataCollectionStatus) {
+		this.dataCollectionStatus = dataCollectionStatus;
+	}
 }

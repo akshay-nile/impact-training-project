@@ -8,24 +8,17 @@
         </div>
         <mat-tab-group>
             <mat-tab label="All">
-                <ng-container *ngFor="let note of notes">
+                <ng-container *ngFor="let note of notes.reverse()">
                     <mat-card class="example-card mb-5">
                         <mat-card-content>
                             <h2>
-                                Note Sent To : {{note.sendTo}}
+                                {{getSentToNameByEmail(note)}}
                             </h2>
-                            <p>
-                                Designation : {{note.designation}}
-                            </p>
-                            <p>
-                                Message : {{note.message}}
-                            </p>
-                            <p>
-                                Urgency Level : {{note.urgencyLevel}}
-                            </p>
+                            <p><b>Message: </b>{{note.message}}</p>
+                            <p><b>Urgency Level: </b>{{note.urgencyLevel.replace('_',' ') | titlecase}}</p>
                         </mat-card-content>
                         <mat-card-actions>
-                            <button mat-raised-button class="btn-success" (click)="viewNote(note.noteId)">View</button>
+                            <button mat-raised-button class="btn-success" (click)="viewNote(note)">View</button>
                         </mat-card-actions>
                     </mat-card>
                 </ng-container>

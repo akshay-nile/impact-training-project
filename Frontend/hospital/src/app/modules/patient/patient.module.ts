@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { PatientRoutingModule } from './patient-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { EmergencyContactInfoComponent } from './components/emergencycontactinfo/emergencycontactinfo.component';
-import { DemographicsComponent } from './components/demographics/demographics.component';
 import { PatientVisitDetailsComponent } from './components/patient-visit-details/patient-visit-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,9 +23,9 @@ import {MatDialogModule} from "@angular/material/dialog";
 import { FullCalendarModule } from '@fullcalendar/angular'; 
 import dayGridPlugin from '@fullcalendar/daygrid'; 
 import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
-import {ScheduleModule, DayService, WeekService, WorkWeekService,TimelineMonthService, MonthService,TimelineViewsService,MonthAgendaService, AgendaService } from '@syncfusion/ej2-angular-schedule';
+import {ScheduleModule,} from '@syncfusion/ej2-angular-schedule';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import { MatFormFieldModule } from '@angular/material/form-field';MatInputModule
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -42,6 +40,8 @@ import { ProfileDetailsComponent } from './components/profile/profile-details/pr
 import { DemographicDetailsComponent } from './components/profile/demographic-details/demographic-details.component';
 import { NomineeDetailsComponent } from './components/profile/nominee-details/nominee-details.component';
 import { ChangePasswordComponent } from './components/profile/change-password/change-password.component';
+import { AllergyDetailsComponent } from './components/profile/allergy-details/allergy-details.component';
+import { AskReasonComponent } from './components/ask-reason/ask-reason.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -51,8 +51,6 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 @NgModule({
   declarations: [
     DashboardComponent,
-    EmergencyContactInfoComponent,
-    DemographicsComponent,
     PatientVisitDetailsComponent,
     AppointmentComponent,
     PatientVisitHistoryComponent,
@@ -63,7 +61,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ProfileDetailsComponent,
     DemographicDetailsComponent,
     NomineeDetailsComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    AllergyDetailsComponent,
+    AskReasonComponent
   ],
   imports: [
     CommonModule,

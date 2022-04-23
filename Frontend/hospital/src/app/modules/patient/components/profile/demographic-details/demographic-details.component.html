@@ -23,18 +23,19 @@
                   <option [value]="'MALE'">Male</option>
                   <option [value]="'FEMALE'">Female</option>
                 </select>
-                <small *ngIf="gender.touched && gender.value === ''" class="text-danger">Please select
+                <small *ngIf="f('gender').touched && f('gender').value === ''" class="text-danger">Please select
                   Gender</small>
               </div>
               <div class="form-group col col-md-4 col-sm-12">
                 <label class="col-form-label">Language:</label>
                 <select class="dropdown-toggle" formControlName="language">
-                  <option value=""></option>
+                  <option [value]="null"></option>
                   <option *ngFor="let lang of languages" [value]="lang">
-                    {{ lang | titlecase }}
+                    {{ lang.replace('_',' ') }}
                   </option>
                 </select>
-                <small *ngIf="language.touched && language.value === ''" class="text-danger">Please select
+                <small *ngIf="f('language').enabled && f('language').touched && f('language').value == null"
+                  class="text-danger">Please select
                   Language</small>
               </div>
             </div>
@@ -43,26 +44,53 @@
               <div class="form-group col col-md-6 col-sm-12">
                 <label class="col-form-label">Race:</label>
                 <input formControlName="race" type="text" class="form-control">
-                <small *ngIf="race.touched && race.errors?.required" class="text-danger">Race is
+                <small *ngIf="f('race').touched && f('race').errors?.required" class="text-danger">Race is
                   required</small>
               </div>
               <div class="form-group col col-md-6 col-sm-12">
                 <label class="col-form-label">Ethnicity:</label>
                 <input formControlName="ethnicity" type="text" class="form-control">
-                <small *ngIf="ethnicity.touched && ethnicity.errors?.required" class="text-danger">Ethnicity
+                <small *ngIf="f('ethnicity').touched && f('ethnicity').errors?.required" class="text-danger">Ethnicity
                   is required</small>
               </div>
             </div>
 
-            <!-- <div class="form-group col col-5">
-                      <label class="col-form-label">Address:</label>
-                      <textarea formControlName="address" class="form-control"
-                        [(ngModel)]="patient.demographics.address"></textarea>
-                      <small *ngIf="address.touched && address.errors?.required" class="text-danger"> Address is
-                        Required(minimum length 10)
-                      </small>
-                    </div>
-                  </div> -->
+            <div class="row">
+              <label class="col-form-label">Address:</label>
+              <form [formGroup]="addressForm" class="form-group">
+                <div class="form-group col col-md-12 col-sm-12">
+                  <input formControlName="street" type="text" class="form-control" placeholder="Street">
+                </div>
+                <div class="form-group col col-md-12 col-sm-12 mt-3">
+                  <input formControlName="landmark" type="text" class="form-control" placeholder="Landmark">
+                </div>
+                <div class="form-group col col-md-12 col-sm-12 mt-3">
+                  <input formControlName="city" type="text" class="form-control" placeholder="City">
+                </div>
+                <div class="form-group col col-md-12 col-sm-12 mt-3">
+                  <input formControlName="state" type="text" class="form-control" placeholder="State">
+                </div>
+                <div class="form-group col col-md-12 col-sm-12 mt-3">
+                  <input formControlName="pincode" type="text" class="form-control" placeholder="Pincode">
+                </div>
+              </form>
+            </div>
+
+            <div class="row" *ngIf="!editMode">
+              <div class="col-md-12 col-sm-12 text-center">
+                <button class="btn btn-primary" (click)="setEditMode(true)">
+                  {{user.demographics == null ? "Add" : "Edit"}} Details
+                </button>
+              </div>
+            </div>
+
+            <div class="row" *ngIf="editMode">
+              <div class="col-md-12 col-sm-12 text-center">
+                <button [disabled]="form.invalid || addressForm.invalid" class="btn btn-success"
+                  (click)="emitDemographicsUpdateEvent()">Update</button>
+                <button class="btn btn-danger" (click)="setEditMode(false)">Cancel</button>
+              </div>
+            </div>
           </form>
         </div>
       </div>

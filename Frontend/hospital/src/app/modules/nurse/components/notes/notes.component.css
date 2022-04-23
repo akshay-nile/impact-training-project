@@ -68,3 +68,11 @@ mat-toolbar {
   .flexExpand {
     flex: 1 1 auto;
 }
+
+p {
+  font-size: 12pt;
+}
+
+b {
+  margin-right: 0.5em;
+}

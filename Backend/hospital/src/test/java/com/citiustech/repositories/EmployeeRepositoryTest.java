@@ -34,6 +34,7 @@ class EmployeeRepositoryTest {
 		credential.put("email","tejas.gaikar@gmail.com");
 		credential.put("password","Tejas123");
 		employee = new Employee();
+		employee.setEmployeeId("EOOO1");
 		employee.setFirstName("Tejas");
 		employee.setLastName("Gaikar");
 		employee.setEmail(email);
@@ -55,6 +56,7 @@ class EmployeeRepositoryTest {
 		assertEquals(email, employeetData.getEmail());
 		assertEquals("Tejas", employeetData.getFirstName());
 		employeeRepo.deleteAll();
+		assertEquals(0, employeeRepo.findAll().size());
 	}
 
 	@Test
@@ -66,5 +68,6 @@ class EmployeeRepositoryTest {
 		assertEquals(email, employeetData.getEmail());
 		assertEquals("Tejas", employeetData.getFirstName());
 		employeeRepo.deleteAll();
+		assertEquals(0, employeeRepo.findAll().size());
 	}
 }

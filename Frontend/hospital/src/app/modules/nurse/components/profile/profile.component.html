@@ -1,173 +1,91 @@
 <div class="content mat-elevation-z8">
     <div class="card-wrapper">
-        <div class="row">
-        </div>
         <mat-tab-group>
             <mat-tab label="Profile Details">
-                <mat-card class="example-card mb-5">
-                    <mat-card-content>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-3 col-sm-2"></div>
-                                <div class="col col-md-6 col-sm-6 emp-register-form">
-                                    <div class="card shadow">
-                                        <div class="card-body">
-                                            <form [formGroup]="form" (submit)="editEmployee()">
-                                                <div class="row">
-                                                    <div class="form-group col col-3">
-                                                        <label class="col-form-label">Title:</label>
-                                                        <select class="dropdown-toggle" formControlName="title"
-                                                            [(ngModel)]="employee.title">
-                                                            <option value='' selected></option>
-                                                            <option *ngFor="let t of titles" value="{{t}}">{{t |
-                                                                titlecase}}
-                                                            </option>
-                                                        </select>
-                                                        <small *ngIf="title.touched && title.value === ''"
-                                                            class="text-danger">Please select
-                                                            title</small>
-                                                    </div>
-                                                    <div class="form-group col col-4">
-                                                        <label class="col-form-label">First Name:</label>
-                                                        <input formControlName="firstName" type="text"
-                                                            class="form-control" [(ngModel)]="employee.firstName">
-                                                        <small *ngIf="first.touched && first.errors?.required"
-                                                            class="text-danger">First
-                                                            name
-                                                            is required</small>
-                                                    </div>
-                                                    <div class="form-group col col-5">
-                                                        <label class="col-form-label">Last Name:</label>
-                                                        <input formControlName="lastName" type="text"
-                                                            class="form-control" [(ngModel)]="employee.lastName">
-                                                        <small *ngIf="last.touched && last.errors?.required"
-                                                            class="text-danger">Last
-                                                            name is
-                                                            required</small>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="form-group col col-4">
-                                                        <label class="col-form-label">Role:</label>
-                                                        <select class="dropdown-toggle" formControlName="role"
-                                                            [(ngModel)]="employee.role">
-                                                            <option *ngFor="let r of roles">{{r}}
-                                                            </option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="email" class="col-form-label">Email Id:</label>
-                                                    <input type="text" formControlName="email" id="email"
-                                                        (blur)="onEmailEntered()" class="form-control"
-                                                        [(ngModel)]="employee.email">
-                                                    <div *ngIf="email.touched && email.errors">
-                                                        <small *ngIf="email.errors?.required" class="text-danger">Email
-                                                            is
-                                                            required</small>
-                                                        <small *ngIf="email.errors?.email" class="text-danger">Not a
-                                                            valid email
-                                                            id</small>
-                                                    </div>
-                                                    <small *ngIf="email.dirty && !email.errors && emailExists"
-                                                        class="text-danger">Email is
-                                                        already used</small>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-form-label">Date of Birth:</label>
-                                                    <input formControlName="birthdate" type="date" class="form-control"
-                                                        max="{{today}}" [(ngModel)]="employee.birthdate">
-                                                    <small *ngIf="dob.touched && dob.errors?.required"
-                                                        class="text-danger">Date of
-                                                        Birth is
-                                                        required</small>
-                                                </div>
-                                            </form>
+                <div class="container-fluid mt-4">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-2"></div>
+                        <div class="col col-md-6 col-sm-6 emp-register-form">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <form [formGroup]="form" (submit)="editEmployee()">
+                                        <div class="row">
+                                            <div class="form-group col col-3">
+                                                <label class="col-form-label">Title:</label>
+                                                <select class="dropdown-toggle" formControlName="title"
+                                                    [(ngModel)]="employee.title">
+                                                    <option value='' selected></option>
+                                                    <option *ngFor="let t of titles" value="{{t}}">{{t |
+                                                        titlecase}}
+                                                    </option>
+                                                </select>
+                                                <small *ngIf="title.touched && title.value === ''"
+                                                    class="text-danger">Please select
+                                                    title</small>
+                                            </div>
+                                            <div class="form-group col col-4">
+                                                <label class="col-form-label">First Name:</label>
+                                                <input formControlName="firstName" type="text" class="form-control"
+                                                    [(ngModel)]="employee.firstName">
+                                                <small *ngIf="first.touched && first.errors?.required"
+                                                    class="text-danger">First
+                                                    name
+                                                    is required</small>
+                                            </div>
+                                            <div class="form-group col col-5">
+                                                <label class="col-form-label">Last Name:</label>
+                                                <input formControlName="lastName" type="text" class="form-control"
+                                                    [(ngModel)]="employee.lastName">
+                                                <small *ngIf="last.touched && last.errors?.required"
+                                                    class="text-danger">Last
+                                                    name is
+                                                    required</small>
+                                            </div>
                                         </div>
-                                    </div>
+                                        <div class="row">
+                                            <div class="form-group col col-4">
+                                                <label class="col-form-label">Role:</label>
+                                                <select class="dropdown-toggle" formControlName="role"
+                                                    [(ngModel)]="employee.role">
+                                                    <option *ngFor="let r of roles">{{r}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email" class="col-form-label">Email Id:</label>
+                                            <input type="text" formControlName="email" id="email" class="form-control"
+                                                [(ngModel)]="employee.email" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Date of Birth:</label>
+                                            <input formControlName="birthdate" type="date" class="form-control"
+                                                max="{{today}}" [(ngModel)]="employee.birthdate">
+                                            <small *ngIf="dob.touched && dob.errors?.required" class="text-danger">Date
+                                                of
+                                                Birth is
+                                                required</small>
+                                        </div>
+
+                                        <div class="row form-group mb-1 mt-1">
+                                            <div class="col col-md-12 text-center">
+                                                <button type="button"
+                                                    [disabled]="form.invalid || title.value === '' || buttonLabel !== 'Edit'"
+                                                    class="btn btn-success"
+                                                    (click)="editEmployee()">{{buttonLabel}}</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <button type="reset" class="btn btn-danger">Clear</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
-                        </div>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-2"></div>
-                            <div class="col-md-5 col-sm-6">
-                                <button type="button"
-                                    [disabled]="form.invalid || title.value === '' || buttonLabel !== 'Edit' || emailExists"
-                                    class="btn btn-success"
-                                    (click)="editEmployee()">{{buttonLabel}}</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button type="reset" class="btn btn-danger">Clear</button>
-                            </div>
-                        </div>
-                    </mat-card-actions>
-                </mat-card>
-            </mat-tab>
-            <mat-tab label="Change Password">
-                <mat-card class="example-card mb-2">
-                    <div class="container-fluid">
-                        <div class="row mt-5">
-                            <div class="col-md-3 col-sm-2"></div>
-                            <div class="col-md-5 col-sm-6">
-                                <div class="card shadow">
-                                    <div class="card-body">
-                                        <form [formGroup]="confirmPasswordForm" (ngSubmit)="submit()">
-                                            <div class="mb-3">
-                                                <h4 class="text-dark text-muted">Change Password</h4>
-                                            </div>
-                                            <div class="form-group mb-3">
-                                                <label for="oldpassword" class="form-label">Old Password</label>
-                                                <input autocomplete="off" formControlName="oldpassword"
-                                                    name="oldpassword" id="oldpassword" type="password"
-                                                    class="form-control">
-                                                <div *ngIf="f['oldpassword'].touched && f['oldpassword'].invalid">
-                                                    <div *ngIf="f['oldpassword'].errors && f['oldpassword'].errors['required']"
-                                                        class="text-danger">This field cannot be empty</div>
-                                                    <div *ngIf="f['oldpassword'].errors!['isValid']"
-                                                        class="text-danger">Password entry does
-                                                        not meet criteria</div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group mb-3">
-                                                <label for="password" class="form-label">New Password</label>
-                                                <input autocomplete="off" formControlName="password" name="password"
-                                                    id="password" type="password" class="form-control">
-                                                <div *ngIf="f['password'].touched && f['password'].invalid">
-                                                    <div *ngIf="f['password'].errors && f['password'].errors['required']"
-                                                        class="text-danger">This field cannot be empty</div>
-                                                    <div *ngIf="f['password'].errors!['isValid']" class="text-danger">
-                                                        Password entry does
-                                                        not meet criteria</div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group mb-3">
-                                                <label for="confirmPassword" class="form-label">Confirm Password</label>
-                                                <input autocomplete="off" formControlName="confirmPassword"
-                                                    name="confirmPassword" id="confirmPassword" type="password"
-                                                    class="form-control">
-                                                <div
-                                                    *ngIf="f['confirmPassword'].touched">
-                                                    <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['required']"
-                                                        class="text-danger">This field cannot be empty</div>
-                                                    <small
-                                                        *ngIf="!cpass.errors?.required && confirmPasswordForm.errors?.areEqual"
-                                                        class="text-danger">Confirm password not
-                                                        matched with the above password</small>
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-success otp"
-                                                [disabled]="confirmPasswordForm.invalid">Change
-                                                Password</button>
-                                        </form>
-                                        <div *ngIf="message !== ''" class="errorMessage text-danger mt-4">{{message}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col"></div>
                         </div>
                     </div>
-                </mat-card>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Change Password">
+                <nurse-change-password [user]="employee"></nurse-change-password>
             </mat-tab>
         </mat-tab-group>
     </div>

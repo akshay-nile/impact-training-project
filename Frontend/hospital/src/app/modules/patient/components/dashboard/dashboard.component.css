@@ -38,6 +38,10 @@ mat-toolbar {
   mat-sidenav-container {
     height: calc(100vh - 100px);
   }
+
+  mat-icon {
+    margin-right: 0.5em;
+  }
   
   .menu-button {
     width: 100%;

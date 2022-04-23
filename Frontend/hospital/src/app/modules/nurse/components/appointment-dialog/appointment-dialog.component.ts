@@ -1,8 +1,9 @@
 import { DatePipe, formatDate } from '@angular/common';
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { from } from 'rxjs';
 import { AppointmentService } from 'src/app/services/appointment.service';
 import { UtilityService } from 'src/app/services/utility.service';
 import { indexValidator } from 'src/app/validators/select-field.validator';
@@ -14,30 +15,43 @@ import { noSpaceValidator } from 'src/app/validators/text-field.validator';
   styleUrls: ['./appointment-dialog.component.css']
 })
 export class AppointmentDialogComponent implements OnInit {
+  appointmentForm!: FormGroup;
+  nurseName: string;
 
-  form!: FormGroup;
-  physicians = [];
-  patients = [];
+  date: string;
+  next3months: string;
+
   windows = [];
   startTimes = [];
   endTimes = [];
-  employeeId = '';
-  patientId = '';
-  next3months: string;
-  user: any;
 
-  constructor(
-    private snackbar: MatSnackBar,
-    private utilityService: UtilityService,
-    private dialogRef: MatDialogRef<AppointmentDialogComponent>,
+  constructor(private snackbar: MatSnackBar,
     private datePipe: DatePipe,
     private apptService: AppointmentService,
+    private dialogRef: MatDialogRef<AppointmentDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     @Inject(LOCALE_ID) private locale: string,
+    private formBuilder: FormBuilder
   ) {
-    this.user = data.user;
+    this.date = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
     let currentdate = new Date();
     this.next3months = this.datePipe.transform(new Date(currentdate.setMonth(currentdate.getMonth() + 3)), 'yyyy-MM-dd');
+
+    this.nurseName = this.data.user.title + '. ' + this.data.user.firstName + ' ' + this.data.user.lastName;
+
+    this.appointmentForm = this.formBuilder.group({
+      meetingTitle: ['', [Validators.required, noSpaceValidator]],
+      description: ['', [Validators.required, noSpaceValidator]],
+      aptDate: [this.date, [Validators.required]],
+      physician: ['', [Validators.required]],
+      employeeId: [{ value: '', disabled: true }],
+      patient: ['', [Validators.required]],
+      patientId: [{ value: '', disabled: true }],
+      window: [{ value: -1, disabled: true }, [Validators.required, indexValidator]],
+      startsAt: [-1, [Validators.required, indexValidator]],
+      endsAt: [{ value: -1, disabled: true }, [Validators.required, indexValidator]],
+      editHistory: ['Not Applicable']
+    });
   }
 
   get today() {
@@ -45,88 +59,35 @@ export class AppointmentDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      meetingTitle: new FormControl('', [Validators.required, noSpaceValidator]),
-      description: new FormControl('', [Validators.required, noSpaceValidator]),
-      aptDate: new FormControl(this.today, [Validators.required]),
-      physician: new FormControl('', [Validators.required]),
-      employeeId: new FormControl({ value: '', disabled: true }),
-      patient: new FormControl('', [Validators.required]),
-      patientId: new FormControl({ value: '', disabled: true }),
-      window: new FormControl({ value: -1, disabled: true }, [Validators.required]),
-      startsAt: new FormControl(-1, [Validators.required, indexValidator]),
-      endsAt: new FormControl({ value: -1, disabled: true }, [Validators.required])
-    });
-    this.getAllPatientNames();
-    this.getAllPhysicians();
+    this.getAvailabilityWindows();
   }
 
-  getAllPatientNames() {
-    this.utilityService.getAllPatientNames().subscribe((result) => {
-      this.patients = result;
-    });
-  }
-
-  getAllPhysicians() {
-    this.utilityService.getAllPhysicians().subscribe((result) => {
-      this.physicians = result;
-    });
-  }
-
-  showPhysicianId() {
-    if (this.form.value.physician == '') {
-      this.employeeId = '';
-    } else {
-      this.employeeId = this.physicians.find(ph => ph.email === this.form.value.physician).employeeId;
-    }
-  }
-
-  showPatientId() {
-    if (this.form.value.patient == '') {
-      this.patientId = '';
-    } else {
-      this.patientId = this.patients.find(p => p.email === this.form.value.patient).patientId;
-    }
-  }
-
-  bookAppointment() {
-    const form = this.form.getRawValue();
-    form.editHistory = "Edited by Nurse with EmployeeId = " + this.user + " on " + this.form.value.aptDate;
-    let appointment = {};
-    for (let control of 'meetingTitle description physician aptDate editHistory'.split(' ')) {
-      appointment[control] = form[control];
-    }
-    appointment['empId'] = +this.employeeId.replace('E', '');
-    appointment['patientName'] = this.patients.find(p => p.email === form.patient).name;
-    appointment['patientEmail'] = form['patient'];
-    appointment['time'] = this.startTimes[form['startsAt']] + ' to ' + this.endTimes[form['endsAt']];
-    this.apptService.addAppointmentDetails(appointment).subscribe((result) => {
-      this.snackbar.open("Appointment Successfully Booked !", "", { duration: 3000 });
-      this.dialogRef.close();
-    });
+  f(field: string) {
+    return this.appointmentForm.controls[field];
   }
 
   getAvailabilityWindows() {
-    let form = this.form.value;
-    if (form.physician === '' || form.patient === '') {
-      this.windows = [];
-      this.form.controls.window.disable();
-      return;
-    }
+    let form = this.appointmentForm.getRawValue();
     const params = {
-      aptDate: form.aptDate,
-      physician: form.physician,
-      patientEmail: form.patient
+      date: form.aptDate,
+      employeeId: form.physician,
+      patientId: form.patient
     };
-    this.apptService.getAvailabilityWindows(params).subscribe(res => {
-      this.windows = res;
-      if (this.windows.length > 0) this.form.controls.window.enable();
-      this.form.value.window = -1;
-    });
+    if (params.employeeId === '' || params.patientId === '') {
+      this.windows = []
+      this.appointmentForm.controls.window.setValue(-1);
+      this.appointmentForm.controls.window.disable();
+    } else {
+      this.apptService.getAvailabilityWindows(params).subscribe(res => {
+        this.appointmentForm.controls.window.enable();
+        this.windows = res;
+      });
+    }
+    this.populateTimes();
   }
 
   populateTimes() {
-    let i = this.form.controls.window.value;
+    let i = this.appointmentForm.controls.window.value;
     if (i >= 0) {
       this.startTimes = this.windows[i].startTimes;
       this.endTimes = this.windows[i].endTimes;
@@ -137,22 +98,43 @@ export class AppointmentDialogComponent implements OnInit {
   }
 
   updateEndTimes() {
-    let windowIndex = this.form.controls.window.value;
-    let startIndex = this.form.controls.startsAt.value;
+    let windowIndex = this.appointmentForm.controls.window.value;
+    let startIndex = this.appointmentForm.controls.startsAt.value;
     if (windowIndex >= 0 && startIndex >= 0) {
-      this.form.controls.endsAt.enable();
+      this.appointmentForm.controls.endsAt.enable();
       this.endTimes = this.windows[windowIndex].endTimes.slice(startIndex);
-      this.form.controls.endsAt.setValue(0);
+      this.appointmentForm.controls.endsAt.setValue(0);
     } else {
       this.endTimes = [];
-      this.form.controls.endsAt.setValue(-1);
-      this.form.controls.endsAt.disable();
+      this.appointmentForm.controls.endsAt.setValue(-1);
+      this.appointmentForm.controls.endsAt.disable();
     }
   }
 
-  close() {
-    this.form.reset();
-    this.dialogRef.close();
+  private getAppointmentReady(): any {
+    const form = this.appointmentForm.getRawValue();
+    let appointment = {
+      time: this.startTimes[form['startsAt']] + ' to ' + this.endTimes[form['endsAt']],
+      editedBy: this.data.user.employeeId
+    };
+    for (let field of 'title=meetingTitle patientId=patient description=description employeeId=physician date=aptDate'.split(' ')) {
+      let fields = field.split('=');
+      appointment[fields[0]] = form[fields[1]];
+    }
+    return appointment;
   }
 
+  bookAppointment() {
+    let appointment = this.getAppointmentReady();
+    appointment['editHistory'] = "Booked by " + this.nurseName + " (Nurse) on " + this.appointmentForm.getRawValue().aptDate;
+    appointment['status'] = 'ACCEPTED'; 
+    this.apptService.addAppointment(appointment).subscribe(result => {
+      this.snackbar.open("Appointment Successfully Booked !", "", { duration: 3000 });
+      this.dialogRef.close();
+    });
+  }
+
+  close() {
+    this.dialogRef.close();
+  }
 }

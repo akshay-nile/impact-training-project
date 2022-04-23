@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.citiustech.models.Patient;
 
 @Repository
-public interface PatientRepository extends JpaRepository<Patient, Integer> {
+public interface PatientRepository extends JpaRepository<Patient, String> {
 	
 	public Patient findByEmail(String email);
 	

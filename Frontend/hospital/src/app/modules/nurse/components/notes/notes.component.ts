@@ -5,6 +5,7 @@ import { Note } from 'src/app/models/Note';
 import { NoteViewComponent } from '../note-view/note-view.component';
 import { NoteService } from 'src/app/services/notes.service';
 import { NoteDialogComponent } from '../note-dialog/note-dialog.component';
+import { UtilityService } from 'src/app/services/utility.service';
 
 @Component({
   selector: 'app-notes',
@@ -15,23 +16,40 @@ export class NotesComponent implements OnInit {
   notes: Note[] = [];
   user: any;
 
-  constructor(private router: Router,
+  allEmployeeNames = [];
+
+  constructor(
+    private router: Router,
     private dialog: MatDialog,
-    private noteService: NoteService) {
+    private noteService: NoteService,
+    private utilityService: UtilityService
+  ) {
     this.user = JSON.parse(sessionStorage.getItem('user'));
   }
 
   ngOnInit(): void {
+    this.getAllEmployeeNames();
     this.getAllNotes();
   }
 
-  viewNote(id: any) {
+  getSentToNameByEmail(note: any): string {
+    let emp = this.allEmployeeNames.find(e => e.employeeId === note.employeeId);
+    if (emp) return "From: " + emp.name;
+    return "To: " + this.allEmployeeNames.find(e => e.email === note.sendTo)?.name;
+  }
+
+  getAllEmployeeNames() {
+    this.utilityService.getAllPhysicians().subscribe(res => {
+      this.allEmployeeNames = res;
+    });
+  }
+
+  viewNote(note: Note) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-
     const dialogRef = this.dialog.open(NoteViewComponent, {
-      width: '50%', data: { noteId: id }
+      width: '50%', data: { note: note, sendToName: this.getSentToNameByEmail(note) }
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result != null) {
@@ -42,11 +60,11 @@ export class NotesComponent implements OnInit {
   }
 
   getAllNotes() {
-    this.noteService.getNotes().subscribe(
-      (result) => {
-        this.notes = result
-      }
-    );
+    this.noteService.getNotes().subscribe(res => {
+      if (res != null) {
+        this.notes = res.filter(n => n.employeeId === this.user.employeeId || n.sendTo === this.user.email);
+      } else alert("Notes Not Available !");
+    });
   }
 
   sendNote() {
@@ -54,18 +72,11 @@ export class NotesComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     const dialogRef = this.dialog.open(NoteDialogComponent, {
-      width: '50%'
+      width: '50%', data: { user: this.user, employeeNames: this.allEmployeeNames }
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result != null) {
-        result.employeeId = 1;
-        this.noteService.addNote(result).subscribe(
-          (result) => {
-            if (result) {
-              this.getAllNotes();
-            }
-          }
-        );
+        this.noteService.addNote(result).subscribe(res => this.getAllNotes());
       }
     });
   }

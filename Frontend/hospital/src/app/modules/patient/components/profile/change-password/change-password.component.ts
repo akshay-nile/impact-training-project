@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { UtilityService } from 'src/app/services/utility.service';
@@ -15,13 +16,13 @@ export class ChangePasswordComponent implements OnInit {
   @Input() user: any;
 
   form!: FormGroup;
-  attempts = 3;
-  message = '';
+  label = 'Change Password';
 
   constructor(
     private router: Router,
     private utilityService: UtilityService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private snackbar: MatSnackBar,
   ) { }
 
   get f() {
@@ -43,21 +44,15 @@ export class ChangePasswordComponent implements OnInit {
       oldPassword: this.form.value.oldPassword,
       newPassword: this.form.value.newPassword,
     };
-    this.utilityService.changeUserPassword(params).subscribe((res) => {
+    this.label = 'Please wait...';
+    this.utilityService.changeUserPassword(params).subscribe(res => {
+      this.label = 'Change Password';
       if (res) {
-        alert("Password successfully changed !");
+        this.snackbar.open("Your password has been successfully updated. You may now login your account !", "", { duration: 3000 });
         this.logout();
       } else {
-        if (--this.attempts > 0) {
-          this.message = this.attempts + " attempts are left"
-          this.form.reset();
-          alert("Password not changed !");
-        } else {
-          this.loginService.blockAccount(this.user.email).subscribe(res => {
-            alert("Your account is blocked !");
-            this.logout();
-          });
-        }
+        this.form.reset();
+        alert("Incorrect Old Password !");
       }
     });
   }

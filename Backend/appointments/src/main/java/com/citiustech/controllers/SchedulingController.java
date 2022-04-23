@@ -25,16 +25,12 @@ public class SchedulingController {
 
 	@PostMapping("/get-windows")
 	public ResponseEntity<?> getAvailabilityWindows(@RequestBody Map<String, String> map) {
-		LocalDate aptDate = LocalDate.parse(map.get("aptDate"), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-		String patientEmail = map.get("patientEmail");
-		String physician = map.get("physician");
-		
-		int skip = -1;
-		if(map.containsKey("skip")) {
-			skip = Integer.parseInt(map.get("skip"));
-		}
-		
-		List<Window> windows = schedulingService.getAvailabilityWindows(aptDate, patientEmail, physician, skip);
+		LocalDate date = LocalDate.parse(map.get("date"), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+		String patientId = map.get("patientId");
+		String employeeId = map.get("employeeId");
+		int skip = map.containsKey("skip") ? Integer.parseInt(map.get("skip")) : -1;
+
+		List<Window> windows = schedulingService.getAvailabilityWindows(date, patientId, employeeId, skip);
 		return new ResponseEntity<>(windows, HttpStatus.OK);
 	}
 }

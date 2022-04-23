@@ -13,24 +13,32 @@ import com.citiustech.models.Appointment;
 
 public interface AppointmentRepository extends CrudRepository<Appointment, Integer> {
 
-	@Query("SELECT a.time FROM Appointment a WHERE a.physician=?1 AND aptDate=?2")
-	public List<String> getAvailableTimeSlots(String physicianEmail, LocalDate aptDate);
+	public List<Appointment> findByOrderByDateDesc();
 
-	@Query("SELECT a.empId FROM Appointment a WHERE a.physician=?1")
-	public int getEmployeeId(String physicianEmail);
+	public List<Appointment> findByPatientIdOrderByDateDesc(String patientId);
 
-	public List<Appointment> findByAptDateAndPhysician(LocalDate aptDate, String physician);
+	public List<Appointment> findByEmployeeIdOrderByDateDesc(String employeeId);
 
-	public List<Appointment> findByAptDateAndPatientEmail(LocalDate aptDate, String patientEmail);
+	public List<Appointment> findByDateAndEmployeeIdOrderByDateDesc(LocalDate date, String employeeId);
 
-	public List<Appointment> findByOrderByAptDate();
+	public List<Appointment> findByDateAndPatientIdOrderByDateDesc(LocalDate date, String patientId);
 
-	public List<Appointment> findByPatientEmailAndIsDataCollectionApptAndDataStatus(String patientEmail,
-			boolean isDataCollectionAppt, boolean dataStatus);
+	public boolean existsByPatientIdAndEmployeeIdAndDateAndTime(String patientId, String employeeId, LocalDate date,
+			String time);
 
-	public List<Appointment> findByPatientEmail(String email);
+	public List<Appointment> findByPatientIdAndIsDataCollectionApptAndDataCollectionStatusOrderByDateDesc(String patientId,
+			boolean isDataCollectionAppt, boolean dataCollectionStatus);
 
-	@Query("SELECT a.meetingTitle FROM Appointment a WHERE a.patientEmail=?1 AND a.dataStatus=?2 AND a.isDataCollectionAppt=?3")
-	public List<String> getAppointmentsMeetingTitle(String patientEmail, boolean dataStatus, boolean isDataCollectionAppt);
+	@Query("SELECT a.editedBy FROM Appointment a WHERE a.employeeId=?1")
+	public int getEmployeeId(String employeeId);
+
+	@Query("SELECT a.title FROM Appointment a WHERE a.patientId=?1 AND a.dataCollectionStatus=?2 AND a.isDataCollectionAppt=?3")
+	public List<String> getAppointmentsMeetingTitles(String patientId, boolean dataCollectionStatus,
+			boolean isDataCollectionAppt);
+
+	public List<Appointment> findByIsDataCollectionApptAndDataCollectionStatusOrderByDateDesc(boolean b, boolean c);
+
+	public List<Appointment> findByEmployeeIdAndIsDataCollectionApptAndDataCollectionStatusOrderByDateDesc(
+			String employeeId, boolean dataCollectionStatus, boolean isDataCollectionAppt);
 
 }

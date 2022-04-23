@@ -23,7 +23,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.citiustech.contollers.LoginController;
 import com.citiustech.models.Employee;
 import com.citiustech.models.Patient;
 import com.citiustech.services.LoginService;

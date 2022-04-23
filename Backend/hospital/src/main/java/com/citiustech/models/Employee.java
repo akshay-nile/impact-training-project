@@ -5,9 +5,10 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 import com.citiustech.models.constants.Role;
 import com.citiustech.models.constants.Status;
@@ -18,8 +19,9 @@ import com.citiustech.models.constants.Title;
 public class Employee {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int employeeId;
+	@GenericGenerator(name = "employee_seq_gen", strategy = "com.citiustech.generators.EmployeeGenerator")
+	@GeneratedValue(generator = "employee_seq_gen")
+	private String employeeId;
 
 	@Column
 	private Title title;
@@ -43,7 +45,7 @@ public class Employee {
 	private String specialization;
 
 	@Column(nullable = false)
-	private int password;
+	private int password = "Password@123".hashCode();
 
 	@Column
 	private Status status = Status.ACTIVE;
@@ -126,11 +128,11 @@ public class Employee {
 		this.role = role;
 	}
 
-	public int getEmployeeId() {
+	public String getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(int employeeId) {
+	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
 	}
 }

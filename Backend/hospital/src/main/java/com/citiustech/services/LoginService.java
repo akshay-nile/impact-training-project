@@ -3,8 +3,10 @@ package com.citiustech.services;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import com.citiustech.exceptions.CustomException;
 import com.citiustech.models.Employee;
 import com.citiustech.models.Patient;
 import com.citiustech.models.constants.Role;
@@ -32,6 +34,10 @@ public class LoginService {
 	}
 
 	public Object login(Map<String, String> credentials) {
+		if(!credentials.containsKey("email") || !credentials.containsKey("password")) {
+			throw new CustomException("Email and Password are required for login", HttpStatus.BAD_REQUEST);
+		}
+		
 		String email = credentials.get("email");
 		int password = credentials.get("password").hashCode();
 		Object object;

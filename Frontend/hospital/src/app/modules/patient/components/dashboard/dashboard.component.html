@@ -18,8 +18,8 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
         <img class="avatar mat-elevation-z8" src="assets/profileImg.png" />
-        <h4 class="name">{{user.firstName}}</h4>
-        <p class="designation">Patient</p>
+        <h4 class="name" style="margin-bottom:0; margin-top: 1em;">{{user.title + '. ' + user.firstName + ' ' + user.lastName}}</h4>
+        <p class="designation">(Patient)</p>
         <mat-divider></mat-divider>
         <button *ngIf="showProfile" mat-button class="menu-button" routerLink="/patient/dashboard/profile"
             (click)="updateProfile()">

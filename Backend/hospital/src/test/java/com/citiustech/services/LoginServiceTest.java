@@ -21,7 +21,6 @@ import com.citiustech.models.Employee;
 import com.citiustech.models.Patient;
 import com.citiustech.repositories.EmployeeRepository;
 import com.citiustech.repositories.PatientRepository;
-import com.citiustech.services.LoginService;
 
 @ExtendWith(MockitoExtension.class)
 class LoginServiceTest {

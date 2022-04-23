@@ -7,23 +7,34 @@ import com.citiustech.models.Appointment;
 
 public interface AppointmentService {
 
-	public Appointment getAppointmentByAptId(int aptId);
-	
 	public List<Appointment> getAppointments();
-	
-	public Appointment addAppointment(Appointment apt);
-	
-	public Appointment deleteAppointment(int aptId);
-	
-	public int getEmployeeId(String physicianEmail);
 
+	public Appointment getAppointmentById(int appointmentId);
+	
+	public Appointment addAppointment(Appointment appointment);
+	
+	public Appointment updateAppointment(Appointment appointment);
+	
 	public List<Map<String, String>> getCalendarAppointments();
 
-	public List<Appointment> getpastAppointments(String patientEmail);
+	public List<Appointment> getUpcomingAppointments(String patientId);
 
-	public List<Appointment> upcomingAppointments(String patientEmail);
+	public List<Map<String, String>> getCalendarAppointmentsByPatientId(String patientId);
+	
+	public List<Map<String, String>> getCalendarAppointmentsByEmployeeId(String EmployeeId);
 
-	public List<Map<String, String>> getCalendarAppointmentsByPatientEmail(String email);
+	public int getEmployeeId(String physicianEmail);
 
-	public List<String> getAppointmentsMeetingTitle(String patientEmail);
+	public List<String> getAppointmentsMeetingTitles(String patientId);
+
+	public List<Appointment> geAppointmentsByPatientId(String patientId);
+
+	public List<Appointment> getAppointmentsByEmployeeId(String employeeId);
+
+	public List<Appointment> getAllPastAppointments();
+
+	public List<Appointment> getPastAppointmentsByPatientId(String id);
+
+	public List<Appointment> getPastAppointmentsByEmployeeId(String id);
+
 }

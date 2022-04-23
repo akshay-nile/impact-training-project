@@ -20,7 +20,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.citiustech.contollers.RegistrationController;
 import com.citiustech.models.Demographics;
 import com.citiustech.models.Employee;
 import com.citiustech.models.Nominee;
@@ -63,7 +62,7 @@ class RegistrationControllerTest {
 		patient.setPassword(credential.get("password"));
 
 		Nominee nominee = new Nominee();
-		nominee.setAccessAllowed(true);
+		nominee.setIsAccessAllowed(true);
 		nominee.setAddress("Mumbai");
 		nominee.setEmail("vinay.billa@gmail.com");
 		nominee.setFirstName("vinay");

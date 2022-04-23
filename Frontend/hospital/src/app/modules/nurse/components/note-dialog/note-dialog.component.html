@@ -2,55 +2,46 @@
     <div class="text-center">
         <h1 class="text-dark text-muted mb-4">Send Note</h1>
     </div>
-    <form [formGroup]="noteForm" (ngSubmit)="sendNote()">
-        <div class="mb-3">
+    <form [formGroup]="noteForm">
+        <div class="mb-3 form-group">
             <label for="date" class="form-label">Date Time</label>
             <input type="date" formControlName="date" class="form-control" id="date" [min]="date">
         </div>
-        <div class="mb-3">
+
+        <div class="mb-3 form-group">
             <label for="sendTo" class="form-label">Send To</label>
             <select formControlName="sendTo" class="form-control" (blur)="dropDownSelected()">
-                <option>Choose Physician</option>
-                <option *ngFor="let physician of physicians">{{physician}}</option>
+                <option [value]="''">Choose Physician</option>
+                <option *ngFor="let e of data.employeeNames" [value]="e.email">{{e.name}}</option>
             </select>
             <div *ngIf="noteForm.controls['sendTo'].touched && noteForm.controls['sendTo'].invalid"
                 class="alert text-danger">Receiver cannot be empty</div>
         </div>
-        <div class="mb-3">
-            <label for="designation" class="form-label">Designation</label>
-            <input type="text" formControlName="designation" class="form-control" id="designation">
-            <div *ngIf="noteForm.controls['designation'].touched && noteForm.controls['designation'].invalid"
-                class="alert text-danger">
-                <div *ngIf="noteForm.controls['designation'].errors?.['required']">Designation cannot be blank</div>
 
-            </div>
-        </div>
-        <div class="mb-3">
+        <div class="mb-3 form-group">
             <label for="message" class="form-label">Message</label>
             <textarea type="text" formControlName="message" class="form-control" id="message"></textarea>
             <div *ngIf="noteForm.controls['message'].touched && noteForm.controls['message'].invalid"
                 class="alert text-danger">
                 <div *ngIf="noteForm.controls['message'].errors?.['required']">Message cannot be blank</div>
-
             </div>
         </div>
-        <div class="mb-3 radioClass mb-4">
+        
+        <div class="mb-3 radioClass mb-4 form-group">
             <label>Urgency Level</label> &nbsp;&nbsp;
-            <input class="form-control-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
-                value="Urgent">
-            <label class="form-control-label" for="flexRadioDefault1"> Urgent</label>&nbsp;
-            <input class="form-control-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked
-                value="Non-Urgent">
-            <label class="form-control-label" for="flexRadioDefault2"> Non-Urgent</label>
+            <input class="form-control-input" type="radio" id="flexRadioDefault1"
+                [value]="'URGENT'" formControlName="urgencyLevel">
+            <label class="form-control-label" for="flexRadioDefault1">Urgent</label>&nbsp;
+            <input class="form-control-input" type="radio" id="flexRadioDefault2" checked
+                [value]="'NON_URGENT'" formControlName="urgencyLevel">
+            <label class="form-control-label" for="flexRadioDefault2">Non Urgent</label>
         </div>
-        <div class="row">
-            <div class="col-md-6"></div>
-            <div class="col-md-3">
-                <button type="submit" [disabled]="!noteForm.valid" [mat-dialog-close]="noteForm.value"
-                    class="btn btn-success mb-2">Send</button>
-            </div>
-            <div class="col-md-3">
-                <button type="button" class="btn btn-warning mb-2" (click)="close()">Close</button>
+
+        <div class="row form-group mt-3">
+            <div class="col col-md-12 text-center">
+                <button (click)="sendNote()" [disabled]="noteForm.invalid" [mat-dialog-close]="noteForm.value"
+                    class="btn btn-success mb-2 me-3">Send</button>
+                <button class="btn btn-warning mb-2 ms-3" (click)="close()">Close</button>
             </div>
         </div>
     </form>

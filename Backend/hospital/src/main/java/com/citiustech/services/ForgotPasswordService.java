@@ -9,8 +9,10 @@ import java.util.Map;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import com.citiustech.exceptions.CustomException;
 import com.citiustech.models.Employee;
 import com.citiustech.models.Patient;
 import com.citiustech.models.Verification;
@@ -47,16 +49,19 @@ public class ForgotPasswordService {
 		text += "Note: This OTP is valid for 10 minutes; till %s\n\n";
 		text += "Please ignore this email if you don't want to reset your password.\n";
 
-		if (emailSenderService.sendEmail(toEmail, "Verification OTP", String.format(text, otp, expiry))) {
-			Verification verify = new Verification(toEmail, otp, expiresAt);
-			verifyRepo.save(verify);
-			return true;
-		}
-
-		return false;
+		emailSenderService.sendEmail(toEmail, "Verification OTP", String.format(text, otp, expiry));
+		Verification verify = new Verification(toEmail, otp, expiresAt);
+		verifyRepo.save(verify);
+		return true;
 	}
 
 	public String resetPasswordByOtp(Map<String, String> passUpdate) {
+		for (String key : "email oldPassword newPassword".split(" ")) {
+			if (!passUpdate.containsKey(key)) {
+				throw new CustomException(key + " not found in the request.", HttpStatus.BAD_REQUEST);
+			}
+		}
+
 		Verification record = verifyRepo.findById(passUpdate.get("email")).orElse(null);
 		if (record == null) {
 			return "failed";

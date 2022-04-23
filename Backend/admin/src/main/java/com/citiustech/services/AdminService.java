@@ -16,32 +16,28 @@ public class AdminService {
 
 	@Autowired
 	private EmployeeRepository employeeRepo;
-	
+
 	@Autowired
 	private PatientRepository patientRepo;
-	
+
 	@Autowired
 	private EmailSenderService emailSender;
 
 	public Employee register(Employee employee) {
 		Employee savedEmployee = employeeRepo.save(employee);
-		if(savedEmployee != null) {
+		if (savedEmployee != null) {
 			String text = "Congratulations! " + employee.getFirstName();
 			text += "\nYou've been successfully registered as " + employee.getRole() + " in CT General Hospital.";
 			text += "\n\nYour login password is Password@123";
 			text += "\n\nPlease change this password immediately as soon as you login for the first time.";
-			if(!emailSender.sendEmail(employee.getEmail(), "Registration Successfull", text)) {
-				employeeRepo.delete(savedEmployee); 
-				return null;
-			}
+			emailSender.sendEmail(employee.getEmail(), "Registration Successfull", text);
+			return savedEmployee;
 		}
-		return savedEmployee;
+		return null;
 	}
 
-	public List<Employee> getAllEmployees(Integer adminId) {
-		return employeeRepo.findAll().stream()
-				.filter(e -> e.getEmployeeId() != adminId)
-				.collect(Collectors.toList());
+	public List<Employee> getAllEmployees(String adminId) {
+		return employeeRepo.findAll().stream().filter(e -> e.getEmployeeId() != adminId).collect(Collectors.toList());
 	}
 
 	public List<Patient> getAllPatients() {
@@ -51,5 +47,5 @@ public class AdminService {
 	public Employee updateEmployee(Employee employee) {
 		return employeeRepo.save(employee);
 	}
-	
+
 }

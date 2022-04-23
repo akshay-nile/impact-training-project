@@ -7,6 +7,8 @@
         routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Appointments</a>
     <a *ngIf="showProfile" style="margin-left: 5%;text-decoration: none;" routerLink="/nurse/dashboard/notes"
         routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Notes</a>
+    <a *ngIf="showProfile" style="margin-left: 5%;text-decoration: none;" routerLink="/nurse/dashboard/visit-report"
+        routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Visit Report</a>
     <a *ngIf="!showProfile" style="margin-left: 20%;text-decoration: none;" routerLink="/nurse/dashboard/profile"
         routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Profile</a>
     <span class="flexExpand"></span>
@@ -18,28 +20,34 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
         <img class="avatar mat-elevation-z8" src="assets/profileImg.png" />
-        <h4 class="name">{{userName}}</h4>
-        <p class="designation">Nurse</p>
+        <h4 class="name" style="margin-bottom:0; margin-top: 1em;">{{user.title + '. ' + user.firstName + ' ' +
+            user.lastName}}</h4>
+        <p class="designation">(Nurse)</p>
         <mat-divider></mat-divider>
         <button *ngIf="showProfile" mat-button class="menu-button" routerLink="/nurse/dashboard/profile"
             (click)="updateProfile()">
-            <mat-icon>account_circle</mat-icon>
+            <mat-icon style="margin-right: 0.5em;">account_circle</mat-icon>
             <span>Profile</span>
         </button>
         <button *ngIf="!showProfile" mat-button class="menu-button" routerLink="/nurse/dashboard/appointment"
             (click)="updateProfile()">
-            <mat-icon style="margin-right: 1em;">home</mat-icon>
+            <mat-icon style="margin-right: 0.5em;">home</mat-icon>
             <span>Home</span>
         </button>
         <button *ngIf="!showProfile" mat-button class="menu-button" routerLink="/nurse/dashboard/notes"
             (click)="updateProfile()">
-            <mat-icon style="margin-right: 1em;">note</mat-icon>
+            <mat-icon style="margin-right: 0.5em;">note</mat-icon>
             <span>Note</span>
+        </button>
+        <button *ngIf="!showProfile" mat-button class="menu-button" routerLink="/nurse/dashboard/visit-report"
+            (click)="updateProfile()">
+            <mat-icon style="margin-right: 0.5em;">report</mat-icon>
+            <span>Visit Report</span>
         </button>
         <mat-divider></mat-divider>
 
         <button mat-button class="menu-button" routerLink="/help">
-            <mat-icon>help</mat-icon>
+            <mat-icon style="margin-right: 0.5em;">help</mat-icon>
             <span>Help</span>
         </button>
     </mat-sidenav>

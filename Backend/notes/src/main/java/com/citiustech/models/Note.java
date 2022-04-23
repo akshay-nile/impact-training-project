@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.citiustech.models.constants.Status;
+
 @Entity
 public class Note {
 
@@ -16,31 +18,15 @@ public class Note {
 
 	private String sendTo;
 
-	private String Designation;
-
 	private String message;
 
-	private int employeeId;
+	private String employeeId;
 
 	private Date date;
 
 	private String urgencyLevel;
 
-	public Note() {
-		super();
-	}
-
-	public Note(int noteId, String sendTo, String designation, String message, int employeeId, Date date,
-			String urgencyLevel) {
-		super();
-		this.noteId = noteId;
-		this.sendTo = sendTo;
-		Designation = designation;
-		this.message = message;
-		this.employeeId = employeeId;
-		this.date = date;
-		this.urgencyLevel = urgencyLevel;
-	}
+	private Status status = Status.ACTIVE;
 
 	public int getNoteId() {
 		return noteId;
@@ -58,12 +44,12 @@ public class Note {
 		this.sendTo = sendTo;
 	}
 
-	public String getDesignation() {
-		return Designation;
+	public Status getStatus() {
+		return status;
 	}
 
-	public void setDesignation(String designation) {
-		Designation = designation;
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
 	public String getMessage() {
@@ -74,11 +60,11 @@ public class Note {
 		this.message = message;
 	}
 
-	public int getEmployeeId() {
+	public String getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(int employeeId) {
+	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
 	}
 

@@ -1,6 +1,6 @@
 package com.citiustech.services;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,8 +11,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.mail.javamail.JavaMailSender;
-
-import com.citiustech.services.EmailSenderService;
 
 @ExtendWith(MockitoExtension.class)
 class EmailSenderServiceTest {
@@ -41,6 +39,6 @@ class EmailSenderServiceTest {
 	@Test
 	@DisplayName("Test Method to send OTP over Email")
 	public void testMethodToSendOtpOverEmail() {
-		assertTrue(emailSenderService.sendEmail(email, "Verification OTP", text));
+		assertNotNull(emailSenderService.sendEmail(email, "Verification OTP", text));
 	}
 }

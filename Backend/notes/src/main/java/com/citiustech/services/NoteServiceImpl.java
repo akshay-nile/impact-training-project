@@ -25,8 +25,11 @@ public class NoteServiceImpl implements NoteService {
 
 	@Override
 	public Note getNoteById(int id) {
-		// TODO Auto-generated method stub
 		return noteRepo.findById(id).get();
 	}
 
+	@Override
+	public Note updateNote(Note note) {
+		return noteRepo.save(note);
+	}
 }

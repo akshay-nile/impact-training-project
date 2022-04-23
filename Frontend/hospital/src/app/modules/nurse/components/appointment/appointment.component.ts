@@ -12,6 +12,7 @@ import { MatSort } from '@angular/material/sort';
 import { AppointmentDialogComponent } from '../appointment-dialog/appointment-dialog.component';
 import { AppointmentService } from 'src/app/services/appointment.service';
 import { VisitDetailsComponent } from '../visit-details/visit-details.component';
+import { UtilityService } from 'src/app/services/utility.service';
 
 @Component({
   selector: 'app-appointment',
@@ -19,25 +20,31 @@ import { VisitDetailsComponent } from '../visit-details/visit-details.component'
   styleUrls: ['./appointment.component.css']
 })
 export class AppointmentComponent implements OnInit {
-  displayedColumns: string[] = ['title', 'physician', 'patientEmail', 'date', 'action'];
+
+  displayedColumns: string[] = ['title', 'employeeName', 'patientName', 'date', 'time', 'status', 'action'];
   dataSource: MatTableDataSource<Appointment>;
   date: string;
   todaysAppointment = "todaysAppointment";
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  appointment = new Appointment();
-  appointments: Appointment[] = []
+
   user: any;
-  calendarAppointments = [];
   calendarOptions: CalendarOptions;
   initialise: boolean;
 
-  constructor(private http: HttpClient,
+  appointments = []
+  calendarAppointments = [];
+
+  allEmployeeNames = [];
+  allPatientNames = [];
+
+  constructor(
     private datePipe: DatePipe,
     private appointmentService: AppointmentService,
-    private router: Router,
-    private dialog: MatDialog) {
+    private utilityService: UtilityService,
+    private dialog: MatDialog
+  ) {
     this.user = JSON.parse(sessionStorage.getItem('user'));
     this.date = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
   }
@@ -58,19 +65,22 @@ export class AppointmentComponent implements OnInit {
         minute: "2-digit",
         hour12: false
       },
-      eventSources: [
-        {
+      eventSources: [{
           events: [],
           color: 'indigo',
           textColor: 'white',
           borderColor: 'black',
-        },
-      ],
-
+        }],
     }
   }
-  getCalendarAppointment() {
-    this.appointmentService.getCalendarAppointment().subscribe((result) => {
+
+  ngOnInit(): void {
+    this.getCalendarAppointments();
+    this.getAllAppointments();
+  }
+
+  getCalendarAppointments() {
+    this.appointmentService.getCalendarAppointments().subscribe((result) => {
       this.calendarAppointments = result !== null ? result : [];
       this.createCalender();
       this.calendarOptions.eventSources[0]['events'] = this.calendarAppointments;
@@ -78,30 +88,37 @@ export class AppointmentComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    this.getCalendarAppointment();
-    this.getAllAppointments();
-  }
-
   getAllAppointments() {
-    this.appointmentService.getAllAppointmentDetails().subscribe((result) => {
-      this.dataSource = new MatTableDataSource(result);
-      if (this.dataSource != null) {
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-      }
+    this.appointmentService.getAllAppointmentDetails().subscribe(appts => {
+      this.utilityService.getAllPhysicians().subscribe(employees => {
+        this.allEmployeeNames = employees;
+        this.utilityService.getAllPatientNames().subscribe(patients => {
+          this.allPatientNames = patients;
+          for (let a of appts) {
+            a['employeeName'] = this.allEmployeeNames.find(e => e.employeeId == a.employeeId).name
+            a['patientName'] = this.allPatientNames.find(p => p.patientId == a.patientId).name
+          }
+          this.dataSource = new MatTableDataSource(appts);
+          if (this.dataSource != null) {
+            this.dataSource.paginator = this.paginator;
+            this.dataSource.sort = this.sort;
+          }
+        });
+      });
     })
   }
-  viewDetails(id: number, email: string) {
+
+  viewDetails(appointment: any) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     const dialogRef = this.dialog.open(VisitDetailsComponent, {
-      width: '50%', data: { appointmentId: id, emailId: email, user: this.user.employeeId }
+      width: '50%',
+      data: { appointment: appointment, user: this.user, employeeNames: this.allEmployeeNames, patientNames: this.allPatientNames }
     });
     dialogRef.afterClosed().subscribe(result => {
       this.getAllAppointments();
-      this.getCalendarAppointment();
+      this.getCalendarAppointments();
     });
   }
 
@@ -113,17 +130,28 @@ export class AppointmentComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
   bookAppointment() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     const dialogRef = this.dialog.open(AppointmentDialogComponent, {
-      width: '50%', data: { user: this.user.employeeId }
+      width: '50%',
+      data: { user: this.user, employeeNames: this.allEmployeeNames, patientNames: this.allPatientNames }
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.appointment = result;
       this.getAllAppointments();
-      this.getCalendarAppointment();
+      this.getCalendarAppointments();
     });
+  }
+
+  getColor(status: string) {
+    return {
+      'text-warning': status === 'PENDING',
+      'text-danger': status === 'CANCELLED',
+      'text-success': status === 'ACCEPTED',
+      'text-primary': status === 'ATTENDED',
+      'text-secondary': status === 'EXPIRED' || status === 'NOT_ATTENDED'
+    }
   }
 }

@@ -25,7 +25,7 @@ public class AdminController {
 	private AdminService adminService;
 
 	@GetMapping("/employees")
-	public ResponseEntity<?> getAllEmployees(@RequestParam(required=false) Integer adminId) {
+	public ResponseEntity<?> getAllEmployees(@RequestParam(required=false) String adminId) {
 		List<Employee> employees = adminService.getAllEmployees(adminId);
 		return new ResponseEntity<>(employees, HttpStatus.OK);
 	}

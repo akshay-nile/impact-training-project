@@ -14,7 +14,6 @@ import { passwordValidator } from 'src/app/validators/password.validator';
 export class LoginComponent implements OnInit {
 
   form?: FormGroup;
-  user: any;
   attempts: number = 3;
   message: string = '';
   emailExist: boolean = true;
@@ -51,9 +50,8 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginClicked() {
-    this.loginService.loginUser(this.form.value).subscribe(res => {
-      this.user = res;
-      if (this.user === null) {
+    this.authenticationService.authenticate(this.form.value).subscribe(res => {
+      if (res === null) {
         if (--this.attempts == 0) {
           this.loginService.blockAccount(this.form.value.email).subscribe(res =>
             this.message = "Account is Blocked!"
@@ -64,15 +62,13 @@ export class LoginComponent implements OnInit {
         }
       } else {
         this.attempts = 3;
-        switch (this.user.status as string) {
+        switch (res.user.status as string) {
           case "ACTIVE":
             this.form.reset();
-            let role = !this.user.role ? 'patient' : this.user.role.toLowerCase();
-            this.authenticationService.authenticate(this.user).subscribe(res => {
-              sessionStorage.setItem('user', JSON.stringify(this.user));
-              sessionStorage.setItem('token', res);              
-              this.router.navigate([role]);
-            });
+            let role = !res.user.role ? 'patient' : res.user.role.toLowerCase();
+            sessionStorage.setItem('user', JSON.stringify(res.user));
+            sessionStorage.setItem('token', res.token);
+            this.router.navigate([role]);
             break;
           case "BLOCKED":
             this.message = "Account was Locked!";
@@ -81,7 +77,7 @@ export class LoginComponent implements OnInit {
             this.message = "Account was Deleted!";
             break;
           default:
-            this.message = "Unexpected status: " + this.user.status;
+            this.message = "Unexpected status: " + res.user.status;
         }
       }
     }, (err: Error) => this.message = err.message);

@@ -91,8 +91,12 @@ export class RegisterPatientComponent implements OnInit {
   }
 
   registerPatient() {
-    console.log(this.form.value);
-    this.registrationService.registerPatient(this.form.value).subscribe(res => {
+    let formData = this.form.getRawValue();
+    let patient = {nominee: null, demographics: null};
+    for(let field of 'title firstName lastName email phone birthdate password'.split(' ')) {
+      patient[field] = formData[field];
+    }
+    this.registrationService.registerPatient(patient).subscribe(res => {
       if (res != null) {
         this.form.reset();
         alert('Registration was successful !');

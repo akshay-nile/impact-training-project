@@ -23,7 +23,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.citiustech.contollers.ForgotPasswordController;
 import com.citiustech.services.ForgotPasswordService;
 import com.citiustech.services.LoginService;
 import com.fasterxml.jackson.databind.ObjectMapper;

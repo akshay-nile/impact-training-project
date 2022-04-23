@@ -1,6 +1,7 @@
 package com.citiustech.contollers;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -71,7 +72,7 @@ public class UtilityController {
 	@PutMapping("/patientDetails")
 	private ResponseEntity<?> updatePatient(@RequestBody Patient patient) {
 		Patient registeredPatient = utilityService.updatePatient(patient);
-		return new ResponseEntity<>(registeredPatient, HttpStatus.CREATED);
+		return new ResponseEntity<>(registeredPatient, HttpStatus.OK);
 	}
 
 	@GetMapping("/patientByEmail/{email}")
@@ -82,6 +83,24 @@ public class UtilityController {
 	@GetMapping("/employeeByEmail/{email}")
 	public Employee getEmployeeByEmail(@PathVariable String email) {
 		return utilityService.getEmployeeByEmail(email);
+	}
+
+	@PostMapping("/get-emails-from-ids")
+	public ResponseEntity<?> mapEmailsToIds(@RequestBody Map<String, String> map) {
+		Map<String, String> info = utilityService.mapEmailsToIds(map);
+		return new ResponseEntity<>(info, HttpStatus.OK);
+	}
+
+	@GetMapping("/get-all-employees")
+	public ResponseEntity<?> getAllEmployees() {
+		List<Employee> employees = utilityService.getAllEmployees();
+		return new ResponseEntity<>(employees, HttpStatus.OK);
+	}
+	
+	@GetMapping("/get-patient/{patientId}")
+	public ResponseEntity<?> getPatientById(@PathVariable String patientId) {
+		Patient patient = utilityService.getPatientById(patientId);
+		return new ResponseEntity<>(patient, HttpStatus.OK);
 	}
 
 }

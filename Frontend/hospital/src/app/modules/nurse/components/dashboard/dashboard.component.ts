@@ -18,14 +18,20 @@ export class DashboardComponent implements OnInit {
   todaysAppointment = "todaysAppointment";
   activeRouting = "activeRouting"
   showProfile: boolean = true;
-  userName:string;
+  user: any;
 
   constructor(private observer: BreakpointObserver,
     private router: Router) {
-      this.userName=JSON.parse(sessionStorage.getItem('user')).firstName;
+    this.user = JSON.parse(sessionStorage.getItem('user'));
   }
 
   ngOnInit(): void {
+    if (this.user.password === 730734381) {
+      setTimeout(() => {
+        alert("Please update your password !");
+      }, 500);
+    }
+
     this.observer
       .observe(['(max-width: 800px)'])
       .pipe(delay(1), untilDestroyed(this))
@@ -50,6 +56,7 @@ export class DashboardComponent implements OnInit {
         }
       });
   }
+
   updateProfile() {
     this.showProfile = !this.showProfile
   }

@@ -15,24 +15,24 @@
               <div class="form-group col col-md-2 col-sm-12">
                 <label class="col-form-label">Title:</label> <br>
                 <select class="dropdown-toggle" formControlName="title">
-                  <option value=""></option>
+                  <option value="''"></option>
                   <option *ngFor="let t of titles" value="{{ t }}">
                     {{ t | titlecase }}
                   </option>
                 </select>
-                <small *ngIf="title.touched && title.value === ''" class="text-danger">Please select
+                <small *ngIf="f('title').touched && f('title').value == ''" class="text-danger">Please select
                   title</small>
               </div>
               <div class="form-group col col-md-5 col-sm-12">
                 <label class="col-form-label">First Name:</label>
                 <input formControlName="firstName" type="text" class="form-control">
-                <small *ngIf="first.touched && first.errors?.required" class="text-danger">First
+                <small *ngIf="f('firstName').touched && f('firstName').errors?.required" class="text-danger">First
                   name is required</small>
               </div>
               <div class="form-group col col-md-5 col-sm-12">
                 <label class="col-form-label">Last Name:</label>
                 <input formControlName="lastName" type="text" class="form-control">
-                <small *ngIf="last.touched && last.errors?.required" class="text-danger">Last name
+                <small *ngIf="f('lastName').touched && f('lastName').errors?.required" class="text-danger">Last name
                   is required</small>
               </div>
             </div>
@@ -48,34 +48,37 @@
               <div class="form-group col col-md-6 col-sm-12">
                 <label class="col-form-label">Phone Number:</label>
                 <input formControlName="phone" type="text" class="form-control" (blur)="onPhoneEntered()">
-                <div *ngIf="phone.touched && phone.errors">
-                  <small *ngIf="phone.errors?.required" class="text-danger">Phone number is
+                <div *ngIf="f('phone').touched && f('phone').errors">
+                  <small *ngIf="f('phone').errors?.required" class="text-danger">Phone number is
                     required</small>
-                  <small *ngIf="phone.errors?.pattern" class="text-danger">Not a valid phone
+                  <small *ngIf="f('phone').errors?.pattern" class="text-danger">Not a valid phone
                     number</small>
                 </div>
-                <small *ngIf="phone.dirty && !phone.errors && user.phone != phone && phoneExists"
+                <small *ngIf="f('phone').dirty && !f('phone').errors && user.phone != form.value.phone && phoneExists"
                   class="text-danger">Phone
                   number is already used</small>
               </div>
               <div class="form-group col col-md-6 col-sm-12">
                 <label class="col-form-label">Date of Birth:</label>
                 <input formControlName="birthdate" type="date" class="form-control" max="{{today}}">
-                <small *ngIf="dob.touched && dob.errors?.required" class="text-danger">Date of Birth is
+                <small *ngIf="f('birthdate').touched && f('birthdate').errors?.required" class="text-danger">Date of
+                  Birth is
                   required</small>
               </div>
             </div>
 
             <div class="row" *ngIf="!editMode">
               <div class="col-md-12 col-sm-12 text-center">
-                <button class="btn btn-primary" (click)="setEditMode(true)">Edit Details</button>
+                <button class="btn btn-primary" (click)="setEditMode(true)">
+                  Edit Details
+                </button>
               </div>
             </div>
 
             <div class="row" *ngIf="editMode">
               <div class="col-md-12 col-sm-12 text-center">
                 <button [disabled]="form.invalid || phoneExists" class="btn btn-success"
-                  (click)="updatePatientDetails()">Update</button>
+                  (click)="emitUserUpdateEvent()">Update</button>
                 <button class="btn btn-danger" (click)="setEditMode(false)">Cancel</button>
               </div>
             </div>

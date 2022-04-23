@@ -11,5 +11,7 @@ public interface NoteService {
 	public List<Note> getAllNotes();
 
 	public Note getNoteById(int id);
+
+	public Note updateNote(Note note);
 	
 }

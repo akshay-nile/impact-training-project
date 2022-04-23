@@ -37,10 +37,10 @@ public class Nominee {
 	@Column
 	private Relation relation;
 
-	@Column(unique = true)
+	@Column
 	private String email;
 
-	@Column(unique = true)
+	@Column
 	private String phone;
 
 	@Column
@@ -121,11 +121,11 @@ public class Nominee {
 		this.address = address;
 	}
 
-	public boolean isAccessAllowed() {
+	public boolean getIsAccessAllowed() {
 		return isAccessAllowed;
 	}
 
-	public void setAccessAllowed(boolean isAccessAllowed) {
+	public void setIsAccessAllowed(boolean isAccessAllowed) {
 		this.isAccessAllowed = isAccessAllowed;
 	}
 

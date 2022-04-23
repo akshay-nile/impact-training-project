@@ -34,6 +34,7 @@ class PatientRepositoryTest {
 		credential.put("email", "tejas.gaikar@gmail.com");
 		credential.put("password", "Tejas123");
 		patient = new Patient();
+		patient.setPatientId("P0001");
 		patient.setFirstName("Tejas");
 		patient.setLastName("Gaikar");
 		patient.setEmail(email);

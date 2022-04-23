@@ -6,10 +6,11 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 import com.citiustech.models.constants.Status;
 import com.citiustech.models.constants.Title;
@@ -20,8 +21,9 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 public class Patient {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int patientId;
+	@GenericGenerator(name = "patient_seq_gen", strategy = "com.citiustech.generators.PatientGenerator")
+	@GeneratedValue(generator = "patient_seq_gen")
+	private String patientId;
 
 	@Column
 	private Title title;
@@ -63,11 +65,11 @@ public class Patient {
 		this.nominee = nominee;
 	}
 
-	public int getPatientId() {
+	public String getPatientId() {
 		return patientId;
 	}
 
-	public void setPatientId(int patientId) {
+	public void setPatientId(String patientId) {
 		this.patientId = patientId;
 	}
 
@@ -147,6 +149,13 @@ public class Patient {
 
 	public void setDemographics(Demographics demographics) {
 		this.demographics = demographics;
+	}
+
+	@Override
+	public String toString() {
+		return "Patient [patientId=" + patientId + ", title=" + title + ", firstName=" + firstName + ", lastName="
+				+ lastName + ", email=" + email + ", phone=" + phone + ", birthdate=" + birthdate + ", password="
+				+ password + ", status=" + status + ", nominee=" + nominee + ", demographics=" + demographics + "]";
 	}
 
 }

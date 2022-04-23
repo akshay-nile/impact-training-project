@@ -20,7 +20,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import com.citiustech.models.Patient;
 import com.citiustech.repositories.EmployeeRepository;
 import com.citiustech.repositories.PatientRepository;
-import com.citiustech.services.RegistrationService;
 
 @ExtendWith(MockitoExtension.class)
 class RegistrationServiceTest {

@@ -4,6 +4,7 @@ import { AppointmentComponent } from './components/appointment/appointment.compo
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NoteDialogComponent } from './components/note-dialog/note-dialog.component';
 import { NotesComponent } from './components/notes/notes.component';
+import { PatientVisitHistoryComponent } from './components/patient-visit-history/patient-visit-history.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
@@ -14,9 +15,11 @@ const routes: Routes = [
       { path: 'appointment', component: AppointmentComponent },
       { path: 'notes', component: NotesComponent },
       { path: 'profile', component: ProfileComponent },
+      { path: 'visit-report', component: PatientVisitHistoryComponent }
     ]
   },
   { path: 'notes-dialog', component: NoteDialogComponent }
+  
 ];
 
 @NgModule({
