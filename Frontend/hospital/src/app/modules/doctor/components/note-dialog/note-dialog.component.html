@@ -1,0 +1,44 @@
+<div class="card mb-4" style="width:600px">
+    <div class="text-center">
+        <h1 class="text-dark text-muted mb-4">Convey your Message</h1>
+    </div>
+    <form [formGroup]="noteForm" (ngSubmit)="sendNote()">
+        <div class="mb-3">
+            <label for="date" class="form-label">Date Time</label>
+            <input type="date" formControlName="date" class="form-control" id="date" [min]="date">
+        </div>
+        <div class="mb-3">
+            <label for="sendTo" class="form-label">Send To</label>
+            <select formControlName="sendTo" class="form-control">
+                <option [value]="''" *ngIf="data.employees.length !== 1">Select Physician</option>
+                <option *ngFor="let p of data.employees" [value]="p.email">
+                    {{ p.title + '. ' + p.firstName + ' ' + p.lastName}}
+                </option>
+            </select>
+            <div *ngIf="sendTo.touched && sendTo.invalid" class="alert text-danger">Receiver cannot be empty</div>
+        </div>
+        <div class="mb-3">
+            <label class="col-form-label">Message:</label>
+            <textarea formControlName="message" class="form-control"></textarea>
+            <small *ngIf="message.touched && (message.errors?.required || message.errors?.isEmpty)" class="text-danger">
+                Message is required
+            </small>
+        </div>
+        <div class="mb-3 radioClass mb-4">
+            <label>Urgency Level</label> &nbsp;&nbsp;
+            <input class="form-control-input" type="radio" name="urgencyLevel" id="flexRadioDefault1" value="Urgent"
+                formControlName="urgencyLevel">
+            <label class="form-control-label" for="flexRadioDefault1"> Urgent</label>&nbsp;
+            <input class="form-control-input" type="radio" name="urgencyLevel" id="flexRadioDefault2" checked
+                value="Non-Urgent" formControlName="urgencyLevel">
+            <label class="form-control-label" for="flexRadioDefault2"> Non-Urgent</label>
+        </div>
+        <div class="row form-group mb-3 mt-4">
+            <div class="col col-md-12 text-center">
+                <button type="submit" [disabled]="!noteForm.valid" [mat-dialog-close]="noteForm.value"
+                    class="btn btn-success me-3">Send</button>
+                <button type="button" class="btn btn-warning ms-3" (click)="close()">Close</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -4,7 +4,6 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { NavigationEnd, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { delay, filter } from 'rxjs';
-import { AuthenticationService } from 'src/app/services/Authentication.servic';
 
 @UntilDestroy()
 @Component({
@@ -14,16 +13,18 @@ import { AuthenticationService } from 'src/app/services/Authentication.servic';
 })
 export class DashboardComponent implements OnInit {
 
-  userName: string;
-  activeRouting="activeRouting";
+  user: any;
+  activeRouting = "activeRouting";
   showProfile: boolean = true;
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
-  constructor(private authenticationService: AuthenticationService, 
-    private observer: BreakpointObserver, 
-    private router: Router) {
-    this.userName = authenticationService.getUserName();
-   }
+
+  constructor(
+    private observer: BreakpointObserver,
+    private router: Router
+  ) {
+    this.user = JSON.parse(sessionStorage.getItem('user'));
+  }
 
   ngOnInit(): void {
     this.observer
@@ -52,11 +53,11 @@ export class DashboardComponent implements OnInit {
   }
 
   updateProfile() {
-    this.showProfile=!this.showProfile
+    this.showProfile = !this.showProfile
   }
-  
+
   logout() {
-    this.authenticationService.clearSession();
-    this.router.navigate(['/login']);
+    sessionStorage.clear();
+    this.router.navigate(['login']);
   }
 }

@@ -2,13 +2,13 @@ import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { confirmPassword, passwordValidator } from 'src/app/validators/password.validator';
-import { AuthenticationService } from 'src/app/services/Authentication.servic';
 import { UtilityService } from 'src/app/services/utility.service';
 import { UserCredential } from 'src/app/models/UserCredential';
 import { AdminService } from 'src/app/modules/admin/services/admin.service';
 import { formatDate } from '@angular/common';
 import { Employee } from 'src/app/models/Employee';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-profile',
@@ -18,26 +18,22 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ProfileComponent implements OnInit {
   message: string = '';
   messageFlag: boolean = false;
-  userCredential = new UserCredential();
-  isOldPasswordCorrect: boolean = false;
   userId: number;
   form!: FormGroup;
-  emailExists = false;
   buttonLabel = "Edit";
   titles = 'Mr Ms Mrs Dr'.split(' ');
   roles = 'NURSE DOCTOR ADMIN'.split(' ');
   employee = new Employee();
   isDisable = true;
+  
   constructor(private snackbar: MatSnackBar,
     private router: Router,
-    private authenticationService: AuthenticationService,
+    private loginService: LoginService,
     private utilityService: UtilityService,
     private adminService: AdminService,
     @Inject(LOCALE_ID) private locale: string,) {
-    this.userId = this.authenticationService.getUserId();
     this.employee = JSON.parse(sessionStorage.getItem('user'));
-    console.log(this.employee);
-
+    this.userId = this.employee.employeeId;
   }
   get today() {
     let miliSeconds = Math.ceil(18 * 365.25 * 24 * 60 * 60 * 1000);
@@ -74,21 +70,16 @@ export class ProfileComponent implements OnInit {
       title: new FormControl(''),
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.email]),
+      email: new FormControl({ value: '', disabled: true }),
       birthdate: new FormControl('', [Validators.required]),
       specialization: new FormControl('', [Validators.maxLength(10)]),
-      role: new FormControl({ value: 'NURSE', disabled: true }, [Validators.required]),
+      role: new FormControl({ value: 'NURSE', disabled: true }),
     });
-  }
-
-  onEmailEntered() {
-    if (this.email.valid) {
-      this.utilityService.emailExists(this.form.value.email).subscribe(res => this.emailExists = res);
-    }
   }
 
   editEmployee() {
     this.buttonLabel = "Updating..."
+    console.log(this.employee);
     this.adminService.updateEmployee(this.employee).subscribe(res => {
       this.buttonLabel = 'Edit';
       if (res != null && res.employeeId > 0) {
@@ -96,39 +87,4 @@ export class ProfileComponent implements OnInit {
       }
     });
   }
-
-  confirmPasswordForm = new FormGroup({
-    oldpassword: new FormControl('', [Validators.required, passwordValidator, Validators.minLength(8)]),
-    password: new FormControl('', [Validators.required, passwordValidator]),
-    confirmPassword: new FormControl('', [Validators.required])
-  }, confirmPassword('password', 'confirmPassword'));
-
-  get f() {
-    return this.confirmPasswordForm.controls;
-  }
-
-  get cpass() {
-    return this.confirmPasswordForm.controls.confirmPassword;
-  }
-
-
-  backToLogin() {
-    this.router.navigate(['login']);
-  }
-
-  submit() {
-    this.userCredential.email=this.employee.email;
-    this.userCredential.oldPassword=this.confirmPasswordForm.value.oldpassword;
-    this.userCredential.newPassword=this.confirmPasswordForm.value.confirmPassword;
-    this.utilityService.changeUserPassword(this.userCredential).subscribe((result) => {
-      if(!result){
-        this.message = "Kindly provide correct old password";
-        return;
-      }
-      this.snackbar.open("Your password has been successfully updated. You may now login your account", "", { duration: 3000 });
-      this.router.navigate(['login']);
-    });
-  }
-
-
 }

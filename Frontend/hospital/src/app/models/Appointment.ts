@@ -1,13 +1,14 @@
-export class Appointment{
-aptId:number;
-date:Date;
-meetingTitle:string;
-description:string;
-patientEmail:string;
-physician:string;
-editHistory:string;
-patientName:string;
-time:string;
-aptDate:string;
-empId:number;
+export class Appointment {
+    appointmentId: number;
+    title: string;
+    description: string;
+    date: Date;
+    time: string;
+    patientId: string;
+    employeeId: string;
+    status: string;
+    editHistory: string;
+    editedBy: number;
+    isDataCollectionAppointment: boolean;
+    dataCollectionStatus: boolean;
 }

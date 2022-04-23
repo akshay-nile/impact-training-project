@@ -18,20 +18,19 @@ export class VitalService {
     return this.http.post<boolean>(this.vitalsUrl, vital)
       .pipe(catchError(this.handleError));
   }
+  
   updateVitals(vital: any): Observable<boolean> {
     return this.http.put<boolean>(this.vitalsUrl, vital)
       .pipe(catchError(this.handleError));
   }
+  
   deleteVitals(id: any): Observable<boolean> {
     return this.http.delete<boolean>(this.vitalsUrl + '/' + id)
       .pipe(catchError(this.handleError));
   }
-  getVitalByPatientId(id: any): Observable<Vitals> {
-    return this.http.get<Vitals>(this.vitalsUrl + `/aptId/${id}`)
-      .pipe(catchError(this.handleError));
-  }
-  getVitalDetails(): Observable<Vitals[]> {
-    return this.http.get<Vitals[]>(this.vitalsUrl + '/getAllVitalDetails')
+
+  getVitalByApptId(appointmentId: any): Observable<Vitals> {
+    return this.http.get<Vitals>(this.vitalsUrl + '/aptId/' + appointmentId)
       .pipe(catchError(this.handleError));
   }
 

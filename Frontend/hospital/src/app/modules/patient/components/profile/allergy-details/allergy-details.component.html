@@ -1,0 +1,91 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col col-md-12 col-sm-12">
+      <div class="card shadow">
+        <div class="card-body">
+          <form [formGroup]="form">
+            <div class="row">
+              <div class="form-group col col-md-4 col-sm-12">
+                <label class="col-form-label">Patient ID:</label>
+                <input formControlName="patientId" type="text" class="form-control" readonly>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col col-md-6 col-sm-12">
+                <label class="col-form-label">Allergy Type:</label>
+                <select class="dropdown-toggle" formControlName="allergyType" (change)="enableOrDisableNames()">
+                  <option [value]="''"></option>
+                  <option *ngFor="let at of allergyTypes" [value]="at">
+                    {{ at | titlecase}}
+                  </option>
+                </select>
+                <small *ngIf="f('allergyType').touched && f('allergyType').errors?.required" class="text-danger">
+                  Allergy Type is required</small>
+              </div>
+              <div class="form-group col col-md-6 col-sm-12">
+                <label class="col-form-label">Allergy Names:</label>
+                <select class="dropdown-toggle" formControlName="allergyName">
+                  <option [value]="''"></option>
+                  <option
+                    *ngFor="let an of (f('allergyType').value != '' ? allergyTypesAndNames[f('allergyType').value] : [])"
+                    [value]="an">
+                    {{ an | titlecase}}
+                  </option>
+                </select>
+                <small *ngIf="f('allergyType').touched && f('allergyType').errors?.required" class="text-danger">
+                  Allergy Type is required</small>
+              </div>
+            </div>
+
+            <div class="row form-group mt-3 align-items-center">
+              <div class="col col-md-6 col-sm-12 text-left">
+                <input type="checkbox" formControlName="isFatal" id="isFatal">
+                <label for="isFatal" class="col-form-label" style="font-size: 11.5pt; margin: 0px;">
+                  Is the allergy fatal?
+                </label>
+              </div>
+              <div class="col col-md-6 col-sm-12 text-center">
+                <button class="btn btn-primary" (click)="addAllergy()" [disabled]="form.invalid">Add Allergy</button>
+              </div>
+            </div>
+
+            <div class="row mt-4 text-center">
+              <div class="col-md-12 col-sm-12 text-center">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Allergy Type</th>
+                      <th scope="col">Allergy Name</th>
+                      <th scope="col">Is Allergy Fatal</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngIf="allergies.length == 0" class="text-danger">
+                      <td colspan="4">No Allergies Selected !</td>
+                    </tr>
+                    <tr *ngFor="let a of allergies; let i=index;">
+                      <td>{{a.allergyType}}</td>
+                      <td>{{a.allergyName}}</td>
+                      <td>{{a.isFatal ? "Yes" : "No"}}</td>
+                      <td>
+                        <button class="del-btn" (click)="allergies.splice(i, 1); changesMade=true;">Remove</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="col col-md-12 col-sm-12 text-center mb-3">
+              <button class="btn btn-success" (click)="emitAllergiesUpdateEvent()" [disabled]="!changesMade">
+                Save Changes
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

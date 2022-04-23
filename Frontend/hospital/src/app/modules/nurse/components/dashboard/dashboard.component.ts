@@ -4,7 +4,6 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { delay, filter } from 'rxjs/operators';
 import { NavigationEnd, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { AuthenticationService } from 'src/app/services/Authentication.servic';
 
 @UntilDestroy()
 @Component({
@@ -18,18 +17,21 @@ export class DashboardComponent implements OnInit {
   sidenav!: MatSidenav;
   todaysAppointment = "todaysAppointment";
   activeRouting = "activeRouting"
-  user:number;
-  userName: string;
   showProfile: boolean = true;
+  user: any;
 
   constructor(private observer: BreakpointObserver,
-    private router: Router,
-    private authenticationService: AuthenticationService) {
-    this.user = authenticationService.getUserId();
-    this.userName = authenticationService.getUserName();
+    private router: Router) {
+    this.user = JSON.parse(sessionStorage.getItem('user'));
   }
 
   ngOnInit(): void {
+    if (this.user.password === 730734381) {
+      setTimeout(() => {
+        alert("Please update your password !");
+      }, 500);
+    }
+
     this.observer
       .observe(['(max-width: 800px)'])
       .pipe(delay(1), untilDestroyed(this))
@@ -54,12 +56,13 @@ export class DashboardComponent implements OnInit {
         }
       });
   }
+
   updateProfile() {
-    this.showProfile=!this.showProfile
+    this.showProfile = !this.showProfile
   }
 
   logout() {
-    this.authenticationService.clearSession();
+    sessionStorage.clear();
     this.router.navigate(['/login']);
   }
 }

@@ -2,21 +2,20 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Patient } from '../models/Patient';
-import { Appointment } from '../models/Appointment';
-import { Vitals } from '../models/Vitals';
 
 
 @Injectable({
     providedIn: 'root'
 })
 export class UtilityService {
-    
+
     constructor(private http: HttpClient) { }
 
     baseUrl: string = environment.baseUrl + '/hospital';
     vitalsUrl = environment.baseUrl + '/patient-visits/vitals';
     apptUrl = environment.baseUrl + '/appointments/api';
+    allergyUrl = environment.baseUrl + '/allergy/api';
+
 
     getRelations(): Observable<string[]> {
         return this.http.get<string[]>(this.baseUrl + '/enums/relations')
@@ -37,46 +36,56 @@ export class UtilityService {
         return this.http.post<boolean>(this.baseUrl + '/exists/phone', phone)
             .pipe(catchError(this.handleError));
     }
-    
+
     getEmpIdByEmail(email: string): Observable<any> {
         return this.http.get<any>(this.baseUrl + `/physicianEmail/${email}`)
             .pipe(catchError(this.handleError));
     }
-    updatePatientDetails(patient: any): Observable<Patient> {
-        return this.http.put<Patient>(this.baseUrl + '/patientDetails/', patient)
+
+    updatePatientDetails(patient: any): Observable<any> {
+        return this.http.put<any>(this.baseUrl + '/patientDetails', patient)
             .pipe(catchError(this.handleError));
     }
 
-
-    getAllPhysicianNames(): Observable<string[]> {
-        return this.http.get<string[]>(this.baseUrl + '/employee/names')
+    getPatientById(patientId: any): Observable<any> {
+        return this.http.get<any>(this.baseUrl + '/get-patient/' + patientId)
             .pipe(catchError(this.handleError));
     }
 
-    getAllPatientEmail(): Observable<string[]> {
-        return this.http.get<string[]>(this.baseUrl + '/patient/emails')
-            .pipe(catchError(this.handleError));
-    }
-    getPatientByEmail(email: string): Observable<number> {
-        return this.http.get<number>(this.baseUrl + `/patient/email/${email}`)
+    getAllPhysicians(): Observable<any[]> {
+        return this.http.get<any[]>(this.baseUrl + '/physician/names')
             .pipe(catchError(this.handleError));
     }
 
-    getPatientByPatientId(id: number): Observable<any> {
-        return this.http.get<any>(this.baseUrl + `/patient/id/${id}`)
+    getAllEmployees(): Observable<any[]> {
+        return this.http.get<any[]>(this.baseUrl + '/get-all-employees')
+            .pipe(catchError(this.handleError));
+    }
+
+    getAllPatientNames(): Observable<any[]> {
+        return this.http.get<any[]>(this.baseUrl + '/patient/names')
+            .pipe(catchError(this.handleError));
+    }
+    getPatientByEmail(email: string): Observable<any> {
+        return this.http.get<any>(this.baseUrl + `/patientByEmail/${email}`)
             .pipe(catchError(this.handleError));
     }
 
     changeUserPassword(userCredentials: any): Observable<any> {
-        return this.http.post<any>(this.baseUrl + '/api/user/change-password/employee', userCredentials)
+        return this.http.post<any>(this.baseUrl + '/api/change-password', userCredentials)
             .pipe(catchError(this.handleError));
     }
 
-    checkOldPassword(userId:any,password: any): Observable<any>  {
-        return this.http.get<any>(this.baseUrl + `/api/change-password/employee/${userId}/${password}`)
-        .pipe(catchError(this.handleError));
-      }
-  
+    checkOldPassword(userId: any, password: any): Observable<any> {
+        return this.http.get<any>(this.baseUrl + `/api/change-password/${userId}/${password}`)
+            .pipe(catchError(this.handleError));
+    }
+
+    getAllergyNamesAndTypes(): Observable<any> {
+        return this.http.get<any>(this.allergyUrl + '/names-and-types')
+            .pipe(catchError(this.handleError));
+    }
+
     private handleError(errorResponse: HttpErrorResponse) {
         if (errorResponse.error instanceof ErrorEvent) {
             console.error("Client Side Error", errorResponse.error.message)

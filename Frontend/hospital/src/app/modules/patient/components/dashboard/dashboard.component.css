@@ -8,10 +8,10 @@ mat-toolbar {
     background: #004a9f;
     color: white;
   }
+
   table {
     width: 100%;
   }
-  
   
   mat-sidenav {
     margin: 16px;
@@ -38,6 +38,10 @@ mat-toolbar {
   mat-sidenav-container {
     height: calc(100vh - 100px);
   }
+
+  mat-icon {
+    margin-right: 0.5em;
+  }
   
   .menu-button {
     width: 100%;
@@ -45,8 +49,6 @@ mat-toolbar {
     align-items: center;
     justify-content: flex-start;
     font-size: 1rem;
-  
-    
   }
   
   .avatar {

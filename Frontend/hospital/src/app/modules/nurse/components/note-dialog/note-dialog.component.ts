@@ -18,46 +18,39 @@ export class NoteDialogComponent implements OnInit {
   date: string;
 
   designationValue: String = '';
-  physicians: any[] ;
+  physicians: any[];
 
   constructor(private snackbar: MatSnackBar,
     private utilityService: UtilityService,
-    private datePipe: DatePipe, 
+    private datePipe: DatePipe,
     private dialogRef: MatDialogRef<NoteDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, 
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private router: Router, private formBuilder: FormBuilder) {
     this.date = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
-    this.noteForm = formBuilder.group(
-      {
-        urgencyLevel: new FormControl('Urgent'),
-        date: [this.date, [Validators.required]],
-        designation: ['', [Validators.required]],
-        message: ['', [Validators.required]],
-        sendTo: ['', [Validators.required]],
-      }
-    )
-  }
-  getAllPhysicianNames() {
-    this.utilityService.getAllPhysicianNames().subscribe((result) => {
-      this.physicians = result;
+    this.noteForm = formBuilder.group({
+      urgencyLevel: new FormControl('NON_URGENT'),
+      date: [this.date, [Validators.required]],
+      message: ['', [Validators.required]],
+      sendTo: ['', [Validators.required]],
+      employeeId: [this.data.user.employeeId]
     });
   }
+
+  ngOnInit(): void {
+  }
+  
   sendNote() {
-    console.log(this.noteForm.value);
-    this.snackbar.open("Note is successfully sent", "", { duration: 3000 });
+    this.snackbar.open("Note Successfully Sent !", "", { duration: 3000 });
   }
 
   close() {
     this.dialogRef.close();
   }
-  viewPatientDetails() {
-  }
+  
   dropDownSelected() {
     if (this.noteForm.value.sendTo == 'akshay.nile@citiustech.com') {
       this.noteForm.controls.designation.setValue('Consultant Ophtho');
     }
   }
-  ngOnInit(): void {
-    this.getAllPhysicianNames()
-  }
+  
 }

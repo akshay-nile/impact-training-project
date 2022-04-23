@@ -1,0 +1,82 @@
+<div class="content mat-elevation-z8">
+    <div class="card-wrapper">
+        <div class="row">
+            <div class="text-dark col-sm-9" style="font-size: 20px;margin-top: 2%;margin-bottom: 2%;">Appointments</div>
+            <div class="col-sm-3" style="margin-right: 0%;padding-right: 0%;"><button mat-raised-button color="primary"
+                    (click)="openBookAppointmentDialog()">Book an Appointment</button> </div>
+
+            <mat-tab-group>
+                <mat-tab label="Calender">
+                    <full-calendar *ngIf="initialise" [options]="calendarOptions"></full-calendar>
+                </mat-tab>
+
+                <mat-tab label="Appointments">
+                    <mat-form-field appearance="standard">
+                        <mat-label>Search</mat-label>
+                        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Patient Name" #input>
+                    </mat-form-field>
+
+                    <div class="mat-elevation-z8">
+                        <table mat-table [dataSource]="dataSource" matSort class="table">
+                            <ng-container matColumnDef="title">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+                                <td mat-cell *matCellDef="let row"> {{row.title}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="patientName">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Patient </th>
+                                <td mat-cell *matCellDef="let row"> {{row.patientName}} &nbsp;&nbsp;</td>
+                            </ng-container>
+                            <ng-container matColumnDef="date">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+                                <td mat-cell *matCellDef="let row">{{row.date}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="time">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Time </th>
+                                <td mat-cell *matCellDef="let row">{{row.time}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="status">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                                <td mat-cell *matCellDef="let row" [ngClass]="getColor(row.status)">
+                                    {{row.status.replace('_', ' ') | titlecase}}
+                                </td>
+                            </ng-container>
+                            <ng-container matColumnDef="action">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                                <td mat-cell *matCellDef="let row">
+                                    <button mat-icon-button [matMenuTriggerFor]="menu"
+                                        aria-label="Example icon-button with a menu">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item (click)="openAppointmentDetailsDialog(row)">
+                                            <span>Appointment Details</span>
+                                        </button>
+                                        <button mat-menu-item (click)="openPatientDetailsDialog(row)">
+                                            <span>Patient Vital Details</span>
+                                        </button>
+                                        <button mat-menu-item (click)="openAddPrescriptionDialog(row)"
+                                            [disabled]="row.status != 'ATTENDED'">
+                                            <span>Add Prescription Info</span>
+                                        </button>
+                                    </mat-menu>
+                                </td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                                [ngClass]="{'todaysAppointment': row.date==date }"></tr>
+
+                            <tr class="mat-row" *matNoDataRow>
+                                <td class="mat-cell" colspan="4">
+                                    No data matching the filter "{{input.value}}"
+                                </td>
+                            </tr>
+                        </table>
+
+                        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users">
+                        </mat-paginator>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

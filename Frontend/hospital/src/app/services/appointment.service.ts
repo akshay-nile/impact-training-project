@@ -9,37 +9,64 @@ import { Appointment } from '../models/Appointment';
 })
 export class AppointmentService {
 
-  constructor(private http: HttpClient) { }
   apptUrl = environment.baseUrl + '/appointments/api';
-  addAppointmentDetails(appointment: any): Observable<boolean> {
-    return this.http.post<boolean>(this.apptUrl, appointment)
+
+  constructor(private http: HttpClient) { }
+
+  addAppointment(appointment: any): Observable<any> {
+    return this.http.post<any>(this.apptUrl + '/add-appointment', appointment)
       .pipe(catchError(this.handleError));
   }
 
-  updateAppointmentDetails(appointment: any): Observable<boolean> {
-    return this.http.put<boolean>(this.apptUrl, appointment)
+  updateAppointment(appointment: any): Observable<any> {
+    return this.http.put<any>(this.apptUrl + '/update-appointment', appointment)
       .pipe(catchError(this.handleError));
   }
-  deleteAppointmentDetails(id: any): Observable<boolean> {
-    return this.http.delete<boolean>(this.apptUrl + `/${id}`)
+
+  getAppointmentById(appointmentId: number): Observable<Appointment> {
+    return this.http.get<Appointment>(this.apptUrl + '/get-appointment/' + appointmentId)
       .pipe(catchError(this.handleError));
   }
-  getAppointmentDetails(id: any): Observable<Appointment> {
-    return this.http.get<Appointment>(this.apptUrl + `/${id}`)
+
+  getPastAppointmentByPatientId(patientId: string): Observable<any[]> {
+    return this.http.get<any[]>(this.apptUrl + '/past-appointments/' + patientId)
       .pipe(catchError(this.handleError));
   }
-  getCalendarAppointment(): Observable<any> {
-    return this.http.get<any>(this.apptUrl + '/getCalendarAppointments')
+  getAllPastAppointments(): Observable<any[]> {
+    return this.http.get<any[]>(this.apptUrl + '/past-appointments')
       .pipe(catchError(this.handleError));
   }
-  getAvailableTimeSlots(physician: string, date: string): Observable<string[]> {
-    return this.http.get<string[]>(this.apptUrl + `/timeslots/${physician}/${date}`)
+  
+  getAppointmentsById(id: any): Observable<any[]> {
+    return this.http.get<any[]>(this.apptUrl + '/get-appointments/' + id)
       .pipe(catchError(this.handleError));
   }
+
+  getCalendarAppointments(): Observable<any> {
+    return this.http.get<any>(this.apptUrl + '/calendar-appointments')
+      .pipe(catchError(this.handleError));
+  }
+
+  getCalendarAppointmentsById(id: string): Observable<any> {
+    return this.http.get<any>(this.apptUrl + '/calendar-appointments/' + id)
+      .pipe(catchError(this.handleError));
+  }
+
+  getAvailabilityWindows(params: any): Observable<any[]> {
+    return this.http.post<any[]>(this.apptUrl + '/get-windows', params)
+      .pipe(catchError(this.handleError));
+  }
+
   getAllAppointmentDetails(): Observable<Appointment[]> {
-    return this.http.get<Appointment[]>(this.apptUrl + '/getAllAppointments')
+    return this.http.get<Appointment[]>(this.apptUrl + '/get-all')
       .pipe(catchError(this.handleError));
   }
+
+  getMeetingTitlesByPatientId(patientId: string): Observable<any> {
+    return this.http.get<any>(this.apptUrl + '/get-meeting-titles/' + patientId)
+      .pipe(catchError(this.handleError));
+  }
+
   private handleError(errorResponse: HttpErrorResponse) {
     if (errorResponse.error instanceof ErrorEvent) {
       console.error("Client Side Error", errorResponse.error.message)

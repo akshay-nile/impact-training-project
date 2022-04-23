@@ -1,0 +1,127 @@
+mat-toolbar {
+    background: #004a9f;
+    color: white;
+  }
+  
+  mat-sidenav {
+    margin: 16px;
+    width: 200px;
+    border-right: none;
+    background: #002b5c;
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .content {
+    height: calc(100vh - 130px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+  
+    padding: 16px;
+  
+    overflow: auto;
+  }
+  
+  mat-sidenav-container {
+    height: calc(100vh - 65px);
+  }
+  
+  .menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+  
+    
+  }
+  
+  .avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .name {
+    margin-top: 8px;
+    font-weight: normal;
+  }
+  
+  .designation {
+    margin-top: 2px;
+    font-size: 0.9rem;
+    color: lightgrey;
+  }
+  
+  mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .logout{
+    font-size: medium;
+  }
+  .flexExpand {
+    flex: 1 1 auto;
+}
+
+.container-fluid {
+    margin-bottom: 4%;
+    
+}
+
+.text-dark{
+    text-align: center;
+}
+
+.form-label{
+    font-weight: 600;
+}
+
+.otp{
+    margin: 10px 0px;
+}
+
+.login{
+    text-decoration: none;
+    padding: 0px;
+    margin: 5px 0px;
+}
+.errorMessage{
+    margin: 3%;
+    font-weight: 600;
+    text-align: center;
+    font-weight: 700;
+}
+label.col-form-label {
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+select.dropdown-toggle{
+  padding: 0.55em 0.4em;
+  margin-right: 1em;
+  width: 99%;
+}
+
+button {
+  margin: 2em 1em 2em 0em;
+}
+
+h2{
+  margin: 1em;
+  margin-bottom: 0;
+}
+
+input {
+  border: 1px solid gray;
+}
+
+
+.emp-register-form {
+background-color: #fafafa;
+}

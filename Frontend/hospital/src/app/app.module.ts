@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -23,7 +23,6 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { ChangePasswordComponent } from './components/change-password/change-password.component'; 
 import { AppointmentService } from './services/appointment.service';
 import { VitalService } from './services/vital.service';
-
 
 @NgModule({
   declarations: [
@@ -46,7 +45,8 @@ import { VitalService } from './services/vital.service';
     BrowserAnimationsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FullCalendarModule
+    FullCalendarModule,
+    FormsModule
   ],
   providers: [DatePipe,ForgotPasswordService, LoginService,UtilityService,NoteService,AppointmentService,VitalService],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UtilityService } from 'src/app/services/utility.service';
+import { noSpaceValidator } from 'src/app/validators/text-field.validator';
 import { AdminService } from '../../services/admin.service';
 
 @Component({
@@ -60,11 +61,11 @@ export class EmployeeTabComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       title: new FormControl(''),
-      firstName: new FormControl('', [Validators.required]),
-      lastName: new FormControl('', [Validators.required]),
+      firstName: new FormControl('', [Validators.required, noSpaceValidator]),
+      lastName: new FormControl('', [Validators.required, noSpaceValidator]),
       email: new FormControl('', [Validators.required, Validators.email]),
       birthdate: new FormControl('', [Validators.required]),
-      specialization: new FormControl('', [Validators.maxLength(10)]),
+      specialization: new FormControl('', [Validators.maxLength(10), noSpaceValidator]),
       role: new FormControl('', [Validators.required]),
     });
     this.onRoleSelect();

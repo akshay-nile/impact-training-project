@@ -1,0 +1,1579 @@
+ID,Allergy Type,Allergy Name,Allergen Source,Isoforms or partial sequences of allergen,Allerginicity
+Bos d 2.0101,Animal,Bovine,Bos taurus,Bos Bos d 2,IgE but no biological test
+Bos d 3.0101,Animal,Bovine,Bos taurus,Bos Bos d 3,IgE but no biological test
+Can f 1.0101,Animal,Dog,Canis familiaris,Canis Can f 1 Lipocalin,IgE plus basophil+ or SPT+
+Can f 2,Animal,Dog,Canis familiaris,Canis Can f 2 Lipocalin,IgE plus basophil+ or SPT+
+Can f 2.0101,Animal,Dog,Canis familiaris,Canis Can f 2 Lipocalin,IgE plus basophil+ or SPT+
+Can f 3,Animal,Dog,Canis familiaris,Canis Can f 3 Serum albumin,IgE plus basophil+ or SPT+
+Can f 3.0101,Animal,Dog,Canis familiaris,Canis Can f 3 Serum albumin,IgE plus basophil+ or SPT+
+Can f 4.0101,Animal,Dog,Canis familiaris,Canis Can f 4 epithelial 18 kDa,IgE but no biological test
+Can f 5.0101,Animal,Dog,Canis familiaris,Canis Can f 5,IgE but no biological test
+Can f 6.0101,Animal,Dog,Canis familiaris,Canis Can f 6 Lipocalin,IgE but no biological test
+Can f 7.0101,Animal,Dog,Canis familiaris,"Canis familiaris	Can f 7",IgE but no biological test
+Cav p 1.0101,Animal,Domestic guinea pig,Cavia porcellus,Cavia Cav p 1,IgE but no biological test
+Cav p 1.0102,Animal,Domestic guinea pig,Cavia porcellus,Cavia Cav p 1,IgE but no biological test
+Cav p 2.0101,Animal,Domestic guinea pig,Cavia porcellus,Cavia Cav p 2,IgE plus basophil+ or SPT+
+Cav p 3.0101,Animal,Domestic guinea pig,Cavia porcellus,Cavia Cav p 3 lipocalin,IgE plus basophil+ or SPT+
+Equ c 1.0101,Animal,Horse,Equus caballus,Equus Equ c 1,IgE but no biological test
+Equ c 2.0101,Animal,Horse,Equus caballus,Equus Equ c 2,IgE but no biological test
+Equ c 2.0102,Animal,Horse,Equus caballus,Equus Equ c 2,IgE but no biological test
+Equ c 3.0101,Animal,Horse,Equus caballus,Equus Equ c 3,IgE plus basophil+ or SPT+
+Equ c 4.0101,Animal,Horse,Equus caballus,Equus Equ c 4 and Equ c 5,IgE but no biological test
+Fel d 1.0101,Animal,Cat,Felis catus,Felis Fel d 1 Chain 1,IgE plus basophil+ or SPT+
+Fel d 1.0101,Animal,Cat,Felis catus,Felis Fel d 1 chain 2,IgE plus basophil+ or SPT+
+Fel d 2.0101,Animal,Cat,Felis catus,Felis Fel d 2,IgE but no biological test
+Fel d 3.0101,Animal,Cat,Felis catus,Felis Fel d 3,IgE but no biological test
+Fel d 4.0101,Animal,Cat,Felis catus,Felis Fel d 4,IgE but no biological test
+Fel d 7.0101,Animal,Cat,Felis catus,Felis Fel d 7,IgE but no biological test
+Fel d 8.0101,Animal,Cat,Felis catus,Felis Fel d 8 latherin-like,IgE but no biological test
+Mes a 1.0101,Animal,Golden hamster,Mesocricetus auratus,Mesocricetus auratus Mes a 1,IgE but no biological test
+Mus m 1.0101,Animal,Mouse,Mus musculus,Mus Mus m 1,IgE plus basophil+ or SPT+
+Mus m 1.0102,Animal,Mouse,Mus musculus domesticus,Mus Mus m 1,IgE plus basophil+ or SPT+
+Ory c 3.A.0101,Animal,European rabbit,Oryctolagus cuniculus,Oryctolagus Ory c 3,IgE plus basophil+ or SPT+
+Ory c 3.B.0101,Animal,European rabbit,Oryctolagus cuniculus,Oryctolagus Ory c 3,IgE plus basophil+ or SPT+
+Ory c 4.0101,Animal,European rabbit,Oryctolagus cuniculus,Oryctolagus Ory c 4,IgE but no biological test
+Rat n 1.0101,Animal,Rat,Rattus norvegicus,Rattus Rat n 1,IgE but no biological test
+Sus s 1.0101,Animal,Pig,Sus scrofa,Sus s serum albumin,IgE but no biological test
+NA-123,Animal,Dog,Canis familiaris,Canis Can f 4 epithelial 18 kDa,IgE but no biological test
+NA-124,Animal,Dog,Canis familiaris,Canis Can f 6 Lipocalin,IgE but no biological test
+NA-191,Animal,Horse,Equus caballus,Equus Equ c 2,IgE but no biological test
+NA-206,Animal,Cat,Felis catus,Felis Fel d 1 Chain 1,IgE plus basophil+ or SPT+
+NA-207,Animal,Cat,Felis catus,Felis Fel d 1 chain 2,IgE plus basophil+ or SPT+
+NA-290,Animal,Golden hamster,Mesocricetus auratus,Mesocricetus auratus Mes a 1,IgE but no biological test
+NA-294,Animal,Mouse,Mus musculus,Mus Mus m 1,IgE plus basophil+ or SPT+
+NA-423,Animal,Pig,Sus scrofa,Sus Porcine Pepsin,IgE but no biological test
+NA-424,Animal,Pig,Sus scrofa,Sus s serum albumin,IgE but no biological test
+NA-522,Animal,Cat,Felis catus,Felis Fel d 1 Chain 1,IgE plus basophil+ or SPT+
+NA-540,Animal,Mouse,Mus musculus,Mus Mus m 1,IgE plus basophil+ or SPT+
+NA-557,Animal,Rat,Rattus norvegicus,Rattus Rat n 1,IgE but no biological test
+Alt a 1.0101,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 1,IgE plus basophil+ or SPT+
+Alt a 1.0102,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 1,IgE plus basophil+ or SPT+
+Alt a 10.01,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 10 ADH,IgE but no biological test
+Alt a 12.0101,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 12 Ribosomal BP P1,IgE but no biological test
+Alt a 13.0101,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 13,IgE plus basophil+ or SPT+
+Alt a 14.0101,Fungi,Fungus,Alternaria alternata,Alternaria MnSOD Alt a 14,IgE but no biological test
+Alt a 3.0101,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 3 HSP,IgE but no biological test
+Alt a 4.0101,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 4 thioredoxin,IgE but no biological test
+Alt a 5.0101,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 5 ribosomal P2,IgE but no biological test
+Alt a 6.0101,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 6 enolase,IgE but no biological test
+Alt a 7.0101,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 7 flavodoxin,IgE but no biological test
+Alt a 8.0101,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 8 (mannitol dehydrogenase),IgE plus basophil+ or SPT+
+Asp f 1,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 1,IgE plus basophil+ or SPT+
+Asp f 10.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 10,IgE but no biological test
+Asp f 11.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 11,IgE plus basophil+ or SPT+
+Asp f 18.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 18 and Asp n 18,IgE but no biological test
+Asp f 2,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 2,IgE but no biological test
+Asp f 2.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 2,IgE but no biological test
+Asp f 22.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 22,IgE but no biological test
+Asp f 23.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 23,IgE but no biological test
+Asp f 27.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 27,IgE but no biological test
+Asp f 28.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 28,IgE but no biological test
+Asp f 29.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 29,IgE but no biological test
+Asp f 3.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 3,IgE plus basophil+ or SPT+
+Asp f 34.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 34,IgE plus basophil+ or SPT+
+Asp f 4.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 4,IgE plus basophil+ or SPT+
+Asp f 5.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 5,IgE but no biological test
+Asp f 6.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 6,IgE plus basophil+ or SPT+
+Asp f 7.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 7,IgE but no biological test
+Asp f 8.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 8,IgE plus basophil+ or SPT+
+Asp f 9.0101,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 9,IgE but no biological test
+Asp f o 13.0101,Fungi,Fungus,Aspergillus oryzae,"Aspergillus Oryzin Asp o 13, fl 13",IgE but no biological test
+Asp n 14,Fungi,Fungus,Aspergillus niger,Aspergillus Asp n 14,IgE but no biological test
+Asp n 14.0101,Fungi,Fungus,Aspergillus niger,Aspergillus Asp n 14,IgE but no biological test
+Asp o 21,Fungi,Fungus,Aspergillus oryzae,Aspergillus Asp o 21,IgE plus basophil+ or SPT+
+Asp o 21.0101,Fungi,Fungus,Aspergillus oryzae,Aspergillus Asp o 21,IgE plus basophil+ or SPT+
+Asp v 13.0101,Fungi,Fungus,Aspergillus versicolor,Aspergillus versicolor serine protease,IgE but no biological test
+Cla c 14.0101,Fungi,Fungus,Cladosporium cladosporioides,Cladosporium Cla c 14,IgE but no biological test
+Cla c 9.0101,Fungi,Fungus,Cladosporium cladosporioides,Cladosporium Cla c 9 Davidiella,IgE but no biological test
+Cla h 10.0101,Fungi,Fungus,Davidiella tassiana,Cladosporium / Davidiella Cla h 10,IgE but no biological test
+Cla h 5.0101,Fungi,Fungus,Davidiella tassiana,Cladosporium / Davidiella Cla h 5,IgE but no biological test
+Cla h 6.0101,Fungi,Fungus,Davidiella tassiana,Cladosporium / Davidiella Cla h 6,IgE but no biological test
+Cla h 7.0101,Fungi,Fungus,Davidiella tassiana,Cladosporium / Davidiella Cla h 7,IgE but no biological test
+Cla h 8.0101,Fungi,Fungus,Davidiella tassiana,Cladosporium / Davidiella Cla h 8,IgE plus basophil+ or SPT+
+Cla h 9.0101,Fungi,Fungus,Davidiella tassiana,Cladosporium / Davidiella Cla h 9 vacuolar serine,IgE but no biological test
+Cur l 2.0101,Fungi,Fungus,Cochliobolus lunatus,Curvularia lunata enolase Cur l 2.01 Cochliobolus,IgE but no biological test
+Cur l 3.0101,Fungi,Fungus,Cochliobolus lunatus,Curvularia lunatua Cur l 3  Cochliobolus,IgE plus basophil+ or SPT+
+Cur l 4.0101,Fungi,Fungus,Cochliobolus lunatus,Curvularia Cur l 4,IgE plus basophil+ or SPT+
+Epi p 1.0101,Fungi,Fungus,Epicoccum nigrum,Epicoccum Epi p 1,IgE plus basophil+ or SPT+
+Fus c 1.0101,Fungi,Fungus,Fusarium culmorum,Fusarium Fus c 1,IgE plus basophil+ or SPT+
+Fus c 2.0101,Fungi,Fungus,Fusarium culmorum,Fusarium Fus c 2,IgE but no biological test
+Fus p 4.0101,Fungi,Fungus,Fusarium proliferatum,Fusarium Fus p 4,IgE but no biological test
+Fus p 9,Fungi,Fungus,Fusarium proliferatum,Fusarium proliferatum Fus p 9,IgE but no biological test
+Pen b 26.0101,Fungi,Fungus,Penicillium brevicompactum,Penicillium Pen b 26,IgE but no biological test
+Pen c 19.0101,Fungi,Fungus,Penicillium citrinum,Penicillium Pen c 19,IgE but no biological test
+Pen c 22.0101,Fungi,Fungus,Penicillium citrinum,Penicillium Pen c 22,IgE but no biological test
+Pen c 24.0101,Fungi,Fungus,Penicillium citrinum,Penicillium Pen c 24,IgE but no biological test
+Pen c 3.0101,Fungi,Fungus,Penicillium citrinum,Penicillium Pen c 3,IgE but no biological test
+Pen c 3.0101,Fungi,Fungus,Penicillium citrinum,Penicillium Pen ch 13,IgE plus basophil+ or SPT+
+Pen c 30.0101,Fungi,Fungus,Penicillium citrinum,Penicillium Pen c 30,IgE but no biological test
+Pen c 32.0101,Fungi,Fungus,Penicillium citrinum,Penicillium Pen c 32,IgE but no biological test
+Pen ch 13.0101,Fungi,Fungus,Penicillium chrysogenum,Penicillium Pen ch 13,IgE plus basophil+ or SPT+
+Pen ch 18.0101,Fungi,Fungus,Penicillium chrysogenum,Penicillium Pen 18,IgE but no biological test
+Pen ch 20.0101,Fungi,Fungus,Penicillium chrysogenum,Penicillium Pen ch 20,IgE but no biological test
+Pen ch 35.0101,Fungi,Fungus,Penicillium chrysogenum,Penicillium Pen ch 35,IgE but no biological test
+Pen cr 26.0101,Fungi,Fungus,Penicillium crustosum,Penicillium crustosum  Pen cr 26 60s P1,IgE but no biological test
+Pen o 18.0101,Fungi,Fungus,Penicillium oxalicum,Penicillium Pen 18,IgE but no biological test
+Rho m 1.0101,Fungi,Fungus,Rhodotorula mucilaginosa,Rhodotorula Rho m 1,IgE but no biological test
+Rho m 2.0101,Fungi,Fungus,Rhodotorula mucilaginosa,Rhodotorula Rho m 2,IgE but no biological test
+Sch c 1.0101,Fungi,Mushroom,Schizophyllum commune H4-8,Schizophyllum Sch c 1,IgE but no biological test
+Sta 3.0101,Fungi,Fungus,Stachybotrys chartarum,Stachybotrys Sta c 3,IgE but no biological test
+NA-12,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 1,IgE plus basophil+ or SPT+
+NA-13,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 5 ribosomal P2,IgE but no biological test
+NA-14,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 7 flavodoxin,IgE but no biological test
+NA-15,Fungi,Fungus,Alternaria alternata,Alternaria Alt a 8 (mannitol dehydrogenase),IgE plus basophil+ or SPT+
+NA-16,Fungi,Fungus,Alternaria alternata,Alternaria Nuc Transport 2,IgE plus basophil+ or SPT+
+NA-17,Fungi,Fungus,Alternaria alternata,Alternaria TCTP IgE binding,IgE but no biological test
+NA-68,Fungi,Fungus,Aspergillus flavus,"Aspergillus Oryzin Asp o 13, fl 13",IgE but no biological test
+NA-69,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 1,IgE plus basophil+ or SPT+
+NA-70,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 22,IgE but no biological test
+NA-71,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 23,IgE but no biological test
+NA-72,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 4,IgE plus basophil+ or SPT+
+NA-73,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 5,IgE but no biological test
+NA-74,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 6,IgE plus basophil+ or SPT+
+NA-75,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Asp f 8,IgE plus basophil+ or SPT+
+NA-76,Fungi,Fungus,Aspergillus fumigatus,Aspergillus Endo-chitosanase,IgE but no biological test
+NA-77,Fungi,Fungus,Aspergillus fumigatus,Aspergillus fumigatus Asp f 13,IgE but no biological test
+NA-78,Fungi,Fungus,Aspergillus fumigatus Af293,Aspergillus Asp f 2,IgE but no biological test
+NA-79,Fungi,Fungus,Aspergillus fumigatus Af293,Aspergillus Endo-chitosanase,IgE but no biological test
+NA-80,Fungi,Fungus,Aspergillus fumigatus var. RP-2014,Aspergillus Asp f 4,IgE plus basophil+ or SPT+
+NA-81,Fungi,Fungus,Aspergillus fumigatus var. RP-2014,Aspergillus Asp f 7,IgE but no biological test
+NA-82,Fungi,Fungus,Aspergillus niger,Aspergillus Asp f 18 and Asp n 18,IgE but no biological test
+NA-134,Fungi,Fungus,Cochliobolus lunatus,Curvularia lunata alcohol dehydrogenase,IgE but no biological test
+NA-157,Fungi,Fungus,Davidiella tassiana,Cladosporium / Davidiella Heat shock 70 kDa protei,IgE but no biological test
+NA-158,Fungi,Fungus,Davidiella tassiana,Cladosporium / Davidiella Hydrophobin,IgE plus basophil+ or SPT+
+NA-159,Fungi,Fungus,Davidiella tassiana,Cladosporium / Davidiella putative hydrolase,IgE but no biological test
+NA-160,Fungi,Fungus,Davidiella tassiana,Cladosporium / Davidiella Putative nuclear transpo,IgE plus basophil+ or SPT+
+NA-161,Fungi,Fungus,Davidiella tassiana,Cladosporium Davidiella TCTP,IgE but no biological test
+NA-216,Fungi,Fungus,Fusarium culmorum,Fusarium claimed Fus c 3,IgE but no biological test
+NA-321,Fungi,Fungus,Penicillium citrinum,Penicillium Pen 18,IgE but no biological test
+NA-372,Fungi,Fungus,Rhizopus oryzae,Rhizopus Rhi o 1.0101,IgE plus basophil+ or SPT+
+NA-418,Fungi,Fungus,Stemphylium callistephi,Stemphylium major allergen alt a1-like,IgE but no biological test
+NA-419,Fungi,Fungus,Stemphylium sp. CID1012,Stemphylium major allergen alt a1-like,IgE but no biological test
+NA-420,Fungi,Fungus,Stemphylium vesicarium,Stemphylium major allergen alt a1-like,IgE but no biological test
+NA-467,Fungi,Fungus,Ulocladium alternariae,Ulocladium alt a1-like,IgE but no biological test
+NA-468,Fungi,Fungus,Ulocladium atrum,Ulocladium alt a1-like,IgE but no biological test
+NA-470,Fungi,Fungus,Ulocladium chartarum,Ulocladium alt a1-like,IgE but no biological test
+NA-512,Fungi,Fungus,Davidiella tassiana,Cladosporium / Davidiella Cla h 6,IgE but no biological test
+NA-551,Fungi,Fungus,Penicillium chrysogenum,Penicillium Pen 18,IgE but no biological test
+NA-552,Fungi,Fungus,Penicillium chrysogenum,Penicillium Pen ch 13,IgE plus basophil+ or SPT+
+Bla g 1.0101,Insect,German cockroach,Blattella germanica,Blattella Bla g 1,IgE plus basophil+ or SPT+
+Bla g 1.0201,Insect,German cockroach,Blattella germanica,Blattella Bla g 1,IgE plus basophil+ or SPT+
+Bla g 11.0101,Insect,German cockroach,Blattella germanica,Blattella Bla g 11 alpha Amylase,IgE but no biological test
+Bla g 2.0101,Insect,German cockroach,Blattella germanica,Blattella Bla g 2,IgE plus basophil+ or SPT+
+Bla g 3.0101,Insect,German cockroach,Blattella germanica,Blattella Bla g 3,IgE but no biological test
+Bla g 4.0101,Insect,German cockroach,Blattella germanica,Blattella Bla g 4,IgE plus basophil+ or SPT+
+Bla g 5.0101,Insect,German cockroach,Blattella germanica,Blattella Bla g 5,IgE plus basophil+ or SPT+
+Bla g 6.0101,Insect,German cockroach,Blattella germanica,Blattella Bla g 6,IgE but no biological test
+Bla g 6.0201,Insect,German cockroach,Blattella germanica,Blattella Bla g 6,IgE but no biological test
+Bla g 6.0301,Insect,German cockroach,Blattella germanica,Blattella Bla g 6,IgE but no biological test
+Bla g 7.0101,Insect,German cockroach,Blattella germanica,Blattella Bla g 7,IgE but no biological test
+Bla g 9.0101,Insect,German cockroach,Blattella germanica,Blattella arginine kinase Bla g 9,IgE but no biological test
+Blo t 21.0101,Insect,Mite,Blomia tropicalis,Blomia Blo t 21,IgE plus basophil+ or SPT+
+Blo t 4.0101,Insect,Mite,Blomia tropicalis,Blomia Blo t 4 alpha amylase,IgE plus basophil+ or SPT+
+Blo t 8.0101,Insect,Mite,Blomia tropicalis,Blomia Blo t 8,IgE but no biological test
+Bomb m 1.0101,Insect,Silkworm,Bombyx mori,Bombyx Bomb m 1,IgE but no biological test
+Chi k 10.0101,Insect,Midge,Chironomus kiiensis,Chironomus Chi k 10,IgE but no biological test
+Chi t 1.0101,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 1,IgE but no biological test
+Chi t 1.0201,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 1,IgE but no biological test
+Chi t 2.0101,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 2,IgE but no biological test
+Chi t 3.0101,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 3,IgE but no biological test
+Chi t 3.0201,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 3,IgE but no biological test
+Chi t 3.0301,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 3,IgE but no biological test
+Chi t 3.0401,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 3,IgE but no biological test
+Chi t 3.0501,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 3,IgE but no biological test
+Chi t 3.0601,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 3,IgE but no biological test
+Chi t 3.0701,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 3,IgE but no biological test
+Chi t 3.0702,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 3,IgE but no biological test
+Chi t 3.0801,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 3,IgE but no biological test
+Chi t 3.0901,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 3,IgE but no biological test
+Chi t 4.0101,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 4,IgE but no biological test
+Chi t 9.0101,Insect,Midge,Chironomus thummi thummi,Chironomus Chi t 9,IgE but no biological test
+Lep s 1.0101,Insect,Silverfish,Lepisma saccharina,Lepisma Tropomyosin,IgE plus basophil+ or SPT+
+Lip b 1.0101,Insect,booklice,Liposcelis bostrychophila,Liposcelis Lip b 1 Fragments,IgE but no biological test
+Lip b 1.0102,Insect,booklice,Liposcelis bostrychophila,Liposcelis Lip b 1 Fragments,IgE but no biological test
+Per a 1.0101,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 1,IgE plus basophil+ or SPT+
+Per a 1.0102,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 1,IgE plus basophil+ or SPT+
+Per a 1.0103,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 1,IgE plus basophil+ or SPT+
+Per a 1.0104,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 1,IgE plus basophil+ or SPT+
+Per a 1.0201,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 1,IgE plus basophil+ or SPT+
+Per a 10.0101,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 10 ser protease,IgE plus basophil+ or SPT+
+Per a 11.0101,Insect,American cockroach,Periplaneta americana,Periplaneta americana Per a 11,IgE plus basophil+ or SPT+
+Per a 11.0101,Insect,American cockroach,Periplaneta americana,Periplaneta Not in IUIS Per a 4,IgE but no biological test
+Per a 12.0101,Insect,American cockroach,Periplaneta americana,Periplaneta americana Per a 12,IgE plus basophil+ or SPT+
+Per a 2.0101,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 2,IgE but no biological test
+Per a 3.0101,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 3,IgE plus basophil+ or SPT+
+Per a 3.0201,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 3,IgE plus basophil+ or SPT+
+Per a 3.0202,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 3,IgE plus basophil+ or SPT+
+Per a 3.0203,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 3,IgE plus basophil+ or SPT+
+Per a 5.0101,Insect,American cockroach,Periplaneta americana,Per a 5 Periplaneta GST,IgE plus basophil+ or SPT+
+Per a 5.0102,Insect,American cockroach,Periplaneta americana,Per a 5 Periplaneta GST,IgE plus basophil+ or SPT+
+Per a 6.0101,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 6,IgE but no biological test
+Per a 6.0101,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 7,IgE plus basophil+ or SPT+
+Per a 7.0101,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 7,IgE plus basophil+ or SPT+
+Per a 7.0102,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 7,IgE plus basophil+ or SPT+
+Per a 9.0101,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 9,IgE but no biological test
+Plo i 1.0101,Insect,Indian meal moth,Plodia interpunctella,Plodia Plo i 1 Arginine kinase,IgE plus basophil+ or SPT+
+Plo i 2.0101,Insect,Indian meal moth,Plodia interpunctella,Plodia Plo i 2 thioredoxin,IgE but no biological test
+NA-1,Insect,Mite,Acarus siro,Acarus siro Group 4 allergen,IgE but no biological test
+NA-95,Insect,German cockroach,Blattella germanica,Blattella  chymotrypsin-like,IgE but no biological test
+NA-96,Insect,German cockroach,Blattella germanica,Blattella 36 kDa allergen,IgE but no biological test
+NA-97,Insect,German cockroach,Blattella germanica,Blattella arginine kinase Bla g 9,IgE but no biological test
+NA-98,Insect,German cockroach,Blattella germanica,Blattella Bla g 2,IgE plus basophil+ or SPT+
+NA-99,Insect,German cockroach,Blattella germanica,Blattella Bla g 3,IgE but no biological test
+NA-100,Insect,German cockroach,Blattella germanica,Blattella Bla g 4,IgE plus basophil+ or SPT+
+NA-101,Insect,German cockroach,Blattella germanica,Blattella Bla g 5,IgE plus basophil+ or SPT+
+NA-102,Insect,German cockroach,Blattella germanica,Blattella delta GST,IgE but no biological test
+NA-104,Insect,Mite,Blomia tropicalis,Blomia Blo t 12,IgE plus basophil+ or SPT+
+NA-108,Insect,Mite,Blomia tropicalis,Blomia Blo t 7,IgE but no biological test
+NA-109,Insect,Mite,Blomia tropicalis,Blomia Blo t 8,IgE but no biological test
+NA-260,Insect,Silverfish,Lepisma saccharina,Lepisma Tropomyosin,IgE plus basophil+ or SPT+
+NA-322,Insect,American cockroach,Periplaneta americana,Per a 5 Periplaneta GST,IgE plus basophil+ or SPT+
+NA-323,Insect,American cockroach,Periplaneta americana,Periplaneta Not in IUIS Per a 4,IgE but no biological test
+NA-324,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 1,IgE plus basophil+ or SPT+
+NA-325,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 2,IgE but no biological test
+NA-326,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 3,IgE plus basophil+ or SPT+
+NA-327,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 7,IgE plus basophil+ or SPT+
+NA-328,Insect,American cockroach,Periplaneta americana,Periplaneta Per a 9,IgE but no biological test
+NA-329,Insect,Smokybrown cockroach,Periplaneta fuliginosa,Periplaneta Per a 7,IgE plus basophil+ or SPT+
+Aca s 13,Mite,Mite,Acarus siro,Acarus Aca s 13,IgE but no biological test
+Blo t 1.0101,Mite,Mite,Blomia tropicalis,Blomia Blo t 1.01,IgE but no biological test
+Blo t 1.0201,Mite,Mite,Blomia tropicalis,Blomia Blo t 1.02,IgE but no biological test
+Blo t 10.0101,Mite,Mite,Blomia tropicalis,Blomia Blo t 10,IgE plus basophil+ or SPT+
+Blo t 11.0101,Mite,Mite,Blomia tropicalis,Blomia Blo t 11,IgE plus basophil+ or SPT+
+Blo t 12.0101,Mite,Mite,Blomia tropicalis,Blomia Blo t 12,IgE plus basophil+ or SPT+
+Blo t 13.0101,Mite,Mite,Blomia tropicalis,Blomia Blo t 13.01,IgE but no biological test
+Blo t 3.0101,Mite,Mite,Blomia tropicalis,Blomia Blo t 3,IgE but no biological test
+Blo t 5.0101,Mite,Mite,Blomia tropicalis,Blomia Blo t 5,IgE plus basophil+ or SPT+
+Blo t 7.0101,Mite,Mite,Blomia tropicalis,Blomia Blo t 7,IgE but no biological test
+Der f 1.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 1 Der f 1 Der m 1,IgE plus basophil+ or SPT+
+Der f 1.0102,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 1 Der f 1 Der m 1,IgE plus basophil+ or SPT+
+Der f 1.0108,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 1 Der f 1 Der m 1,IgE plus basophil+ or SPT+
+Der f 1.0109,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 1 Der f 1 Der m 1,IgE plus basophil+ or SPT+
+Der f 1.0110,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 1 Der f 1 Der m 1,IgE plus basophil+ or SPT+
+Der f 10.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 10 / Der f 10,IgE plus basophil+ or SPT+
+Der f 11.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 11 / Der f 11,IgE plus basophil+ or SPT+
+Der f 13.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 13,IgE plus basophil+ or SPT+
+Der f 14.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 14 / Der f 14,IgE but no biological test
+Der f 15.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 15 Der p 15,IgE but no biological test
+Der f 16.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 16,IgE but no biological test
+Der f 18.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides farinae Der f 18 Der p 18,IgE but no biological test
+Der f 2.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+Der f 2.0102,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+Der f 2.0103,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+Der f 2.0105,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+Der f 2.0106,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+Der f 2.0107,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+Der f 2.0108,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+Der f 2.0109,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+Der f 2.0112,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+Der f 2.0116,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+Der f 20.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 20 / Der p 20,IgE but no biological test
+Der f 20.0201,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 20 / Der p 20,IgE but no biological test
+Der f 21.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides farinae Der f 21 Chew,IgE but no biological test
+Der f 24.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 24 and Der p 24 Ubiquinol,IgE but no biological test
+Der f 25.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 25,IgE but no biological test
+Der f 25.0201,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 25,IgE but no biological test
+Der f 28.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 28,IgE but no biological test
+Der f 28.0201,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 28,IgE but no biological test
+Der f 29.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 29,IgE plus basophil+ or SPT+
+Der f 3.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 3 / Der f 3,IgE but no biological test
+Der f 30.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 30,IgE plus basophil+ or SPT+
+Der f 31.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 31,IgE plus basophil+ or SPT+
+Der f 33.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 33,IgE but no biological test
+Der f 34.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides farinae Der f 34,IgE but no biological test
+Der f 35.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 35,IgE but no biological test
+Der f 4.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides farinae Der f 4,IgE but no biological test
+Der f 6.0101,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 6 / Der f 6,IgE but no biological test
+Der f 7.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 7 /  Der f 7,IgE plus basophil+ or SPT+
+Der m 1.0101,Mite,House dust mite,Dermatophagoides microceras,Dermatophagoides Der p 1 Der f 1 Der m 1,IgE plus basophil+ or SPT+
+Der p 1.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 1 Der f 1 Der m 1,IgE plus basophil+ or SPT+
+Der p 1.0102,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 27,IgE plus basophil+ or SPT+
+Der p 1.0113,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 1 Der f 1 Der m 1,IgE plus basophil+ or SPT+
+Der p 1.0124,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 1 Der f 1 Der m 1,IgE plus basophil+ or SPT+
+Der p 10.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 10 / Der f 10,IgE plus basophil+ or SPT+
+Der p 11.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 11 / Der f 11,IgE plus basophil+ or SPT+
+Der p 13.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 13,IgE but no biological test
+Der p 14.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 14 / Der f 14,IgE but no biological test
+Der p 15.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der f 15 Der p 15,IgE but no biological test
+Der p 15.0102,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der f 15 Der p 15,IgE but no biological test
+Der p 18.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides farinae Der f 18 Der p 18,IgE but no biological test
+Der p 2.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+Der p 2.0110,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+Der p 2.0114,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+Der p 20.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der f 20 / Der p 20,IgE but no biological test
+Der p 21.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 21,IgE plus basophil+ or SPT+
+Der p 23.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 23 Peritrophin-like protein,IgE plus basophil+ or SPT+
+Der p 24.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der f 24 and Der p 24 Ubiquinol,IgE but no biological test
+Der p 3.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 3 / Der f 3,IgE but no biological test
+Der p 4.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 4,IgE but no biological test
+Der p 5.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 5,IgE plus basophil+ or SPT+
+Der p 5.0102,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 5,IgE plus basophil+ or SPT+
+Der p 7.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 7 /  Der f 7,IgE plus basophil+ or SPT+
+Der p 8.0101,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 8,IgE but no biological test
+Eur m 1.0101,Mite,House dust mite,Euroglyphus maynei,Euroglyphus Eur m 1,IgE but no biological test
+Eur m 2.0101,Mite,House dust mite,Euroglyphus maynei,Euroglyphus Eur m 2,IgE but no biological test
+Eur m 2.0102,Mite,House dust mite,Euroglyphus maynei,Euroglyphus Eur m 2,IgE but no biological test
+Gly d 2.0101,Mite,Storage mite,Glycyphagus domesticus,Glycyphagus Gly d 2,IgE but no biological test
+Gly d 2.0201,Mite,Storage mite,Glycyphagus domesticus,Glycyphagus Gly d 2,IgE but no biological test
+Hev b 8.0203,Mite,Para rubber tree,Hevea brasiliensis,Hevea Hev b 8,IgE plus basophil+ or SPT+
+Lep d 10.0101,Mite,Storage mite,Lepidoglyphus destructor,Lepidoglyphus Lep d 10,IgE but no biological test
+Lep d 13.0101,Mite,Storage mite,Lepidoglyphus destructor,Lepidoglyphus Lep d 13,IgE but no biological test
+Lep d 2.0101,Mite,Storage mite,Lepidoglyphus destructor,Lepidoglyphus Lep d 2,IgE but no biological test
+Lep d 2.0102,Mite,Storage mite,Lepidoglyphus destructor,Lepidoglyphus Lep d 2,IgE but no biological test
+Lep d 2.0201,Mite,Storage mite,Lepidoglyphus destructor,Lepidoglyphus Lep d 2,IgE but no biological test
+Lep d 2.0202,Mite,Storage mite,Lepidoglyphus destructor,Lepidoglyphus Lep d 2,IgE but no biological test
+Lep d 5.0101,Mite,Storage mite,Lepidoglyphus destructor,Lepidoglyphus Lep d 5,IgE but no biological test
+Lep d 5.0102,Mite,Storage mite,Lepidoglyphus destructor,Lepidoglyphus Lep d 5,IgE but no biological test
+Lep d 5.0103,Mite,Storage mite,Lepidoglyphus destructor,Lepidoglyphus Lep d 5,IgE but no biological test
+Lep d 7.0101,Mite,Storage mite,Lepidoglyphus destructor,Lepidoglyphus Lep d 7,IgE but no biological test
+Tyr p 10.0101,Mite,Dust mite,Tyrophagus putrescentiae,Tyrophagus Tyr p 10 tropomyosin,IgE but no biological test
+Tyr p 13.0101,Mite,Dust mite,Tyrophagus putrescentiae,Tyrophagus Tyr p 13,IgE but no biological test
+Tyr p 2.0101,Mite,Dust mite,Tyrophagus putrescentiae,Tyrophagus Tyr p 2,IgE but no biological test
+Tyr p 28.0101,Mite,Dust mite,Tyrophagus putrescentiae,Tyrophagus putrescentiae Tyr p 28,IgE but no biological test
+Tyr p 3.0101,Mite,Dust mite,Tyrophagus putrescentiae,Tyrophagus Tyr p 3,IgE plus basophil+ or SPT+
+Tyr p 34.0101,Mite,Dust mite,Tyrophagus putrescentiae,Tyrophagus Tyr p 24 Troponin C,IgE but no biological test
+Tyr p 35.0101,Mite,Dust mite,Tyrophagus putrescentiae,Tyrophagus putrescentiae Tyr p 35,IgE but no biological test
+Tyr p 36.0101,Mite,Dust mite,Tyrophagus putrescentiae,Tyrophagus putrescentiae Tyr p 36,IgE but no biological test
+NA-103,Mite,Mite,Blomia tropicalis,Blomia Blo t 1.02,IgE but no biological test
+NA-105,Mite,Mite,Blomia tropicalis,Blomia Blo t 21,IgE plus basophil+ or SPT+
+NA-106,Mite,Mite,Blomia tropicalis,Blomia Blo t 3,IgE but no biological test
+NA-107,Mite,Mite,Blomia tropicalis,Blomia Blo t 5,IgE plus basophil+ or SPT+
+NA-162,Mite,House dust mite,Dermatophagoides farinae,Der f 36 from Proteome,IgE but no biological test
+NA-163,Mite,House dust mite,Dermatophagoides farinae,Der f alpha actinin,IgE plus basophil+ or SPT+
+NA-164,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 20 / Der p 20,IgE but no biological test
+NA-165,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 23 like,IgE plus basophil+ or SPT+
+NA-166,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 27,IgE plus basophil+ or SPT+
+NA-167,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der f 5-like,IgE but no biological test
+NA-168,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 1 Der f 1 Der m 1,IgE plus basophil+ or SPT+
+NA-169,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 11 / Der f 11,IgE plus basophil+ or SPT+
+NA-170,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 14 / Der f 14,IgE but no biological test
+NA-171,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+NA-172,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 3 / Der f 3,IgE but no biological test
+NA-173,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 6 / Der f 6,IgE but no biological test
+NA-174,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 7 /  Der f 7,IgE plus basophil+ or SPT+
+NA-175,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides farinae Der f 21 Chew,IgE but no biological test
+NA-176,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides farinae Der f 4,IgE but no biological test
+NA-177,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides farinae Pseudo-Der f 8,IgE but no biological test
+NA-178,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Profilin,IgE but no biological test
+NA-179,Mite,House dust mite,Dermatophagoides pteronyssinus,Der p 36,IgE but no biological test
+NA-180,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der f 30,IgE plus basophil+ or SPT+
+NA-181,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der f 33,IgE but no biological test
+NA-182,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der f 35,IgE but no biological test
+NA-183,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 1 Der f 1 Der m 1,IgE plus basophil+ or SPT+
+NA-184,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 10 / Der f 10,IgE plus basophil+ or SPT+
+NA-185,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+NA-186,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 23 Peritrophin-like protein,IgE plus basophil+ or SPT+
+NA-187,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 4,IgE but no biological test
+NA-188,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 8,IgE but no biological test
+NA-189,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Profilin,IgE but no biological test
+NA-190,Mite,House dust mite,Dermatophagoides siboney,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+NA-196,Mite,House dust mite,Euroglyphus maynei,Euroglyphus Eur m 1,IgE but no biological test
+NA-234,Mite,Storage mite,Glycyphagus domesticus,Glycyphagus Gly d 2,IgE but no biological test
+NA-258,Mite,Storage mite,Lepidoglyphus destructor,Blomia Blo t 12,IgE plus basophil+ or SPT+
+NA-259,Mite,Storage mite,Lepidoglyphus destructor,Lepidoglyphus Lep d 2,IgE but no biological test
+NA-385,Mite,Scabies mite,Sarcoptes scabiei type suis,Sarcoptes Apolipoprotein Ssag1.2,IgE but no biological test
+NA-422,Mite,Mite,Suidasia medanensis,Suidasia putative not official Sui m 2,IgE but no biological test
+NA-463,Mite,Dust mite,Tyrophagus putrescentiae,Tyrophagus Blo-t-5-like loose group,IgE but no biological test
+NA-464,Mite,Dust mite,Tyrophagus putrescentiae,Tyrophagus Tyr p 10 tropomyosin,IgE but no biological test
+NA-465,Mite,Dust mite,Tyrophagus putrescentiae,Tyrophagus Tyr p 13,IgE but no biological test
+NA-466,Mite,Dust mite,Tyrophagus putrescentiae,Tyrophagus Tyr p 8,IgE plus basophil+ or SPT+
+NA-513,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 1 Der f 1 Der m 1,IgE plus basophil+ or SPT+
+NA-514,Mite,House dust mite,Dermatophagoides farinae,Dermatophagoides Der p 3 / Der f 3,IgE but no biological test
+NA-515,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 1 Der f 1 Der m 1,IgE plus basophil+ or SPT+
+NA-516,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 10 / Der f 10,IgE plus basophil+ or SPT+
+NA-517,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 2 / Der f 2,IgE plus basophil+ or SPT+
+NA-518,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 5,IgE plus basophil+ or SPT+
+NA-519,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 6 / Der f 6,IgE but no biological test
+NA-520,Mite,House dust mite,Dermatophagoides pteronyssinus,Dermatophagoides Der p 7 /  Der f 7,IgE plus basophil+ or SPT+
+NA-534,Mite,Storage mite,Lepidoglyphus destructor,Lepidoglyphus Lep d 2,IgE but no biological test
+Aln g 1.0101,Plant,Alder,Alnus glutinosa,Alnus Aln g 1,IgE plus basophil+ or SPT+
+Aln g 4.0101,Plant,Alder,Alnus glutinosa,Alnus Aln g 4,IgE plus basophil+ or SPT+
+Ama r 1.0101,Plant,Common Amaranth,Amaranthus retroflexus,Amaranthus retroflexus Ama r 1,IgE but no biological test
+Ama r 2.0101,Plant,Common Amaranth,Amaranthus retroflexus,Amaranthus Ama r 2 Proflin,IgE plus basophil+ or SPT+
+Amb a 1.0101,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 1,IgE plus basophil+ or SPT+
+Amb a 1.0201,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 1,IgE plus basophil+ or SPT+
+Amb a 1.0202,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 1,IgE plus basophil+ or SPT+
+Amb a 1.0301,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 1,IgE plus basophil+ or SPT+
+Amb a 1.0303,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 1,IgE plus basophil+ or SPT+
+Amb a 1.0304,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 1,IgE plus basophil+ or SPT+
+Amb a 1.0305,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 1,IgE plus basophil+ or SPT+
+Amb a 1.0401,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 1,IgE plus basophil+ or SPT+
+Amb a 1.0402,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 1,IgE plus basophil+ or SPT+
+Amb a 1.0501,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 1,IgE plus basophil+ or SPT+
+Amb a 1.0502,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 1,IgE plus basophil+ or SPT+
+Amb a 10.0101,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 10,IgE but no biological test
+Amb a 11.0101,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia artemisiifolia Amb a 11,IgE plus basophil+ or SPT+
+Amb a 3.0101,Plant,Short ragweed,Ambrosia artemisiifolia (elatior),Ambrosia Amb a 3,IgE plus basophil+ or SPT+
+Amb a 4.0101,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 4,IgE but no biological test
+Amb a 5.0101,Plant,Short ragweed,Ambrosia artemisiifolia (elatior),Ambrosia Amb a 5 Ra5 Amb p 5,IgE plus basophil+ or SPT+
+Amb a 6.0101,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 6,IgE but no biological test
+Amb a 8.0101,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 8 profilin,IgE plus basophil+ or SPT+
+Amb a 8.0102,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 8 profilin,IgE plus basophil+ or SPT+
+Amb a 9.0101,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 9,IgE plus basophil+ or SPT+
+Amb a 9.0102,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 9,IgE plus basophil+ or SPT+
+Amb p 5.0101,Plant,Western ragweed,Ambrosia psilostachya,Ambrosia Amb a 5 Ra5 Amb p 5,IgE plus basophil+ or SPT+
+Amb p 5.0201,Plant,Western ragweed,Ambrosia psilostachya,Ambrosia Amb a 5 Ra5 Amb p 5,IgE plus basophil+ or SPT+
+Amb t 5.0101,Plant,Giant ragweed,Ambrosia trifida,Ambrosia Amb t 5 Ra5G,IgE but no biological test
+Ana c 2.0101,Plant,Pineapple,Ananas comosus,Ananas Ana c 2 Bromelain precursor,IgE plus basophil+ or SPT+
+Ant o 1.0101,Plant,Sweet vernal grass,Anthoxanthum odoratum,Anthoxanthum Ant o 1,IgE but no biological test
+Art v 1.0101,Plant,Mugwort,Artemisia vulgaris,Artemisia Art v 1,IgE plus basophil+ or SPT+
+Art v 2.0101,Plant,Mugwort,Artemisia vulgaris,Artemisia Art v 2,IgE but no biological test
+Art v 3.0101,Plant,Mugwort,Artemisia vulgaris,Artemisia Art v 3,IgE plus basophil+ or SPT+
+Art v 3.0201,Plant,Mugwort,Artemisia vulgaris,Artemisia Art v 3,IgE plus basophil+ or SPT+
+Art v 3.0202,Plant,Mugwort,Artemisia vulgaris,Artemisia Art v 3,IgE plus basophil+ or SPT+
+Art v 3.0301,Plant,Mugwort,Artemisia vulgaris,Artemisia Art v 3,IgE plus basophil+ or SPT+
+Art v 4.0101,Plant,Mugwort,Artemisia vulgaris,Artemisia Art v 4,IgE but no biological test
+Art v 4.0201,Plant,Mugwort,Artemisia vulgaris,Artemisia Art v 4,IgE but no biological test
+Art v 5.0101,Plant,Mugwort,Artemisia vulgaris,Artemisia mugwort Art v 5,IgE plus basophil+ or SPT+
+Art v 6.0101,Plant,Mugwort,Artemisia vulgaris,Artemisia Art v 6 pectate lyase,IgE but no biological test
+Bet v 1.0101,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0102,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0103,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0104,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0106,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0107,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0108,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0109,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0110,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0111,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0113,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0114,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0115,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0116,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0117,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0118,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0119,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0201,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0202,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0203,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0205,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0206,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0207,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 1.0301,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+Bet v 2.0101,Plant,European white birch,Betula pendula,Betula Bet v 2,IgE plus basophil+ or SPT+
+Bet v 3.0101,Plant,European white birch,Betula pendula,Betula Bet v 3,IgE but no biological test
+Bet v 4.0101,Plant,European white birch,Betula pendula,Betula Bet v 4,IgE but no biological test
+Bet v 6.0102,Plant,European white birch,Betula pendula,Betula Bet v 6,IgE but no biological test
+Bet v 7.0101,Plant,European white birch,Betula pendula,Betula Bet v 7,IgE but no biological test
+Bet v 8.0101,Plant,European white birch,Betula pendula,Betula Bet v 8 glutathione S-transferase,IgE plus basophil+ or SPT+
+Bra o 3.0101,Plant,Wild cabbage,Brassica oleracea var. oleracea,Brassica Bra o 3 LTP full length,IgE plus basophil+ or SPT+
+Can s 3.0101,Plant,Hemp,Cannabis sativa,Cannabis LTP Can s 3,IgE plus basophil+ or SPT+
+Car b 1.0101,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0102,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0103,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0104,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0105,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0106,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0107,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0108,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0109,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0110,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0111,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0112,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0113,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0201,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0301,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Car b 1.0302,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+Cas s 1.0101,Plant,European chestnut,Castanea sativa,Castanea Cas s 1,IgE but no biological test
+Cat r 1.0101,Plant,Madagascar periwinkle,Catharanthus roseus,Catharanthus cyclophilin,IgE plus basophil+ or SPT+
+Cha o 1.0101,Plant,Japanese cypress,Chamaecyparis obtusa,Chamaecyparis Cha o 1,IgE but no biological test
+Cha o 2.0101,Plant,Japanese cypress,Chamaecyparis obtusa,Chamaecyparis Cha o 2,IgE but no biological test
+Cha o 3.0101,Plant,Japanese cypress,Chamaecyparis obtusa,Chamaecyparis obtusa Cha o 3,IgE plus basophil+ or SPT+
+Che a 1.0101,Plant,Pigweed,Chenopodium album,Chenopodium Che a 1,IgE but no biological test
+Che a 2.0101,Plant,Pigweed,Chenopodium album,Chenopodium Che a 2,IgE plus basophil+ or SPT+
+Che a 3.0101,Plant,Pigweed,Chenopodium album,Chenopodium Che a 3,IgE but no biological test
+Cor a 1.0102,Plant,European hazelnut,Corylus avellana,Corylus Cor a 1,IgE plus basophil+ or SPT+
+Cor a 1.0103,Plant,European hazelnut,Corylus avellana,Corylus Cor a 1,IgE plus basophil+ or SPT+
+Cor a 1.0104,Plant,European hazelnut,Corylus avellana,Corylus Cor a 1,IgE plus basophil+ or SPT+
+Cor a 1.0201,Plant,European hazelnut,Corylus avellana,Corylus Cor a 1,IgE plus basophil+ or SPT+
+Cor a 1.0301,Plant,European hazelnut,Corylus avellana,Corylus Cor a 1,IgE plus basophil+ or SPT+
+Cor a 2.0101,Plant,European hazelnut,Corylus avellana,Corylus Cor a 2 profilins,IgE but no biological test
+Cor a 2.0102,Plant,European hazelnut,Corylus avellana,Corylus Cor a 2 profilins,IgE but no biological test
+Cro s 1.0101,Plant,Saffron crocus,Crocus sativus,Crocus Cro s 1,IgE but no biological test
+Cro s 2.0101,Plant,Saffron crocus,Crocus sativus,Crocus profilin Cro s 2,IgE but no biological test
+Cry j 1.0101,Plant,Japanese cedar,Cryptomeria japonica,Cryptomeria Cry j 1,IgE but no biological test
+Cry j 1.0102,Plant,Japanese cedar,Cryptomeria japonica,Cryptomeria Cry j 1,IgE but no biological test
+Cry j 1.0103,Plant,Japanese cedar,Cryptomeria japonica,Cryptomeria Cry j 1,IgE but no biological test
+Cry j 2.0101,Plant,Japanese cedar,Cryptomeria japonica,Cryptomeria Cry j 2,IgE plus basophil+ or SPT+
+Cup a 1.0101,Plant,Arizona Cypress,Cupressus arizonica,Cupressus Cup a 1/Cup s 1,IgE plus basophil+ or SPT+
+Cup s 1.0101,Plant,Mediterranean Cypress,Cupressus sempervirens,Cupressus Cup a 1/Cup s 1,IgE plus basophil+ or SPT+
+Cup s 1.0102,Plant,Mediterranean Cypress,Cupressus sempervirens,Cupressus Cup a 1/Cup s 1,IgE plus basophil+ or SPT+
+Cup s 1.0103,Plant,Mediterranean Cypress,Cupressus sempervirens,Cupressus Cup a 1/Cup s 1,IgE plus basophil+ or SPT+
+Cup s 1.0104,Plant,Mediterranean Cypress,Cupressus sempervirens,Cupressus Cup a 1/Cup s 1,IgE plus basophil+ or SPT+
+Cup s 1.0105,Plant,Mediterranean Cypress,Cupressus sempervirens,Cupressus Cup a 1/Cup s 1,IgE plus basophil+ or SPT+
+Cup s 3.0101,Plant,Mediterranean Cypress,Cupressus sempervirens,Cupressus Cup s 3,IgE but no biological test
+Cup s 3.0102,Plant,Mediterranean Cypress,Cupressus sempervirens,Cupressus Cup s 3,IgE but no biological test
+Cyn d 1.0101,Plant,Bermuda grass,Cynodon dactylon,Cynodon Cyn d 1,IgE plus basophil+ or SPT+
+Cyn d 1.0201,Plant,Bermuda grass,Cynodon dactylon,Cynodon Cyn d 1,IgE plus basophil+ or SPT+
+Cyn d 1.0202,Plant,Bermuda grass,Cynodon dactylon,Cynodon Cyn d 1,IgE plus basophil+ or SPT+
+Cyn d 1.0203,Plant,Bermuda grass,Cynodon dactylon,Cynodon Cyn d 1,IgE plus basophil+ or SPT+
+Cyn d 1.0204,Plant,Bermuda grass,Cynodon dactylon,Cynodon Cyn d 1,IgE plus basophil+ or SPT+
+Cyn d 12.0101,Plant,Bermuda grass,Cynodon dactylon,Cynodon Cyn d 12,IgE but no biological test
+Cyn d 7.0101,Plant,Bermuda grass,Cynodon dactylon,Cynodon Cyn d 7,IgE but no biological test
+Dac g 1.0101,Plant,Orchard grass,Dactylis glomerata,Dactylis Dac g 1,IgE plus basophil+ or SPT+
+Dac g 2.0101,Plant,Orchard grass,Dactylis glomerata,Dactylis Dac g 2,IgE but no biological test
+Dac g 3.0101,Plant,Orchard grass,Dactylis glomerata,Dactylis Dac g 3,IgE but no biological test
+Dac g 4.0101,Plant,Orchard grass,Dactylis glomerata,Dactylis Dac g 4,IgE but no biological test
+Fag s 1.0101,Plant,European Beech,Fagus sylvatica,Fagus Fag s 1,IgE plus basophil+ or SPT+
+Fra e 1.0101,Plant,European ash,Fraxinus excelsior,Fraxinus Fra e 1,IgE plus basophil+ or SPT+
+Fra e 1.0102,Plant,European ash,Fraxinus excelsior,Fraxinus Fra e 1,IgE plus basophil+ or SPT+
+Fra e 1.0201,Plant,European ash,Fraxinus excelsior,Fraxinus Fra e 1,IgE plus basophil+ or SPT+
+Gly m 1.0101,Plant,Soybean,Glycine max,Glycine Gly m 1,IgE but no biological test
+Hel a 2.0101,Plant,Sunflower,Helianthus annuus,Helianthus Hel a 2,IgE but no biological test
+Hel a 6,Plant,Sunflower,Helianthus annuus,Hel a 6,IgE but no biological test
+Hol l 1.0101,Plant,Velvet grass,Holcus lanatus,Holcus Hol l 1,IgE but no biological test
+Hol l 1.0102,Plant,Velvet grass,Holcus lanatus,Holcus Hol l 1,IgE but no biological test
+Hol l 5.0101,Plant,Velvet grass,Holcus lanatus,Holcus Hol l 5,IgE plus basophil+ or SPT+
+Hol l 5.0201,Plant,Velvet grass,Holcus lanatus,Holcus Hol l 5,IgE plus basophil+ or SPT+
+Hum j 1.0101,Plant,Japanese hop,Humulus japonicus,Humulus Humj1,IgE but no biological test
+Jun a 1.0101,Plant,Mountain cedar,Juniperus ashei,Juniperus Jun a/v 1,IgE but no biological test
+Jun a 2.0101,Plant,Mountain cedar,Juniperus ashei,Juniperus Jun a 2,IgE but no biological test
+Jun a 3.0101,Plant,Mountain cedar,Juniperus ashei,Juniperus Jun a 3,IgE but no biological test
+Jun o 4.0101,Plant,Juniper,Juniperus oxycedrus,Juniperus Jun o 4,IgE but no biological test
+Jun v 1.0101,Plant,Red cedar,Juniperus virginiana,Juniperus Jun a/v 1,IgE but no biological test
+Jun v 1.0102,Plant,Red cedar,Juniperus virginiana,Juniperus Jun a/v 1,IgE but no biological test
+Koc 2 2.0101,Plant,summer cypress,Bassia scoparia,Kochia scoparia Koc s 2.01,IgE but no biological test
+Koc s 1.0101,Plant,summer cypress,Bassia scoparia,"Kochia scoparia	 Koc s 1",IgE but no biological test
+Lig v 1.0101,Plant,Privet,Ligustrum vulgare,Ligustrum Lig v 1,IgE but no biological test
+Lig v 1.0102,Plant,Privet,Ligustrum vulgare,Ligustrum Lig v 1,IgE but no biological test
+Lol p 1.0101,Plant,Perennial ryegrass,Lolium perenne,Lolium Lol p 1,IgE plus basophil+ or SPT+
+Lol p 1.0102,Plant,Perennial ryegrass,Lolium perenne,Lolium Lol p 1,IgE plus basophil+ or SPT+
+Lol p 1.0103,Plant,Perennial ryegrass,Lolium perenne,Lolium Lol p 1,IgE plus basophil+ or SPT+
+Lol p 11.0101,Plant,Perennial ryegrass,Lolium perenne,Lolium Lol p 11,IgE plus basophil+ or SPT+
+Lol p 2.0101,Plant,Perennial ryegrass,Lolium perenne,Lolium Lol p 2,IgE plus basophil+ or SPT+
+Lol p 3.0101,Plant,Perennial ryegrass,Lolium perenne,Lolium Lol p 3,IgE but no biological test
+Lol p 4.0101,Plant,Perennial ryegrass,Lolium perenne,Lolium Lol p 4,IgE plus basophil+ or SPT+
+Lol p 5.0101,Plant,Perennial ryegrass,Lolium perenne,Lolium Lol p 5,IgE plus basophil+ or SPT+
+Lol p 5.0102,Plant,Perennial ryegrass,Lolium perenne,Lolium Lol p 5,IgE plus basophil+ or SPT+
+Mer a 1.0101,Plant,Annual mercury grass,Mercurialis annua,Mercurialis Mer a 1,IgE but no biological test
+Ole e 1.0101,Plant,Olive tree,Olea europaea,Olea Ole e 1,IgE plus basophil+ or SPT+
+Ole e 1.0102,Plant,Olive tree,Olea europaea,Olea Ole e 1,IgE plus basophil+ or SPT+
+Ole e 1.0103,Plant,Olive tree,Olea europaea,Olea Ole e 1,IgE plus basophil+ or SPT+
+Ole e 1.0104,Plant,Olive tree,Olea europaea,Olea Ole e 1,IgE plus basophil+ or SPT+
+Ole e 1.0105,Plant,Olive tree,Olea europaea,Olea Ole e 1,IgE plus basophil+ or SPT+
+Ole e 1.0106,Plant,Olive tree,Olea europaea,Olea Ole e 1,IgE plus basophil+ or SPT+
+Ole e 1.0107,Plant,Olive tree,Olea europaea,Olea Ole e 1,IgE plus basophil+ or SPT+
+Ole e 10.0101,Plant,Olive tree,Olea europaea,Olea Ole e 10,IgE plus basophil+ or SPT+
+Ole e 11.0101,Plant,Olive tree,Olea europaea,Olea Ole e 11.0101 and 0102,IgE but no biological test
+Ole e 12.0101,Plant,Olive tree,Olea europaea,olea Ole e 12 in WHO IUIS,IgE but no biological test
+Ole e 13.0101,Plant,Olive tree,Olea europaea,Olea e 13 in WHO IUIS,IgE but no biological test
+Ole e 2.0101,Plant,Olive tree,Olea europaea,Olea Ole e 2,IgE but no biological test
+Ole e 3.0101,Plant,Olive tree,Olea europaea,Olea Ole e 3,IgE plus basophil+ or SPT+
+Ole e 5.0101,Plant,Olive tree,Olea europaea,Olea Ole e 5,IgE but no biological test
+Ole e 6.0101,Plant,Olive tree,Olea europaea,Olea Ole e 6,IgE but no biological test
+Ole e 7.0101,Plant,Olive tree,Olea europaea,Olea Ole e 7,IgE but no biological test
+Ole e 8.0101,Plant,Olive tree,Olea europaea,Olea Ole e 8,IgE but no biological test
+Ole e 9.0101,Plant,Olive tree,Olea europaea,Olea Ole e 9,IgE plus basophil+ or SPT+
+Ory s 1.0101,Plant,Rice,Oryza sativa,Oryza Ory s 1,IgE but no biological test
+Ost c 1.0101,Plant,European hop hornbeam,Ostrya carpinifolia,Ostrya Ost c 1pollen allergen,IgE plus basophil+ or SPT+
+Par h 1.0101,Plant,Parthenium hysterophorus,Parthenium hysterophorus,Parthenium hysterophorus Par h 1,IgE but no biological test
+Par j 1.0101,Plant,Weed,Parietaria judaica,Parietaria Par j 1,IgE plus basophil+ or SPT+
+Par j 1.0102,Plant,Weed,Parietaria judaica,Parietaria Par j 1,IgE plus basophil+ or SPT+
+Par j 1.0103,Plant,Weed,Parietaria judaica,Parietaria Par j 1,IgE plus basophil+ or SPT+
+Par j 2.0101,Plant,Weed,Parietaria judaica,Parietaria Par j 2,IgE plus basophil+ or SPT+
+Par j 2.0102,Plant,Weed,Parietaria judaica,Parietaria Par j 2,IgE plus basophil+ or SPT+
+Par j 3.0101,Plant,Weed,Parietaria judaica,Parietaria Par j 3 profilin,IgE plus basophil+ or SPT+
+Par j 3.0102,Plant,Weed,Parietaria judaica,Parietaria Par j 3 profilin,IgE plus basophil+ or SPT+
+Par j 3.0201,Plant,Weed,Parietaria judaica,Parietaria Par j 3 profilin,IgE plus basophil+ or SPT+
+Par j 4.0101,Plant,Weed,Parietaria judaica,Parietaria Par j 4,IgE plus basophil+ or SPT+
+Par o 1.0101,Plant,Weed,Parietaria officinalis,Parietaria Par o 1,IgE but no biological test
+Pas n 1.0101,Plant,Bahia grass,Paspalum notatum,Paspalum Pas n 1 beta expansin,IgE plus basophil+ or SPT+
+Pha a 1.0101,Plant,Canary grass,Phalaris aquatica,Phalaris Pha a 1,IgE but no biological test
+Pha a 5.0101,Plant,Canary grass,Phalaris aquatica,Phalaris Pha a 5,IgE but no biological test
+Phl p 1.0101,Plant,Common timothy,Phleum pratense,Phleum Phl p 1,IgE plus basophil+ or SPT+
+Phl p 1.0102,Plant,Common timothy,Phleum pratense,Phleum Phl p 1,IgE plus basophil+ or SPT+
+Phl p 11.0101,Plant,Common timothy,Phleum pratense,Phleum Phl p 11,IgE plus basophil+ or SPT+
+Phl p 12.0101,Plant,Common timothy,Phleum pratense,Phleum Phl p 12,IgE but no biological test
+Phl p 12.0102,Plant,Common timothy,Phleum pratense,Phleum Phl p 12,IgE but no biological test
+Phl p 12.0103,Plant,Common timothy,Phleum pratense,Phleum Phl p 12,IgE but no biological test
+Phl p 13.0101,Plant,Common timothy,Phleum pratense,Phleum Phl p 13,IgE plus basophil+ or SPT+
+Phl p 2.0101,Plant,Common timothy,Phleum pratense,Phleum Phl p 1,IgE plus basophil+ or SPT+
+Phl p 2.0101,Plant,Common timothy,Phleum pratense,Phleum Phl p 2,IgE but no biological test
+Phl p 2.0101,Plant,Date palm,Phoenix dactylifera,Phoenix Pho d 2,IgE but no biological test
+Phl p 4.0101,Plant,Common timothy,Phleum pratense,Phleum Phl p 4,IgE plus basophil+ or SPT+
+Phl p 4.0201,Plant,Common timothy,Phleum pratense,Phleum Phl p 4,IgE plus basophil+ or SPT+
+Phl p 5.0101,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+Phl p 5.0102,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+Phl p 5.0104,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+Phl p 5.0105,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+Phl p 5.0106,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+Phl p 5.0107,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+Phl p 5.0108,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+Phl p 5.0109,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+Phl p 5.0201,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+Phl p 5.0202,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+Phl p 5.0203,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+Phl p 5.0206,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+Phl p 5.0207,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+Phl p 6.0101,Plant,Common timothy,Phleum pratense,Phleum Phl p 6,IgE plus basophil+ or SPT+
+Phl p 6.0102,Plant,Common timothy,Phleum pratense,Phleum Phl p 6,IgE plus basophil+ or SPT+
+Phl p 7.0101,Plant,Common timothy,Phleum pratense,Phleum Polcalin (Phl p 7),IgE plus basophil+ or SPT+
+Phod s 1.0101,Plant,Siberian hamster,Phodopus sungorus,Phodopus sungorus lipocalin,IgE plus basophil+ or SPT+
+Pla a 1.0101,Plant,London plane tree,Platanus x acerifolia,Platanus Pla a 1,IgE plus basophil+ or SPT+
+Pla a 2.0101,Plant,London plane tree,Platanus x acerifolia,Platanus Pla a 2,IgE plus basophil+ or SPT+
+Pla a 3.0101,Plant,London plane tree,Platanus x acerifolia,Platanus acerifolia Pla a 3,IgE plus basophil+ or SPT+
+Pla a 3.0201,Plant,London plane tree,Platanus x acerifolia,Platanus acerifolia Pla a 3,IgE plus basophil+ or SPT+
+Pla l 1.0101,Plant,Narrow-leaved plantain,Plantago lanceolata,Plantago Pla l 1,IgE but no biological test
+Pla l 1.0102,Plant,Narrow-leaved plantain,Plantago lanceolata,Plantago Pla l 1,IgE but no biological test
+Pla l 1.0103,Plant,Narrow-leaved plantain,Plantago lanceolata,Plantago Pla l 1,IgE but no biological test
+Pla or 1.0101,Plant,oriental plane,Platanus orientalis,Platanus Pla or 1,IgE but no biological test
+Pla or 2.0101,Plant,oriental plane,Platanus orientalis,Platanus Pla or 2,IgE but no biological test
+Poa p 1.0101,Plant,Kentucky bluegrass,Poa pratensis,Poa Poa p 1,IgE but no biological test
+Poa p 5.0101,Plant,Kentucky bluegrass,Poa pratensis,Poa Poa p 5,IgE but no biological test
+Pro j 1.0101,Plant,mesquite,Prosopis juliflora,Prosopis juliflora Pro j 1.0101,IgE but no biological test
+Pro j 2.0101,Plant,mesquite,Prosopis juliflora,Prosopis Pro j 2,IgE but no biological test
+Que a 1.0201,Plant,Oak,Quercus alba,Quercus Que a 1 Que m 1,IgE plus basophil+ or SPT+
+Que a 1.0301,Plant,Oak,Quercus alba,Quercus Que a 1 Que m 1,IgE plus basophil+ or SPT+
+Que a 1.0401,Plant,Oak,Quercus alba,Quercus Que a 1 Que m 1,IgE plus basophil+ or SPT+
+Sal k 1.0101,Plant,Thistle,Salsola kali,Salsola Sal k 1,IgE plus basophil+ or SPT+
+Sal k 1.0201,Plant,Thistle,Salsola kali,Salsola pectin methylesterase Sal k 1.01 & 1.02,IgE but no biological test
+Sal k 1.0301,Plant,Thistle,Salsola kali,Salsola pectin methylesterase Sal k 1.01 & 1.02,IgE but no biological test
+Sal k 1.0302,Plant,Thistle,Salsola kali,Salsola pectin methylesterase Sal k 1.01 & 1.02,IgE but no biological test
+Sal k 3.0101,Plant,Thistle,Salsola kali,Salsola Sal k 3 pollen allergen,IgE plus basophil+ or SPT+
+Sal k 4.0101,Plant,Thistle,Salsola kali,Salsola Sal k 4 profilin,IgE plus basophil+ or SPT+
+Sal k 4.0201,Plant,Thistle,Salsola kali,Salsola Sal k 4 profilin,IgE plus basophil+ or SPT+
+Sal k 6.0101,Plant,Thistle,Salsola kali,Salsola kali Sal k 6.01,IgE plus basophil+ or SPT+
+Sal k 6.0101,Plant,Thistle,Salsola kali,Salsola Sal k 5,IgE but no biological test
+Sec c 38.0101,Plant,Rye,Secale cereale,Secale Sec c 38.01,IgE plus basophil+ or SPT+
+Sor h 1.0101,Plant,Johnson grass,Sorghum halepense,Sorghum Sor h 1,IgE but no biological test
+Sor h 1.0201,Plant,Johnson grass,Sorghum halepense,Sorghum Sor h 1,IgE but no biological test
+Sor h 13.0101,Plant,Johnson grass,Sorghum halepense,Sorghum Sor h 13,IgE but no biological test
+Sor h 13.0201,Plant,Johnson grass,Sorghum halepense,Sorghum Sor h 13,IgE but no biological test
+Sor h 2.0101,Plant,Johnson grass,Sorghum halepense,Sorghum halepens group 2 allergen,IgE but no biological test
+Sor h 2.0201,Plant,Johnson grass,Sorghum halepense,Sorghum halepens group 2 allergen,IgE but no biological test
+Syr v 1.0101,Plant,Lilac,Syringa vulgaris,Syringa Syr v I,IgE but no biological test
+Syr v 1.0102,Plant,Lilac,Syringa vulgaris,Syringa Syr v I,IgE but no biological test
+Syr v 1.0103,Plant,Lilac,Syringa vulgaris,Syringa Syr v I,IgE but no biological test
+Syr v 3.0101,Plant,Lilac,Syringa vulgaris,Syringa Syr v 3,IgE but no biological test
+Tri a 15.0101,Plant,Wheat,Triticum aestivum,Triticum Tri a 15,IgE but no biological test
+Tri a 25.0101,Plant,Wheat,Triticum aestivum,Triticum Tri a 25,IgE but no biological test
+Tri a 29.0101,Plant,Wheat,Triticum aestivum,Triticum Tri a 29,IgE plus basophil+ or SPT+
+Tri a 29.0201,Plant,Wheat,Triticum aestivum,Triticum Tri a 29,IgE plus basophil+ or SPT+
+Tri a 30.0101,Plant,Wheat,Triticum aestivum,Triticum Tri a 30,IgE plus basophil+ or SPT+
+Tri a 31.0101,Plant,Wheat,Triticum aestivum,Triticum Tri a 31,IgE but no biological test
+Tri a 32.0101,Plant,Wheat,Triticum aestivum,Triticum Tri a 32 Peroxiredoxin,IgE plus basophil+ or SPT+
+Tri a 33.0101,Plant,Wheat,Triticum aestivum,Triticum Tri a 33 Serine protease inhibitor,IgE but no biological test
+Tri a 34.0101,Plant,Wheat,Triticum aestivum,Triticum Tri a 34 GAPDH,IgE but no biological test
+Tri a 39.0101,Plant,Wheat,Triticum aestivum,Triticum Tri a 39  serine proteinase inhibitor-lik,IgE but no biological test
+Tri a 40.0101,Plant,Wheat,Triticum aestivum,Triticum aestivum Tri a 40,IgE but no biological test
+Tri a 41.0101,Plant,Wheat,Triticum aestivum,Triticum aestivum Tri a 41,IgE but no biological test
+Tri a 42.0101,Plant,Wheat,Triticum aestivum,Triticum aestivum Tri a 42,IgE but no biological test
+Tri a 43.0101,Plant,Wheat,Triticum aestivum,Triticum aestivum Tri a 43,IgE but no biological test
+Tri a 44.0101,Plant,Wheat,Triticum aestivum,Triticum aestivum Tri a 44,IgE but no biological test
+Tri a 45.0101,Plant,Wheat,Triticum aestivum,Triticum aestivum Tri a 45,IgE but no biological test
+NA-11,Plant,Bent grass,Agrostis alba,Agrostis Agr a 1,IgE but no biological test
+NA-18,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 1,IgE plus basophil+ or SPT+
+NA-19,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 4,IgE but no biological test
+NA-20,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia Amb a 8 profilin,IgE plus basophil+ or SPT+
+NA-21,Plant,Short ragweed,Ambrosia artemisiifolia,Ambrosia artemisiifolia Amb a 11,IgE plus basophil+ or SPT+
+NA-22,Plant,Western ragweed,Ambrosia psilostachya,Ambrosia Amb a 5 Ra5 Amb p 5,IgE plus basophil+ or SPT+
+NA-34,Plant,Sweet vernal grass,Anthoxanthum odoratum,Anthoxanthum Ant o 1,IgE but no biological test
+NA-60,Plant,Mugwort,Artemisia vulgaris,Art an 7 putative galactose oxidase,IgE but no biological test
+NA-61,Plant,Mugwort,Artemisia vulgaris,Artemisia Art v 3,IgE plus basophil+ or SPT+
+NA-62,Plant,Mugwort,Artemisia vulgaris,Artemisia Art v 4,IgE but no biological test
+NA-89,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+NA-90,Plant,European white birch,Betula pendula,Betula Bet v 1b,IgE plus basophil+ or SPT+
+NA-91,Plant,European white birch,Betula pendula,Betula Bet v 2,IgE plus basophil+ or SPT+
+NA-92,Plant,Japanese white birch,Betula platyphylla,Betula Bet v 1,IgE plus basophil+ or SPT+
+NA-93,Plant,Birch,Betula sp.,Betula Bet v 1,IgE plus basophil+ or SPT+
+NA-94,Plant,Birch,Betula sp.,Betula Bet v 1b,IgE plus basophil+ or SPT+
+NA-118,Plant,Rape,Brassica napus,Bra n Bra r 2,IgE but no biological test
+NA-120,Plant,Turnip,Brassica rapa,Bra n Bra r 2,IgE but no biological test
+NA-121,Plant,Turnip,Brassica rapa subsp. rapa,Bra n Bra r 2,IgE but no biological test
+NA-125,Plant,Hornbeam,Carpinus betulus,Carpinus Car b 1,IgE plus basophil+ or SPT+
+NA-127,Plant,Fishtail Palm,Caryota mitis,Caryota profilin,IgE but no biological test
+NA-128,Plant,European chestnut,Castanea sativa,Castanea Cas s 1,IgE but no biological test
+NA-130,Plant,Japanese cypress,Chamaecyparis obtusa,Chamaecyparis Cha o 2,IgE but no biological test
+NA-131,Plant,Pigweed,Chenopodium album,Chenopodium Che a 2,IgE plus basophil+ or SPT+
+NA-137,Plant,European hazelnut,Corylus avellana,Corylus Cor a 9,IgE plus basophil+ or SPT+
+NA-139,Plant,Japanese cedar,Cryptomeria japonica,Cryptomeria class IV chitinase,IgE but no biological test
+NA-140,Plant,Japanese cedar,Cryptomeria japonica,Cryptomeria Cry j 2,IgE plus basophil+ or SPT+
+NA-141,Plant,Japanese cedar,Cryptomeria japonica,Cryptomeria Isoflavone reductase-like protein,IgE but no biological test
+NA-142,Plant,Japanese cedar,Cryptomeria japonica,Cryptomeria pollen allergen CJP-8,IgE but no biological test
+NA-143,Plant,Japanese cedar,Cryptomeria japonica,Cryptomeria pollen allergen CPA63,IgE but no biological test
+NA-144,Plant,Japanese cedar,Cryptomeria japonica,Cryptomeria thaumatin like Cry j 3.8,IgE plus basophil+ or SPT+
+NA-149,Plant,Arizona Cypress,Cupressus arizonica,Cupressus Cup a 1/Cup s 1,IgE plus basophil+ or SPT+
+NA-150,Plant,Arizona Cypress,Cupressus arizonica,Cupressus Cup a 4,IgE but no biological test
+NA-151,Plant,Arizona Cypress,Cupressus arizonica,Cupressus Cup s 3,IgE but no biological test
+NA-152,Plant,Bermuda grass,Cynodon dactylon,Cynodon Cyn d 7,IgE but no biological test
+NA-153,Plant,Bermuda grass,Cynodon dactylon,Cynodon Group 4 like-allergen FAD-linked oxidoredu,IgE but no biological test
+NA-205,Plant,European Beech,Fagus sylvatica,Fagus Fag s 1,IgE plus basophil+ or SPT+
+NA-213,Plant,European ash,Fraxinus excelsior,"Fraxinus excelsior polcalcin	not WHO IUIS",IgE but no biological test
+NA-214,Plant,European ash,Fraxinus excelsior,Fraxinus excelsior profilin not in WHO IUIS,IgE but no biological test
+NA-243,Plant,Velvet grass,Holcus lanatus,Holcus Hol l 1,IgE but no biological test
+NA-244,Plant,Velvet grass,Holcus lanatus,Holcus Hol l 5,IgE plus basophil+ or SPT+
+NA-245,Plant,Barley,Hordeum vulgare,Hordeum Alpha-amylase inhibitor component CMb,IgE plus basophil+ or SPT+
+NA-248,Plant,Barley,Hordeum vulgare,Hordeum LTP 1,IgE but no biological test
+NA-249,Plant,Barley,Hordeum vulgare,Hordeum Trypsin inhibitor CMe,IgE plus basophil+ or SPT+
+NA-250,Plant,Barley,Hordeum vulgare subsp. vulgare,Hordeum Alpha-amylase inhibitor BDAI-1,IgE plus basophil+ or SPT+
+NA-251,Plant,Barley,Hordeum vulgare subsp. vulgare,Hordeum Alpha-amylase inhibitor component Cma,IgE plus basophil+ or SPT+
+NA-252,Plant,Barley,Hordeum vulgare subsp. vulgare,Hordeum Trypsin inhibitor CMe,IgE plus basophil+ or SPT+
+NA-253,Plant,Japanese hop,Humulus scandens,Humulus profilin-like protein,IgE but no biological test
+NA-255,Plant,Juniper,Juniperus oxycedrus,Juniperus Jun a/v 1,IgE but no biological test
+NA-256,Plant,Cedar,Juniperus rigida,Juniperus Jun a 3,IgE but no biological test
+NA-257,Plant,Red cedar,Juniperus virginiana,Juniperus Jun a 3,IgE but no biological test
+NA-261,Plant,Trumpet lily,Lilium longiflorum,Lilium polygalacturonase,IgE but no biological test
+NA-300,Plant,Tobacco,Nicotiana tabacum,Nicotiana villin,IgE but no biological test
+NA-302,Plant,Olive tree,Olea europaea,Ole e 14 Olea europea polygalacturonase,IgE but no biological test
+NA-303,Plant,Olive tree,Olea europaea,Olea Ole e 1,IgE plus basophil+ or SPT+
+NA-304,Plant,Olive tree,Olea europaea,Olea Ole e 15  cyclophilin,IgE but no biological test
+NA-305,Plant,Olive tree,Olea europaea,Olea Ole e 2,IgE but no biological test
+NA-306,Plant,Olive tree,Olea europaea,Olea Ole e 5,IgE but no biological test
+NA-307,Plant,Olive tree,Olea europaea,Olea Ole e 9,IgE plus basophil+ or SPT+
+NA-313,Plant,Rice,Oryza sativa,Oryza Ory s 1,IgE but no biological test
+NA-315,Plant,Rice,Oryza sativa (japonica cultivar-group),Oryza putative polcalcin Phl p 7,IgE but no biological test
+NA-318,Plant,Weed,Parietaria officinalis,Parietaria Par o 1,IgE but no biological test
+NA-319,Plant,Bahia grass,Paspalum notatum,Paspalum group 13 pollen allergen,IgE plus basophil+ or SPT+
+NA-331,Plant,Canary grass,Phalaris aquatica,Phalaris Pha a 1,IgE but no biological test
+NA-332,Plant,Canary grass,Phalaris aquatica,Phalaris Pha a 5,IgE but no biological test
+NA-333,Plant,Common timothy,Phleum pratense,Phleum Phl p 1,IgE plus basophil+ or SPT+
+NA-334,Plant,Common timothy,Phleum pratense,Phleum Phl p 12,IgE but no biological test
+NA-335,Plant,Common timothy,Phleum pratense,Phleum Phl p 4,IgE plus basophil+ or SPT+
+NA-336,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+NA-337,Plant,Common timothy,Phleum pratense,Phleum Phl p 6,IgE plus basophil+ or SPT+
+NA-338,Plant,Common timothy,Phleum pratense,Phleum pollen allergen group 3,IgE plus basophil+ or SPT+
+NA-342,Plant,Narrow-leaved plantain,Plantago lanceolata,Plantago Pla l 1,IgE but no biological test
+NA-343,Plant,Kentucky bluegrass,Poa pratensis,Poa not IUIS Poa p 9 like Poa p 5,IgE but no biological test
+NA-376,Plant,Thistle,Salsola kali,Salsola kali Sal k 6.01,IgE plus basophil+ or SPT+
+NA-377,Plant,Thistle,Salsola kali,Salsola pectin methylesterase Sal k 1.01 & 1.02,IgE but no biological test
+NA-378,Plant,Thistle,Salsola kali,Salsola Sal k 4 profilin,IgE plus basophil+ or SPT+
+NA-387,Plant,Tall fescue,Schedonorus arundinaceus,Festuca group 1 allergen,IgE but no biological test
+NA-395,Plant,Rye,Secale cereale,Secale Sec c 4,IgE but no biological test
+NA-396,Plant,Rye,Secale cereale,Secale Sec c 5,IgE but no biological test
+NA-440,Plant,Wheat,Triticum aestivum,Triticum Bakers asthma allergen #4,IgE but no biological test
+NA-441,Plant,Wheat,Triticum aestivum,Triticum flour Glutathione Transferase,IgE plus basophil+ or SPT+
+NA-452,Plant,Wheat,Triticum aestivum,Triticum Tri a 29,IgE plus basophil+ or SPT+
+NA-453,Plant,Wheat,Triticum aestivum,Triticum Tri a 32 Peroxiredoxin,IgE plus basophil+ or SPT+
+NA-454,Plant,Wheat,Triticum aestivum,Triticum Tri a 33 Serine protease inhibitor,IgE but no biological test
+NA-457,Plant,Wheat,Triticum aestivum,Triticum Tri a 39  serine proteinase inhibitor-lik,IgE but no biological test
+NA-460,Plant,Wheat,Triticum turgidum subsp. durum,Triticum Tri a 29,IgE plus basophil+ or SPT+
+NA-495,Plant,Corn,Zea mays,Zea group 13 pollen allergen,IgE but no biological test
+NA-497,Plant,Corn,Zea mays,Zea pollen specific protein,IgE but no biological test
+NA-498,Plant,Corn,Zea mays,Zea Zea m 1 beta-expansin,IgE but no biological test
+NA-499,Plant,Corn,Zea mays,Zea Zea m 1 isoform,IgE but no biological test
+NA-501,Plant,Corn,Zea mays,Zea Zea m 12 profilin,IgE but no biological test
+Zea m 12.0101,Plant,Corn,Zea mays,Zea Zea m 12 profilin,IgE but no biological test
+Zea m 12.0102,Plant,Corn,Zea mays,Zea Zea m 12 profilin,IgE but no biological test
+Zea m 12.0103,Plant,Corn,Zea mays,Zea Zea m 12 profilin,IgE but no biological test
+Zea m 12.0105,Plant,Corn,Zea mays,Zea Zea m 12 profilin,IgE but no biological test
+Zea m 25.0101,Plant,Corn,Zea mays,Zea Zea m 25  thioredoxin,IgE but no biological test
+NA-502,Plant,European white birch,Betula pendula,Betula Bet v 1,IgE plus basophil+ or SPT+
+NA-503,Plant,Papaya,Carica papaya,Carica papain (Car p 1 not IUIS),IgE plus basophil+ or SPT+
+NA-505,Plant,European chestnut,Castanea sativa,Castanea Cas s 1,IgE but no biological test
+NA-506,Plant,Japanese cedar,Cryptomeria japonica,Cryptomeria Cry j 2,IgE plus basophil+ or SPT+
+NA-507,Plant,Arizona Cypress,Cupressus arizonica,Cupressus Cup a 1/Cup s 1,IgE plus basophil+ or SPT+
+NA-508,Plant,Bermuda grass,Cynodon dactylon,Cynodon Cyn d 1,IgE plus basophil+ or SPT+
+NA-509,Plant,Orchard grass,Dactylis glomerata,Dactylis Dac g 1,IgE plus basophil+ or SPT+
+NA-510,Plant,Orchard grass,Dactylis glomerata,Dactylis Dac g 2,IgE but no biological test
+NA-511,Plant,Orchard grass,Dactylis glomerata,Dactylis Dac g 5,IgE but no biological test
+NA-535,Plant,Perennial ryegrass,Lolium perenne,Lolium Lol p 1,IgE plus basophil+ or SPT+
+NA-536,Plant,Perennial ryegrass,Lolium perenne,Lolium Lol p 2,IgE plus basophil+ or SPT+
+NA-537,Plant,Perennial ryegrass,Lolium perenne,Lolium Lol p 5,IgE plus basophil+ or SPT+
+NA-542,Plant,Olive tree,Olea europaea,Olea Ole e 1,IgE plus basophil+ or SPT+
+NA-543,Plant,Olive tree,Olea europaea,Olea Ole e 11.0101 and 0102,IgE but no biological test
+NA-544,Plant,Olive tree,Olea europaea,Olea Ole e 2,IgE but no biological test
+NA-545,Plant,Olive tree,Olea europaea,Olea Ole e 3,IgE plus basophil+ or SPT+
+NA-546,Plant,Olive tree,Olea europaea,Olea Ole e 5,IgE but no biological test
+NA-547,Plant,Olive tree,Olea europaea,Olea Ole e 8,IgE but no biological test
+NA-548,Plant,Rice,Oryza sativa (japonica cultivar-group),Oryza Ory s 1,IgE but no biological test
+NA-549,Plant,Weed,Parietaria judaica,Parietaria Par j 1,IgE plus basophil+ or SPT+
+NA-550,Plant,Weed,Parietaria officinalis,Parietaria Par o 1,IgE but no biological test
+NA-553,Plant,Common timothy,Phleum pratense,Phleum Phl p 1,IgE plus basophil+ or SPT+
+NA-554,Plant,Common timothy,Phleum pratense,Phleum Phl p 12,IgE but no biological test
+NA-555,Plant,Common timothy,Phleum pratense,Phleum Phl p 5,IgE plus basophil+ or SPT+
+NA-556,Plant,Kentucky bluegrass,Poa pratensis,Poa Poa p 1,IgE but no biological test
+NA-83,Bacteria airway,Bacteria,Bacillus lentus,Bacillus lentus subtilisin,IgE but no biological test
+NA-84,Bacteria airway,Bacteria,Bacillus licheniformis,Bacillus licheniformis subtlilisin,IgE plus basophil+ or SPT+
+NA-85,Bacteria airway,Bacteria,Bacillus sp.,Bacillus lentus Esperase,IgE but no biological test
+NA-413,Bacteria skin,Bacteria,Staphylococcus aureus,Staphylococcus enterotoxin SEA,IgE plus basophil+ or SPT+
+NA-414,Bacteria skin,Bacteria,Staphylococcus aureus,Staphylococcus enterotoxin SEB,IgE plus basophil+ or SPT+
+NA-415,Bacteria skin,Bacteria,Staphylococcus aureus,Staphylococcus enterotoxin SEC,IgE but no biological test
+NA-416,Bacteria skin,Bacteria,Staphylococcus aureus,Staphylococcus enterotoxin SED,IgE but no biological test
+NA-417,Bacteria skin,Bacteria,Staphylococcus aureus,Staphylococcus enterotoxin TSST 1,IgE plus basophil+ or SPT+
+Bra r 2.0101,Contact,Turnip,Brassica rapa subsp. rapa,Brassica Bra r 2,IgE but no biological test
+Cand a 1.0101,Contact,Yeast,Candida albicans,Candida Cand a 1 Alcohol dehydrogenase,IgE but no biological test
+Cand a 3.0101,Contact,Yeast,Candida albicans,Candida Cand a 3 Peroxysomal protein,IgE but no biological test
+Hev a 9.0101,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 8,IgE plus basophil+ or SPT+
+Hev a 9.0101,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 9,IgE but no biological test
+Hev b 1.0101,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 1,IgE plus basophil+ or SPT+
+Hev b 10.0101,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 10,IgE but no biological test
+Hev b 10.0102,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 10,IgE but no biological test
+Hev b 10.0103,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 10,IgE but no biological test
+Hev b 11.0101,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 11,IgE but no biological test
+Hev b 11.0102,Contact,Para rubber tree,Hevea brasiliensis subsp. brasiliensis,Hevea Hev b 11,IgE but no biological test
+Hev b 12.0101,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 12,IgE but no biological test
+Hev b 13.0101,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 13,IgE but no biological test
+Hev b 14.0101,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 14 hevamine,IgE but no biological test
+Hev b 15.0101,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 15,IgE but no biological test
+Hev b 2.0101,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 2,IgE plus basophil+ or SPT+
+Hev b 3.0101,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 3,IgE plus basophil+ or SPT+
+Hev b 4.0101,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 4,IgE but no biological test
+Hev b 5.0101,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 5,IgE plus basophil+ or SPT+
+Hev b 7.01,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 7,IgE plus basophil+ or SPT+
+Hev b 7.02,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 7,IgE plus basophil+ or SPT+
+Hev b 8.0101,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 8,IgE plus basophil+ or SPT+
+Hev b 8.0102,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 8,IgE plus basophil+ or SPT+
+Hev b 8.0201,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 8,IgE plus basophil+ or SPT+
+Hev b 8.0204,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 8,IgE plus basophil+ or SPT+
+Mala f 2.0101,Contact,Yeast,Malassezia furfur,Malassezia Mala f 2,IgE but no biological test
+Mala f 3.0101,Contact,Yeast,Malassezia furfur,Malassezia Mala f 3,IgE but no biological test
+Mala f 4.0101,Contact,Yeast,Malassezia furfur,Malassezia Mala f 4,IgE but no biological test
+Mala s 1.0101,Contact,Yeast,Malassezia sympodialis,Malassezia Mala s 1,IgE plus basophil+ or SPT+
+Mala s 10.0101,Contact,Yeast,Malassezia sympodialis,Malassezia Mala s 10 heat shock protein,IgE but no biological test
+Mala s 11.0101,Contact,Yeast,Malassezia sympodialis,Malassezia Mala s 11 first 38 aa signal,IgE but no biological test
+Mala s 12.0101,Contact,Yeast,Malassezia sympodialis,Malassezia Mala s 12,IgE but no biological test
+Mala s 13,Contact,Yeast,Malassezia sympodialis ATCC 42132,Malassezia Mala s 13 Thioredoxin Rev,IgE plus basophil+ or SPT+
+Mala s 5.0101,Contact,Yeast,Malassezia sympodialis,Malassezia Mala s 5,IgE but no biological test
+Mala s 6.0101,Contact,Yeast,Malassezia sympodialis,Malassezia Mala s 6,IgE but no biological test
+Mala s 7.0101,Contact,Yeast,Malassezia sympodialis,Malassezia Mala s 7,IgE but no biological test
+Mala s 8.0101,Contact,Yeast,Malassezia sympodialis,Malassezia Mala s 8,IgE but no biological test
+Mala s 9.0101,Contact,Yeast,Malassezia sympodialis,Malassezia Mala s 9,IgE but no biological test
+Tha p 1.0101,Contact,Pine moth,Thaumetopoea pityocampa,Thaumetopoea Tha p 1 full length,IgE but no biological test
+Tha p 2.0101,Contact,Pine moth,Thaumetopoea pityocampa,Thaumetopoea Tha p 2,IgE but no biological test
+Tri r 2.0101,Contact,Fungus,Trichophyton rubrum,Trichophyton (Arthroderma) Tri r 2,IgE plus basophil+ or SPT+
+Tri r 4.0101,Contact,Fungus,Trichophyton rubrum,Trichophyton tri 4 allergen (Arthroderma),IgE plus basophil+ or SPT+
+NA-63,Contact,Fungus,Arthroderma benhamiae,Trichophyton (Arthroderma) Tri m 4,IgE plus basophil+ or SPT+
+NA-64,Contact,Fungus,Arthroderma benhamiae,Trichophyton (Arthroderma) Tri r 2,IgE plus basophil+ or SPT+
+NA-65,Contact,Fungus,Arthroderma vanbreuseghemii,Trichophyton (Arthroderma) Tri m 4,IgE plus basophil+ or SPT+
+NA-122,Contact,Yeast,Candida albicans,Candida Enolase 1,IgE plus basophil+ or SPT+
+NA-239,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 2,IgE plus basophil+ or SPT+
+NA-240,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 6,IgE plus basophil+ or SPT+
+NA-241,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 7,IgE plus basophil+ or SPT+
+NA-242,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 9,IgE but no biological test
+NA-270,Contact,Yeast,Malassezia sympodialis ATCC 42132,Malassezia Mala s 10 heat shock protein,IgE but no biological test
+NA-271,Contact,Yeast,Malassezia sympodialis ATCC 42132,Malassezia Mala s 11 first 38 aa signal,IgE but no biological test
+NA-272,Contact,Yeast,Malassezia sympodialis ATCC 42132,Malassezia Mala s 5,IgE but no biological test
+NA-273,Contact,Yeast,Malassezia sympodialis ATCC 42132,Malassezia Mala s 7,IgE but no biological test
+NA-274,Contact,Yeast,Malassezia sympodialis ATCC 42132,Malassezia Mala s 9,IgE but no biological test
+NA-426,Contact,Pine moth,Thaumetopoea pityocampa,Thaumetopoea Tha p 2,IgE but no biological test
+NA-434,Contact,Fungus,Trichophyton schoenleinii,Trichophyton (Arthroderma) Tri r 2,IgE plus basophil+ or SPT+
+NA-435,Contact,Fungus,Trichophyton schoenleinii,Trichophyton tri 4 allergen (Arthroderma),IgE plus basophil+ or SPT+
+NA-529,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 2,IgE plus basophil+ or SPT+
+NA-530,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 6,IgE plus basophil+ or SPT+
+NA-531,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 7,IgE plus basophil+ or SPT+
+NA-532,Contact,Para rubber tree,Hevea brasiliensis,Hevea Hev b 8,IgE plus basophil+ or SPT+
+Ani s 1.0101,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 1 protease inhibitor,IgE plus basophil+ or SPT+
+Ani s 10.0101,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 10,IgE but no biological test
+Ani s 11.0101,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 11,IgE but no biological test
+Ani s 12.0101,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 12,IgE but no biological test
+Ani s 14.0101,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 14,IgE but no biological test
+Ani s 2.0101,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 2 paramyosin,IgE but no biological test
+Ani s 3.0101,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 3 tropomyosin,IgE plus basophil+ or SPT+
+Ani s 4.0101,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 4,IgE plus basophil+ or SPT+
+Ani s 5.0101,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 5 SXP/RAL-2 family protein,IgE but no biological test
+Ani s 7.0101,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 7 UA3-recognized allergen,IgE but no biological test
+Ani s 8.0101,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 8 SXP/RAL-2 family protein 2,IgE but no biological test
+Ani s 9.0101,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 9,IgE but no biological test
+Bos d 10.0101,Food ,Bovine,Bos taurus,Bos Bos d 10,IgE plus basophil+ or SPT+
+Bos d 11.0101,Food ,Yak,Bos grunniens mutus,Bos Bos d 11 beta casein,IgE plus basophil+ or SPT+
+Bos d 11.0101,Food ,Bovine,Bos taurus,Bos Bos d 11 beta casein,IgE plus basophil+ or SPT+
+Bos d 12.0101,Food ,Bovine,Bos taurus,Bos Bos d 12,IgE plus basophil+ or SPT+
+Bos d 4.0101,Food ,Bovine,Bos taurus,Bos Bos d 4,IgE plus basophil+ or SPT+
+Bos d 5.0101,Food ,Bovine,Bos taurus,Bos Bos d 5,IgE plus basophil+ or SPT+
+Bos d 6.0101,Food ,Bovine,Bos taurus,Bos Bos d 6,IgE plus basophil+ or SPT+
+Bos d 9.0101,Food ,Bovine,Bos taurus,Bos Alpha-s1 casein,IgE plus basophil+ or SPT+
+Cha f 1.0101,Food ,Crab,Charybdis feriatus,Charybdis Cha f 1,IgE but no biological test
+Clu h 1.0101,Food ,Atlantic herring,Clupea harengus,Clupea Clu h 1,IgE but no biological test
+Clu h 1.0201,Food ,Atlantic herring,Clupea harengus,Clupea Clu h 1,IgE but no biological test
+Clu h 1.0301,Food ,Atlantic herring,Clupea harengus,Clupea Clu h 1,IgE but no biological test
+Cra c 1.0101,Food ,Shrimp,Crangon crangon,Crangon Cra c 1 tropomyosin,IgE but no biological test
+Cra c 2.0101,Food ,Shrimp,Crangon crangon,Crangon Cra c 2 arginine kinase,IgE but no biological test
+Cra c 4.0101,Food ,Shrimp,Crangon crangon,Crangon Cra c 4 sarcoplasmic calcium-binding prote,IgE but no biological test
+Cra c 5.0101,Food ,Shrimp,Crangon crangon,Crangon Cra c 5 myosin light chain,IgE but no biological test
+Cra c 6.0101,Food ,Shrimp,Crangon crangon,Crangon Cra c 6 troponin C,IgE but no biological test
+Cra c 8.0101,Food ,Shrimp,Crangon crangon,Crangon Cra c 8 triosephosphate isomerase,IgE but no biological test
+Cra g 1.0101,Food ,American  oyster,Crassostrea gigas,Crassostrea Tropomyosin Cra g 1,IgE but no biological test
+Cra g 1.0102,Food ,American  oyster,Crassostrea gigas,Crassostrea Tropomyosin Cra g 1,IgE but no biological test
+Cyp c 1.0101,Food ,Carp,Cyprinus carpio,Cyprinus Cyp c 1 Parvalbumin,IgE plus basophil+ or SPT+
+Cyp c 1.0201,Food ,Carp,Cyprinus carpio,Cyprinus Cyp c 1 Parvalbumin,IgE plus basophil+ or SPT+
+Equ a 6,Food ,Asinus ,Equus asinus,Equus asinus / caballas  Equ a 6 Equ c 6 lysozyme,IgE plus basophil+ or SPT+
+Equ c 6,Food ,Horse,Equus caballus,Equus asinus / caballas  Equ a 6 Equ c 6 lysozyme,IgE plus basophil+ or SPT+
+Eri s 2.0101,Food ,Chinese mitten crab,Eriocheir sinensis,Eriocheir sinensis Eri s 2,IgE plus basophil+ or SPT+
+Gad c 1.0101,Food ,Baltic cod,Gadus callarias,Gadus Gad c 1 Gad m 1,IgE plus basophil+ or SPT+
+Gad m 1.0101,Food ,Atlantic cod,Gadus morhua,Gadus Gad c 1 Gad m 1,IgE plus basophil+ or SPT+
+Gad m 1.0102,Food ,Atlantic cod,Gadus morhua,Gadus Gad c 1 Gad m 1,IgE plus basophil+ or SPT+
+Gad m 1.0201,Food ,Atlantic cod,Gadus morhua,Gadus Gad c 1 Gad m 1,IgE plus basophil+ or SPT+
+Gad m 1.0202,Food ,Atlantic cod,Gadus morhua,Gadus Gad c 1 Gad m 1,IgE plus basophil+ or SPT+
+Gad m 2.0101,Food ,Atlantic cod,Gadus morhua,Gadus Morhua Gad m 2,IgE but no biological test
+Gal d 1.0101,Food ,Chicken,Gallus gallus,Gallus Gal d 1,IgE plus basophil+ or SPT+
+Gal d 2.0101,Food ,Chicken,Gallus gallus,Gallus Gal d 2,IgE plus basophil+ or SPT+
+Gal d 3.0101,Food ,Chicken,Gallus gallus,Gallus Gal d 3,IgE plus basophil+ or SPT+
+Gal d 4.0101,Food ,Chicken,Gallus gallus,Gallus Gal d 4,IgE plus basophil+ or SPT+
+Gal d 5.0101,Food ,Chicken,Gallus gallus,Gallus Gal d 5,IgE plus basophil+ or SPT+
+Gal d 6,Food ,Chicken,Gallus gallus,Gallus Gal d 6 YGP42 c_terminal 284 AA,IgE but no biological test
+Gal d 8.0101,Food ,Chicken,Gallus gallus,Gallus parvalbumin Gal d 8,IgE plus basophil+ or SPT+
+Gal d 9.0101,Food ,Chicken,Gallus gallus,Gallus enolase Gal d 9,IgE plus basophil+ or SPT+
+Hal l 1.0101,Food ,Haliotis laevigata x Haliotis rubra,Haliotis laevigata x Haliotis rubra,Haliotis Hal m 1 tropomyosin,IgE but no biological test
+Hel as 1.0101,Food ,Brown garden snail,Helix aspersa,Helix Hel as 1 tropomyosin,IgE but no biological test
+Hom a 1.0101,Food ,American lobster,Homarus americanus,Homarus Hom a 1,IgE plus basophil+ or SPT+
+Hom a 1.0102,Food ,American lobster,Homarus americanus,Homarus Hom a 1,IgE plus basophil+ or SPT+
+Lat c 1.0101,Food ,Asian Seabass,Lates calcarifer,Lates Lat c 1,IgE but no biological test
+Lat c 1.0201,Food ,Asian Seabass,Lates calcarifer,Lates Lat c 1,IgE but no biological test
+Lep w 1.0101,Food ,Flat fish,Lepidorhombus whiffiagonis,Lepidorhombus Lep w 1 parvalbumin,IgE but no biological test
+Lit v 1.0101,Food ,Whiteleg Shrimp,Litopenaeus vannamei,Litopenaeus Lit v 1 tropomyosin,IgE but no biological test
+Lit v 2.0101,Food ,Whiteleg Shrimp,Litopenaeus vannamei,Litopenaeus Lit v 2,IgE but no biological test
+Lit v 3.0101,Food ,Whiteleg Shrimp,Litopenaeus vannamei,Litopenaeus Lit v 3 myosin,IgE but no biological test
+Lit v 4.0101,Food ,Whiteleg Shrimp,Litopenaeus vannamei,Litopenaeus  Lit v 4 sarcoplasmic Ca+ binding,IgE plus basophil+ or SPT+
+Mac r 1.0101,Food ,Giant River Prawn,Macrobrachium rosenbergii,Macrobrachium rosenbergii shrimp tropomyosin,IgE but no biological test
+Mel l 1.0101,Food ,King Prawn,Melicertus latisulcatus,Melicertus tropomyosin,IgE but no biological test
+Met e 1.0101,Food ,Greasyback shrimp,Metapenaeus ensis,Metapenaeus Met e 1 Tropomyosin,IgE but no biological test
+Onc k 5.0101,Food ,chum salmon,Oncorhynchus keta,Oncorhynchus Onc k 5,IgE but no biological test
+Onc m 1.0101,Food ,rainbow trout,Oncorhynchus mykiss,Oncorhynchus Rainbow trout parv Onc m 1,IgE but no biological test
+Onc m 1.0201,Food ,rainbow trout,Oncorhynchus mykiss,Oncorhynchus Rainbow trout parv Onc m 1,IgE but no biological test
+Ore m 4.0101,Food ,Mozambique tilapia,Oreochromis mossambicus,Oreochromis Ore m 4 tropomyosin,IgE but no biological test
+Pan b 1.0101,Food ,caribean shrimp,Pandalus borealis,Pandalus Pan b 1,IgE but no biological test
+Pan s 1.0101,Food ,Lobster,Panulirus stimpsoni,Panulirus Pan s 1,IgE plus basophil+ or SPT+
+Pen a 1.0101,Food ,Brown shrimp,Farfantepenaeus aztecus,Farfantepenaeus Pen a 1,IgE plus basophil+ or SPT+
+Pen m 1.0101,Food ,Black tiger shrimp,Penaeus monodon,Penaeus Pen m 1 tropomyosin,IgE but no biological test
+Pen m 2.0101,Food ,Black tiger shrimp,Penaeus monodon,Penaeus Pen m 2,IgE plus basophil+ or SPT+
+Pen m 3.0101,Food ,Black tiger shrimp,Penaeus monodon,Penaeus Pen m 3 myosin light chain,IgE but no biological test
+Pen m 4.0101,Food ,Black tiger shrimp,Penaeus monodon,Penaeus Pen m 4 sarcoplasmic calcium binding,IgE but no biological test
+Pon l 4.0101,Food ,Danube crayfish,Pontastacus leptodactylus,Pontastacus Pon l 4,IgE but no biological test
+Por p 1.0101,Food ,blue swimmer crab,Portunus pelagicus,Portunus Por p 1 tropomyosin,IgE plus basophil+ or SPT+
+Pro c 1.0101,Food ,red swamp crayfish,Procambarus clarkii,Procambarus tropomysin,IgE but no biological test
+Pro c 2.0101,Food ,red swamp crayfish,Procambarus clarkii,Procambarus red crayfish arginine kinase,IgE but no biological test
+Pro c 5.0101,Food ,red swamp crayfish,Procambarus clarkii,Procambarus Pro c 5 MLC 1,IgE but no biological test
+Pro c 8.0101,Food ,red swamp crayfish,Procambarus clarkii,Procambarus Pro c 8,IgE but no biological test
+Ran e 1.0101,Food ,Frog,Rana esculenta,Rana Ran e 1,IgE but no biological test
+Ran e 2.0101,Food ,Frog,Rana esculenta,Rana Ran e 2,IgE but no biological test
+Ras k 1.0101,Food ,Rastrelliger kanagurta,Rastrelliger kanagurta,Rastrelliger Ras k 1 parvalbumin,IgE but no biological test
+Sac g 1,Food ,Saccostrea glomerata,Saccostrea glomerata,Saccostrea glomerata Sac g 1,IgE but no biological test
+Sal s 1.0101,Food ,Salmon,Salmo salar,Salmo Sal s 1,IgE plus basophil+ or SPT+
+Sal s 2.0101,Food ,Salmon,Salmo salar,Salmo Sal s 2 enolase,IgE plus basophil+ or SPT+
+Sal s 3.0101,Food ,Salmon,Salmo salar,Salmo Sal s 3 aldolase,IgE plus basophil+ or SPT+
+Sar sa 1.0101,Food ,South American pilchard,Sardinops sagax,Sardinops Sar sa 1 parvalbumin,IgE but no biological test
+Sco j 1,Food ,Chub mackerel,Scomber japonicus,Scomber Parvalbumin Sco s 1,IgE but no biological test
+Sco s 1.0101,Food ,Atlantic mackerel,Scomber scombrus,Scomber Parvalbumin Sco s 1,IgE but no biological test
+Scy p 2.0101,Food ,green mud crab,Scylla paramamosain,Scylla arginine kinase Scy p 2,IgE but no biological test
+Scy p 4.0101,Food ,green mud crab,Scylla paramamosain,Scylla paramamosain Scy p 4 Sarc Ca Binding Ptn,IgE but no biological test
+Scy p 8.0101,Food ,green mud crab,Scylla paramamosain,Scylla paramamosain Triosphosphate Isomerase,IgE but no biological test
+Seb m 1.0101,Food ,ocean perch (red fish),Sebastes marinus,Sebastes Seb m 1,IgE but no biological test
+Seb m 1.0201,Food ,ocean perch (red fish),Sebastes marinus,Sebastes Seb m 1,IgE but no biological test
+Thu a 2.0101,Food ,Yellowfin tuna,Thunnus albacares,Thunnus Thu a 2 enolase,IgE plus basophil+ or SPT+
+Thu a 3.0101,Food ,Yellowfin tuna,Thunnus albacares,Thunnus Thu a 3 aldolase,IgE plus basophil+ or SPT+
+NA-23,Food ,Octopus,Amphioctopus fangsiao,Amphioctopus arginine kinase,IgE but no biological test
+NA-24,Food ,Parasitic fish worm,Anisakis pegreffii,Anisakis Ani s 12,IgE but no biological test
+NA-26,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 1 protease inhibitor,IgE plus basophil+ or SPT+
+NA-27,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 11,IgE but no biological test
+NA-28,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 12,IgE but no biological test
+NA-29,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 2 paramyosin,IgE but no biological test
+NA-30,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 3 tropomyosin,IgE plus basophil+ or SPT+
+NA-31,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 4,IgE plus basophil+ or SPT+
+NA-32,Food ,Parasitic fish worm,Anisakis simplex,Anisakis Ani s 8 SXP/RAL-2 family protein 2,IgE but no biological test
+NA-33,Food ,Parasitic fish worm,Anisakis simplex,Anisakis simplex troponin-like,IgE but no biological test
+NA-86,Food ,Crustacean,Balanus rostratus,Balanus r tropomyosin,IgE but no biological test
+NA-87,Food ,Japanese turban shell,Batillus cornutus,Batillus Tur c1,IgE but no biological test
+NA-110,Food ,Bovine,Bos taurus,Bos Alpha-s1 casein,IgE plus basophil+ or SPT+
+NA-111,Food ,Bovine,Bos taurus,Bos Bos d 11 beta casein,IgE plus basophil+ or SPT+
+NA-112,Food ,Bovine,Bos taurus,Bos Bos d 12,IgE plus basophil+ or SPT+
+NA-113,Food ,Bovine,Bos taurus,Bos Bos d 4,IgE plus basophil+ or SPT+
+NA-114,Food ,Bovine,Bos taurus,Bos Bos d 5,IgE plus basophil+ or SPT+
+NA-115,Food ,Bovine,Bos taurus,Bos Bos d 6,IgE plus basophil+ or SPT+
+NA-117,Food ,Bovine,Bos taurus,Bos lactotransferrin,IgE but no biological test
+NA-132,Food ,Snow Crab,Chionoecetes opilio,Chionoecetes tropomyosin,IgE but no biological test
+NA-138,Food ,Eastern oyster,Crassostrea virginica,Crassostrea Tropomyosin Cra g 1,IgE but no biological test
+NA-192,Food ,Horsehair crab,Erimacrus isenbeckii,Erimacrus tropomyosin,IgE but no biological test
+NA-193,Food ,Chinese mitten crab,Eriocheir sinensis,Eriocheir tropomyosin,IgE but no biological test
+NA-194,Food ,North Pacific Krill,Euphausia pacifica,Euphausia,IgE plus basophil+ or SPT+
+NA-195,Food ,Krill,Euphausia superba,Euphausia,IgE plus basophil+ or SPT+
+NA-197,Food ,Crimson seabream,Evynnis japonica,Evynnis parvalbumin,IgE but no biological test
+NA-208,Food ,Chinese white shrimp,Fenneropenaeus chinensis,Fenneropenaeus Arginine kinase,IgE but no biological test
+NA-209,Food ,Chinese white shrimp,Fenneropenaeus chinensis,Penaeus chinensis allergen,IgE plus basophil+ or SPT+
+NA-210,Food ,Banana Prawn,Fenneropenaeus merguiensis,Fenneropenaeus  hemocyanin banana shrimp,IgE but no biological test
+NA-211,Food ,Banana Prawn,Fenneropenaeus merguiensis,Fenneropenaeus enolase,IgE but no biological test
+NA-215,Food ,Mollusc,Fulvia mutica,Fulvia tropomyosin,IgE but no biological test
+NA-217,Food ,Chicken,Gallus gallus,Gallus Gal d 1,IgE plus basophil+ or SPT+
+NA-218,Food ,Chicken,Gallus gallus,Gallus Gal d 2,IgE plus basophil+ or SPT+
+NA-235,Food ,Disk abalone,Haliotis discus discus,Haliotis Hal m 1 tropomyosin,IgE but no biological test
+NA-236,Food ,Disk abalone,Haliotis discus discus,Haliotis paramyosin,IgE but no biological test
+NA-237,Food ,Abalone,Haliotis diversicolor,Haliotis Hal m 1 tropomyosin,IgE but no biological test
+NA-263,Food ,Whiteleg Shrimp,Litopenaeus vannamei,Litopenaeus Lit v 2,IgE but no biological test
+NA-267,Food ,Giant River Prawn,Macrobrachium rosenbergii,Macrobrachium rosenbergii shrimp tropomyosin,IgE but no biological test
+NA-268,Food ,Patagonian Grenadier,Macruronus magellanicus,Merluccius sp. Macruronus sp. Parvalbumin Hake,IgE but no biological test
+NA-269,Food ,Blue hake,Macruronus novaezelandiae,Merluccius sp. Macruronus sp. Parvalbumin Hake,IgE but no biological test
+NA-280,Food ,Kuruma Shrimp,Marsupenaeus japonicus,Marsupenaeus tropomyosin,IgE but no biological test
+NA-281,Food ,southern hake,Merluccius australis australis,Merluccius sp. Macruronus sp. Parvalbumin Hake,IgE but no biological test
+NA-282,Food ,Southern hake,Merluccius australis polylepis,Merluccius sp. Macruronus sp. Parvalbumin Hake,IgE but no biological test
+NA-283,Food ,Silver hake,Merluccius bilinearis,Merluccius sp. Macruronus sp. Parvalbumin Hake,IgE but no biological test
+NA-284,Food ,Shallow-water cape hake,Merluccius capensis,Merluccius sp. Macruronus sp. Parvalbumin Hake,IgE but no biological test
+NA-285,Food ,Southern Pacific hake,Merluccius gayi,Merluccius sp. Macruronus sp. Parvalbumin Hake,IgE but no biological test
+NA-286,Food ,European hake,Merluccius merluccius,Merluccius sp. Macruronus sp. Parvalbumin Hake,IgE but no biological test
+NA-287,Food ,Deep-water cape hake,Merluccius paradoxus,Merluccius sp. Macruronus sp. Parvalbumin Hake,IgE but no biological test
+NA-288,Food ,Benguela hake,Merluccius polli,Merluccius sp. Macruronus sp. Parvalbumin Hake,IgE but no biological test
+NA-289,Food ,North Pacific hake,Merluccius productus,Merluccius sp. Macruronus sp. Parvalbumin Hake,IgE but no biological test
+NA-291,Food ,Noble scallop,Mimachlamys nobilis,Mimachlamys Tropomyosin,IgE plus basophil+ or SPT+
+NA-299,Food ,Wrinkled Neptune,Neptunea polycostata,Neptunea tropomyosin,IgE but no biological test
+NA-301,Food ,Octopus,Octopus vulgaris,Octopus tropomyosin,IgE but no biological test
+NA-308,Food ,red squid,Ommastrephes bartramii,Ommastrephes tropomyosin,IgE but no biological test
+NA-310,Food ,rainbow trout,Oncorhynchus mykiss,Oncorhynchus Rainbow trout parv Onc m 1,IgE but no biological test
+NA-311,Food ,mantis shrimp,Oratosquilla oratoria,Oratosquilla tropomyosin,IgE plus basophil+ or SPT+
+NA-317,Food ,Kamchatka crab,Paralithodes camtschaticus,Paralithodes tropomyosin,IgE but no biological test
+NA-320,Food ,Black tiger shrimp,Penaeus monodon,Penaeus Pen m 2,IgE plus basophil+ or SPT+
+NA-330,Food ,Asian green mussell,Perna viridis,Perna Tropomyosin,IgE but no biological test
+NA-348,Food ,Crab,Portunus sanguinolentus,Portunus Por s and t tropomyosin,IgE but no biological test
+NA-349,Food ,Crab,Portunus trituberculatus,Portunus Por s and t tropomyosin,IgE but no biological test
+NA-350,Food ,Arthropod,Protortonia cacti,Protortonia,IgE but no biological test
+NA-366,Food ,Mollusc,Pseudocardium sachalinensis,Pseudocardium tropomyosin,IgE but no biological test
+NA-370,Food ,Frog,Rana sp. CH-2001,Rana Ran e 1,IgE but no biological test
+NA-371,Food ,Frog,Rana sp. CH-2001,Rana Ran e 2,IgE but no biological test
+NA-373,Food ,Salmon,Salmo salar,Salmo Sal s 1,IgE plus basophil+ or SPT+
+NA-374,Food ,Salmon,Salmo salar,Salmo Sal s 2 enolase,IgE plus basophil+ or SPT+
+NA-375,Food ,Salmon,Salmo salar,Salmo Sal s 3 aldolase,IgE plus basophil+ or SPT+
+NA-379,Food ,Brook trout,Salvelinus fontinalis,Salvelinus parvalbumin,IgE but no biological test
+NA-386,Food ,Clam,Scapharca broughtonii,Scapharca tropomyosin,IgE but no biological test
+NA-391,Food ,green mud crab,Scylla paramamosain,Scylla arginine kinase Scy p 2,IgE but no biological test
+NA-392,Food ,green mud crab,Scylla paramamosain,Scylla paramamosain filamin C,IgE plus basophil+ or SPT+
+NA-393,Food ,giant mud crab,Scylla serrata,Scylla arginine kinase Scy p 2,IgE but no biological test
+NA-394,Food ,giant mud crab,Scylla serrata,Scylla sp. (mud crab) tropomyosin,IgE but no biological test
+NA-397,Food ,cuttlefish,Sepia esculenta,Sepia tropomyosin,IgE but no biological test
+NA-398,Food ,bigfin reef squid,Sepioteuthis lessoniana,Sepioteuthis tropomyosin,IgE but no biological test
+NA-404,Food ,Chinese razor clam,Sinonovacula constricta,Sinonovacula tropomyosin [Song paper],IgE but no biological test
+NA-410,Food ,Gould's razor shell,Solen strictus,Solen tropomyosin,IgE but no biological test
+NA-428,Food ,Alaska pollock,Theragra chalcogramma,Theragra parvalbumin,IgE plus basophil+ or SPT+
+NA-429,Food ,Yellowfin tuna,Thunnus albacares,Thunnus Thu a 2 enolase,IgE plus basophil+ or SPT+
+NA-430,Food ,Yellowfin tuna,Thunnus albacares,Thunnus Thu a 3 aldolase,IgE plus basophil+ or SPT+
+NA-431,Food ,Japanese flying squid,Todarodes pacificus,Todarodes Tod p 1,IgE but no biological test
+NA-432,Food ,Japanese horse mackerel,Trachurus japonicus,Trachurus parvalbumin,IgE but no biological test
+NA-433,Food ,clam,Tresus keenae,Tresus tropomyosin,IgE but no biological test
+NA-483,Food ,Clam,Venerupis philippinarum,Venerupis tropomyosin,IgE but no biological test
+Xip g 1.0101,Food ,Swordfish,Xiphias gladius,Xiphias Xip g 1 beta-parvalbumin,IgE but no biological test
+NA-524,Food ,Atlantic cod,Gadus morhua,Gadus morhua Gad m 3,IgE but no biological test
+NA-525,Food ,Chicken,Gallus gallus,Gallus Gal d 2,IgE plus basophil+ or SPT+
+NA-526,Food ,Chicken,Gallus gallus,Gallus Gal d 3,IgE plus basophil+ or SPT+
+NA-527,Food ,Chicken,Gallus gallus,Gallus Gal d 4,IgE plus basophil+ or SPT+
+NA-528,Food ,Chicken,Gallus gallus,Gallus gallus Gal d 7,IgE but no biological test
+NA-558,Food ,Salmon,Salmo salar,Salmo Sal s 1,IgE plus basophil+ or SPT+
+Cop c 1.0101,Food ,Shaggy mane,Coprinus comatus,Coprinus Cop c 1,IgE but no biological test
+NA-425,Food ,Yellow mealworm,Tenebrio molitor,Tenebrio molitor tropomyosin mealworm,IgE plus basophil+ or SPT+
+Act c 10,Food ,Kiwi,Actinidia chinensis,Actinidia Act c 10 LTP,IgE plus basophil+ or SPT+
+Act c 5.0102,Food ,Kiwi,Actinidia chinensis,Actinidia Act c 5 kiwellin,IgE but no biological test
+Act c 8.0101,Food ,Kiwi,Actinidia chinensis,Actinidia Act c 8 Act d 8 PR-10,IgE but no biological test
+Act d 1.0101,Food ,Kiwi,Actinidia deliciosa,Actinidia Act c 1 Act d 1 Actinidin,IgE plus basophil+ or SPT+
+Act d 10.0101,Food ,Kiwi,Actinidia deliciosa,Actinidia Act d 10 LTP,IgE plus basophil+ or SPT+
+Act d 10.0201,Food ,Kiwi,Actinidia deliciosa,Actinidia Act d 10 LTP,IgE plus basophil+ or SPT+
+Act d 11.0101,Food ,Kiwi,Actinidia deliciosa,Actinidia Act d 11 Kirola MLP,IgE but no biological test
+Act d 12.0102,Food ,Kiwi,Actinidia chinensis,Actinidia Act d 12,IgE plus basophil+ or SPT+
+Act d 2.0101,Food ,Kiwi,Actinidia deliciosa,Actinidia Act d 2 thaumatin like protein,IgE plus basophil+ or SPT+
+Act d 4.0101,Food ,Kiwi,Actinidia deliciosa,Actinidia Act d 4 Phytocystatin,IgE plus basophil+ or SPT+
+Act d 5.0101,Food ,Kiwi,Actinidia deliciosa,Actinidia Act d 5 kiwellin,IgE but no biological test
+Act d 8.0101,Food ,Kiwi,Actinidia deliciosa,Actinidia Act c 8 Act d 8 PR-10,IgE but no biological test
+Act d 9.0101,Food ,Kiwi,Actinidia deliciosa,"Actinidia Act d 9, profilin",IgE but no biological test
+Ana 0 1.0101,Food ,Cashew,Anacardium occidentale,Anacardium Ana o 1,IgE plus basophil+ or SPT+
+Ana 0 1.0102,Food ,Cashew,Anacardium occidentale,Anacardium Ana o 1,IgE plus basophil+ or SPT+
+Ana c 1.0101,Food ,Pineapple,Ananas comosus,Ananas profilin Ana c 1,IgE but no biological test
+Ana o 2.0101,Food ,Cashew,Anacardium occidentale,Anacardium Ana o 2,IgE plus basophil+ or SPT+
+Ana o 3.0101,Food ,Cashew,Anacardium occidentale,Anacardium Ana o 3,IgE but no biological test
+Api g 1.0101,Food ,Celery,Apium graveolens,Apium Api g 1,IgE plus basophil+ or SPT+
+Api g 1.0201,Food ,Celery,Apium graveolens,Apium Api g 1,IgE plus basophil+ or SPT+
+Api g 2.0101,Food ,Celery,Apium graveolens,Apium Api g 2,IgE plus basophil+ or SPT+
+Api g 4.0101,Food ,Celery,Apium graveolens,Apium Api g 4,IgE plus basophil+ or SPT+
+Api g 5.0101,Food ,Celery,Apium graveolens,Apium Api g 5,IgE but no biological test
+Api g 6.0101,Food ,Celery,Apium graveolens Rapaceum Group,Apium graveolens Api g 6  LTP 2,IgE but no biological test
+Ara a 2,Food ,Peanut,Arachis hypogaea,Arachis Ara h 2,IgE plus basophil+ or SPT+
+Ara h 1,Food ,Peanut,Arachis hypogaea,Arachis Ara h 1,IgE plus basophil+ or SPT+
+Ara h 1.0101,Food ,Peanut,Arachis hypogaea,Arachis Ara h 1,IgE plus basophil+ or SPT+
+Ara h 10.0101,Food ,Peanut,Arachis hypogaea,Arachis hypogaea Ara h 10,IgE but no biological test
+Ara h 10.0102,Food ,Peanut,Arachis hypogaea,Arachis hypogaea Ara h 10,IgE but no biological test
+Ara h 11.0101,Food ,Peanut,Arachis hypogaea,Arachis hypogaea Ara h 11,IgE but no biological test
+Ara h 11.0102,Food ,Peanut,Arachis hypogaea,Arachis hypogaea Ara h 11,IgE but no biological test
+Ara h 12.0101,Food ,Peanut,Arachis hypogaea,Arachis Ara h 12,IgE but no biological test
+Ara h 13.0101,Food ,Peanut,Arachis hypogaea,Arachis Ara h 13 defensin,IgE but no biological test
+Ara h 13.0102,Food ,Peanut,Arachis hypogaea,Arachis Ara h 13 defensin,IgE but no biological test
+Ara h 15.0101,Food ,Peanut,Arachis hypogaea,Arachis hypogaea oleosin Ara h 15,IgE plus basophil+ or SPT+
+Ara h 2.0101,Food ,Peanut,Arachis hypogaea,Arachis Ara h 2,IgE plus basophil+ or SPT+
+Ara h 2.0201,Food ,Peanut,Arachis hypogaea,Arachis Ara h 2,IgE plus basophil+ or SPT+
+Ara h 3.0101,Food ,Peanut,Arachis hypogaea,Arachis Ara h 3 Glycinin,IgE plus basophil+ or SPT+
+Ara h 3.0201,Food ,Peanut,Arachis hypogaea,Arachis Ara h 3 Glycinin,IgE plus basophil+ or SPT+
+Ara h 5.0101,Food ,Peanut,Arachis hypogaea,Arachis Ara h 5,IgE plus basophil+ or SPT+
+Ara h 6.0101,Food ,Peanut,Arachis hypogaea,Arachis Ara h 6,IgE plus basophil+ or SPT+
+Ara h 7.0201,Food ,Peanut,Arachis hypogaea,Arachis Ara h 7,IgE but no biological test
+Ara h 8.0101,Food ,Peanut,Arachis hypogaea,Arachis Ara h 8,IgE plus basophil+ or SPT+
+Ara h 8.0201,Food ,Peanut,Arachis hypogaea,Arachis Ara h 8,IgE plus basophil+ or SPT+
+Ara h 9.0101,Food ,Peanut,Arachis hypogaea,Arachis Ara h 9  LTP isoallergens,IgE but no biological test
+Ara h 9.0201,Food ,Peanut,Arachis hypogaea,Arachis Ara h 9  LTP isoallergens,IgE but no biological test
+Ber e 1.0101,Food ,Brazil nut,Bertholletia excelsa,Bertholletia Ber e 1,IgE plus basophil+ or SPT+
+Ber e 2.0101,Food ,Brazil nut,Bertholletia excelsa,Bertholletia Ber e 2,IgE but no biological test
+Bra j 1.0101,Food ,Mustard,Brassica juncea,Brassica Bra j 1 2S albumin,IgE but no biological test
+Bra n 1.0101,Food ,Rape,Brassica napus,Bra n 1,IgE but no biological test
+Bra r 1.0101,Food ,Turnip,Brassica rapa,Brassica Bra r 1,IgE but no biological test
+Bra r 5.0101,Food ,Turnip,Brassica rapa,Brassica Calcim binding protein Group I,IgE but no biological test
+Cap a 1.0101,Food ,Bell pepper,Capsicum annuum,Capsicum Cap a 1,IgE but no biological test
+Cap a 2.0101,Food ,Bell pepper,Capsicum annuum,Capsicum Cap a 2,IgE but no biological test
+Car i 1.0101,Food ,Pecan,Carya illinoinensis,Carya Car i 1 Seed storage protein,IgE but no biological test
+Car i 2.0101,Food ,Pecan,Carya illinoinensis,Carya i Car i 2.0101 vicilin,IgE but no biological test
+Car i 4.0101,Food ,Pecan,Carya illinoinensis,Carya Car i 4 11s legumin,IgE but no biological test
+Cari p 1.0101,Food ,Papaya,Carica papaya,Cari p 1.0101 endo polygalacturonase,IgE plus basophil+ or SPT+
+Cas s 5.0101,Food ,European chestnut,Castanea sativa,Castanea Cas s 5,IgE plus basophil+ or SPT+
+Cit l 3.0101,Food ,Lemon,Citrus limon,Citrus LTP Cit s 3/Cit l 3,IgE plus basophil+ or SPT+
+Cit s 1.0101,Food ,Navel orange,Citrus sinensis,Citrus Cit s 1,IgE plus basophil+ or SPT+
+Cit s 2.0101,Food ,Navel orange,Citrus sinensis,Citrus Cit s 2,IgE plus basophil+ or SPT+
+Cit s 3.0101,Food ,Navel orange,Citrus sinensis,Citrus LTP Cit s 3/Cit l 3,IgE plus basophil+ or SPT+
+Cit s 3.0102,Food ,Navel orange,Citrus sinensis,Citrus LTP Cit s 3/Cit l 3,IgE plus basophil+ or SPT+
+Cit s 7,Food ,Navel orange,Citrus sinensis,Citrus sinensis Cit s 7,IgE plus basophil+ or SPT+
+Citr l 2.0101,Food ,Citrullus lanatus,Citrullus lanatus,Citrullus lanatus Citr l 2,IgE plus basophil+ or SPT+
+Cof a 1.0101,Food ,Coffee,Coffea arabica,Coffea Cof a 1,IgE but no biological test
+Cof a 2.0101,Food ,Coffee,Coffea arabica,Coffea Cof a 2,IgE but no biological test
+Cof a 3.0101,Food ,Coffee,Coffea arabica,Coffea  Cof a 3,IgE but no biological test
+Cor 1 9.0101,Food ,European hazelnut,Corylus avellana,Corylus Cor a 9,IgE plus basophil+ or SPT+
+Cor a 1.0101,Food ,European hazelnut,Corylus avellana,Corylus Cor a 1,IgE plus basophil+ or SPT+
+Cor a 1.0401,Food ,European hazelnut,Corylus avellana,Corylus Cor a 1,IgE plus basophil+ or SPT+
+Cor a 1.0402,Food ,European hazelnut,Corylus avellana,Corylus Cor a 1,IgE plus basophil+ or SPT+
+Cor a 1.0403,Food ,European hazelnut,Corylus avellana,Corylus Cor a 1,IgE plus basophil+ or SPT+
+Cor a 1.0404,Food ,European hazelnut,Corylus avellana,Corylus Cor a 1,IgE plus basophil+ or SPT+
+Cor a 11.0101,Food ,European hazelnut,Corylus avellana,Corylus Cor a 11,IgE plus basophil+ or SPT+
+Cor a 12.0101,Food ,European hazelnut,Corylus avellana,Corylus Cor a 12,IgE plus basophil+ or SPT+
+Cor a 13.0101,Food ,European hazelnut,Corylus avellana,Corylus Cor a 13 Oleosin,IgE but no biological test
+Cor a 14.0101,Food ,European hazelnut,Corylus avellana,Corylus Cor a 14 2S albumin,IgE plus basophil+ or SPT+
+Cor a 8.0101,Food ,European hazelnut,Corylus avellana,Corylus Cor a 8,IgE but no biological test
+Cuc m 1.0101,Food ,Muskmelon,Cucumis melo,Cucumis Cuc m 1,IgE but no biological test
+Cuc m 2.0101,Food ,Muskmelon,Cucumis melo,Cucumis Cuc m 2,IgE plus basophil+ or SPT+
+Cuc m 3.0101,Food ,Muskmelon,Cucumis melo,Cucumis Cuc m 3,IgE plus basophil+ or SPT+
+Dau c 1.0101,Food ,Carrot,Daucus carota,Daucus Dau c 1,IgE plus basophil+ or SPT+
+Dau c 1.0102,Food ,Carrot,Daucus carota,Daucus Dau c 1,IgE plus basophil+ or SPT+
+Dau c 1.0103,Food ,Carrot,Daucus carota,Daucus Dau c 1,IgE plus basophil+ or SPT+
+Dau c 1.0104,Food ,Carrot,Daucus carota,Daucus Dau c 1,IgE plus basophil+ or SPT+
+Dau c 1.0105,Food ,Carrot,Daucus carota,Daucus Dau c 1,IgE plus basophil+ or SPT+
+Dau c 1.0201,Food ,Carrot,Daucus carota,Daucus Dau c 1,IgE plus basophil+ or SPT+
+Dau c 1.0301,Food ,Carrot,Daucus carota,Daucus Dau c 1,IgE plus basophil+ or SPT+
+Dau c 4.0101,Food ,Carrot,Daucus carota,Daucus Dau c 4,IgE plus basophil+ or SPT+
+Dau c 5.0101,Food ,Carrot,Daucus carota,Daucus Dau c 5 isoflavone reductase,IgE but no biological test
+Fag e 2.0101,Food ,Buckwheat,Fagopyrum esculentum,Fagopyrum Fag e 2 Fag t 2,IgE but no biological test
+Fag e 3.0101,Food ,Buckwheat,Fagopyrum esculentum,Fagopyrum vicilin-like Fag e 3,IgE but no biological test
+Fag t 2.0101,Food ,Buckwheat,Fagopyrum tataricum,Fagopyrum Fag e 2 Fag t 2,IgE but no biological test
+Fra a 1,Food ,Strawberry,Fragaria x ananassa,Fragaria  Fra a 1,IgE plus basophil+ or SPT+
+Fra a 1.0102,Food ,Strawberry,Fragaria x ananassa,Fragaria  Fra a 1,IgE plus basophil+ or SPT+
+Fra a 3.0101,Food ,Strawberry,Fragaria x ananassa,Fragaria Fra a 3,IgE plus basophil+ or SPT+
+Fra a 3.0102,Food ,Strawberry,Fragaria x ananassa,Fragaria Fra a 3,IgE plus basophil+ or SPT+
+Fra a 3.0201,Food ,Strawberry,Fragaria x ananassa,Fragaria Fra a 3,IgE plus basophil+ or SPT+
+Fra a 3.0202,Food ,Strawberry,Fragaria x ananassa,Fragaria Fra a 3,IgE plus basophil+ or SPT+
+Gly m 3.0101,Food ,Soybean,Glycine max,Glycine Gly m 3,IgE but no biological test
+Gly m 3.0102,Food ,Soybean,Glycine max,Glycine Gly m 3,IgE but no biological test
+Gly m 4.0101,Food ,Soybean,Glycine max,Glycine Gly m 4,IgE plus basophil+ or SPT+
+Gly m 5.0101,Food ,Soybean,Glycine max,Glycine Gly m 5.0101 alpha subunit beta congl,IgE but no biological test
+Gly m 5.0201,Food ,Soybean,Glycine max,Glycine Gly m 5.0201 alpha prime beta congly,IgE but no biological test
+Gly m 5.0301,Food ,Soybean,Glycine max,Glycine Gly m 5.0301 beta sub unit beta congl,IgE but no biological test
+Gly m 6.0101,Food ,Soybean,Glycine max,Glycine Gly m 6.0101,IgE but no biological test
+Gly m 6.0201,Food ,Soybean,Glycine max,Glycine Gly m 6.0201,IgE but no biological test
+Gly m 6.0301,Food ,Soybean,Glycine max,Glycine Gly m 6.0301,IgE but no biological test
+Gly m 6.0401,Food ,Soybean,Glycine max,Glycine Gly m 6.0401,IgE but no biological test
+Gly m 6.0501,Food ,Soybean,Glycine max,Glycine Gly m 6.0501,IgE but no biological test
+Gly m 7.0101,Food ,Soybean,Glycine max,Glycine 68kDa biotinylated protein,IgE plus basophil+ or SPT+
+Gly m 8.0101,Food ,Soybean,Glycine max,Glycine Gly m 8 2s albumin,IgE but no biological test
+Hel a 3.0101,Food ,Sunflower,Helianthus annuus,Helianthus Hel a 3,IgE but no biological test
+Hor v 15.0101,Food ,Barley,Hordeum vulgare subsp. vulgare,Hordeum Hor v 15,IgE plus basophil+ or SPT+
+Hor v 20.0101,Food ,Barley,Hordeum vulgare,Hordeum Hor v 20,IgE plus basophil+ or SPT+
+Jug n 1.0101,Food ,Black walnut,Juglans nigra,Juglans Jug r 1 Jug n 1,IgE but no biological test
+Jug n 2.0101,Food ,Black walnut,Juglans nigra,Juglans Jug r 2,IgE but no biological test
+Jug n 4.0101,Food ,Black walnut,Juglans nigra,Juglans nigra Jug n 4 legumin,IgE but no biological test
+Jug r 1.0101,Food ,English walnut,Juglans regia,Juglans Jug r 1 Jug n 1,IgE but no biological test
+Jug r 3.0101,Food ,English walnut,Juglans regia,Juglans Jug r 3,IgE but no biological test
+Jug r 4.0101,Food ,English walnut,Juglans regia,Juglans Jug r 4 seed storage protein,IgE but no biological test
+Jug r 5.0101,Food ,English walnut,Juglans regia,Juglans regia Jug r 5,IgE plus basophil+ or SPT+
+Jug r 6.0101,Food ,English walnut,Juglans regia,Juglans Jug r 6,IgE but no biological test
+Lac s 1,Food ,Garden lettuce,Lactuca sativa,Lactuca sativa LTP,IgE plus basophil+ or SPT+
+Len c 1.0101,Food ,Lentil,Lens culinaris,Lens Len c 1,IgE but no biological test
+Len c 1.0102,Food ,Lentil,Lens culinaris,Lens Len c 1,IgE but no biological test
+Len c 3.0101,Food ,Lentil,Lens culinaris,Lens  Len c 3,IgE but no biological test
+Lit c 1.0101,Food ,Lychee nut,Litchi chinensis,Litchi Lit c 1,IgE but no biological test
+Lup an 1.0101,Food ,blue lupin,Lupinus angustifolius,Lupinus Lup an 1 conglutin beta,IgE but no biological test
+Mal d 1.0101,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0102,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0103,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0104,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0105,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0106,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0107,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0108,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0109,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0201,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0203,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0204,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0205,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0206,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0207,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0208,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0301,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0302,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0304,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0401,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0402,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 1.0403,Food ,Apple,Malus x domestica,Malus Mal d 1,IgE plus basophil+ or SPT+
+Mal d 2.0101,Food ,Apple,Malus x domestica,Malus Mal d 2,IgE but no biological test
+Mal d 3.0102,Food ,Apple,Malus x domestica,Malus Mal d 3,IgE plus basophil+ or SPT+
+Mal d 3.0201,Food ,Apple,Malus x domestica,Malus Mal d 3,IgE plus basophil+ or SPT+
+Mal d 3.0202,Food ,Apple,Malus x domestica,Malus Mal d 3,IgE plus basophil+ or SPT+
+Mal d 3.0203,Food ,Apple,Malus x domestica,Malus Mal d 3,IgE plus basophil+ or SPT+
+Mal d 4.0101,Food ,Apple,Malus x domestica,Malus Mal d 4,IgE plus basophil+ or SPT+
+Mal d 4.0102,Food ,Apple,Malus x domestica,Malus Mal d 4,IgE plus basophil+ or SPT+
+Mal d 4.0201,Food ,Apple,Malus x domestica,Malus Mal d 4,IgE plus basophil+ or SPT+
+Mal d 4.0202,Food ,Apple,Malus x domestica,Malus Mal d 4,IgE plus basophil+ or SPT+
+Mal d 4.0301,Food ,Apple,Malus x domestica,Malus Mal d 4,IgE plus basophil+ or SPT+
+Mal d 4.0302,Food ,Apple,Malus x domestica,Malus Mal d 4,IgE plus basophil+ or SPT+
+Man e 5.0101,Food ,Cassava,Manihot esculenta,Manihot Man e 5.0101,IgE but no biological test
+Mor n 3.0101,Food ,Black mulberry,Morus nigra,Morus Mor n 3 mulberry LTP,IgE plus basophil+ or SPT+
+Mus a 1.0101,Food ,Banana,Musa acuminata,Musa acuminata Mus a 1 profilin banana,IgE but no biological test
+Mus a 2.0101,Food ,Banana,Musa acuminata,Musa Mus s 2,IgE but no biological test
+Mus a 4.0101,Food ,Banana,Musa acuminata,Musa Mus a 4,IgE plus basophil+ or SPT+
+Pers a 1.0101,Food ,Avocado,Persea americana,Persea Pers a 1,IgE but no biological test
+Pha v 3.0101,Food ,Kidney bean,Phaseolus vulgaris,Phaseolus Pha v 3,IgE plus basophil+ or SPT+
+Pha v 3.0201,Food ,Kidney bean,Phaseolus vulgaris,Phaseolus Pha v 3,IgE plus basophil+ or SPT+
+Pin k 2.0101,Food ,Pinus koraiensis,Pinus koraiensis,Pinus koraiensis vicilin Pin k 2.0101,IgE but no biological test
+Pin p 1.0101,Food ,Pine,Pinus pinea,Pinus pinea Pin p 1 2S,IgE plus basophil+ or SPT+
+Pis s 1.0101,Food ,Pea,Pisum sativum,Pisum Pis s 1,IgE but no biological test
+Pis s 1.0102,Food ,Pea,Pisum sativum,Pisum Pis s 1,IgE but no biological test
+Pis s 2.0101,Food ,Pea,Pisum sativum,Pisum Pis s 2,IgE but no biological test
+Pis s 3.0101,Food ,Pea,Pisum sativum,Pisum sativum Pis s 3,IgE but no biological test
+Pis v 1.0101,Food ,pistachio,Pistacia vera,Pistacia Pis v 1 2S albumin,IgE but no biological test
+Pis v 2.0101,Food ,pistachio,Pistacia vera,Pistacia 11S globulin,IgE but no biological test
+Pis v 2.0201,Food ,pistachio,Pistacia vera,Pistacia 11S globulin,IgE but no biological test
+Pis v 3.0101,Food ,pistachio,Pistacia vera,Pistacia Pis v 3 vicilin,IgE but no biological test
+Pis v 4.0101,Food ,pistachio,Pistacia vera,Pistacia Pis v 4,IgE but no biological test
+Pru ar 1.0101,Food ,Apricot,Prunus armeniaca,Prunus PRP (Bet v 1 family),IgE plus basophil+ or SPT+
+Pru ar 3.0101,Food ,Apricot,Prunus armeniaca,Prunus Pru 3,IgE plus basophil+ or SPT+
+Pru av 1.0101,Food ,Cherry,Prunus avium,Prunus PRP (Bet v 1 family),IgE plus basophil+ or SPT+
+Pru av 1.0201,Food ,Cherry,Prunus avium,Prunus PRP (Bet v 1 family),IgE plus basophil+ or SPT+
+Pru av 1.0202,Food ,Cherry,Prunus avium,Prunus PRP (Bet v 1 family),IgE plus basophil+ or SPT+
+Pru av 1.0203,Food ,Cherry,Prunus avium,Prunus PRP (Bet v 1 family),IgE plus basophil+ or SPT+
+Pru av 2.0101,Food ,Cherry,Prunus avium,Prunus Pru av 2,IgE but no biological test
+Pru av 3.0101,Food ,Cherry,Prunus avium,Prunus Pru 3,IgE plus basophil+ or SPT+
+Pru av 4.0101,Food ,Cherry,Prunus avium,Prunus Pru 4 Profilin peach cherry almond,IgE plus basophil+ or SPT+
+Pru d 3.0101,Food ,Plum,Prunus domestica,Prunus Pru 3,IgE plus basophil+ or SPT+
+Pru du 4.0101,Food ,Almond,Prunus dulcis,Prunus Pru 4 Profilin peach cherry almond,IgE plus basophil+ or SPT+
+Pru du 6.0101,Food ,Almond,Prunus dulcis,Prunus Pru du 6 Amandin,IgE but no biological test
+Pru du 6.0201,Food ,Almond,Prunus dulcis,Prunus Pru du 6 Amandin,IgE but no biological test
+Pru p 1.0101,Food ,Peach,Prunus persica,Prunus PRP (Bet v 1 family),IgE plus basophil+ or SPT+
+Pru p 1.0201,Food ,Peach,Prunus persica,Prunus PRP (Bet v 1 family),IgE plus basophil+ or SPT+
+Pru p 1.0301,Food ,Peach,Prunus persica,Prunus PRP (Bet v 1 family),IgE plus basophil+ or SPT+
+Pru p 2.0101,Food ,Plant hybrid,Prunus dulcis x Prunus persica,Prunus persica Pru p 2 IUIS,IgE plus basophil+ or SPT+
+Pru p 2.0201,Food ,Plant hybrid,Prunus dulcis x Prunus persica,Prunus persica Pru p 2 IUIS,IgE plus basophil+ or SPT+
+Pru p 2.0301,Food ,Plant hybrid,Prunus dulcis x Prunus persica,Prunus persica Pru p 2 IUIS,IgE plus basophil+ or SPT+
+Pru p 3.0101,Food ,Peach,Prunus persica,Prunus Pru 3,IgE plus basophil+ or SPT+
+Pru p 4.0101,Food ,Peach,Prunus persica,Prunus Pru 4 Profilin peach cherry almond,IgE plus basophil+ or SPT+
+Pru p 4.0201,Food ,Peach,Prunus persica,Prunus Pru 4 Profilin peach cherry almond,IgE plus basophil+ or SPT+
+Pru p 7.0101,Food ,Peach,Prunus persica,Prunus Pru p 7 Pru m 7 Peamaclein,IgE plus basophil+ or SPT+
+Pun g 1.0101,Food ,Pomegranate,Punica granatum,Punica Pun g 1,IgE but no biological test
+Pun g 1.0201,Food ,Pomegranate,Punica granatum,Punica Pun g 1,IgE but no biological test
+Pun g 1.0301,Food ,Pomegranate,Punica granatum,Punica Pun g 1,IgE but no biological test
+Pun g 7,Food ,Pomegranate,Punica granatum,Punica peptide Pommaclein Pun g 7,IgE but no biological test
+Pyr c 1.0101,Food ,Pear,Pyrus communis,Pyrus Pyr c 1,IgE plus basophil+ or SPT+
+Pyr c 3.0101,Food ,Pear,Pyrus communis,Pyrus LTP Pyr c 3 IUIS,IgE but no biological test
+Pyr c 4.0101,Food ,Pear,Pyrus communis,Pyrus Pyr c 4,IgE plus basophil+ or SPT+
+Pyr c 5.0101,Food ,Pear,Pyrus communis,Pyrus Pyr c 5,IgE plus basophil+ or SPT+
+Ric c 1.0101,Food ,Castor bean,Ricinus communis,Ricinus Ric c 1,IgE plus basophil+ or SPT+
+Rub i 1.0101,Food ,raspberry,Rubus idaeus,Rubus Rub i 1,IgE but no biological test
+Rub i 3.0101,Food ,raspberry,Rubus idaeus,Rubus Rub i 3,IgE but no biological test
+Sec c 20.0101,Food ,Rye,Secale cereale,Secale Sec c 20,IgE plus basophil+ or SPT+
+Sec c 20.0201,Food ,Rye,Secale cereale,Secale Sec c 20,IgE plus basophil+ or SPT+
+Sec c 5.0101,Food ,Rye,Secale cereale,Secale Sec c 5,IgE but no biological test
+Ses i 1.0101,Food ,Sesame,Sesamum indicum,Sesamum Ses i 1,IgE but no biological test
+Ses i 2.0101,Food ,Sesame,Sesamum indicum,Sesamum Ses i 2,IgE but no biological test
+Ses i 3.0101,Food ,Sesame,Sesamum indicum,Sesamum Ses i 3,IgE but no biological test
+Ses i 4.0101,Food ,Sesame,Sesamum indicum,Sesamum Ses i 4 oleosin,IgE but no biological test
+Ses i 5.0101,Food ,Sesame,Sesamum indicum,Sesamum Ses i 5 oleosin,IgE but no biological test
+Ses i 6.0101,Food ,Sesame,Sesamum indicum,Sesamum Ses i 6,IgE plus basophil+ or SPT+
+Ses i 7.0101,Food ,Sesame,Sesamum indicum,Sesamum Ses i 7,IgE but no biological test
+Sin a 1.0101,Food ,White mustard,Sinapis alba,Sinapis Sin a 1.01,IgE plus basophil+ or SPT+
+Sin a 2.0101,Food ,White mustard,Sinapis alba,Sinapis Sin a 2.01 11S globulin,IgE plus basophil+ or SPT+
+Sin a 3.0101,Food ,White mustard,Sinapis alba,Sinapis Sin a 3.01 LTP,IgE but no biological test
+Sin a 4.0101,Food ,White mustard,Sinapis alba,Sinapis Sin a 4.01 profilin,IgE but no biological test
+Sola l 1.0101,Food ,Tomato,Solanum lycopersicum (Lycopersicon esculentum),Solanum Sola l 1 profilin (Lyc e 1),IgE plus basophil+ or SPT+
+Sola l 2.0101,Food ,Tomato,Solanum lycopersicum (Lycopersicon esculentum),Solanum Sola l 2 Beta-fructofuranosidase (Lyc e 2),IgE but no biological test
+Sola l 2.0201,Food ,Tomato,Solanum lycopersicum (Lycopersicon esculentum),Solanum Sola l 2 Beta-fructofuranosidase (Lyc e 2),IgE but no biological test
+Sola l 3.0101,Food ,Tomato,Solanum lycopersicum (Lycopersicon esculentum),Solanum Sola l 3 LTP (Lyc e 3),IgE plus basophil+ or SPT+
+Sola l 4.0101,Food ,Tomato,Solanum lycopersicum (Lycopersicon esculentum),Solanum Sola l 4 PR-10 (Lyc e 4),IgE but no biological test
+Sola l 4.0201,Food ,Tomato,Solanum lycopersicum (Lycopersicon esculentum),Solanum Sola l 4 PR-10 (Lyc e 4),IgE but no biological test
+Sola l 6.0101,Food ,Tomato,Solanum lycopersicum (Lycopersicon esculentum),Solanum lycopersicum Sola l 6,IgE plus basophil+ or SPT+
+Sola l 7.0101,Food ,Tomato,Solanum lycopersicum (Lycopersicon esculentum),Solanum lycopersicum Sola l 7,IgE plus basophil+ or SPT+
+Sola t 2.0101,Food ,Potato,Solanum tuberosum,Solanum Sola t 2,IgE plus basophil+ or SPT+
+Sola t 3.0101,Food ,Potato,Solanum tuberosum,Solanum Sola t 3,IgE plus basophil+ or SPT+
+Sola t 4.0101,Food ,Potato,Solanum tuberosum,Solanum Sola t 4,IgE plus basophil+ or SPT+
+Tri a 12.0101,Food ,Wheat,Triticum aestivum,Triticum Tri a 12,IgE but no biological test
+Tri a 12.0102,Food ,Wheat,Triticum aestivum,Triticum Tri a 12,IgE but no biological test
+Tri a 12.0103,Food ,Wheat,Triticum aestivum,Triticum Tri a 12,IgE but no biological test
+Tri a 12.0104,Food ,Wheat,Triticum aestivum,Triticum Tri a 12,IgE but no biological test
+Tri a 17.0101,Food ,Wheat,Triticum aestivum,Triticum Tri a 17,IgE plus basophil+ or SPT+
+Tri a 19.0101,Food ,Wheat,Triticum aestivum,Triticum omega-5 gliadin Tri a 19,IgE plus basophil+ or SPT+
+Tri a 20.0101,Food ,Wheat,Triticum aestivum,Triticum Tri a 20,IgE plus basophil+ or SPT+
+Tri a 21.0101,Food ,Wheat,Triticum aestivum,"Triticum Tri a 21  alpha, beta-gliadin",IgE but no biological test
+Tri a 26.0101,Food ,Wheat,Triticum aestivum,Triticum Tri a 26,IgE plus basophil+ or SPT+
+Tri a 26.0201,Food ,Wheat,Triticum aestivum,Triticum Tri a 26,IgE plus basophil+ or SPT+
+Tri a 28.0101,Food ,Wheat,Triticum aestivum,Triticum Tri a 28,IgE but no biological test
+Tri a 36.0101,Food ,Wheat,Triticum aestivum,Triticum Tri a 36,IgE but no biological test
+Tri a 37.0101,Food ,Wheat,Triticum aestivum,Triticum Tri a 37 alpha purothionin,IgE but no biological test
+Tri tu 14,Food ,Wheat,Triticum aestivum,Triticum Tri tu 14,IgE plus basophil+ or SPT+
+NA-2,Food ,Hardy Kiwi,Actinidia arguta,Actinidia arguta kiwellin,IgE but no biological test
+NA-3,Food ,Kiwi,Actinidia chinensis,Actinidia Act c 1 Act d 1 Actinidin,IgE plus basophil+ or SPT+
+NA-4,Food ,Kiwi,Actinidia chinensis,Actinidia Act d 2 thaumatin like protein,IgE plus basophil+ or SPT+
+NA-5,Food ,Kiwi,Actinidia deliciosa,Actinidia Act c 1 Act d 1 Actinidin,IgE plus basophil+ or SPT+
+NA-6,Food ,Kiwi,Actinidia deliciosa,Actinidia Act d 2 thaumatin like protein,IgE plus basophil+ or SPT+
+NA-7,Food ,Kiwi,Actinidia deliciosa,Actinidia Act d 5 kiwellin,IgE but no biological test
+NA-8,Food ,Climber (plant),Actinidia eriantha,Actinidia eriantha kiwellin,IgE but no biological test
+NA-42,Food ,Peanut,Arachis hypogaea,Arachis Agglutinin (lectin),IgE but no biological test
+NA-43,Food ,Peanut,Arachis hypogaea,Arachis Ara h 1,IgE plus basophil+ or SPT+
+NA-44,Food ,Peanut,Arachis hypogaea,Arachis Ara h 2,IgE plus basophil+ or SPT+
+NA-45,Food ,Peanut,Arachis hypogaea,Arachis Ara h 3 Glycinin,IgE plus basophil+ or SPT+
+NA-46,Food ,Peanut,Arachis hypogaea,Arachis Ara h 5,IgE plus basophil+ or SPT+
+NA-47,Food ,Peanut,Arachis hypogaea,Arachis Ara h 6,IgE plus basophil+ or SPT+
+NA-48,Food ,Peanut,Arachis hypogaea,Arachis Ara h 8,IgE plus basophil+ or SPT+
+NA-88,Food ,Brazil nut,Bertholletia excelsa,Bertholletia Ber e 2,IgE but no biological test
+NA-119,Food ,Rape,Brassica napus,Brassica napus 2S albumin,IgE but no biological test
+NA-126,Food ,Pecan,Carya illinoinensis,Carya Car i 4 11s legumin,IgE but no biological test
+NA-129,Food ,European chestnut,Castanea sativa,Castanea Cas s 5,IgE plus basophil+ or SPT+
+NA-136,Food ,European hazelnut,Corylus avellana,Corylus Cor a 2 profilins,IgE but no biological test
+NA-145,Food ,Muskmelon,Cucumis melo,Cucumis Cuc m 2,IgE plus basophil+ or SPT+
+NA-146,Food ,Muskmelon,Cucumis melo var. inodorus,Cucumis Cuc m 3,IgE plus basophil+ or SPT+
+NA-147,Food ,Netted muskmelon,Cucumis melo var. reticulatus,Cucumis Cuc m 2,IgE plus basophil+ or SPT+
+NA-154,Food ,Carrot,Daucus carota,Daucus cyclophilin,IgE but no biological test
+NA-155,Food ,Carrot,Daucus carota,Daucus Dau c 1,IgE plus basophil+ or SPT+
+NA-156,Food ,Carrot,Daucus carota,Daucus Dau c 5 isoflavone reductase,IgE but no biological test
+NA-198,Food ,Buckwheat,Fagopyrum esculentum,Fagopyrum BW 8 kDa protein,IgE but no biological test
+NA-199,Food ,Buckwheat,Fagopyrum esculentum,Fagopyrum esculentum 13S globulins IgE binding,IgE but no biological test
+NA-200,Food ,Buckwheat,Fagopyrum esculentum,Fagopyrum Fag e 2 Fag t 2,IgE but no biological test
+NA-201,Food ,Buckwheat,Fagopyrum esculentum,Fagopyrum Legumin-like protein,IgE but no biological test
+NA-202,Food ,Buckwheat,Fagopyrum esculentum,Fagopyrum vicilin-like Fag e 3,IgE but no biological test
+NA-203,Food ,Buckwheat,Fagopyrum tataricum,Fagopyrum BW 8 kDa protein,IgE but no biological test
+NA-204,Food ,Buckwheat,Fagopyrum tataricum,Fagopyrum Legumin-like protein,IgE but no biological test
+NA-212,Food ,Strawberry,Fragaria x ananassa,Fragaria  Fra a 1,IgE plus basophil+ or SPT+
+NA-220,Food ,Soybean,Glycine max,Glycine Gly m 3,IgE but no biological test
+NA-221,Food ,Soybean,Glycine max,Glycine Gly m 5.0101 alpha subunit beta congl,IgE but no biological test
+NA-222,Food ,Soybean,Glycine max,Glycine Gly m 5.0201 alpha prime beta congly,IgE but no biological test
+NA-223,Food ,Soybean,Glycine max,Glycine Gly m 5.0301 beta sub unit beta congl,IgE but no biological test
+NA-224,Food ,Soybean,Glycine max,Glycine Gly m 6.0101,IgE but no biological test
+NA-225,Food ,Soybean,Glycine max,Glycine Gly m 6.0201,IgE but no biological test
+NA-226,Food ,Soybean,Glycine max,Glycine Gly m 6.0401,IgE but no biological test
+NA-227,Food ,Soybean,Glycine max,Glycine Gly m 6.0501,IgE but no biological test
+NA-228,Food ,Soybean,Glycine max,Glycine Gly m 8 2s albumin,IgE but no biological test
+NA-229,Food ,Soybean,Glycine max,Glycine Gly m Bd 28K,IgE but no biological test
+NA-230,Food ,Soybean,Glycine max,Glycine Gly m Bd 30 kDa,IgE but no biological test
+NA-231,Food ,Soybean,Glycine max,Glycine Major Gly 50 kDa allergen,IgE but no biological test
+NA-232,Food ,Soybean,Glycine max,Glycine Trypsin inhibitor,IgE but no biological test
+NA-233,Food ,Soybean,Glycine soja,Glycine Gly m 6.0401,IgE but no biological test
+NA-238,Food ,Sunflower,Helianthus annuus,Helianthus Seed 2S albumin,IgE but no biological test
+NA-246,Food ,Barley,Hordeum vulgare,Hordeum Hor v 20,IgE plus basophil+ or SPT+
+NA-247,Food ,Barley,Hordeum vulgare,Hordeum LTP 1,IgE but no biological test
+NA-254,Food ,English walnut,Juglans regia,Juglans regia Walnut profilin,IgE but no biological test
+NA-262,Food ,Lychee nut,Litchi chinensis,Litchi Lit c 1,IgE but no biological test
+NA-264,Food ,white lupine,Lupinus albus,Lupinus albus congluten beta,IgE but no biological test
+NA-265,Food ,blue lupin,Lupinus angustifolius,Lupinus Lup an 1 conglutin beta,IgE but no biological test
+NA-266,Food ,wolfberry,Lycium barbarum,Lycium ltp,IgE but no biological test
+NA-275,Food ,Apple,Malus x domestica,Malus Mal d 2,IgE but no biological test
+NA-276,Food ,Apple,Malus x domestica,Malus Mal d 3,IgE plus basophil+ or SPT+
+NA-277,Food ,Apple,Malus x domestica,Malus Mal d 4,IgE plus basophil+ or SPT+
+NA-278,Food ,Cassava,Manihot esculenta,Manihot Man e 5.0101,IgE but no biological test
+NA-279,Food ,Sapodilla plum,Manilkara zapota,Manilkara Thaumatin like protein 1,IgE but no biological test
+NA-292,Food ,White Mulberry,Morus alba var. atropurpurea,Morus winter accumulating protein,IgE but no biological test
+NA-293,Food ,Mulberry,Morus bombycis,Morus winter accumulating protein,IgE but no biological test
+NA-295,Food ,Banana,Musa acuminata,"Musa acuminata Mus a 5 Endo-Beta-1,3-Glucanase",IgE plus basophil+ or SPT+
+NA-296,Food ,Banana,Musa acuminata AAA Group,"Musa acuminata Mus a 5 Endo-Beta-1,3-Glucanase",IgE plus basophil+ or SPT+
+NA-312,Food ,Rice,Oryza sativa,Oryza Glyoxalase I,IgE but no biological test
+NA-314,Food ,Rice,Oryza sativa (japonica cultivar-group),Oryza Glyoxalase I,IgE but no biological test
+NA-316,Food ,Rice,Oryza sativa (japonica cultivar-group),Oryza Trypsin alpha-amylase inhibitor,IgE but no biological test
+NA-339,Food ,Pine,Pinus pinea,Pinus pinea albumin AAI,IgE but no biological test
+NA-340,Food ,pistachio,Pistacia vera,Pistacia 11S globulin,IgE but no biological test
+NA-341,Food ,Pea,Pisum sativum,Pisum sativum Pis s 3,IgE but no biological test
+NA-351,Food ,Apricot,Prunus armeniaca,Prunus armeniaca Pru ar 5,IgE but no biological test
+NA-352,Food ,Apricot,Prunus armeniaca,Prunus Pru 3,IgE plus basophil+ or SPT+
+NA-353,Food ,Cherry,Prunus avium,Prunus avium Pru av 7.01 Gibberellin,IgE but no biological test
+NA-354,Food ,Cherry,Prunus avium,Prunus PRP (Bet v 1 family),IgE plus basophil+ or SPT+
+NA-355,Food ,Cherry,Prunus avium,Prunus Pru 3,IgE plus basophil+ or SPT+
+NA-356,Food ,Almond,Prunus dulcis,Pru du 8 Antimicrobial protein,IgE but no biological test
+NA-357,Food ,Almond,Prunus dulcis,Pru du x Prunus dulcis vicilin,IgE but no biological test
+NA-358,Food ,Almond,Prunus dulcis,Prunus persica Pru p 2 IUIS,IgE plus basophil+ or SPT+
+NA-359,Food ,Almond,Prunus dulcis,Prunus Pru du 6 Amandin,IgE but no biological test
+NA-360,Food ,Almond,Prunus dulcis,Prunus Seed allergenic protein 2 (Conglutin gamma),IgE but no biological test
+NA-361,Food ,Plant hybrid,Prunus dulcis x Prunus persica,Prunus persica Pru p 2 IUIS,IgE plus basophil+ or SPT+
+NA-362,Food ,Plant hybrid,Prunus dulcis x Prunus persica,Prunus Pru 4 Profilin peach cherry almond,IgE plus basophil+ or SPT+
+NA-363,Food ,Peach,Prunus persica,Pru p 9 peach a PR-1 protein Cys rich,IgE plus basophil+ or SPT+
+NA-364,Food ,Peach,Prunus persica,Prunus persica Pru p 2 IUIS,IgE plus basophil+ or SPT+
+NA-365,Food ,Peach,Prunus persica,Prunus Pru 3,IgE plus basophil+ or SPT+
+NA-367,Food ,Pomegranate,Punica granatum,Punica chitinase putative Put g 14,IgE but no biological test
+NA-368,Food ,Pear,Pyrus communis,Pyrus LTP Pyr c 3 IUIS,IgE but no biological test
+NA-399,Food ,Sesame,Sesamum indicum,Sesamum seed maturation-like protein,IgE but no biological test
+NA-400,Food ,Sesame,Sesamum indicum,Sesamum Ses i 1,IgE but no biological test
+NA-401,Food ,Sesame,Sesamum indicum,Sesamum Ses i 5 oleosin,IgE but no biological test
+NA-403,Food ,White mustard,Sinapis alba,Sinapis Sin a 2.01 11S globulin,IgE plus basophil+ or SPT+
+NA-405,Food ,Tomato,Solanum lycopersicum (Lycopersicon esculentum),Solanum Sola l 3 LTP (Lyc e 3),IgE plus basophil+ or SPT+
+NA-406,Food ,Tomato,Solanum lycopersicum (Lycopersicon esculentum),Solanum Sola l 4 PR-10 (Lyc e 4),IgE but no biological test
+NA-407,Food ,Eggplant,Solanum melongena,Solanum melalongena Sola m 1,IgE plus basophil+ or SPT+
+NA-408,Food ,Potato,Solanum tuberosum,Solanum profilin-like,IgE but no biological test
+NA-409,Food ,Potato,Solanum tuberosum,Solanum Sola t 1,IgE plus basophil+ or SPT+
+NA-436,Food ,Wheat,Triticum aestivum,Triticum  Tri a 14 LTP_amylase inhibitor,IgE plus basophil+ or SPT+
+NA-437,Food ,Wheat,Triticum aestivum,Triticum aestivum Tri a 40,IgE but no biological test
+NA-438,Food ,Wheat,Triticum aestivum,Triticum aestivum Tri a 44,IgE but no biological test
+NA-442,Food ,Wheat,Triticum aestivum,Triticum omega-5 gliadin Tri a 19,IgE plus basophil+ or SPT+
+NA-444,Food ,Wheat,Triticum aestivum,Triticum putative leucine-rich repeat protein,IgE but no biological test
+NA-445,Food ,Wheat,Triticum aestivum,Triticum serine carboxypeptidase II,IgE but no biological test
+NA-446,Food ,Wheat,Triticum aestivum,Triticum Thaumatin-like,IgE but no biological test
+NA-447,Food ,Wheat,Triticum aestivum,Triticum Tri a 12,IgE but no biological test
+NA-449,Food ,Wheat,Triticum aestivum,Triticum Tri a 26,IgE plus basophil+ or SPT+
+NA-451,Food ,Wheat,Triticum aestivum,Triticum Tri a 27.0101 Thiol reductase,IgE but no biological test
+NA-455,Food ,Wheat,Triticum aestivum,Triticum Tri a 36,IgE but no biological test
+NA-459,Food ,Wheat,Triticum turgidum subsp. durum,Triticum aestivum Tri a 40,IgE but no biological test
+NA-461,Food ,Wheat,Triticum turgidum subsp. durum,Triticum Tri a 36,IgE but no biological test
+NA-492,Food ,mung bean,Vigna radiata var. radiata,Vigna Vig r 6 Cytokinin-specific binding protein,IgE but no biological test
+NA-493,Food ,Grape,Vitis sp.,Vitis Lipid transfer protein P3,IgE but no biological test
+NA-494,Food ,Grape,Vitis sp.,Vitis Vit v 1 LTP,IgE but no biological test
+NA-496,Food ,Corn,Zea mays,Zea mays Zea m 8,IgE but no biological test
+NA-500,Food ,Corn,Zea mays,Zea Zea m 12 profilin,IgE but no biological test
+Vig r 1.0101,Food ,mung bean,Vigna radiata,Vigna Vig r 1 PR 10,IgE but no biological test
+Vig r 2.0101,Food ,mung bean,Vigna radiata,Vigna Vig r 2,IgE but no biological test
+Vig r 2.0201,Food ,mung bean,Vigna radiata,Vigna Vig r 2,IgE but no biological test
+Vig r 4.0101,Food ,mung bean,Vigna radiata var. radiata,Vigna Vig r 4,IgE but no biological test
+Vig r 6.0101,Food ,mung bean,Vigna radiata,Vigna Vig r 6 Cytokinin-specific binding protein,IgE but no biological test
+Zea m 12.0104,Food ,Corn,Zea mays,Zea Zea m 12 profilin,IgE but no biological test
+Zea m 14.0101,Food ,Corn,Zea mays,Zea Zea m 14,IgE but no biological test
+Zea m 14.0102,Food ,Corn,Zea mays,Zea Zea m 14,IgE but no biological test
+Zea m 8.0101,Food ,Corn,Zea mays,Zea mays Zea m 8,IgE but no biological test
+Ziz m 1.0101,Food ,Chinese-date,Ziziphus mauritiana,Ziziphus Ziz m 1,IgE plus basophil+ or SPT+
+NA-504,Food ,Pecan,Carya illinoinensis,Carya i Car i 2.0101 vicilin,IgE but no biological test
+NA-523,Food ,Strawberry,Fragaria x ananassa,Fragaria  Fra a 1,IgE plus basophil+ or SPT+
+NA-533,Food ,English walnut,Juglans regia,Juglans Jug r 2,IgE but no biological test
+NA-538,Food ,Apple,Malus x domestica,Malus Mal d 3,IgE plus basophil+ or SPT+
+NA-539,Food ,Apple,Malus x domestica,Malus Mal d 4,IgE plus basophil+ or SPT+
+NA-559,Food ,White mustard,Sinapis alba,Sinapis Sin a 1.01,IgE plus basophil+ or SPT+
+NA-560,Food ,Tomato,Solanum lycopersicum (Lycopersicon esculentum),Solanum Sola l 1 profilin (Lyc e 1),IgE plus basophil+ or SPT+
+NA-561,Food ,Potato,Solanum tuberosum,Solanum Sola t 1,IgE plus basophil+ or SPT+
+NA-562,Food ,Potato,Solanum tuberosum,Solanum Sola t 3,IgE plus basophil+ or SPT+
+NA-566,Food ,Grape,Vitis sp.,Vitis Vit v 1 LTP,IgE but no biological test
+NA-439,Plant,Wheat,Triticum aestivum,Triticum alpha/beta gliadin,IgE plus basophil+ or SPT+
+NA-443,Plant,Wheat,Triticum aestivum,Triticum omega-5 gliadin Tri a 19,IgE plus basophil+ or SPT+
+NA-448,Plant,Wheat,Triticum aestivum,Triticum Tri a 20,IgE plus basophil+ or SPT+
+NA-450,Plant,Wheat,Triticum aestivum,Triticum Tri a 26,IgE plus basophil+ or SPT+
+NA-456,Plant,Wheat,Triticum aestivum,Triticum Tri a 36,IgE but no biological test
+NA-462,Plant,Wheat,Triticum urartu,Triticum alpha/beta gliadin,IgE plus basophil+ or SPT+
+NA-25,Parasite,Parasitic fish worm,Anisakis pegreffii,Anisakis Ani s 2 paramyosin,IgE but no biological test
+NA-389,Parasite,Schistosoma,Schistosoma japonicum,Schistosoma profilin,IgE but no biological test
+NA-390,Parasite,Schistosoma,Schistosoma japonicum,Schistosoma tegumental antigen,IgE but no biological test
+NA-116,Vaccine,Bovine,Bos taurus,Bos collagen alpha2,IgE plus basophil+ or SPT+
+Aed a 1.0101,Venom or Salivary,Yellow fever mosquito,Aedes aegypti,Aedes Aed a 1 apyrase,IgE plus basophil+ or SPT+
+Aed a 10.0101,Venom or Salivary,Yellow fever mosquito,Aedes aegypti,Aedes aegypti Aed a 10,IgE but no biological test
+Aed a 10.0201,Venom or Salivary,Yellow fever mosquito,Aedes aegypti,Aedes aegypti Aed a 10,IgE but no biological test
+Aed a 11,Venom or Salivary,Yellow fever mosquito,Aedes aegypti,Aedes Aed a 11 Lysosomal protease,IgE but no biological test
+Aed a 2,Venom or Salivary,Yellow fever mosquito,Aedes aegypti,Aedes Aed a 2,IgE plus basophil+ or SPT+
+Aed a 3.0101,Venom or Salivary,Yellow fever mosquito,Aedes aegypti,Aedes Aed a 3,IgE plus basophil+ or SPT+
+Aed a 4.0101,Venom or Salivary,Yellow fever mosquito,Aedes aegypti,Aedes aegypti Aed a 4 alpha glucosidase,IgE but no biological test
+Aed a 5.0101,Venom or Salivary,Yellow fever mosquito,Aedes aegypti,Aedes Aed a 5  Sarcoplasmic Ca+ bind,IgE but no biological test
+Aed a 7.0101,Venom or Salivary,Yellow fever mosquito,Aedes aegypti,Aedes Aed a 7,IgE but no biological test
+Aed a 8.0101,Venom or Salivary,Yellow fever mosquito,Aedes aegypti,Aedes Aed a 8 HSP70,IgE but no biological test
+Api d 1,Venom or Salivary,Indian honeybee,Apis cerana cerana,Apis Api m 1 Api d 1 Api c 1,IgE plus basophil+ or SPT+
+Api d 1.0101,Venom or Salivary,Giant honeybee,Apis dorsata,Apis Api m 1 Api d 1 Api c 1,IgE plus basophil+ or SPT+
+Api m 1.0101,Venom or Salivary,Honeybee,Apis mellifera,Apis Api m 1 Api d 1 Api c 1,IgE plus basophil+ or SPT+
+Api m 10.0101,Venom or Salivary,Honeybee,Apis mellifera,Apis Api m 10 icarapin,IgE but no biological test
+Api m 11.0101,Venom or Salivary,Honeybee,Apis mellifera,Apis mellifera Api m 11,IgE but no biological test
+Api m 11.0201,Venom or Salivary,Honeybee,Apis mellifera,Apis mellifera Api m 11,IgE but no biological test
+Api m 12.0101,Venom or Salivary,Honeybee,Apis mellifera,Apis mellifera Api m 12,IgE but no biological test
+Api m 2.0101,Venom or Salivary,Honeybee,Apis mellifera,Apis Api m 2,IgE plus basophil+ or SPT+
+Api m 3.0101,Venom or Salivary,Honeybee,Apis mellifera,Apis Api m 3 acid phosphatase,IgE but no biological test
+Api m 4.0101,Venom or Salivary,Honeybee,Apis mellifera,Apis Api m 4 Melittin,IgE but no biological test
+Api m 5.0101,Venom or Salivary,Honeybee,Apis mellifera,Apis Api m 5 dipeptidylpeptidase,IgE plus basophil+ or SPT+
+Api m 6.01,Venom or Salivary,Honeybee,Apis mellifera,Apis Api m 6,IgE but no biological test
+Arg r 1.0101,Venom or Salivary,European pigeon tick,Argas reflexus,Argas Arg r 1,IgE plus basophil+ or SPT+
+Bom p 1.0101,Venom or Salivary,Bumblebee,Bombus pennsylvanicus,Bombus Bom p 1,IgE but no biological test
+Bom p 4.0101,Venom or Salivary,Bumblebee,Bombus pennsylvanicus,Bombus Bom p 4 protease,IgE but no biological test
+Bom t 1.0101,Venom or Salivary,Bumblebee,Bombus terrestris,Bombus Bom t 1,IgE but no biological test
+Bom t 4.0101,Venom or Salivary,Bumblebee,Bombus terrestris,Bombus Bom t 4 protease,IgE but no biological test
+Dol m 1.0101,Venom or Salivary,Whiteface hornet,Dolichovespula maculata,Dolichovespula Dol m 1 Phospholipase A1B,IgE plus basophil+ or SPT+
+Dol m 1.02,Venom or Salivary,Whiteface hornet,Dolichovespula maculata,Dolichovespula Dol m 1 Phospholipase A1B,IgE plus basophil+ or SPT+
+Dol m 2.0101,Venom or Salivary,Whiteface hornet,Dolichovespula maculata,Dolichovespula Dol m 2 Hyaluronidase,IgE plus basophil+ or SPT+
+Dol m 5.0101,Venom or Salivary,Whiteface hornet,Dolichovespula maculata,Dolichovespula Venom allergen 5,IgE plus basophil+ or SPT+
+Dol m 5.02,Venom or Salivary,Whiteface hornet,Dolichovespula maculata,Dolichovespula Venom allergen 5,IgE plus basophil+ or SPT+
+For t 1.0101,Venom or Salivary,biting midges,Forcipomyia taiwana,Forcipomyia For t 1,IgE but no biological test
+For t 1.0101,Venom or Salivary,biting midges,Forcipomyia taiwana,Forcipomyia For t 2,IgE but no biological test
+Glo m 5.0101,Venom or Salivary,Tsetse fly,Glossina morsitans morsitans,Glossina Glo m 5,IgE but no biological test
+Myr p 1.0101,Venom or Salivary,Jumper ant,Myrmecia pilosula,Myrmecia Myr p 1,IgE but no biological test
+Myr p 2.0101,Venom or Salivary,Jumper ant,Myrmecia pilosula,Myrmecia Myr p 2,IgE but no biological test
+Myr p 3.0101,Venom or Salivary,Giant Bull Ant,Myrmecia banksi,Myrmecia Myr p 3 listed as Myrmecia banksi,IgE but no biological test
+Pac c 3.0101,Venom or Salivary,Asian needle ant,Pachycondyla chinensis,Pachycondyla Pac c 3 allergen,IgE but no biological test
+Pol a 1.0101,Venom or Salivary,Paper wasp,Polistes annularis,Polistes Pol a 1 Pol d 1,IgE but no biological test
+Pol a 2.0101,Venom or Salivary,Paper wasp,Polistes annularis,Polistes Pol a 2,IgE but no biological test
+Pol a 5.0101,Venom or Salivary,Paper wasp,Polistes annularis,Polistes Pol 5,IgE plus basophil+ or SPT+
+Pol d 1.0101,Venom or Salivary,Paper wasp,Polistes dominulus,Polistes Pol a 1 Pol d 1,IgE but no biological test
+Pol d 1.0102,Venom or Salivary,Paper wasp,Polistes dominulus,Polistes Pol a 1 Pol d 1,IgE but no biological test
+Pol d 1.0103,Venom or Salivary,Paper wasp,Polistes dominulus,Polistes Pol a 1 Pol d 1,IgE but no biological test
+Pol d 1.0104,Venom or Salivary,Paper wasp,Polistes dominulus,Polistes Pol a 1 Pol d 1,IgE but no biological test
+Pol d 4.0101,Venom or Salivary,Paper wasp,Polistes dominulus,Polistes Venom serine protease,IgE but no biological test
+Pol d 5.0101,Venom or Salivary,Paper wasp,Polistes dominulus,Polistes Pol 5,IgE plus basophil+ or SPT+
+Pol e 5.0101,Venom or Salivary,Paper wasp,Polistes exclamans,Polistes Pol 5,IgE plus basophil+ or SPT+
+Pol f 5.0101,Venom or Salivary,Paper wasp,Polistes fuscatus,Polistes Pol 5,IgE plus basophil+ or SPT+
+Pol g 1.0101,Venom or Salivary,Paper wasp,Polistes gallicus,Polistes Pol a 1 Pol d 1,IgE but no biological test
+Pol g 5.0101,Venom or Salivary,Paper wasp,Polistes gallicus,Polistes Pol 5,IgE plus basophil+ or SPT+
+Poly p 1.0101,Venom or Salivary,wasp,Polybia paulista,Polybia Pol p 1.0101 phospholipase,IgE but no biological test
+Poly p 2.0101,Venom or Salivary,wasp,Polybia paulista,Polybia Poly p 2 hyaluronidase,IgE but no biological test
+Poly p 5.0101,Venom or Salivary,wasp,Polybia paulista,Polybia Pol p 1.0101 phospholipase,IgE but no biological test
+Poly p 5.0102,Venom or Salivary,wasp,Polybia paulista,"Polybia Poly p 5, Poly s 5 venom allergen",IgE but no biological test
+Sol g 4.0101,Venom or Salivary,Tropical Fire Ant,Solenopsis geminata,Solenopsis Sol g 4 Sol  i 4,IgE but no biological test
+Sol i 1.0101,Venom or Salivary,Red fire ant,Solenopsis invicta,Solenopsis Sol i 1,IgE but no biological test
+Sol i 2.0101,Venom or Salivary,Red fire ant,Solenopsis invicta,Solenopsis Sol i and Sol r Venom allergen II,IgE but no biological test
+Sol i 3.0101,Venom or Salivary,Red fire ant,Solenopsis invicta,Solenopsis Venom allergen III,IgE but no biological test
+Sol i 4.0101,Venom or Salivary,Red fire ant,Solenopsis invicta,Solenopsis Sol g 4 Sol  i 4,IgE but no biological test
+Sol r 2.0101,Venom or Salivary,Black fire ant,Solenopsis richteri,Solenopsis Sol i and Sol r Venom allergen II,IgE but no biological test
+Sol r 3.0101,Venom or Salivary,Black fire ant,Solenopsis richteri,Solenopsis Venom allergen III,IgE but no biological test
+Tab y 1.0101,Venom or Salivary,Horse Fly,Tabanus yao,Tabanus Tab y 1 Apyrase,IgE plus basophil+ or SPT+
+Tab y 2.0101,Venom or Salivary,Horse Fly,Tabanus yao,Tabanus Tab y 2 Hyaluronidase,IgE but no biological test
+Tab y 5.0101,Venom or Salivary,Horse Fly,Tabanus yao,Tabanus Tab y 5,IgE but no biological test
+Tria p 1.0101,Venom or Salivary,Western conenose,Triatoma protracta,Triatoma Tria p 1,IgE but no biological test
+NA-9,Venom or Salivary,Yellow fever mosquito,Aedes aegypti,Aedes Aed a 1 apyrase,IgE plus basophil+ or SPT+
+NA-10,Venom or Salivary,Yellow fever mosquito,Aedes aegypti,Aedes Aed a 3,IgE plus basophil+ or SPT+
+NA-35,Venom or Salivary,Indian honeybee,Apis cerana,Apis Api m 1 Api d 1 Api c 1,IgE plus basophil+ or SPT+
+NA-36,Venom or Salivary,Giant honeybee,Apis dorsata,Apis Api m 4 Melittin,IgE but no biological test
+NA-37,Venom or Salivary,Honeybee,Apis mellifera,Apis Api m 10 icarapin,IgE but no biological test
+NA-38,Venom or Salivary,Honeybee,Apis mellifera,Apis Api m 3 acid phosphatase,IgE but no biological test
+NA-39,Venom or Salivary,Honeybee,Apis mellifera,Apis Api m 4 Melittin,IgE but no biological test
+NA-40,Venom or Salivary,Honeybee,Apis mellifera,Apis Api m 6,IgE but no biological test
+NA-41,Venom or Salivary,Honeybee,Apis mellifera carnica,Apis Api m 10 icarapin,IgE but no biological test
+NA-49,Venom or Salivary,European pigeon tick,Argas reflexus,Argas Arg r 1,IgE plus basophil+ or SPT+
+NA-148,Venom or Salivary,Farmyyard midge,Culicoides nubeculosus,Culicoides antigen 5 by similarity,IgE but no biological test
+NA-219,Venom or Salivary,Tsetse fly,Glossina morsitans morsitans,Glossina Glo m 5,IgE but no biological test
+NA-298,Venom or Salivary,Jumper ant,Myrmecia pilosula,Myrmecia Myr p 1,IgE but no biological test
+NA-345,Venom or Salivary,wasp,Polybia paulista,Polybia Poly p 2 hyaluronidase,IgE but no biological test
+NA-346,Venom or Salivary,wasp,Polybia paulista,"Polybia Poly p 5, Poly s 5 venom allergen",IgE but no biological test
+NA-347,Venom or Salivary,Wasp,Polybia scutellaris rioplatensis,"Polybia Poly p 5, Poly s 5 venom allergen",IgE but no biological test
+NA-380,Venom or Salivary,mite,Sarcoptes scabiei,Sarcoptes scabiei paramyosin,IgE but no biological test
+NA-381,Venom or Salivary,Scabies mite,Sarcoptes scabiei type hominis,Sarcoptes Apolipoprotein Ssag1.2,IgE but no biological test
+NA-382,Venom or Salivary,Scabies mite,Sarcoptes scabiei type hominis,Sarcoptes cysteine protease CO8,IgE but no biological test
+NA-383,Venom or Salivary,Scabies mite,Sarcoptes scabiei type hominis,Sarcoptes cysteine proteases FO4,IgE but no biological test
+NA-384,Venom or Salivary,Scabies mite,Sarcoptes scabiei type hominis,Sarcoptes Glutathione S-transferase Mu,IgE but no biological test
+NA-388,Venom or Salivary,Tall fescue,Schedonorus arundinaceus,Festuca group 1 allergen,IgE but no biological test
+NA-402,Venom or Salivary,black fly,Simulium vittatum,Simulium vit antigen 5 by similarity,IgE but no biological test
+NA-411,Venom or Salivary,Red fire ant,Solenopsis invicta,Solenopsis Sol i 1,IgE but no biological test
+NA-412,Venom or Salivary,Brazilian fire ant,Solenopsis saevissima,Solenopsis Sol g 4 Sol  i 4,IgE but no biological test
+NA-484,Venom or Salivary,Lesser banded hornet,Vespa affinis,Vespa affinis Phospholipase A1,IgE plus basophil+ or SPT+
+NA-485,Venom or Salivary,Hornet,Vespa magnifica,Vespa magnifica Vesp ma 2 hyaluronidase,IgE plus basophil+ or SPT+
+NA-486,Venom or Salivary,Hornet,Vespa magnifica,Vespa magnifica Vesp ma 5,IgE plus basophil+ or SPT+
+NA-487,Venom or Salivary,Wasp,Vespula germanica,"Vespula antigen 5 Ves f, v, s  5",IgE plus basophil+ or SPT+
+NA-488,Venom or Salivary,Wasp,Vespula germanica,Vespula Phospholipase A1- Ves m/v 1,IgE plus basophil+ or SPT+
+NA-489,Venom or Salivary,Wasp,Vespula germanica,Vespula Ves v 2,IgE plus basophil+ or SPT+
+NA-490,Venom or Salivary,Wasp,Vespula maculifrons,"Vespula antigen 5 Ves f, v, s  5",IgE plus basophil+ or SPT+
+NA-491,Venom or Salivary,Wasp,Vespula vulgaris,Vespula Ves v 2,IgE plus basophil+ or SPT+
+Ves f 5.0101,Venom or Salivary,Wasp,Vespula flavopilosa,"Vespula antigen 5 Ves f, v, s  5",IgE plus basophil+ or SPT+
+Ves g 5.0101,Venom or Salivary,Wasp,Vespula germanica,"Vespula antigen 5 Ves f, v, s  5",IgE plus basophil+ or SPT+
+Ves m 2.0101,Venom or Salivary,Wasp,Vespula maculifrons,Vespula Ves m 2 Hyaluronidase,IgE but no biological test
+Ves m 5.0101,Venom or Salivary,Wasp,Vespula maculifrons,"Vespula antigen 5 Ves f, v, s  5",IgE plus basophil+ or SPT+
+Ves p 5.0101,Venom or Salivary,Wasp,Vespula pensylvanica,"Vespula antigen 5 Ves f, v, s  5",IgE plus basophil+ or SPT+
+Ves s 1.0101,Venom or Salivary,Wasp,Vespula squamosa,Vespula Ves s 1 phospholipase,IgE but no biological test
+Ves s 5.0101,Venom or Salivary,Wasp,Vespula squamosa,"Vespula antigen 5 Ves f, v, s  5",IgE plus basophil+ or SPT+
+Ves v 2.0101,Venom or Salivary,Wasp,Vespula vulgaris,Vespula Ves v 2,IgE plus basophil+ or SPT+
+Ves v 3.0101,Venom or Salivary,Wasp,Vespula vulgaris,Vespula Ves v 3 dipeptidylpeptidase IV,IgE plus basophil+ or SPT+
+Ves v 5,Venom or Salivary,Wasp,Vespula vulgaris,"Vespula antigen 5 Ves f, v, s  5",IgE plus basophil+ or SPT+
+Ves v 5.0101,Venom or Salivary,Wasp,Vespula vulgaris,"Vespula antigen 5 Ves f, v, s  5",IgE plus basophil+ or SPT+
+Ves vi 5.0101,Venom or Salivary,Wasp,Vespula vidua,"Vespula antigen 5 Ves f, v, s  5",IgE plus basophil+ or SPT+
+Vesp c 1.0101,Venom or Salivary,European hornet,Vespa crabro,Vespa Vesp c 1 phospholipase,IgE but no biological test
+Vesp c 5.0101,Venom or Salivary,European hornet,Vespa crabro,Vespa Vesp c 5 and Vesp m 5,IgE but no biological test
+Vesp c 5.0102,Venom or Salivary,European hornet,Vespa crabro,Vespa Vesp c 5 and Vesp m 5,IgE but no biological test
+Vesp m 1.0101,Venom or Salivary,Wasp,Vespula maculifrons,Vespula Phospholipase A1- Ves m/v 1,IgE plus basophil+ or SPT+
+Vesp m 5.0101,Venom or Salivary,Wasp,Vespa mandarinia,Vespa Vesp c 5 and Vesp m 5,IgE but no biological test
+Vesp v 1.0101,Venom or Salivary,Wasp,Vespula vulgaris,Vespula Phospholipase A1- Ves m/v 1,IgE plus basophil+ or SPT+
+NA-521,Venom or Salivary,Yellow jacket,Dolichovespula arenaria,Dolichovespula Venom allergen 5,IgE plus basophil+ or SPT+
+NA-541,Venom or Salivary,Jumper ant,Myrmecia pilosula,Myrmecia Myr p 2,IgE but no biological test
+NA-563,Venom or Salivary,Tropical Fire Ant,Solenopsis geminata,Solenopsis Sol g 4 Sol  i 4,IgE but no biological test
+NA-564,Venom or Salivary,Red fire ant,Solenopsis invicta,Solenopsis Sol g 4 Sol  i 4,IgE but no biological test
+NA-565,Venom or Salivary,Wasp,Vespula vulgaris,Vespula Ves v 2,IgE plus basophil+ or SPT+
+Asc l 3.0101,Parasite,Parasitic roundworm,Ascaris lumbricoides,Ascaris tropomyosin Asc l 3,IgE but no biological test
+Asc s 1,Parasite,Parasitic roundworm,Ascaris suum,Ascaris Asc s 1,IgE but no biological test
+Asc s 1.0101,Parasite,Parasitic roundworm,Ascaris suum,Ascaris Asc s 1,IgE but no biological test
+Asc s 13.0101,Parasite,Parasitic roundworm,Ascaris suum,Ascaris lumbricoides/suum  Glutathione S-transfera,IgE plus basophil+ or SPT+
+NA-66,Parasite,Parasitic roundworm,Ascaris lumbricoides,Ascaris Asc s 1,IgE but no biological test
+NA-67,Parasite,Parasitic roundworm,Ascaris suum,Ascaris Asc s 1,IgE but no biological test
+NA-309,Parasite,Parasitic nematode,Onchocerca volvulus,Onchocerca tropomyosin,IgE plus basophil+ or SPT+
+NA-421,Parasite,Parasitic nematode,Strongyloides stercoralis,Strongyloides L3NieAg.01,IgE plus basophil+ or SPT+
+NA,Drug ,Pharmaceutical Agent,Pharmaceutical Agent,,

@@ -8,7 +8,7 @@ import { Note } from "../models/Note";
     providedIn: 'root'
 })
 export class NoteService {
-
+   
     constructor(private http: HttpClient) { }
 
     baseUrl: string = environment.baseUrl + '/notes/api';
@@ -23,6 +23,11 @@ export class NoteService {
     addNote(note: Note): Observable<boolean> {
         return this.http.post<boolean>(this.baseUrl + '/addNote', note)
             .pipe(catchError(this.handleError));
+    }
+    
+    updateNote(note:any): Observable<any>{
+        return this.http.put<any>(this.baseUrl + '/updateNote', note)
+        .pipe(catchError(this.handleError));
     }
     private handleError(errorResponse: HttpErrorResponse) {
         if (errorResponse.error instanceof ErrorEvent) {

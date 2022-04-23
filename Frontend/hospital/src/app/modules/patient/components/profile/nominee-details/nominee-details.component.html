@@ -1,0 +1,127 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col col-md-12 col-sm-12">
+      <div class="card shadow">
+        <div class="card-body">
+          <form [formGroup]="form">
+            <div class="row">
+              <div class="form-group col col-md-4 col-sm-12">
+                <label class="col-form-label">Patient ID:</label>
+                <input formControlName="patientId" type="text" class="form-control" readonly>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col col-md-2 col-sm-12">
+                <label class="col-form-label">Title:</label> <br>
+                <select class="dropdown-toggle" formControlName="title">
+                  <option value="null"></option>
+                  <option *ngFor="let t of titles" value="{{ t }}">
+                    {{ t | titlecase }}
+                  </option>
+                </select>
+                <small *ngIf="f('title').enabled && f('title').touched && f('title').value == null"
+                  class="text-danger">Please select
+                  title</small>
+              </div>
+              <div class="form-group col col-md-5 col-sm-12">
+                <label class="col-form-label">First Name:</label>
+                <input formControlName="firstName" type="text" class="form-control">
+                <small *ngIf="f('firstName').touched && f('firstName').errors?.required" class="text-danger">First
+                  name is required</small>
+              </div>
+              <div class="form-group col col-md-5 col-sm-12">
+                <label class="col-form-label">Last Name:</label>
+                <input formControlName="lastName" type="text" class="form-control">
+                <small *ngIf="f('lastName').touched && f('lastName').errors?.required" class="text-danger">Last name
+                  is required</small>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col col-md-12 col-sm-12">
+                <label class="col-form-label">Relation (from Patient's perspective):</label> <br>
+                <select class="dropdown-toggle" formControlName="relation">
+                  <option value="null"></option>
+                  <option *ngFor="let r of relations" value="{{ r }}">
+                    {{ r | titlecase }}
+                  </option>
+                </select>
+                <small *ngIf="f('relation').enabled && f('relation').touched && f('relation').value == null"
+                  class="text-danger">Please
+                  select title</small>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col col-md-6 col-sm-12">
+                <label for="email" class="col-form-label">Email ID:</label>
+                <input type="text" formControlName="email" id="email" class="form-control">
+                <div *ngIf="f('email').touched && f('email').errors">
+                  <small *ngIf="f('email').errors?.required" class="text-danger">Email is required</small>
+                  <small *ngIf="f('email').errors?.email" class="text-danger">Not a valid email id</small>
+                </div>
+              </div>
+              <div class="form-group col col-md-6 col-sm-12">
+                <label for="phone" class="col-form-label">Phone Number:</label>
+                <input formControlName="phone" type="text" class="form-control">
+                <div *ngIf="f('phone').touched && f('phone').errors">
+                  <small *ngIf="f('phone').errors?.required" class="text-danger">Phone number is
+                    required</small>
+                  <small *ngIf="f('phone').errors?.pattern" class="text-danger">Not a valid phone
+                    number</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="col-form-label">Address:</label>
+              <form [formGroup]="addressForm" class="form-group">
+                <div class="form-group col col-md-12 col-sm-12">
+                  <input formControlName="street" type="text" class="form-control" placeholder="Street">
+                </div>
+                <div class="form-group col col-md-12 col-sm-12 mt-3">
+                  <input formControlName="landmark" type="text" class="form-control" placeholder="Landmark">
+                </div>
+                <div class="form-group col col-md-12 col-sm-12 mt-3">
+                  <input formControlName="city" type="text" class="form-control" placeholder="City">
+                </div>
+                <div class="form-group col col-md-12 col-sm-12 mt-3">
+                  <input formControlName="state" type="text" class="form-control" placeholder="State">
+                </div>
+                <div class="form-group col col-md-12 col-sm-12 mt-3">
+                  <input formControlName="pincode" type="text" class="form-control" placeholder="Pincode">
+                </div>
+              </form>
+            </div>
+
+            <div class="row">
+              <div class="form-group col col-md-12 col-sm-12 text-center">
+                <input type="checkbox" formControlName="isAccessAllowed" id="isAccessAllowed">
+                <label for="isAccessAllowed" class="col-form-label">
+                  <i>Allow this person to access your account in the case of emergency?</i>
+                </label>
+              </div>
+            </div>
+
+            <div class="row" *ngIf="!editMode">
+              <div class="col-md-12 col-sm-12 text-center">
+                <button class="btn btn-primary" (click)="setEditMode(true)">
+                  {{user.nominee == null ? "Add" : "Edit"}} Details
+                </button>
+              </div>
+            </div>
+
+            <div class="row" *ngIf="editMode">
+              <div class="col-md-12 col-sm-12 text-center">
+                <button [disabled]="form.invalid || addressForm.invalid" class="btn btn-success"
+                  (click)="emitNomineeUpdateEvent()">Update</button>
+                <button class="btn btn-danger" (click)="setEditMode(false)">Cancel</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

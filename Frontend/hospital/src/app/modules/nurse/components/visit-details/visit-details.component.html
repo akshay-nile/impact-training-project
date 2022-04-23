@@ -1,91 +1,10 @@
 <mat-tab-group>
     <mat-tab label="Appointment Details">
-        <mat-card class="example-card">
-            <form autofocus="off" [formGroup]="appointmentForm">
-                <div class="mb-3">
-                    <label for="meetingTitle" class="form-label">Meeting Title</label>
-                    <input type="text" formControlName="meetingTitle" class="form-control" id="meetingTitle"
-                        [(ngModel)]="appointment.meetingTitle">
-                    <div *ngIf="appointmentForm.controls['meetingTitle'].touched && appointmentForm.controls['meetingTitle'].invalid"
-                        class="alert text-danger">
-                        <div *ngIf="appointmentForm.controls['meetingTitle'].errors?.['required']">Meeting Title cannot
-                            be blank</div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
-                    <textarea type="text" formControlName="description" class="form-control" id="description"
-                        [(ngModel)]="appointment.description"></textarea>
-                    <div *ngIf="appointmentForm.controls['description'].touched && appointmentForm.controls['description'].invalid"
-                        class="alert text-danger">
-                        <div *ngIf="appointmentForm.controls['description'].errors?.['required']">Description cannot be
-                            blank</div>
-
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="physician" class="form-label">Physician</label>
-                    <select formControlName="physician" class="form-control" [(ngModel)]="appointment.physician"
-                        (blur)="getAvailableTimeSlots()">
-                        <option>Choose Physician</option>
-                        <option *ngFor="let physician of physicians">{{physician}}</option>
-                    </select>
-                    <div *ngIf="appointmentForm.controls['physician'].touched && appointmentForm.controls['physician'].invalid"
-                        class="alert text-danger">Physician cannot be empty</div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="empId" class="form-label">Physician Employee Id</label>
-                    <input type="text" formControlName="empId" class="form-control" id="empId" [(ngModel)]="appointment.empId"
-                        >
-                        
-                    <div *ngIf="appointmentForm.controls['empId'].touched && appointmentForm.controls['empId'].invalid"
-                        class="alert text-danger">Physician Employee Id cannot be empty</div>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="aptDate" class="form-label">Date</label>
-                    <input type="date" formControlName="aptDate" class="form-control" id="aptDate"
-                        [(ngModel)]="appointment.aptDate" [min]="date" [max]="next3months"
-                        (blur)="getAvailableTimeSlots()">
-                </div>
-                <div class="mb-3">
-                    <label for="time" class="form-label">Time Slot</label>
-                    <select formControlName="time" class="form-control" [(ngModel)]="appointment.time">
-                        <option *ngFor="let timeSlot of time">{{timeSlot}}</option>
-                    </select>
-                    <div *ngIf="appointmentForm.controls['time'].touched && appointmentForm.controls['time'].invalid"
-                        class="alert text-danger">Time Slot cannot be empty</div>
-                </div>
-                <div class="mb-3">
-                    <label for="patientEmail" class="form-label">Patient Email</label>
-                    <select formControlName="patientEmail" class="form-control" [(ngModel)]="appointment.patientEmail">
-
-                        <option *ngFor="let patientEmail of patientEmails">{{patientEmail}}</option>
-                    </select>
-                    <div *ngIf="appointmentForm.controls['patientEmail'].touched && appointmentForm.controls['patientEmail'].invalid"
-                        class="alert text-danger">Patient Email cannot be empty</div>
-                </div>
-                <div class="mb-3">
-                    <label for="editHistory" class="form-label">Edit History</label>
-                    <input type="text" formControlName="editHistory" class="form-control" id="editHistory"
-                        [(ngModel)]="appointment.editHistory" readonly="readonly" value="NA">
-                </div>
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-2">
-                        <button type="button" class="btn btn-success mb-2" (click)="editAppointment() " >Edit</button>
-                    </div>
-                    <div class="col-md-2">
-                        <button type="button" class="btn btn-danger mb-2" (click)="deleteAppointment()" >Delete</button>
-                    </div>
-                    <div class="col-md-2">
-                        <button type="button" class="btn btn-warning mb-2" (click)="close()">Close</button>
-                    </div>
-                </div>
-            </form>
-        </mat-card>
+        <appointment-details [data]="data"></appointment-details>
     </mat-tab>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------- -->
+
     <mat-tab label="Patient Details">
         <mat-card class="example-card">
             <mat-card-content>
@@ -180,9 +99,9 @@
                                         blank</div>
 
                                 </div>
-                            </div> 
+                            </div>
                             <h3><b>Demographic Details</b></h3>
-                             <div class="mb-3">
+                            <div class="mb-3">
                                 <label for="race" class="form-label">Race</label>
                                 <input type="text" formControlName="race" class="form-control" id="race"
                                     [(ngModel)]="demographics.race">
@@ -216,10 +135,9 @@
                                     <div *ngIf="patientDetailsForm.controls['language'].errors?.['required']">
                                         Language cannot be
                                         blank</div>
-
                                 </div>
                             </div>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="address" class="form-label">Address</label>
                                 <textarea type="text" formControlName="address" class="form-control" id="address"
                                     [(ngModel)]="demographics.address"></textarea>
@@ -230,7 +148,7 @@
                                         blank</div>
 
                                 </div>
-                            </div>
+                            </div> -->
                             <h3><b>Nominee Details</b></h3>
                             <div class="mb-3">
                                 <label for="nomineeFirstName" class="form-label">FirstName</label>
@@ -258,8 +176,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="nomineeEmail" class="form-label">Email</label>
-                                <input type="text" formControlName="nomineeEmail" class="form-control"
-                                    id="nomineeEmail" [(ngModel)]="nominee.email">
+                                <input type="text" formControlName="nomineeEmail" class="form-control" id="nomineeEmail"
+                                    [(ngModel)]="nominee.email">
                                 <div *ngIf="patientDetailsForm.controls['nomineeEmail'].touched && patientDetailsForm.controls['nomineeEmail'].invalid"
                                     class="alert text-danger">
                                     <div *ngIf="patientDetailsForm.controls['nomineeEmail'].errors?.['required']">
@@ -270,8 +188,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="nomineePhone" class="form-label">Phone</label>
-                                <input type="text" formControlName="nomineePhone" class="form-control"
-                                    id="nomineePhone" [(ngModel)]="nominee.phone">
+                                <input type="text" formControlName="nomineePhone" class="form-control" id="nomineePhone"
+                                    [(ngModel)]="nominee.phone">
                                 <div *ngIf="patientDetailsForm.controls['nomineePhone'].touched && patientDetailsForm.controls['nomineePhone'].invalid"
                                     class="alert text-danger">
                                     <div *ngIf="patientDetailsForm.controls['nomineePhone'].errors?.['required']">
@@ -282,8 +200,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="relation" class="form-label">Relation</label>
-                                <input type="text" formControlName="relation" class="form-control"
-                                    id="relation" [(ngModel)]="nominee.relation">
+                                <input type="text" formControlName="relation" class="form-control" id="relation"
+                                    [(ngModel)]="nominee.relation">
                                 <div *ngIf="patientDetailsForm.controls['relation'].touched && patientDetailsForm.controls['relation'].invalid"
                                     class="alert text-danger">
                                     <div *ngIf="patientDetailsForm.controls['relation'].errors?.['required']">
@@ -292,7 +210,7 @@
 
                                 </div>
                             </div>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="nomineeAddress" class="form-label">Address</label>
                                 <textarea type="text" formControlName="nomineeAddress" class="form-control"
                                     id="nomineeAddress" [(ngModel)]="nominee.address"></textarea>
@@ -303,22 +221,14 @@
                                         blank</div>
 
                                 </div>
-                            </div> 
+                            </div> -->
                         </div>
                     </mat-card-content>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <button *ngIf="result.vitalId==0" type="button" mat-raised-button
-                                (click)="saveVitalSigns()">Save Vital
-                                Signs</button>
-                        </div>
-                        <div class="col-md-2" *ngIf="result.vitalId!=0">
-                            <button type="button" class="btn btn-success mb-2"
-                                (click)="editPatientDetails()">Edit</button>
-                        </div>
-                        
-                        <div class="col-md-2">
-                            <button type="button" class="btn btn-warning mb-2" (click)="close()">Close</button>
+
+                    <div class="row form-group text-center mt-3">
+                        <div class="col col-md-12 text-center">
+                            <button class="btn btn-success mb-2 me-3" (click)="editPatientDetails()">Update</button>
+                            <button class="btn btn-warning mb-2 ms-3" (click)="close()">Close</button>
                         </div>
                     </div>
                 </form>
@@ -352,7 +262,8 @@
                                 class="alert text-danger">
                                 <div *ngIf="vitalDetailsForm.controls['weight'].errors?.['required']">weight cannot be
                                     blank</div>
-                                <div *ngIf="vitalDetailsForm.controls['weight'].errors?.pattern">Enter Valid Weight e.g.66.15</div>
+                                <div *ngIf="vitalDetailsForm.controls['weight'].errors?.pattern">Enter Valid Weight
+                                    e.g.66.15</div>
 
                             </div>
                         </div>
@@ -393,20 +304,12 @@
                         </div>
                     </div>
                 </mat-card-content>
-                <div class="row">
-                    <div class="col-md-4">
-                        <button *ngIf="result.vitalId==0" type="button" mat-raised-button
-                            (click)="saveVitalSigns()">Save Vital
-                            Signs</button>
-                    </div>
-                    <div class="col-md-2" *ngIf="result.vitalId!=0">
-                        <button type="button" class="btn btn-success mb-2" (click)="editVitalSigns()">Save</button>
-                    </div>
-                    <div class="col-md-2" *ngIf="result.vitalId!=0">
-                        <button type="button" class="btn btn-danger mb-2" (click)="deleteVitalDetails()">Delete</button>
-                    </div>
-                    <div class="col-md-2">
-                        <button type="button" class="btn btn-warning mb-2" (click)="close()">Close</button>
+
+                <div class="row form-group mt-3 text-center">
+                    <div class="col col-md-12 text-center" *ngIf="result.vitalId!=0">
+                        <button class="btn btn-success mb-2 me-3" (click)="editVitalSigns()">Save</button>
+                        <button class="btn btn-danger mb-2 ms-3 me-3" (click)="deleteVitalDetails()">Clear</button>
+                        <button class="btn btn-warning mb-2 ms-3" (click)="close()">Close</button>
                     </div>
                 </div>
             </form>

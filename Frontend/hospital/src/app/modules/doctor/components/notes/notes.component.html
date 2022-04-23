@@ -1,0 +1,86 @@
+<div class="content mat-elevation-z8">
+    <div class="card-wrapper">
+        <div class="row">
+            <div class="text-dark col-md-10" style="font-size: 20px;margin-top: 2%;margin-bottom: 2%;">
+                Notes</div>
+            <div class="col-md-2" style="margin-right: 0%;padding-right: 0%;"><button mat-raised-button color="primary"
+                    (click)="showNoteDialog()">Send Note</button> </div>
+        </div>
+        <mat-tab-group>
+            <mat-tab label="All">
+                <ng-container *ngFor="let note of notes.reverse()">
+                    <mat-card class="example-card mb-5">
+                        <mat-card-content>
+                            <p style="font-weight: 600;">
+                                {{getSentToNameByEmail(note)}}
+                            </p>
+                            <p>
+                                Message : <br>{{note.message}}
+                            </p>
+                            <p>
+                                Urgency Level : {{note.urgencyLevel}}
+                            </p>
+                            <p>
+                                Note Status : <span class="text-white d-inline-block p-1" [ngClass]="getNoteColor(note.status)">{{note.status}}</span>
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-raised-button class="btn-success" (click)="viewNote(note)">View</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </ng-container>
+            </mat-tab>
+
+            <mat-tab label="Sent">
+                <ng-container *ngFor="let note of sentNotes.reverse()">
+                    <mat-card class="example-card mb-5">
+                        <mat-card-content>
+                            <p style="font-weight: 600;">
+                                {{getSentToNameByEmail(note)}}
+                            </p>
+                            <p>
+                                Message : <br>{{note.message}}
+                            </p>
+                            <p>
+                                Urgency Level : {{note.urgencyLevel}}
+                            </p>
+                            <p>
+                                Note Status : <span class="text-white d-inline-block p-1" [ngClass]="getNoteColor(note.status)">{{note.status}}</span>
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-raised-button class="btn-success" (click)="viewNote(note)">View</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </ng-container>
+            </mat-tab>
+      
+            <mat-tab label="Received">
+                <ng-container *ngFor="let note of receivedNotes.reverse()">
+                    <mat-card class="example-card mb-5">
+                        <mat-card-content>
+                            <p style="font-weight: 600;">
+                                {{getSentToNameByEmail(note)}}
+                            </p>
+                            <p>
+                                Message : <br>{{note.message}}
+                            </p>
+                            <p>
+                                Urgency Level : {{note.urgencyLevel}}
+                            </p>
+                            <p>
+                                Note Status : <span class="text-white d-inline-block p-1" [ngClass]="getNoteColor(note.status)">{{note.status}}</span>
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-raised-button class="btn-success" (click)="viewNote(note)">View</button>
+                            <button *ngIf="note.status === 'ACTIVE'" mat-raised-button class="btn-primary" (click)="showNoteDialog(note.employeeId)">Reply</button>
+                            <button *ngIf="note.status === 'ACTIVE'" mat-raised-button class="btn-secondary" (click)="changeStatus(note.noteId)">Close</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </ng-container>
+            </mat-tab>
+      
+        </mat-tab-group>
+    </div>
+</div>

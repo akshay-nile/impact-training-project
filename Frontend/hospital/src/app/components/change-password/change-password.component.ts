@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { confirmPassword, passwordValidator } from 'src/app/validators/password.validator';
-import { AuthenticationService } from 'src/app/services/Authentication.servic';
 import { UtilityService } from 'src/app/services/utility.service';
 import { UserCredential } from 'src/app/models/UserCredential';
 
@@ -19,9 +18,8 @@ export class ChangePasswordComponent implements OnInit {
   isOldPasswordCorrect: boolean = false;
   userId: number;
   constructor(private router: Router,
-    private authenticationService: AuthenticationService,
     private utilityService: UtilityService) {
-    this.userId = this.authenticationService.getUserId();
+      this.userId = JSON.parse(sessionStorage.getItem('user')).employeeId;
   }
 
   form = new FormGroup({

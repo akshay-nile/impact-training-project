@@ -1,0 +1,31 @@
+{
+	
+	"demographics": {
+		"address": "Navi Mumbai$$abc$$def$$ddds$$123456",
+		"age": 18,
+		"demographicsId": 1,
+		"ethnicity": "Ethnicity",
+		"gender": "MALE",
+		"language": "ENGLISH_US",
+		"race": "Race"
+	},
+	"email": "tejas.gaikar@citiustech.com",
+	"firstName": "Tejas",
+	"lastName": "Gaikar",
+	"nominee": {
+		"accessAllowed": false,
+		"address": "Mumbai$$asd$$wew$$ds$$123456",
+		"email": "suresh@gmail.com",
+		"firstName": "Suresh",
+		"lastName": "Verma",
+		"nomineeId": 1,
+		"phone": "+91 1234567890",
+		"relation": "BROTHER",
+		"title": "Mr"
+	},
+	"password": 898716845,
+	"patientId": "P0005",
+	"phone": "+91 8355948705",
+	"status": "ACTIVE",
+	"title": "Mr"
+}

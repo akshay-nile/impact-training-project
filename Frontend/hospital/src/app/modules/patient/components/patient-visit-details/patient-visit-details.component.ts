@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-patient-visit-details',
@@ -8,11 +9,24 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class PatientVisitDetailsComponent implements OnInit {
 
+  user: any;
   patientVisitForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) {
+    this.user = JSON.parse(sessionStorage.getItem('user'));
+  }
 
   ngOnInit(): void {
+    if (this.user.demographics == null || this.user.nominee == null || this.user.allergy == null) {
+      setTimeout(() => {
+        alert("Please complete your profile first !")
+        this.router.navigate(['patient', 'dashboard', 'profile']);
+      }, 500);
+    }
+    
     this.patientVisitForm = this.formBuilder.group({
       height: new FormControl('', [Validators.required]),
       weight: new FormControl('', [Validators.required]),
@@ -37,8 +51,8 @@ export class PatientVisitDetailsComponent implements OnInit {
   get respiration_rate() {
     return this.patientVisitForm.get('respiration_rate');
   }
+  
   cancel() {
-    console.log(this.patientVisitForm.value);
     this.patientVisitForm.reset();
 
   }

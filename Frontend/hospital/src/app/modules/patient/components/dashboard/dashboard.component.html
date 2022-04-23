@@ -7,12 +7,9 @@
         routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Appointments</a>
     <a *ngIf="showProfile" style="margin-left: 5%;text-decoration: none;" routerLink="/patient/dashboard/visit-history"
         routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Visit History</a>
-        <a *ngIf="!showProfile" style="margin-left: 20%;text-decoration: none;" routerLink="/patient/dashboard/profile"
+    <a *ngIf="!showProfile" style="margin-left: 20%;text-decoration: none;" routerLink="/patient/dashboard/profile"
         routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Profile</a>
-        <span class="flexExpand"></span>
-    <div style="margin-right: 3%;">
-        <mat-icon matBadge="0">notifications</mat-icon>
-    </div>
+    <span class="flexExpand"></span>
     <div>
         <button mat-raised-button class="logout" (click)="logout()">Logout</button>
     </div>
@@ -21,11 +18,11 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
         <img class="avatar mat-elevation-z8" src="assets/profileImg.png" />
-        <h4 class="name">{{userName}}</h4>
-        <p class="designation">Patient</p>
+        <h4 class="name" style="margin-bottom:0; margin-top: 1em;">{{user.title + '. ' + user.firstName + ' ' + user.lastName}}</h4>
+        <p class="designation">(Patient)</p>
         <mat-divider></mat-divider>
-        <button *ngIf="showProfile"  mat-button class="menu-button" routerLink="/patient/dashboard/profile"
-        (click)="updateProfile()">
+        <button *ngIf="showProfile" mat-button class="menu-button" routerLink="/patient/dashboard/profile"
+            (click)="updateProfile()">
             <mat-icon>account_circle</mat-icon>
             <span>Profile</span>
         </button>
@@ -45,6 +42,7 @@
             <span>Help</span>
         </button>
     </mat-sidenav>
+
     <mat-sidenav-content>
         <router-outlet></router-outlet>
     </mat-sidenav-content>

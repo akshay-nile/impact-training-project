@@ -1,3 +1,4 @@
+import { Allergy } from "./Allergy";
 import { Demographic } from "./Demographic";
 import { Nominee } from "./Nominee";
 
@@ -13,4 +14,5 @@ export class Patient{
     birthdate:Date;
     demographics:Demographic;
     nominee:Nominee;
+    allergy: Allergy;
 }
