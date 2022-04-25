@@ -8,22 +8,22 @@ import { environment } from 'src/environments/environment';
 })
 export class ProcedureService {
 
-    procedureUrl = environment.baseUrl + '/procedure/api';
+    procedureUrl = environment.baseUrl + '/procedures/api';
 
     constructor(private http: HttpClient) { }
 
-    getAllProcedures(): Observable<any[]> {
-        return this.http.get<any[]>(this.procedureUrl + '/getAllProcedureDetails')
+    getAllProcedures(start: number, count: number): Observable<any[]> {
+        return this.http.get<any[]>(this.procedureUrl + '/get-procedure-details?start=' + start + "&count=" + count)
             .pipe(catchError(this.handleError));
     }
 
-    getProcedureByAptId(aptId: number): Observable<any[]> {
-        return this.http.get<any>(this.procedureUrl + '/procedureByAptId' + aptId)
+    getProcedureByAptId(appointmentId: number): Observable<any[]> {
+        return this.http.get<any>(this.procedureUrl + '/appointment-procedures/' + appointmentId)
             .pipe(catchError(this.handleError));
     }
 
-    addProcedureByAptId(procedure: any): Observable<any> {
-        return this.http.post<any>(this.procedureUrl + '/addProcedureByAptId', procedure)
+    addProcedureByAptId(procedures: any): Observable<any> {
+        return this.http.post<any>(this.procedureUrl +  '/appointment-procedures', procedures)
             .pipe(catchError(this.handleError));
     }
 

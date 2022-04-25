@@ -44,19 +44,6 @@ public class DiagnosisController {
 		return new ResponseEntity<>(null, HttpStatus.OK);
 	}
 	
-	@GetMapping("/diagnosisByAptId/{aptId}")
-	public ResponseEntity<?> getDiagnosisByAptId(@PathVariable int aptId) {
-		List<Diagnosis> diagnosisList = diagnosisService.getDiagnosisByAptId(aptId);
-		if (diagnosisList.size() != 0) {
-			return new ResponseEntity<>(diagnosisList, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
-	}
-	
-	@PostMapping("/addDiagnosisByAptId")
-	public ResponseEntity<?> addDiagnosisByApiId(@RequestBody AppointmentDiagnosis aptDiagnosis){
-		return new ResponseEntity<>(diagnosisService.addDiagnosisByApiId(aptDiagnosis), HttpStatus.OK);
-	}
 
 	@DeleteMapping(value = "/deleteDiagnosisById/{id}")
     public ResponseEntity<?> deleteDiagnosisById(@PathVariable int id) {
@@ -69,4 +56,21 @@ public class DiagnosisController {
 		Diagnosis newDiagnosis = diagnosisService.addNewDiagnosis(diagnosis);
 		return new ResponseEntity<>(newDiagnosis, HttpStatus.OK);
 	}
+	
+	
+	// ----------------- for AppointmentDiagnosis ---------------------- //
+	
+	@GetMapping("/appointment-diagnosis/{appointmentId}")
+	public ResponseEntity<?> getDiagnosisByAppointmentId(@PathVariable int appointmentId) {
+		List<Diagnosis> diagnosis = diagnosisService.getDiagnosisByApppintmentId(appointmentId);
+		return new ResponseEntity<>(diagnosis, HttpStatus.OK);
+	}
+	
+	@PostMapping("/appointment-diagnosis")
+	public ResponseEntity<?> addDiagnosisForAppointment(@RequestBody AppointmentDiagnosis appointmentDiagnosis){
+		AppointmentDiagnosis addedAppointmentDiagnosis = diagnosisService.addDiagnosisForAppointment(appointmentDiagnosis);
+		return new ResponseEntity<>(addedAppointmentDiagnosis, HttpStatus.OK);
+	}
+	
+	
 }

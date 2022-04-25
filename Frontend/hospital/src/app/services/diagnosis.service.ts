@@ -17,13 +17,13 @@ export class DiagnosisService {
             .pipe(catchError(this.handleError));
     }
 
-    getDiagnosisByAptId(aptId: number): Observable<any[]> {
-        return this.http.get<any>(this.diagnosisUrl + '/diagnosisByAptId/' + aptId )
+    getDiagnosisByAptId(appointmentId: number): Observable<any[]> {
+        return this.http.get<any>(this.diagnosisUrl + '/appointment-diagnosis/' + appointmentId )
             .pipe(catchError(this.handleError));
     }
 
     addDiagnosisByAptId(diagnosis: any): Observable<any> {
-        return this.http.post<any>(this.diagnosisUrl + '/addDiagnosisByAptId', diagnosis)
+        return this.http.post<any>(this.diagnosisUrl + '/appointment-diagnosis', diagnosis)
             .pipe(catchError(this.handleError));
     }
 

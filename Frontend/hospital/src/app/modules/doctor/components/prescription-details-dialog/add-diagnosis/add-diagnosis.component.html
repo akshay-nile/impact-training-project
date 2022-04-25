@@ -1,0 +1,51 @@
+<div class="row form-group mt-4">
+    <div class="col col-md-12 col-sm-12">
+        <mat-form-field [formGroup]="form" class="w-100">
+            <mat-label>Diagnosis</mat-label>
+            <mat-select formControlName="diagnosis" name="diagnosis" #selectDiagnosis>
+                <mat-option [value]="-1">Select Diagnosis</mat-option>
+                <mat-option *ngFor="let d of diagnosisData" [value]="d.diagnosisId">
+                    {{d.title}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div style="display: flex; width: 100%; justify-content: end; margin-top: 0;">
+        <button class="btn btn-primary" [disabled]="selectDiagnosis.value === -1"
+            (click)="addSelectedDiagnosis(selectDiagnosis.value)"
+            style="justify-self: flex-end; margin-right: 1.7em;">Add</button>
+    </div>
+</div>
+
+<table class="table table-hover mt-4">
+    <thead>
+        <tr>
+            <th scope="col" class="text-center">ID</th>
+            <th scope="col">Diagnosis Title</th>
+            <th scope="col" class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="selectedDiagnosis.length == 0">
+            <td class="text-danger text-center" colspan="3">
+                No Diagnosis Available !
+            </td>
+        </tr>
+        <tr *ngFor="let d of selectedDiagnosis; let i=index;">
+            <td class="text-center">{{d.diagnosisId}}</td>
+            <td>{{d.title}}</td>
+            <td class="text-center">
+                <button class="btn btn-danger" style="font-size: 10pt; padding: 0.5em; margin: 0;"
+                    (click)="removeDiagnosis(i)">Remove
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="row form-group text-center mt-4 mb-4">
+    <div class="col col-md-12 text-center">
+        <button class="btn btn-success me-3" (click)="emitDiagnosisUpdateEvent()" [disabled]="!hasAnythingChanged">Save</button>
+        <button class="btn btn-warning ms-3" (click)="dialogRef.close()">Close</button>
+    </div>
+</div>

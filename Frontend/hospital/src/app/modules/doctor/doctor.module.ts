@@ -35,6 +35,9 @@ import { AppointmentDetailsDialogComponent } from './components/appointment-deta
 import { AskReasonComponent } from './components/ask-reason/ask-reason.component';
 import { PatientDetailsDialogComponent } from './components/patient-details-dialog/patient-details-dialog.component';
 import { PatientVisitHistoryComponent } from './components/patient-visit-history/patient-visit-history.component';
+import { AddProceduresComponent } from './components/prescription-details-dialog/add-procedures/add-procedures.component';
+import { AddMedicationsComponent } from './components/prescription-details-dialog/add-medications/add-medications.component';
+import { AddDiagnosisComponent } from './components/prescription-details-dialog/add-diagnosis/add-diagnosis.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -42,7 +45,7 @@ FullCalendarModule.registerPlugins([
   interactionPlugin
 ]);
 @NgModule({
-  declarations: [DashboardComponent, NotesComponent, NoteDialogComponent, NoteViewComponent, AppointmentBookDialogComponent, AppointmentComponent, ProfileComponent, AppointmentDetailsDialogComponent, AskReasonComponent, PatientDetailsDialogComponent,PatientVisitHistoryComponent, PrescriptionDetailsDialogComponent],
+  declarations: [DashboardComponent, NotesComponent, NoteDialogComponent, NoteViewComponent, AppointmentBookDialogComponent, AppointmentComponent, ProfileComponent, AppointmentDetailsDialogComponent, AskReasonComponent, PatientDetailsDialogComponent,PatientVisitHistoryComponent, PrescriptionDetailsDialogComponent, AddProceduresComponent, AddMedicationsComponent, AddDiagnosisComponent],
   imports: [
     CommonModule,
     DoctorRoutingModule,

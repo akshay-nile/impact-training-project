@@ -11,5 +11,4 @@ import com.citiustech.models.Procedure;
 @Repository
 public interface ProcedureRepository extends CrudRepository<Procedure, Integer> {
 
-	@Query("SELECT p FROM Procedure p,AppointmentProcedure ap WHERE ap.aptId=?1 AND p.procedureId=ap.procedureId")
-	List<Procedure> getProcedureByAptId(int aptId);}
+}

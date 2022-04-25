@@ -16,6 +16,7 @@ import { Vitals } from 'src/app/models/Vitals';
 import { VisitReport } from 'src/app/models/VisitReport';
 import { Procedure } from 'src/app/models/Procedure';
 import { UtilityService } from 'src/app/services/utility.service';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-patient-visit-history',
@@ -99,10 +100,9 @@ export class PatientVisitHistoryComponent implements OnInit {
       }
     });
   }
+
   viewDetails(appointment: any) {
     this.showReport = true;
-    console.log(appointment);
-    
     this.patientVisitService.getVisitReportDetails(appointment).subscribe((result) => {
       this.report = result;
       this.patient = this.report.patient;
@@ -116,11 +116,11 @@ export class PatientVisitHistoryComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
   }
+  
   downloadReport() {
     var element = document.getElementById("report");
     html2canvas(element).then((canvas) => {
@@ -132,6 +132,7 @@ export class PatientVisitHistoryComponent implements OnInit {
     });
     this.showReport = false;
   }
+
   logout() {
     sessionStorage.clear();
     this.router.navigate(['/login']);

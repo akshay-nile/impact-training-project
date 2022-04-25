@@ -3,6 +3,7 @@
         <div class="row">
             <div class="text-dark col-sm-6" style="font-size: 20px;margin-top: 2%;margin-bottom: 2%;">
                 Visit History Details</div>
+
             <mat-form-field appearance="standard">
                 <mat-label>Search</mat-label>
                 <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Patient Name" #input>
@@ -55,12 +56,11 @@
 <div class="content mat-elevation-z8" *ngIf="showReport">
     <div class="card-wrapper">
         <div class="row">
-            <div class="text-dark col-sm-6" style="font-size: 20px;margin-top: 2%;margin-bottom: 2%;">
+            <div style="display: flex; justify-content: flex-end; gap: 1.2em; margin: 1em 0em; padding: 0.25em;">
+                <button class="btn btn-danger" (click)="showReport = false">Close</button>
+                <button class="btn btn-success" (click)="downloadReport()">Download Report</button>
             </div>
 
-            <div class="col-sm-3"></div>
-            <div class="col-sm-3"><button class="btn btn-success" (click)="downloadReport()">Download Report</button>
-            </div>
             <div id="report" style="border: 2px solid black;">
                 <h1 style="text-align: center;font-weight: bolder;margin-top: 5%;margin-bottom: 5%;">CT Hospital</h1>
                 <h2 style="background-color: lightgray;font-weight: bold">Visit Report<span
@@ -107,11 +107,11 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{{vital.height}}</td>
-                            <td>{{vital.weight}}</td>
-                            <td>{{vital.bloodPressure}}</td>
-                            <td>{{vital.bodyTemperature}}</td>
-                            <td>{{vital.respirationRate}}</td>
+                            <td>{{vital?.height}}</td>
+                            <td>{{vital?.weight}}</td>
+                            <td>{{vital?.bloodPressure}}</td>
+                            <td>{{vital?.bodyTemperature}}</td>
+                            <td>{{vital?.respirationRate}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -125,8 +125,8 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let diagnosis of report.diagnosis">
-                            <td>{{diagnosis.diagnosisId}}</td>
-                            <td>{{diagnosis.title}}</td>
+                            <td>{{diagnosis?.diagnosisId}}</td>
+                            <td>{{diagnosis?.title}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -141,9 +141,9 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let procedure of procedures">
-                            <td>{{procedure.procedureId}}</td>
-                            <td>{{procedure.procedureName}}</td>
-                            <td>{{procedure.description}}</td>
+                            <td>{{procedure?.procedureId}}</td>
+                            <td>{{procedure?.procedureName}}</td>
+                            <td>{{procedure?.description}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -159,14 +159,15 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let medication of report.medications">
-                            <td>{{medication.medicationId}}</td>
-                            <td>{{medication.medicationName}}</td>
-                            <td>{{medication.dosage}}</td>
-                            <td>{{medication.description}}</td>
+                            <td>{{medication?.medicationId}}</td>
+                            <td>{{medication?.medicationName}}</td>
+                            <td>{{medication?.dosage}}</td>
+                            <td>{{medication?.description}}</td>
                         </tr>
                     </tbody>
                 </table>
-                <img style="margin-top:5%;margin-bottom: 10%;height: 100px;width: 180px;float: right;" src="assets/hospital-stamp.jpg" alt="">
+                <img style="margin-top:5%;margin-bottom: 10%;height: 100px;width: 180px;float: right;"
+                    src="assets/hospital-stamp.jpg" alt="">
             </div>
         </div>
     </div>

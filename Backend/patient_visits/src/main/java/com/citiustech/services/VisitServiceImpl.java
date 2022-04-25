@@ -3,7 +3,6 @@ package com.citiustech.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.citiustech.models.Appointment;
@@ -42,15 +41,19 @@ public class VisitServiceImpl implements VisitService {
 		String patientUrl = "http://localhost:8082/hospital/patientByEmail/" + apt.getPatientEmail();
 		String employeeUrl = "http://localhost:8082/hospital/employeeByEmail/" + apt.getEmployeeEmail();
 		String vitalUrl = "http://localhost:8085/patient-visits/vitals/aptId/" + apt.getAppointmentId();
-		String diagnosisUrl = "http://localhost:8086/diagnosis/api/diagnosisByAptId/" + apt.getAppointmentId();
-		String medicationUrl = "http://localhost:8087/medication/api/medicationByAptId/" + apt.getAppointmentId();
-		String procedureUrl = "http://localhost:8089/procedure/api/procedureByAptId/" + apt.getAppointmentId();
+
+		String diagnosisUrl = "http://localhost:8080/diagnosis/api/appointment-diagnosis/" + apt.getAppointmentId();
+		String medicationUrl = "http://localhost:8080/medications/api/appointment-medications/" + apt.getAppointmentId();
+		String procedureUrl = "http://localhost:8080/procedures/api/appointment-procedures/" + apt.getAppointmentId();
+
 		Patient patient = patientService.getPatientDetails(patientUrl);
 		Employee employee = employeeService.getEmployeeDetails(employeeUrl);
 		Vital vital = vitalService.getVitalDetails(vitalUrl);
+
 		List<Diagnosis> diagnosisList = diagnosisService.diagnosisDetails(diagnosisUrl);
 		List<Procedure> procedureList = procedureService.procedureDetails(procedureUrl);
 		List<Medication> medicationList = medicationService.medicationDetails(medicationUrl);
+
 		return createVisitReport(patient, employee, vital, diagnosisList, medicationList, procedureList, apt);
 	}
 

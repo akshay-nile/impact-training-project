@@ -1,35 +1,34 @@
 package com.citiustech.models;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class AppointmentDiagnosis {
-
+public class AppointmentMedications {
+	
 	@Id
 	private int appointmentId;
 	
 	@ElementCollection
-	private List<Integer> diagnosisIds;
-	
+	private Set<Integer> medicationIds;
+
 	public int getAppointmentId() {
 		return appointmentId;
 	}
-	
+
 	public void setAppointmentId(int appointmentId) {
 		this.appointmentId = appointmentId;
 	}
-	
-	public List<Integer> getDiagnosisIds() {
-		return diagnosisIds;
+
+	public Set<Integer> getMedicationIds() {
+		return medicationIds;
 	}
-	
-	public void setDiagnosisIds(List<Integer> diagnosisIds) {
-		this.diagnosisIds = diagnosisIds;
+
+	public void setMedicationIds(Set<Integer> medicationIds) {
+		this.medicationIds = medicationIds;
 	}
-	
 	
 }

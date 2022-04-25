@@ -45,11 +45,11 @@ spring:
       - id: medication-microservice
         uri: http://localhost:8087
         predicates:
-        - Path=/medication/**
+        - Path=/medications/**
       - id: procedure-microservice
         uri: http://localhost:8089
         predicates:
-        - Path=/procedure/**
+        - Path=/procedures/**
       - id: allergy-microservice
         uri: http://localhost:8090
         predicates:

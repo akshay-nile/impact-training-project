@@ -12,27 +12,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.citiustech.models.AppointmentProcedure;
 import com.citiustech.models.Procedure;
 import com.citiustech.services.ProcedureService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/procedure/api")
+@RequestMapping("/procedures/api")
 public class ProcedureController {
 
 	@Autowired
 	private ProcedureService procedureService;
 
-	@GetMapping("/getAllProcedureDetails")
-	public ResponseEntity<?> getAllProcedureDetails() {
-		List<Procedure> procedures = procedureService.getProcedureDetails();
-		if (procedures.size() != 0) {
-			return new ResponseEntity<>(procedures, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
+	@GetMapping("/get-procedure-details")
+	public ResponseEntity<?> getAllProcedureDetails(@RequestParam int start, @RequestParam int count) {
+		List<Procedure> procedures = procedureService.getProcedureDetails(start, count);
+		return new ResponseEntity<>(procedures, HttpStatus.OK);
 	}
 
 	@GetMapping("/procedureId/{procedureId}")
@@ -44,19 +41,6 @@ public class ProcedureController {
 		return new ResponseEntity<>(null, HttpStatus.OK);
 	}
 
-	@GetMapping("/procedureByAptId/{aptId}")
-	public ResponseEntity<?> getProcedureByAptId(@PathVariable int aptId) {
-		List<Procedure> procedureList = procedureService.getProcedureByAptId(aptId);
-		if (procedureList.size() != 0) {
-			return new ResponseEntity<>(procedureList, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
-	}
-
-	@PostMapping("/addProcedureByAptId")
-	public ResponseEntity<?> addDiagnosisByApiId(@RequestBody AppointmentProcedure appointmentProcedure) {
-		return new ResponseEntity<>(procedureService.addProcedureByApiId(appointmentProcedure), HttpStatus.OK);
-	}
 
 	@PostMapping("/addProcedure")
 	private ResponseEntity<?> addProcedure(@RequestBody Procedure procedure) {
