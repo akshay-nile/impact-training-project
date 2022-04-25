@@ -94,8 +94,8 @@
                     </tr>
                 </table>
                 <hr>
-                <h4 style="font-weight: 600;margin-top: 3%;">Vital Details:</h4>
-                <table class="table table-striped">
+                <h4 *ngIf="vital!=null" style="font-weight: 600;margin-top: 3%;">Vital Details:</h4>
+                <table *ngIf="vital!=null" class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Height (cm)</th>
@@ -115,8 +115,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <h4 style="font-weight: 600;margin-top: 3%;">Diagnosis Details:</h4>
-                <table class="table table-striped">
+                <h4 *ngIf="report.diagnosis.length!=0" style="font-weight: 600;margin-top: 3%;">Diagnosis Details:</h4>
+                <table *ngIf="report.diagnosis.length!=0" class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
@@ -130,8 +130,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <h4 style="font-weight: 600;margin-top: 3%;">Procedure Details:</h4>
-                <table class="table table-striped">
+                <h4 *ngIf="report.medications.length!=0" style="font-weight: 600;margin-top: 3%;">Procedure Details:</h4>
+                <table *ngIf="report.medications.length!=0" class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
