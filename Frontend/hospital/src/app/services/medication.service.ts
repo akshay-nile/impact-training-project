@@ -8,22 +8,22 @@ import { environment } from 'src/environments/environment';
 })
 export class MedicationService {
 
-    medicationUrl = environment.baseUrl + '/medication/api';
+    medicationUrl = environment.baseUrl + '/medications/api';
 
     constructor(private http: HttpClient) { }
 
     getAllMedications(): Observable<any[]> {
-        return this.http.get<any[]>(this.medicationUrl + '/getAllMedicationDetails')
+        return this.http.get<any[]>(this.medicationUrl + '/get-medication-details')
             .pipe(catchError(this.handleError));
     }
     
-    getMedicationByAptId(aptId: number): Observable<any[]> {
-        return this.http.get<any>(this.medicationUrl + '/medicationByAptId/' + aptId )
+    getMedicationByAptId(appointmentId: number): Observable<any[]> {
+        return this.http.get<any>(this.medicationUrl + '/appointment-medications/' + appointmentId)
             .pipe(catchError(this.handleError));
     }
 
-    addMedicationByAptId(medication: any): Observable<any> {
-        return this.http.post<any>(this.medicationUrl + '/addMedicationByAptId', medication)
+    addMedicationByAptId(medications: any): Observable<any> {
+        return this.http.post<any>(this.medicationUrl +  '/appointment-medications', medications)
             .pipe(catchError(this.handleError));
     }
 

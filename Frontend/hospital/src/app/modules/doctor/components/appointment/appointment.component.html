@@ -1,13 +1,19 @@
 <div class="content mat-elevation-z8">
     <div class="card-wrapper">
         <div class="row">
-            <div class="text-dark col-sm-9" style="font-size: 20px;margin-top: 2%;margin-bottom: 2%;">Appointments</div>
-            <div class="col-sm-3" style="margin-right: 0%;padding-right: 0%;"><button mat-raised-button color="primary"
-                    (click)="openBookAppointmentDialog()">Book an Appointment</button> </div>
+            <div style="display: flex; margin: 0.5em 0em; align-items: center; justify-items: flex-start; gap: 1em;">
+                <div style="flex: 8; margin: 0; padding: 0; font-size: 20px;" class="text-dark d-inline-block">
+                    Appointments
+                </div>
+
+                <div style="flex: 1; margin: 0; padding: 0em 0.5em;">
+                    <button mat-raised-button color="primary" (click)="openBookAppointmentDialog()">Book an Appointment</button>
+                </div>
+            </div>
 
             <mat-tab-group>
                 <mat-tab label="Calender">
-                    <full-calendar *ngIf="initialise" [options]="calendarOptions"></full-calendar>
+                    <full-calendar *ngIf="initialise" [options]="calendarOptions" style="padding: 1em 0.5em;"></full-calendar>
                 </mat-tab>
 
                 <mat-tab label="Appointments">

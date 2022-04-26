@@ -1,113 +1,107 @@
-<mat-card class="example-card">
-    <ask-reason *ngIf="mode === 'cancel'" [type]="'cancel'" (reason)="cancelAppointment($event)"></ask-reason>
+<ask-reason *ngIf="mode === 'cancel'" [type]="'cancel'" (reason)="cancelAppointment($event)"></ask-reason>
 
-    <ask-reason *ngIf="mode === 'edit'" [type]="'edit'" (reason)="editAppointment($event)"></ask-reason>
+<ask-reason *ngIf="mode === 'edit'" [type]="'edit'" (reason)="editAppointment($event)"></ask-reason>
 
-    <form *ngIf="mode === ''" [formGroup]="appointmentForm">
-        <div class="mb-4">
-            <label for="meetingTitle" class="form-label">Meeting Title</label>
-            <input type="text" formControlName="meetingTitle" class="form-control" id="meetingTitle">
-            <div
-                *ngIf="appointmentForm.controls['meetingTitle'].touched && appointmentForm.controls['meetingTitle'].invalid">
-                <small *ngIf="appointmentForm.controls['meetingTitle'].errors?.['required']" class="text-danger">Meeting
-                    Title
-                    cannot be blank</small>
-            </div>
+<form *ngIf="mode === ''" [formGroup]="appointmentForm">
+    <div class="mb-4">
+        <label for="meetingTitle" class="form-label">Meeting Title</label>
+        <input type="text" formControlName="meetingTitle" class="form-control" id="meetingTitle">
+        <div
+            *ngIf="appointmentForm.controls['meetingTitle'].touched && appointmentForm.controls['meetingTitle'].invalid">
+            <small *ngIf="appointmentForm.controls['meetingTitle'].errors?.['required']" class="text-danger">Meeting
+                Title
+                cannot be blank</small>
         </div>
+    </div>
 
-        <div class="mb-4">
-            <label for="description" class="form-label">Description</label>
-            <textarea type="text" formControlName="description" class="form-control" id="description"></textarea>
-            <div
-                *ngIf="appointmentForm.controls['description'].touched && appointmentForm.controls['description'].invalid">
-                <small *ngIf="appointmentForm.controls['description'].errors?.['required']"
-                    class="text-danger">Description cannot
-                    be blank</small>
-            </div>
+    <div class="mb-4">
+        <label for="description" class="form-label">Description</label>
+        <textarea type="text" formControlName="description" class="form-control" id="description"></textarea>
+        <div *ngIf="appointmentForm.controls['description'].touched && appointmentForm.controls['description'].invalid">
+            <small *ngIf="appointmentForm.controls['description'].errors?.['required']" class="text-danger">Description
+                cannot
+                be blank</small>
         </div>
+    </div>
 
-        <div class="row mb-4">
-            <div class="col col-md-8">
-                <label for="physician" class="form-label">Physician Name</label>
-                <select formControlName="physician" class="form-control">
-                    <option [value]="data.appointment.employeeId">{{doctorName}}</option>
-                </select>
-            </div>
-            <div class="col col-md-4">
-                <label for="employeeId" class="form-label">Physician ID</label>
-                <input type="text" formControlName="employeeId" class="form-control"
-                    readonly>
-            </div>
-        </div>
-
-        <div class="row mb-4">
-            <div class="col col-md-8">
-                <label for="patient" class="form-label">Patient Name</label>
-                <select formControlName="patient" class="form-control">
-                    <option [value]="data.appointment.patientId">{{data.patientName}}</option>
-                </select>
-            </div>
-            <div class="col col-md-4">
-                <label for="patientId" class="form-label">Patient ID</label>
-                <input type="text" formControlName="patientId" class="form-control"
-                    readonly>
-            </div>
-        </div>
-
-        <div class="mb-4">
-            <label for="aptDate" class="form-label">Date of Appointment</label>
-            <input type="date" formControlName="aptDate" class="form-control" [min]="today" [max]="next3months"
-                (change)="getAvailabilityWindows()">
-        </div>
-
-        <div class="mb-4" *ngIf="!editable">
-            <label for="window" class="form-label">Availability Window</label>
-            <select class="form-control" formControlName="window" (change)="populateTimes()">
-                <option *ngIf="windows.length == 0" [value]="-1">No Window Available</option>
-                <option *ngIf="windows.length > 0" [value]="-1">Select Window</option>
-                <option *ngFor="let w of windows; let i=index;" [value]="i">{{w.label}}</option>
+    <div class="row mb-4">
+        <div class="col col-md-8">
+            <label for="physician" class="form-label">Physician Name</label>
+            <select formControlName="physician" class="form-control">
+                <option [value]="data.appointment.employeeId">{{doctorName}}</option>
             </select>
-            <small *ngIf="appointmentForm.controls.window.touched && appointmentForm.controls.window.value == -1"
-                class="text-danger">
-                Availability window is required</small>
         </div>
-
-        <div class="row mb-4 form-group" *ngIf="windows.length > 0 || editable">
-            <div class="col col-md-6 col-sm-12">
-                <label for="startsAt" class="form-label">Start Time</label>
-                <select formControlName="startsAt" class="form-control" (change)="updateEndTimes()">
-                    <option *ngIf="startTimes.length > 0" [value]="-1">Select Start Time</option>
-                    <option *ngFor="let st of startTimes; let i=index;" [value]="i">{{st | uppercase}}</option>
-                </select>
-            </div>
-            <div class="col col-md-6 col-sm-12">
-                <label for="endsAt" class="form-label">End Time</label>
-                <select formControlName="endsAt" class="form-control">
-                    <option *ngIf="endTimes.length == 0" [value]="-1">Select End Time</option>
-                    <option *ngFor="let et of endTimes; let i=index;" [value]="i">{{et | uppercase}}</option>
-                </select>
-            </div>
+        <div class="col col-md-4">
+            <label for="employeeId" class="form-label">Physician ID</label>
+            <input type="text" formControlName="employeeId" class="form-control" readonly>
         </div>
+    </div>
 
-        <div class="mb-4">
-            <label for="editHistory" class="form-label">Edit History</label>
-            <input type="text" class="form-control" formControlName="editHistory" id="editHistory" readonly="readonly">
+    <div class="row mb-4">
+        <div class="col col-md-8">
+            <label for="patient" class="form-label">Patient Name</label>
+            <select formControlName="patient" class="form-control">
+                <option [value]="data.appointment.patientId">{{data.patientName}}</option>
+            </select>
         </div>
-
-        <div class="row text-center form-group mt-4">
-            <div class="col col-md-12 col-sm-12">
-                <button *ngIf="data.appointment.status === 'PENDING'" 
-                class="btn btn-success mb-2 me-3"
-                    (click)="acceptAppointment()">Accept</button>
-
-                <button *ngIf="data.appointment.status === 'PENDING'" class="btn btn-primary mb-2 ms-3 me-3"
-                    (click)="mode = 'edit'">Update</button>
-
-                <button *ngIf="['ACCEPTED', 'PENDING'].includes(data.appointment.status)"
-                    class="btn btn-danger mb-2 ms-3 me-3" (click)="mode = 'cancel'">Cancel</button>
-
-                <button class="btn btn-warning mb-2 ms-3" (click)="close()">Close</button>
-            </div>
+        <div class="col col-md-4">
+            <label for="patientId" class="form-label">Patient ID</label>
+            <input type="text" formControlName="patientId" class="form-control" readonly>
         </div>
-    </form>
-</mat-card>
+    </div>
+
+    <div class="mb-4">
+        <label for="aptDate" class="form-label">Date of Appointment</label>
+        <input type="date" formControlName="aptDate" class="form-control" [min]="today" [max]="next3months"
+            (change)="getAvailabilityWindows()">
+    </div>
+
+    <div class="mb-4" *ngIf="!editable">
+        <label for="window" class="form-label">Availability Window</label>
+        <select class="form-control" formControlName="window" (change)="populateTimes()">
+            <option *ngIf="windows.length == 0" [value]="-1">No Window Available</option>
+            <option *ngIf="windows.length > 0" [value]="-1">Select Window</option>
+            <option *ngFor="let w of windows; let i=index;" [value]="i">{{w.label}}</option>
+        </select>
+        <small *ngIf="appointmentForm.controls.window.touched && appointmentForm.controls.window.value == -1"
+            class="text-danger">
+            Availability window is required</small>
+    </div>
+
+    <div class="row mb-4 form-group" *ngIf="windows.length > 0 || editable">
+        <div class="col col-md-6 col-sm-12">
+            <label for="startsAt" class="form-label">Start Time</label>
+            <select formControlName="startsAt" class="form-control" (change)="updateEndTimes()">
+                <option *ngIf="startTimes.length > 0" [value]="-1">Select Start Time</option>
+                <option *ngFor="let st of startTimes; let i=index;" [value]="i">{{st | uppercase}}</option>
+            </select>
+        </div>
+        <div class="col col-md-6 col-sm-12">
+            <label for="endsAt" class="form-label">End Time</label>
+            <select formControlName="endsAt" class="form-control">
+                <option *ngIf="endTimes.length == 0" [value]="-1">Select End Time</option>
+                <option *ngFor="let et of endTimes; let i=index;" [value]="i">{{et | uppercase}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <label for="editHistory" class="form-label">Edit History</label>
+        <input type="text" class="form-control" formControlName="editHistory" id="editHistory" readonly="readonly">
+    </div>
+
+    <div class="row text-center form-group mt-4">
+        <div class="col col-md-12 col-sm-12">
+            <button *ngIf="data.appointment.status === 'PENDING'" class="btn btn-success mb-2 me-3"
+                (click)="acceptAppointment()">Accept</button>
+
+            <button *ngIf="data.appointment.status === 'PENDING'" class="btn btn-primary mb-2 ms-3 me-3"
+                (click)="mode = 'edit'">Update</button>
+
+            <button *ngIf="['ACCEPTED', 'PENDING'].includes(data.appointment.status)"
+                class="btn btn-danger mb-2 ms-3 me-3" (click)="mode = 'cancel'">Cancel</button>
+
+            <button class="btn btn-warning mb-2 ms-3" (click)="close()">Close</button>
+        </div>
+    </div>
+</form>

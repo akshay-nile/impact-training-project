@@ -58,12 +58,6 @@ export class PatientVisitHistoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // if (this.user.password == 'Password@123'. || this.user.nominee == null) {
-    //   setTimeout(() => {
-    //     alert("Please complete your profile first !")
-    //     this.router.navigate(['patient', 'dashboard', 'profile']);
-    //   }, 500);
-    // }
     this.getAllAppointments();
   }
 
@@ -74,7 +68,7 @@ export class PatientVisitHistoryComponent implements OnInit {
     })
   }
 
-  getAllPatients(appts:any) {
+  getAllPatients(appts: any) {
     this.utilityService.getAllPatientNames().subscribe(
       patients => {
         this.allPatientNames = patients;
@@ -99,10 +93,9 @@ export class PatientVisitHistoryComponent implements OnInit {
       }
     });
   }
+
   viewDetails(appointment: any) {
     this.showReport = true;
-    console.log(appointment);
-    
     this.patientVisitService.getVisitReportDetails(appointment).subscribe((result) => {
       this.report = result;
       this.patient = this.report.patient;
@@ -116,11 +109,11 @@ export class PatientVisitHistoryComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
   }
+
   downloadReport() {
     var element = document.getElementById("report");
     html2canvas(element).then((canvas) => {
@@ -128,10 +121,11 @@ export class PatientVisitHistoryComponent implements OnInit {
       var doc = new jspdf();
       var imgHeight = canvas.height * 208 / canvas.width;
       doc.addImage(imgData, 0, 0, 208, 250);
-      doc.save("Report_"+Date.now()+".pdf");
+      doc.save("Report_" + Date.now() + ".pdf");
     });
     this.showReport = false;
   }
+
   logout() {
     sessionStorage.clear();
     this.router.navigate(['/login']);

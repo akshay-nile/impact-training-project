@@ -1,9 +1,9 @@
 package com.citiustech.services;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.citiustech.models.AppointmentDiagnosis;
@@ -12,14 +12,14 @@ import com.citiustech.repositories.AppointmentDiagnosisRepository;
 import com.citiustech.repositories.DiagnosisRepository;
 
 @Service
-public class DiagnosisServiceImpl implements DiagnosisService{
-	
+public class DiagnosisServiceImpl implements DiagnosisService {
+
 	@Autowired
 	private DiagnosisRepository diagnosisRepo;
 
 	@Autowired
-	private AppointmentDiagnosisRepository aptDiagnosisRepo;
-	
+	private AppointmentDiagnosisRepository apptDiagnosisRepo;
+
 	@Override
 	public Diagnosis getDiagnosisDetailsByDiagnosisId(int diagnosisId) {
 		return diagnosisRepo.findById(diagnosisId).get();
@@ -27,17 +27,7 @@ public class DiagnosisServiceImpl implements DiagnosisService{
 
 	@Override
 	public List<Diagnosis> getDiagnosisDetails() {
-		return (List<Diagnosis>) diagnosisRepo.findAll();
-	}
-
-	@Override
-	public List<Diagnosis> getDiagnosisByAptId(int aptId) {
-		return diagnosisRepo.getDiagnosisByAptId(aptId);
-	}
-
-	@Override
-	public AppointmentDiagnosis addDiagnosisByApiId(AppointmentDiagnosis aptDiagnosis) {
-		return aptDiagnosisRepo.save(aptDiagnosis);
+		return ((List<Diagnosis>) diagnosisRepo.findAll()).stream().limit(50).collect(Collectors.toList());
 	}
 
 	@Override
@@ -48,5 +38,23 @@ public class DiagnosisServiceImpl implements DiagnosisService{
 	@Override
 	public Diagnosis addNewDiagnosis(Diagnosis diagnosis) {
 		return diagnosisRepo.save(diagnosis);
+	}
+
+	@Override
+	public List<Diagnosis> getDiagnosisByApppintmentId(int appointmentId) {
+		AppointmentDiagnosis apptDiagnosis = apptDiagnosisRepo.findById(appointmentId).orElse(null);
+
+		if (apptDiagnosis == null) {
+			return List.of();
+		}
+
+		return apptDiagnosis.getDiagnosisIds().stream()
+				.map(diagnosisId -> diagnosisRepo.findById(diagnosisId).orElse(null))
+				.filter(diagnosis -> diagnosis != null).collect(Collectors.toList());
+	}
+
+	@Override
+	public AppointmentDiagnosis addDiagnosisForAppointment(AppointmentDiagnosis appointmentDiagnosis) {
+		return apptDiagnosisRepo.save(appointmentDiagnosis);
 	}
 }

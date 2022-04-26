@@ -138,7 +138,7 @@ export class AppointmentComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     const dialogRef = this.dialog.open(PrescriptionDetailsDialogComponent, {
-      width: '50%', 
+      width: '60%',
       data: { appointment: appointment, user: this.user }
     });
     dialogRef.afterClosed().subscribe(result => {

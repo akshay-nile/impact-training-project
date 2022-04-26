@@ -39,8 +39,6 @@ mat-toolbar {
     align-items: center;
     justify-content: flex-start;
     font-size: 1rem;
-  
-    
   }
   
   .avatar {
@@ -75,6 +73,7 @@ mat-toolbar {
 .todaysAppointment{
   background-color: rgb(240, 240, 136);
 }
+
 .activeRouting{
-  color: azure;
+  color: white;
 }

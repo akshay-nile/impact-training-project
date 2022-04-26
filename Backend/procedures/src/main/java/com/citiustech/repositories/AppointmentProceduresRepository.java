@@ -3,8 +3,9 @@ package com.citiustech.repositories;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.citiustech.models.AppointmentProcedure;
+import com.citiustech.models.AppointmentProcedures;
 
 @Repository
-public interface AppointmentProcedureRepository extends CrudRepository<AppointmentProcedure, String> {
+public interface AppointmentProceduresRepository extends CrudRepository<AppointmentProcedures, Integer> {
+
 }

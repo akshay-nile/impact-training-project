@@ -3,51 +3,52 @@
         <div class="row">
             <div class="text-dark col-sm-6" style="font-size: 20px;margin-top: 2%;margin-bottom: 2%;">
                 Visit History Details</div>
-            <mat-form-field appearance="standard">
-                <mat-label>Search</mat-label>
-                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Patient Name" #input>
-            </mat-form-field>
+            <<<<<<< HEAD=======>>>>>>> master
+                <mat-form-field appearance="standard">
+                    <mat-label>Search</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Patient Name" #input>
+                </mat-form-field>
 
-            <div class="mat-elevation-z8">
-                <table mat-table [dataSource]="dataSource" matSort class="table table-striped">
-                    <ng-container matColumnDef="title">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
-                        <td mat-cell *matCellDef="let row"> {{row.title}} </td>
-                    </ng-container>
-                    <ng-container matColumnDef="employeeName">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Physician </th>
-                        <td mat-cell *matCellDef="let row"> {{row.employeeName}} </td>
-                    </ng-container>
-                    <ng-container matColumnDef="patientName">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Patient </th>
-                        <td mat-cell *matCellDef="let row"> {{row.patientName}} </td>
-                    </ng-container>
-                    <ng-container matColumnDef="date">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
-                        <td mat-cell *matCellDef="let row">{{row.date}} </td>
-                    </ng-container>
-                    <ng-container matColumnDef="time">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Time </th>
-                        <td mat-cell *matCellDef="let row">{{row.time}} </td>
-                    </ng-container>
-                    <ng-container matColumnDef="action">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
-                        <td mat-cell *matCellDef="let row"> <button class="btn btn-success"
-                                (click)="viewDetails(row)">View</button>
-                        </td>
-                    </ng-container>
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-                        [ngClass]="{'todaysAppointment': row.aptDate==date }"></tr>
-                    <!-- Row shown when there is no matching data. -->
-                    <tr class="mat-row" *matNoDataRow>
-                        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"
-                        </td>
-                    </tr>
-                </table>
-                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users">
-                </mat-paginator>
-            </div>
+                <div class="mat-elevation-z8">
+                    <table mat-table [dataSource]="dataSource" matSort class="table table-striped">
+                        <ng-container matColumnDef="title">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+                            <td mat-cell *matCellDef="let row"> {{row.title}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="employeeName">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Physician </th>
+                            <td mat-cell *matCellDef="let row"> {{row.employeeName}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="patientName">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Patient </th>
+                            <td mat-cell *matCellDef="let row"> {{row.patientName}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="date">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+                            <td mat-cell *matCellDef="let row">{{row.date}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="time">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Time </th>
+                            <td mat-cell *matCellDef="let row">{{row.time}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="action">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                            <td mat-cell *matCellDef="let row"> <button class="btn btn-success"
+                                    (click)="viewDetails(row)">View</button>
+                            </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                            [ngClass]="{'todaysAppointment': row.aptDate==date }"></tr>
+                        <!-- Row shown when there is no matching data. -->
+                        <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"
+                            </td>
+                        </tr>
+                    </table>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users">
+                    </mat-paginator>
+                </div>
         </div>
     </div>
 </div>
@@ -55,12 +56,11 @@
 <div class="content mat-elevation-z8" *ngIf="showReport">
     <div class="card-wrapper">
         <div class="row">
-            <div class="text-dark col-sm-6" style="font-size: 20px;margin-top: 2%;margin-bottom: 2%;">
+            <div style="display: flex; justify-content: flex-end; gap: 1.2em; margin: 1em 0em; padding: 0.25em;">
+                <button class="btn btn-danger" (click)="showReport = false">Close</button>
+                <button class="btn btn-success" (click)="downloadReport()">Download Report</button>
             </div>
 
-            <div class="col-sm-3"></div>
-            <div class="col-sm-3"><button class="btn btn-success" (click)="downloadReport()">Download Report</button>
-            </div>
             <div id="report" style="border: 2px solid black;">
                 <h1 style="text-align: center;font-weight: bolder;margin-top: 5%;margin-bottom: 5%;">CT Hospital</h1>
                 <h2 style="background-color: lightgray;font-weight: bold">Visit Report<span
@@ -107,11 +107,11 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{{vital.height}}</td>
-                            <td>{{vital.weight}}</td>
-                            <td>{{vital.bloodPressure}}</td>
-                            <td>{{vital.bodyTemperature}}</td>
-                            <td>{{vital.respirationRate}}</td>
+                            <td>{{vital?.height}}</td>
+                            <td>{{vital?.weight}}</td>
+                            <td>{{vital?.bloodPressure}}</td>
+                            <td>{{vital?.bodyTemperature}}</td>
+                            <td>{{vital?.respirationRate}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -125,13 +125,14 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let diagnosis of report.diagnosis">
-                            <td>{{diagnosis.diagnosisId}}</td>
-                            <td>{{diagnosis.title}}</td>
+                            <td>{{diagnosis?.diagnosisId}}</td>
+                            <td>{{diagnosis?.title}}</td>
                         </tr>
                     </tbody>
                 </table>
-                <h4 *ngIf="report.medications.length!=0" style="font-weight: 600;margin-top: 3%;">Procedure Details:</h4>
-                <table *ngIf="report.medications.length!=0" class="table table-striped">
+                <h4 *ngIf="report.procedures.length!=0" style="font-weight: 600;margin-top: 3%;">Procedure Details:
+                </h4>
+                <table *ngIf="report.procedures.length!=0" class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
@@ -141,14 +142,14 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let procedure of procedures">
-                            <td>{{procedure.procedureId}}</td>
-                            <td>{{procedure.procedureName}}</td>
-                            <td>{{procedure.description}}</td>
+                            <td>{{procedure?.procedureId}}</td>
+                            <td>{{procedure?.procedureName}}</td>
+                            <td>{{procedure?.description}}</td>
                         </tr>
                     </tbody>
                 </table>
-                <h4 style="font-weight: 600;margin-top: 3%;">Medication Details:</h4>
-                <table class="table table-striped">
+                <h4 *ngIf="report.medications.length!=0"  style="font-weight: 600;margin-top: 3%;">Medication Details:</h4>
+                <table  *ngIf="report.medications.length!=0"  class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
@@ -159,14 +160,15 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let medication of report.medications">
-                            <td>{{medication.medicationId}}</td>
-                            <td>{{medication.medicationName}}</td>
-                            <td>{{medication.dosage}}</td>
-                            <td>{{medication.description}}</td>
+                            <td>{{medication?.medicationId}}</td>
+                            <td>{{medication?.medicationName}}</td>
+                            <td>{{medication?.dosage}}</td>
+                            <td>{{medication?.description}}</td>
                         </tr>
                     </tbody>
                 </table>
-                <img style="margin-top:5%;margin-bottom: 10%;height: 100px;width: 180px;float: right;" src="assets/hospital-stamp.jpg" alt="">
+                <img style="margin-top:5%;margin-bottom: 10%;height: 100px;width: 180px;float: right;"
+                    src="assets/hospital-stamp.jpg" alt="">
             </div>
         </div>
     </div>

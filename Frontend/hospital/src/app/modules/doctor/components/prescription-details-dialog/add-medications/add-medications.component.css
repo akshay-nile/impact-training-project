@@ -1,0 +1,13 @@
+
+th, td {
+    margin: 0;
+    padding: 1em;
+    font-weight: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    vertical-align: middle;
+}
+
+thead > tr:first-child {
+    background-color: #fafafa;
+    border: 1px solid lightgray;
+}

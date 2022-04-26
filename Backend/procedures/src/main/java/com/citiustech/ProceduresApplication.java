@@ -18,16 +18,17 @@ import com.citiustech.repositories.ProcedureRepository;
 public class ProceduresApplication {
 	private static void populateTableData(ProcedureRepository repo) {
 		List<Procedure> list = new ArrayList<>();
-		
+
 		try {
 			Scanner sc = new Scanner(new File("procedure_data.csv"));
 			sc.nextLine();
-			while(sc.hasNextLine()) {
+			while (sc.hasNextLine()) {
 				String line = sc.nextLine();
 				int i = line.indexOf(",");
-				if(i == -1) continue;
+				if (i == -1)
+					continue;
 				String name = line.substring(0, i).trim();
-				String desc = line.substring(i+1).trim();
+				String desc = line.substring(i + 1).trim();
 				Procedure p = new Procedure();
 				p.setProcedureName(name);
 				p.setDescription(desc);

@@ -1,13 +1,14 @@
 package com.citiustech.services;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.citiustech.models.AppointmentProcedure;
+import com.citiustech.models.AppointmentProcedures;
 import com.citiustech.models.Procedure;
-import com.citiustech.repositories.AppointmentProcedureRepository;
+import com.citiustech.repositories.AppointmentProceduresRepository;
 import com.citiustech.repositories.ProcedureRepository;
 
 @Service
@@ -17,7 +18,7 @@ public class ProcedureServiceImpl implements ProcedureService {
 	private ProcedureRepository procedureRepo;
 
 	@Autowired
-	private AppointmentProcedureRepository aptprocedureRepo;
+	private AppointmentProceduresRepository apptProceduresRepo;
 
 	@Override
 	public Procedure getProcedureDetailsByProcedureId(int procedureId) {
@@ -25,18 +26,9 @@ public class ProcedureServiceImpl implements ProcedureService {
 	}
 
 	@Override
-	public List<Procedure> getProcedureDetails() {
-		return (List<Procedure>) procedureRepo.findAll();
-	}
-
-	@Override
-	public List<Procedure> getProcedureByAptId(int aptId) {
-		return procedureRepo.getProcedureByAptId(aptId);
-	}
-
-	@Override
-	public AppointmentProcedure addProcedureByApiId(AppointmentProcedure aptProcedure) {
-		return aptprocedureRepo.save(aptProcedure);
+	public List<Procedure> getProcedureDetails(int start, int count) {
+		List<Procedure> list = (List<Procedure>) procedureRepo.findAll();
+		return list.stream().limit(count).collect(Collectors.toList());
 	}
 
 	@Override
@@ -52,6 +44,25 @@ public class ProcedureServiceImpl implements ProcedureService {
 	@Override
 	public Procedure addNewProcedure(Procedure procedure) {
 		return procedureRepo.save(procedure);
+	}
+
+	@Override
+	public List<Procedure> getProceduresByAppointmentId(int appointmentId) {
+		AppointmentProcedures apptProcedures = apptProceduresRepo.findById(appointmentId).orElse(null);
+		
+		if(apptProcedures == null) {
+			return List.of();
+		}
+		
+		return apptProcedures.getProcedureIds().stream()
+				.map(procedureId -> procedureRepo.findById(procedureId).orElse(null))
+				.filter(procedure -> procedure != null)
+				.collect(Collectors.toList());
+	}
+
+	@Override
+	public AppointmentProcedures addProceduresForAppointment(AppointmentProcedures appointmentProcedures) {
+		return apptProceduresRepo.save(appointmentProcedures);
 	}
 
 }
