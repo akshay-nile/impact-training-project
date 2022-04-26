@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import {MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AppointmentService } from 'src/app/services/appointment.service';
 
@@ -17,7 +17,7 @@ export class PrescriptionDetailsDialogComponent {
   ) { }
 
   setAppointmentDataCollectionStatus() {
-    if(this.data.appointment.dataCollectionStatus) return;
+    if (this.data.appointment.dataCollectionStatus) return;
     let appointment = this.data.appointment;
     appointment['dataCollectionStatus'] = true;
     this.appointmentService.updateAppointment(appointment).subscribe(res => {

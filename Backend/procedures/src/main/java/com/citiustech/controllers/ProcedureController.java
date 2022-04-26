@@ -41,7 +41,6 @@ public class ProcedureController {
 		return new ResponseEntity<>(null, HttpStatus.OK);
 	}
 
-
 	@PostMapping("/addProcedure")
 	private ResponseEntity<?> addProcedure(@RequestBody Procedure procedure) {
 		Procedure newProcedure = procedureService.addProcedure(procedure);

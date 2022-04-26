@@ -38,7 +38,7 @@ public class ProceduresApplication {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		
 		repo.deleteAll();
 		repo.saveAll(list);
 	}

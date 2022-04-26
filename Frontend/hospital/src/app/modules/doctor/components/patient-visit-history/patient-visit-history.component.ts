@@ -16,7 +16,6 @@ import { Vitals } from 'src/app/models/Vitals';
 import { VisitReport } from 'src/app/models/VisitReport';
 import { Procedure } from 'src/app/models/Procedure';
 import { UtilityService } from 'src/app/services/utility.service';
-import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-patient-visit-history',
@@ -59,12 +58,6 @@ export class PatientVisitHistoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // if (this.user.password == 'Password@123'. || this.user.nominee == null) {
-    //   setTimeout(() => {
-    //     alert("Please complete your profile first !")
-    //     this.router.navigate(['patient', 'dashboard', 'profile']);
-    //   }, 500);
-    // }
     this.getAllAppointments();
   }
 
@@ -75,7 +68,7 @@ export class PatientVisitHistoryComponent implements OnInit {
     })
   }
 
-  getAllPatients(appts:any) {
+  getAllPatients(appts: any) {
     this.utilityService.getAllPatientNames().subscribe(
       patients => {
         this.allPatientNames = patients;
@@ -120,7 +113,7 @@ export class PatientVisitHistoryComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  
+
   downloadReport() {
     var element = document.getElementById("report");
     html2canvas(element).then((canvas) => {
@@ -128,7 +121,7 @@ export class PatientVisitHistoryComponent implements OnInit {
       var doc = new jspdf();
       var imgHeight = canvas.height * 208 / canvas.width;
       doc.addImage(imgData, 0, 0, 208, 250);
-      doc.save("Report_"+Date.now()+".pdf");
+      doc.save("Report_" + Date.now() + ".pdf");
     });
     this.showReport = false;
   }

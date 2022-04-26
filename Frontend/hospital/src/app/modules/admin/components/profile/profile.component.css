@@ -2,10 +2,6 @@ mat-toolbar {
     background: #004a9f;
     color: white;
   }
-  table {
-    width: 100%;
-  }
-  
   
   mat-sidenav {
     margin: 16px;
@@ -30,7 +26,7 @@ mat-toolbar {
   }
   
   mat-sidenav-container {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 65px);
   }
   
   .menu-button {
@@ -72,9 +68,60 @@ mat-toolbar {
   .flexExpand {
     flex: 1 1 auto;
 }
-.todaysAppointment{
-  background-color: rgb(240, 240, 136);
+
+.container-fluid {
+    margin-bottom: 4%;
+    
 }
-.activeRouting{
-  color: azure;
+
+.text-dark{
+    text-align: center;
+}
+
+.form-label{
+    font-weight: 600;
+}
+
+.otp{
+    margin: 10px 0px;
+}
+
+.login{
+    text-decoration: none;
+    padding: 0px;
+    margin: 5px 0px;
+}
+.errorMessage{
+    margin: 3%;
+    font-weight: 600;
+    text-align: center;
+    font-weight: 700;
+}
+label.col-form-label {
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+select.dropdown-toggle{
+  padding: 0.55em 0.4em;
+  margin-right: 1em;
+  width: 99%;
+}
+
+button {
+  margin: 2em 1em 2em 0em;
+}
+
+h2{
+  margin: 1em;
+  margin-bottom: 0;
+}
+
+input {
+  border: 1px solid gray;
+}
+
+
+.emp-register-form {
+background-color: #fafafa;
 }

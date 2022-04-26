@@ -23,7 +23,7 @@ export class ProcedureService {
     }
 
     addProcedureByAptId(procedures: any): Observable<any> {
-        return this.http.post<any>(this.procedureUrl +  '/appointment-procedures', procedures)
+        return this.http.post<any>(this.procedureUrl + '/appointment-procedures', procedures)
             .pipe(catchError(this.handleError));
     }
 
