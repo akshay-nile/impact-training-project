@@ -42,9 +42,9 @@ public class VisitServiceImpl implements VisitService {
 		String employeeUrl = "http://localhost:8082/hospital/employeeByEmail/" + apt.getEmployeeEmail();
 		String vitalUrl = "http://localhost:8085/patient-visits/vitals/aptId/" + apt.getAppointmentId();
 
-		String diagnosisUrl = "http://localhost:8080/diagnosis/api/appointment-diagnosis/" + apt.getAppointmentId();
-		String medicationUrl = "http://localhost:8080/medications/api/appointment-medications/" + apt.getAppointmentId();
-		String procedureUrl = "http://localhost:8080/procedures/api/appointment-procedures/" + apt.getAppointmentId();
+		String diagnosisUrl = "http://localhost:8086/diagnosis/api/appointment-diagnosis/" + apt.getAppointmentId();
+		String medicationUrl = "http://localhost:8087/medications/api/appointment-medications/" + apt.getAppointmentId();
+		String procedureUrl = "http://localhost:8089/procedures/api/appointment-procedures/" + apt.getAppointmentId();
 
 		Patient patient = patientService.getPatientDetails(patientUrl);
 		Employee employee = employeeService.getEmployeeDetails(employeeUrl);

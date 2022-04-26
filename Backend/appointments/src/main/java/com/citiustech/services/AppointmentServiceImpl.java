@@ -150,19 +150,13 @@ public class AppointmentServiceImpl implements AppointmentService {
 
 	@Override
 	public List<Appointment> getPastAppointmentsByPatientId(String patientId) {
-		LocalDate today = LocalDate.now();
-		List<Appointment> appointments = appointmentRepo
+		return appointmentRepo
 				.findByPatientIdAndIsDataCollectionApptAndDataCollectionStatusOrderByDateDesc(patientId, false, true);
-		return statusFilter(
-				appointments.stream().filter(a -> a.getDate().isBefore(today)).collect(Collectors.toList()));
 	}
 
 	@Override
 	public List<Appointment> getPastAppointmentsByEmployeeId(String employeeId) {
-		LocalDate today = LocalDate.now();
-		List<Appointment> appointments = appointmentRepo
+		return appointmentRepo
 				.findByEmployeeIdAndIsDataCollectionApptAndDataCollectionStatusOrderByDateDesc(employeeId, false, true);
-		return statusFilter(
-				appointments.stream().filter(a -> a.getDate().isBefore(today)).collect(Collectors.toList()));
 	}
 }
