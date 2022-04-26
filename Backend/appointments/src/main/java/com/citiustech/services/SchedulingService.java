@@ -30,7 +30,8 @@ public class SchedulingService {
 		} else {
 			return null;
 		}
-		return appointments.stream().filter(a -> a.getAppointmentId() != skip && a.getStatus().equals(Status.ACCEPTED))
+		return appointments.stream().filter(a -> a.getAppointmentId() != skip
+						&& (a.getStatus().equals(Status.ACCEPTED) || a.getStatus().equals(Status.PENDING)))
 				.map(Appointment::getTime).map(TimeSlot::fromString).collect(Collectors.toList());
 	}
 

@@ -17,7 +17,7 @@ public class EmailSenderService implements Runnable {
 
 	public Thread sendEmail(String toEmail, String subject, String body) {
 		SimpleMailMessage message = new SimpleMailMessage();
-		message.setFrom("taxdeptofind@gmail.com");
+		message.setFrom("CTHospitalO@gmail.com");
 		message.setTo(toEmail);
 		message.setSubject(subject);
 		message.setText(body);
