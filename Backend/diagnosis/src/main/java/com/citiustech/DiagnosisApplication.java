@@ -1,9 +1,9 @@
 package com.citiustech;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,31 +16,34 @@ import com.citiustech.repositories.DiagnosisRepository;
 @EnableEurekaClient
 @SpringBootApplication
 public class DiagnosisApplication {
+
 	private static void populateTableData(DiagnosisRepository repo) {
-		List<Diagnosis> list = new ArrayList<>();
-		
+		Set<Diagnosis> set = new HashSet<>();
+
 		try {
 			Scanner sc = new Scanner(new File("diagnosis_data.txt"));
-			sc.nextLine();
-			while(sc.hasNextLine()) {
+			while (sc.hasNextLine()) {
 				String line = sc.nextLine();
-				if(!line.matches("[A-Z]\\d+\\s[A-Z][a-z].*")) continue;
 				Diagnosis d = new Diagnosis();
 				d.setTitle(line.trim());
-				list.add(d);
+				set.add(d);
 			}
 			sc.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		repo.deleteAll();
-		repo.saveAll(list);
+		repo.saveAll(set);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		ApplicationContext context = SpringApplication.run(DiagnosisApplication.class, args);
-//		populateTableData(context.getBean(DiagnosisRepository.class));
+		DiagnosisRepository repo = context.getBean(DiagnosisRepository.class);
+		if (repo.count() < 100) {
+			System.out.println("POPULATING DIAGNOSIS TABLE FORM FILE...");
+			populateTableData(repo);
+		}
 	}
 
 }

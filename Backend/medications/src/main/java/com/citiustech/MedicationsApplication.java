@@ -1,11 +1,9 @@
 package com.citiustech;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Scanner;
-import java.util.stream.Collectors;
+import java.util.Set;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,41 +12,43 @@ import org.springframework.context.ApplicationContext;
 
 import com.citiustech.models.Medication;
 import com.citiustech.repositories.MedicationRepository;
+
 @EnableEurekaClient
 @SpringBootApplication
 public class MedicationsApplication {
-	
+
 	private static void populateTableData(MedicationRepository repo) {
-		List<Medication> list = new ArrayList<>();
-		
+		Set<Medication> set = new HashSet<>();
+
 		try {
-			Scanner sc = new Scanner(new File("medication_data.csv"));
+			Scanner sc = new Scanner(new File("medication_data.txt"));
 			sc.nextLine();
-			while(sc.hasNextLine()) {
-				List<String> words = Arrays.stream(sc.nextLine().split(","))
-						.map(String::trim).collect(Collectors.toList());
-				
-				if(words.get(2).length() == 0 || words.get(3).length() == 0 || words.get(5).length() == 0) continue;
-				if(words.get(2) == "0" || words.get(3) == "0" || words.get(5) == "0") continue;
-				
+			while (sc.hasNextLine()) {
+				String[] words = sc.nextLine().split("\t");
+				if (words.length != 3)
+					continue;
 				Medication med = new Medication();
-				med.setMedicationName(words.get(5));
-				med.setDosage(words.get(3));
-				med.setDescription(words.get(2));
-				list.add(med);
+				med.setMedicationName(words[0].trim());
+				med.setDosage(words[1].trim());
+				med.setDescription(words[2].trim());
+				set.add(med);
 			}
 			sc.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		repo.deleteAll();
-		repo.saveAll(list);
+		repo.saveAll(set);
 	}
-	
-	public static void main(String[] args) {
+
+	public static void main(String[] args) throws Exception {
 		ApplicationContext context = SpringApplication.run(MedicationsApplication.class, args);
-//		populateTableData(context.getBean(MedicationRepository.class));
+		MedicationRepository repo = context.getBean(MedicationRepository.class);
+		if (repo.count() < 100) {
+			System.out.println("POPULATING MEDICATION TABLE FROM FILE...");
+			populateTableData(repo);
+		}
 	}
 
 }

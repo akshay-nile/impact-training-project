@@ -1,9 +1,9 @@
 package com.citiustech;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,36 +16,37 @@ import com.citiustech.repositories.ProcedureRepository;
 @EnableEurekaClient
 @SpringBootApplication
 public class ProceduresApplication {
+
 	private static void populateTableData(ProcedureRepository repo) {
-		List<Procedure> list = new ArrayList<>();
+		Set<Procedure> set = new HashSet<>();
 
 		try {
-			Scanner sc = new Scanner(new File("procedure_data.csv"));
-			sc.nextLine();
+			Scanner sc = new Scanner(new File("procedure_data.txt"));
 			while (sc.hasNextLine()) {
-				String line = sc.nextLine();
-				int i = line.indexOf(",");
-				if (i == -1)
+				String[] words = sc.nextLine().split("\t");
+				if (words.length != 2)
 					continue;
-				String name = line.substring(0, i).trim();
-				String desc = line.substring(i + 1).trim();
 				Procedure p = new Procedure();
-				p.setProcedureName(name);
-				p.setDescription(desc);
-				list.add(p);
+				p.setProcedureName(words[0].trim());
+				p.setDescription(words[1].trim());
+				set.add(p);
 			}
 			sc.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		repo.deleteAll();
-		repo.saveAll(list);
+		repo.saveAll(set);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		ApplicationContext context = SpringApplication.run(ProceduresApplication.class, args);
-//		populateTableData(context.getBean(ProcedureRepository.class));
+		ProcedureRepository repo = context.getBean(ProcedureRepository.class);
+		if (repo.count() < 100) {
+			System.out.println("POPULATING PROCEDURE TABLE FROM FILE...");
+			populateTableData(repo);
+		}
 	}
 
 }

@@ -1,11 +1,9 @@
 package com.citiustech;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,36 +16,37 @@ import com.citiustech.repositories.AllergyRepository;
 @EnableEurekaClient
 @SpringBootApplication
 public class AllergyApplication {
-	
+
 	private static void populateTableData(AllergyRepository allergyRepo) {
-		List<Allergy> list = new ArrayList<>();
-		
+		Set<Allergy> set = new HashSet<>();
+
 		try {
-			Scanner sc = new Scanner(new File("allergy_data.csv"));
-			sc.nextLine();
-			while(sc.hasNextLine()) {
-				String[] words = sc.nextLine().split(",");
+			Scanner sc = new Scanner(new File("allergy_data.txt"));
+			while (sc.hasNextLine()) {
+				String[] words = sc.nextLine().split("\t");
+				if (words.length != 2)
+					continue;
 				Allergy allergy = new Allergy();
-				allergy.setAllergyId(words[0].trim());
-				allergy.setAllergyType(words[1].trim());
-				allergy.setAllergyName(words[2].trim());
-				allergy.setAllergySource(words[3].trim());
-				allergy.setAllergySequence(words[4].trim());
-				allergy.setAllerginicity(words[5].trim());
-				list.add(allergy);
+				allergy.setAllergyType(words[0].trim());
+				allergy.setAllergyName(words[1].trim());
+				set.add(allergy);
 			}
 			sc.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		allergyRepo.deleteAll();
-		allergyRepo.saveAll(list);
+		allergyRepo.saveAll(set);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		ApplicationContext context = SpringApplication.run(AllergyApplication.class, args);
-//		populateTableData(context.getBean(AllergyRepository.class));
+		AllergyRepository repo = context.getBean(AllergyRepository.class);
+		if (repo.count() < 100) {
+			System.out.println("POPULATING ALLERGY TABLE FROM FILE...");
+			populateTableData(repo);
+		}
 	}
 
 }

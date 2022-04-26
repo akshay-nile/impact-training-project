@@ -1,0 +1,1567 @@
+Animal	Bovine
+Animal	Bovine
+Animal	Dog
+Animal	Dog
+Animal	Dog
+Animal	Dog
+Animal	Dog
+Animal	Dog
+Animal	Dog
+Animal	Dog
+Animal	Dog
+Animal	Domestic guinea pig
+Animal	Domestic guinea pig
+Animal	Domestic guinea pig
+Animal	Domestic guinea pig
+Animal	Horse
+Animal	Horse
+Animal	Horse
+Animal	Horse
+Animal	Horse
+Animal	Cat
+Animal	Cat
+Animal	Cat
+Animal	Cat
+Animal	Cat
+Animal	Golden hamster
+Animal	Mouse
+Animal	Mouse
+Animal	European rabbit
+Animal	European rabbit
+Animal	European rabbit
+Animal	Rat
+Animal	Pig
+Animal	Dog
+Animal	Dog
+Animal	Horse
+Animal	Cat
+Animal	Cat
+Animal	Golden hamster
+Animal	Mouse
+Animal	Pig
+Animal	Pig
+Animal	Cat
+Animal	Mouse
+Animal	Rat
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Mushroom
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Fungi	Fungus
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	Mite
+Insect	Mite
+Insect	Mite
+Insect	Silkworm
+Insect	Midge
+Insect	Midge
+Insect	Midge
+Insect	Midge
+Insect	Midge
+Insect	Midge
+Insect	Midge
+Insect	Midge
+Insect	Midge
+Insect	Midge
+Insect	Midge
+Insect	Midge
+Insect	Midge
+Insect	Midge
+Insect	Midge
+Insect	Midge
+Insect	Silverfish
+Insect	booklice
+Insect	booklice
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	Indian meal moth
+Insect	Indian meal moth
+Insect	Mite
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	German cockroach
+Insect	Mite
+Insect	Mite
+Insect	Mite
+Insect	Silverfish
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	American cockroach
+Insect	Smokybrown cockroach
+Mite	Mite
+Mite	Mite
+Mite	Mite
+Mite	Mite
+Mite	Mite
+Mite	Mite
+Mite	Mite
+Mite	Mite
+Mite	Mite
+Mite	Mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	Storage mite
+Mite	Storage mite
+Mite	Para rubber tree
+Mite	Storage mite
+Mite	Storage mite
+Mite	Storage mite
+Mite	Storage mite
+Mite	Storage mite
+Mite	Storage mite
+Mite	Storage mite
+Mite	Storage mite
+Mite	Storage mite
+Mite	Storage mite
+Mite	Dust mite
+Mite	Dust mite
+Mite	Dust mite
+Mite	Dust mite
+Mite	Dust mite
+Mite	Dust mite
+Mite	Dust mite
+Mite	Dust mite
+Mite	Mite
+Mite	Mite
+Mite	Mite
+Mite	Mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	Storage mite
+Mite	Storage mite
+Mite	Storage mite
+Mite	Scabies mite
+Mite	Mite
+Mite	Dust mite
+Mite	Dust mite
+Mite	Dust mite
+Mite	Dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	House dust mite
+Mite	Storage mite
+Plant	Alder
+Plant	Alder
+Plant	Common Amaranth
+Plant	Common Amaranth
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Western ragweed
+Plant	Western ragweed
+Plant	Giant ragweed
+Plant	Pineapple
+Plant	Sweet vernal grass
+Plant	Mugwort
+Plant	Mugwort
+Plant	Mugwort
+Plant	Mugwort
+Plant	Mugwort
+Plant	Mugwort
+Plant	Mugwort
+Plant	Mugwort
+Plant	Mugwort
+Plant	Mugwort
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	Wild cabbage
+Plant	Hemp
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	Hornbeam
+Plant	European chestnut
+Plant	Madagascar periwinkle
+Plant	Japanese cypress
+Plant	Japanese cypress
+Plant	Japanese cypress
+Plant	Pigweed
+Plant	Pigweed
+Plant	Pigweed
+Plant	European hazelnut
+Plant	European hazelnut
+Plant	European hazelnut
+Plant	European hazelnut
+Plant	European hazelnut
+Plant	European hazelnut
+Plant	European hazelnut
+Plant	Saffron crocus
+Plant	Saffron crocus
+Plant	Japanese cedar
+Plant	Japanese cedar
+Plant	Japanese cedar
+Plant	Japanese cedar
+Plant	Arizona Cypress
+Plant	Mediterranean Cypress
+Plant	Mediterranean Cypress
+Plant	Mediterranean Cypress
+Plant	Mediterranean Cypress
+Plant	Mediterranean Cypress
+Plant	Mediterranean Cypress
+Plant	Mediterranean Cypress
+Plant	Bermuda grass
+Plant	Bermuda grass
+Plant	Bermuda grass
+Plant	Bermuda grass
+Plant	Bermuda grass
+Plant	Bermuda grass
+Plant	Bermuda grass
+Plant	Orchard grass
+Plant	Orchard grass
+Plant	Orchard grass
+Plant	Orchard grass
+Plant	European Beech
+Plant	European ash
+Plant	European ash
+Plant	European ash
+Plant	Soybean
+Plant	Sunflower
+Plant	Sunflower
+Plant	Velvet grass
+Plant	Velvet grass
+Plant	Velvet grass
+Plant	Velvet grass
+Plant	Japanese hop
+Plant	Mountain cedar
+Plant	Mountain cedar
+Plant	Mountain cedar
+Plant	Juniper
+Plant	Red cedar
+Plant	Red cedar
+Plant	summer cypress
+Plant	summer cypress
+Plant	Privet
+Plant	Privet
+Plant	Perennial ryegrass
+Plant	Perennial ryegrass
+Plant	Perennial ryegrass
+Plant	Perennial ryegrass
+Plant	Perennial ryegrass
+Plant	Perennial ryegrass
+Plant	Perennial ryegrass
+Plant	Perennial ryegrass
+Plant	Perennial ryegrass
+Plant	Annual mercury grass
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Rice
+Plant	European hop hornbeam
+Plant	Parthenium hysterophorus
+Plant	Weed
+Plant	Weed
+Plant	Weed
+Plant	Weed
+Plant	Weed
+Plant	Weed
+Plant	Weed
+Plant	Weed
+Plant	Weed
+Plant	Weed
+Plant	Bahia grass
+Plant	Canary grass
+Plant	Canary grass
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Siberian hamster
+Plant	London plane tree
+Plant	London plane tree
+Plant	London plane tree
+Plant	London plane tree
+Plant	Narrow-leaved plantain
+Plant	Narrow-leaved plantain
+Food	Kiwi
+Plant	Narrow-leaved plantain
+Plant	oriental plane
+Plant	oriental plane
+Plant	Kentucky bluegrass
+Plant	Kentucky bluegrass
+Plant	mesquite
+Plant	mesquite
+Plant	Oak
+Plant	Oak
+Plant	Oak
+Plant	Thistle
+Plant	Thistle
+Plant	Thistle
+Plant	Thistle
+Plant	Thistle
+Plant	Thistle
+Plant	Thistle
+Plant	Rye
+Plant	Johnson grass
+Plant	Johnson grass
+Plant	Johnson grass
+Plant	Johnson grass
+Plant	Johnson grass
+Plant	Johnson grass
+Plant	Lilac
+Plant	Lilac
+Plant	Lilac
+Plant	Lilac
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Bent grass
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Short ragweed
+Plant	Western ragweed
+Plant	Sweet vernal grass
+Plant	Mugwort
+Plant	Mugwort
+Plant	Mugwort
+Plant	European white birch
+Plant	European white birch
+Plant	European white birch
+Plant	Japanese white birch
+Plant	Birch
+Plant	Birch
+Plant	Rape
+Plant	Turnip
+Plant	Turnip
+Plant	Hornbeam
+Plant	Fishtail Palm
+Plant	European chestnut
+Plant	Japanese cypress
+Plant	Pigweed
+Plant	European hazelnut
+Plant	Japanese cedar
+Plant	Japanese cedar
+Plant	Japanese cedar
+Plant	Japanese cedar
+Plant	Japanese cedar
+Plant	Japanese cedar
+Plant	Arizona Cypress
+Plant	Arizona Cypress
+Plant	Arizona Cypress
+Plant	Bermuda grass
+Plant	Bermuda grass
+Plant	European Beech
+Plant	European ash
+Plant	European ash
+Plant	Velvet grass
+Plant	Velvet grass
+Plant	Barley
+Plant	Barley
+Plant	Barley
+Plant	Barley
+Plant	Barley
+Plant	Barley
+Plant	Japanese hop
+Plant	Juniper
+Plant	Cedar
+Plant	Red cedar
+Plant	Trumpet lily
+Plant	Tobacco
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Rice
+Plant	Rice
+Plant	Weed
+Plant	Bahia grass
+Plant	Canary grass
+Plant	Canary grass
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Narrow-leaved plantain
+Plant	Kentucky bluegrass
+Plant	Thistle
+Plant	Thistle
+Plant	Thistle
+Plant	Tall fescue
+Plant	Rye
+Plant	Rye
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Corn
+Plant	Corn
+Plant	Corn
+Plant	Corn
+Plant	Corn
+Plant	Corn
+Plant	Corn
+Plant	Corn
+Plant	Corn
+Plant	Corn
+Plant	European white birch
+Plant	Papaya
+Plant	European chestnut
+Plant	Japanese cedar
+Plant	Arizona Cypress
+Plant	Bermuda grass
+Plant	Orchard grass
+Plant	Orchard grass
+Plant	Orchard grass
+Plant	Perennial ryegrass
+Plant	Perennial ryegrass
+Plant	Perennial ryegrass
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Olive tree
+Plant	Rice
+Plant	Weed
+Plant	Weed
+Plant	Common timothy
+Plant	Common timothy
+Plant	Common timothy
+Plant	Kentucky bluegrass
+Bacteria airway	Bacteria
+Bacteria airway	Bacteria
+Bacteria airway	Bacteria
+Bacteria skin	Bacteria
+Bacteria skin	Bacteria
+Bacteria skin	Bacteria
+Bacteria skin	Bacteria
+Bacteria skin	Bacteria
+Contact	Turnip
+Contact	Yeast
+Contact	Yeast
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Yeast
+Contact	Yeast
+Contact	Yeast
+Contact	Yeast
+Contact	Yeast
+Contact	Yeast
+Contact	Yeast
+Contact	Yeast
+Contact	Yeast
+Contact	Yeast
+Contact	Yeast
+Contact	Yeast
+Contact	Yeast
+Contact	Pine moth
+Contact	Pine moth
+Contact	Fungus
+Contact	Fungus
+Contact	Fungus
+Contact	Fungus
+Contact	Fungus
+Contact	Yeast
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Yeast
+Contact	Yeast
+Contact	Yeast
+Contact	Yeast
+Contact	Yeast
+Contact	Pine moth
+Contact	Fungus
+Contact	Fungus
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Contact	Para rubber tree
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Bovine
+Food	Bovine
+Food	Bovine
+Food	Bovine
+Food	Bovine
+Food	Bovine
+Food	Crab
+Food	Atlantic herring
+Food	Atlantic herring
+Food	Atlantic herring
+Food	Shrimp
+Food	Shrimp
+Food	Shrimp
+Food	Shrimp
+Food	Shrimp
+Food	Shrimp
+Food	American  oyster
+Food	American  oyster
+Food	Carp
+Food	Carp
+Food	Asinus
+Food	Horse
+Food	Chinese mitten crab
+Food	Baltic cod
+Food	Atlantic cod
+Food	Atlantic cod
+Food	Atlantic cod
+Food	Atlantic cod
+Food	Atlantic cod
+Food	Chicken
+Food	Chicken
+Food	Chicken
+Food	Chicken
+Food	Chicken
+Food	Chicken
+Food	Chicken
+Food	Chicken
+Food	Haliotis laevigata x Haliotis rubra
+Food	Brown garden snail
+Food	American lobster
+Food	American lobster
+Food	Asian Seabass
+Food	Asian Seabass
+Food	Flat fish
+Food	Whiteleg Shrimp
+Food	Whiteleg Shrimp
+Food	Whiteleg Shrimp
+Food	Whiteleg Shrimp
+Food	Giant River Prawn
+Food	King Prawn
+Food	Greasyback shrimp
+Food	chum salmon
+Food	rainbow trout
+Food	rainbow trout
+Food	Mozambique tilapia
+Food	caribean shrimp
+Food	Lobster
+Food	Brown shrimp
+Food	Black tiger shrimp
+Food	Black tiger shrimp
+Food	Black tiger shrimp
+Food	Black tiger shrimp
+Food	Danube crayfish
+Food	blue swimmer crab
+Food	red swamp crayfish
+Food	red swamp crayfish
+Food	red swamp crayfish
+Food	red swamp crayfish
+Food	Frog
+Food	Frog
+Food	Rastrelliger kanagurta
+Food	Saccostrea glomerata
+Food	Salmon
+Food	Salmon
+Food	Salmon
+Food	South American pilchard
+Food	Chub mackerel
+Food	Atlantic mackerel
+Food	green mud crab
+Food	green mud crab
+Food	green mud crab
+Food	ocean perch (red fish)
+Food	ocean perch (red fish)
+Food	Yellowfin tuna
+Food	Yellowfin tuna
+Food	Octopus
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Parasitic fish worm
+Food	Crustacean
+Food	Japanese turban shell
+Food	Bovine
+Food	Bovine
+Food	Bovine
+Food	Bovine
+Food	Bovine
+Food	Bovine
+Food	Bovine
+Food	Snow Crab
+Food	Eastern oyster
+Food	Horsehair crab
+Food	Chinese mitten crab
+Food	North Pacific Krill
+Food	Krill
+Food	Crimson seabream
+Food	Chinese white shrimp
+Food	Chinese white shrimp
+Food	Banana Prawn
+Food	Banana Prawn
+Food	Mollusc
+Food	Chicken
+Food	Chicken
+Food	Disk abalone
+Food	Disk abalone
+Food	Abalone
+Food	Whiteleg Shrimp
+Food	Giant River Prawn
+Food	Patagonian Grenadier
+Food	Blue hake
+Food	Kuruma Shrimp
+Food	southern hake
+Food	Southern hake
+Food	Silver hake
+Food	Shallow-water cape hake
+Food	Southern Pacific hake
+Food	European hake
+Food	Deep-water cape hake
+Food	Benguela hake
+Food	North Pacific hake
+Food	Noble scallop
+Food	Wrinkled Neptune
+Food	Octopus
+Food	red squid
+Food	rainbow trout
+Food	mantis shrimp
+Food	Kamchatka crab
+Food	Black tiger shrimp
+Food	Asian green mussell
+Food	Crab
+Food	Crab
+Food	Arthropod
+Food	Mollusc
+Food	Frog
+Food	Frog
+Food	Salmon
+Food	Salmon
+Food	Salmon
+Food	Brook trout
+Food	Clam
+Food	green mud crab
+Food	green mud crab
+Food	giant mud crab
+Food	giant mud crab
+Food	cuttlefish
+Food	bigfin reef squid
+Food	Chinese razor clam
+Food	Gould's razor shell
+Food	Alaska pollock
+Food	Yellowfin tuna
+Food	Yellowfin tuna
+Food	Japanese flying squid
+Food	Japanese horse mackerel
+Food	clam
+Food	Clam
+Food	Swordfish
+Food	Atlantic cod
+Food	Chicken
+Food	Chicken
+Food	Chicken
+Food	Chicken
+Food	Salmon
+Food	Shaggy mane
+Food	Yellow mealworm
+Food	Kiwi
+Food	Kiwi
+Food	Kiwi
+Food	Kiwi
+Food	Kiwi
+Food	Kiwi
+Food	Kiwi
+Food	Kiwi
+Food	Kiwi
+Food	Kiwi
+Food	Kiwi
+Food	Kiwi
+Food	Cashew
+Food	Cashew
+Food	Pineapple
+Food	Cashew
+Food	Cashew
+Food	Celery
+Food	Celery
+Food	Celery
+Food	Celery
+Food	Celery
+Food	Celery
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Brazil nut
+Food	Brazil nut
+Food	Mustard
+Food	Rape
+Food	Turnip
+Food	Turnip
+Food	Bell pepper
+Food	Bell pepper
+Food	Pecan
+Food	Pecan
+Food	Pecan
+Food	Papaya
+Food	European chestnut
+Food	Lemon
+Food	Navel orange
+Food	Navel orange
+Food	Navel orange
+Food	Navel orange
+Food	Navel orange
+Food	Citrullus lanatus
+Food	Coffee
+Food	Coffee
+Food	Coffee
+Food	European hazelnut
+Food	European hazelnut
+Food	European hazelnut
+Food	European hazelnut
+Food	European hazelnut
+Food	European hazelnut
+Food	European hazelnut
+Food	European hazelnut
+Food	European hazelnut
+Food	European hazelnut
+Food	European hazelnut
+Food	Muskmelon
+Food	Muskmelon
+Food	Muskmelon
+Food	Carrot
+Food	Carrot
+Food	Carrot
+Food	Carrot
+Food	Carrot
+Food	Carrot
+Food	Carrot
+Food	Carrot
+Food	Carrot
+Food	Buckwheat
+Food	Buckwheat
+Food	Buckwheat
+Food	Strawberry
+Food	Strawberry
+Food	Strawberry
+Food	Strawberry
+Food	Strawberry
+Food	Strawberry
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Sunflower
+Food	Barley
+Food	Barley
+Food	Black walnut
+Food	Black walnut
+Food	Black walnut
+Food	English walnut
+Food	English walnut
+Food	English walnut
+Food	English walnut
+Food	English walnut
+Food	Garden lettuce
+Food	Lentil
+Food	Lentil
+Food	Lentil
+Food	Lychee nut
+Food	blue lupin
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Cassava
+Food	Black mulberry
+Food	Banana
+Food	Banana
+Food	Banana
+Food	Avocado
+Food	Kidney bean
+Food	Kidney bean
+Food	Pinus koraiensis
+Food	Pine
+Food	Pea
+Food	Pea
+Food	Pea
+Food	Pea
+Food	pistachio
+Food	pistachio
+Food	pistachio
+Food	pistachio
+Food	pistachio
+Food	Apricot
+Food	Apricot
+Food	Cherry
+Food	Cherry
+Food	Cherry
+Food	Cherry
+Food	Cherry
+Food	Cherry
+Food	Cherry
+Food	Plum
+Food	Almond
+Food	Almond
+Food	Almond
+Food	Peach
+Food	Peach
+Food	Peach
+Food	Plant hybrid
+Food	Plant hybrid
+Food	Plant hybrid
+Food	Peach
+Food	Peach
+Food	Peach
+Food	Peach
+Food	Pomegranate
+Food	Pomegranate
+Food	Pomegranate
+Food	Pomegranate
+Food	Pear
+Food	Pear
+Food	Pear
+Food	Pear
+Food	Castor bean
+Food	raspberry
+Food	raspberry
+Food	Rye
+Food	Rye
+Food	Rye
+Food	Sesame
+Food	Sesame
+Food	Sesame
+Food	Sesame
+Food	Sesame
+Food	Sesame
+Food	Sesame
+Food	White mustard
+Food	White mustard
+Food	White mustard
+Food	White mustard
+Food	Tomato
+Food	Tomato
+Food	Tomato
+Food	Tomato
+Food	Tomato
+Food	Tomato
+Food	Tomato
+Food	Tomato
+Food	Potato
+Food	Potato
+Food	Potato
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Hardy Kiwi
+Food	Kiwi
+Food	Kiwi
+Food	Kiwi
+Food	Kiwi
+Food	Kiwi
+Food	Climber (plant)
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Peanut
+Food	Brazil nut
+Food	Rape
+Food	Pecan
+Food	European chestnut
+Food	European hazelnut
+Food	Muskmelon
+Food	Muskmelon
+Food	Netted muskmelon
+Food	Carrot
+Food	Carrot
+Food	Carrot
+Food	Buckwheat
+Food	Buckwheat
+Food	Buckwheat
+Food	Buckwheat
+Food	Buckwheat
+Food	Buckwheat
+Food	Buckwheat
+Food	Strawberry
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Soybean
+Food	Sunflower
+Food	Barley
+Food	Barley
+Food	English walnut
+Food	Lychee nut
+Food	white lupine
+Food	blue lupin
+Food	wolfberry
+Food	Apple
+Food	Apple
+Food	Apple
+Food	Cassava
+Food	Sapodilla plum
+Food	White Mulberry
+Food	Mulberry
+Food	Banana
+Food	Banana
+Food	Rice
+Food	Rice
+Food	Rice
+Food	Pine
+Food	pistachio
+Food	Pea
+Food	Apricot
+Food	Apricot
+Food	Cherry
+Food	Cherry
+Food	Cherry
+Food	Almond
+Food	Almond
+Food	Almond
+Food	Almond
+Food	Almond
+Food	Plant hybrid
+Food	Plant hybrid
+Food	Peach
+Food	Peach
+Food	Peach
+Food	Pomegranate
+Food	Pear
+Food	Sesame
+Food	Sesame
+Food	Sesame
+Food	White mustard
+Food	Tomato
+Food	Tomato
+Food	Eggplant
+Food	Potato
+Food	Potato
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	Wheat
+Food	mung bean
+Food	Grape
+Food	Grape
+Food	Corn
+Food	Corn
+Food	mung bean
+Food	mung bean
+Food	mung bean
+Food	mung bean
+Food	mung bean
+Food	Corn
+Food	Corn
+Food	Corn
+Food	Corn
+Food	Chinese-date
+Food	Pecan
+Food	Strawberry
+Food	English walnut
+Food	Apple
+Food	Apple
+Food	White mustard
+Food	Tomato
+Food	Potato
+Food	Potato
+Food	Grape
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Plant	Wheat
+Parasite	Parasitic fish worm
+Parasite	Schistosoma
+Parasite	Schistosoma
+Vaccine	Bovine
+Venom or Salivary	Yellow fever mosquito
+Venom or Salivary	Yellow fever mosquito
+Venom or Salivary	Yellow fever mosquito
+Venom or Salivary	Yellow fever mosquito
+Venom or Salivary	Yellow fever mosquito
+Venom or Salivary	Yellow fever mosquito
+Venom or Salivary	Yellow fever mosquito
+Venom or Salivary	Yellow fever mosquito
+Venom or Salivary	Yellow fever mosquito
+Venom or Salivary	Yellow fever mosquito
+Venom or Salivary	Indian honeybee
+Venom or Salivary	Giant honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	European pigeon tick
+Venom or Salivary	Bumblebee
+Venom or Salivary	Bumblebee
+Venom or Salivary	Bumblebee
+Venom or Salivary	Bumblebee
+Venom or Salivary	Whiteface hornet
+Venom or Salivary	Whiteface hornet
+Venom or Salivary	Whiteface hornet
+Venom or Salivary	Whiteface hornet
+Venom or Salivary	Whiteface hornet
+Venom or Salivary	Tsetse fly
+Venom or Salivary	Jumper ant
+Venom or Salivary	Jumper ant
+Venom or Salivary	Giant Bull Ant
+Venom or Salivary	Asian needle ant
+Venom or Salivary	Paper wasp
+Venom or Salivary	Paper wasp
+Venom or Salivary	Paper wasp
+Venom or Salivary	Paper wasp
+Venom or Salivary	Paper wasp
+Venom or Salivary	Paper wasp
+Venom or Salivary	Paper wasp
+Venom or Salivary	Paper wasp
+Venom or Salivary	Paper wasp
+Venom or Salivary	Paper wasp
+Venom or Salivary	Paper wasp
+Venom or Salivary	Paper wasp
+Venom or Salivary	Paper wasp
+Venom or Salivary	wasp
+Venom or Salivary	wasp
+Venom or Salivary	wasp
+Venom or Salivary	wasp
+Venom or Salivary	Tropical Fire Ant
+Venom or Salivary	Red fire ant
+Venom or Salivary	Red fire ant
+Venom or Salivary	Red fire ant
+Venom or Salivary	Red fire ant
+Venom or Salivary	Black fire ant
+Venom or Salivary	Black fire ant
+Venom or Salivary	Horse Fly
+Venom or Salivary	Horse Fly
+Venom or Salivary	Horse Fly
+Venom or Salivary	Western conenose
+Venom or Salivary	Yellow fever mosquito
+Venom or Salivary	Yellow fever mosquito
+Venom or Salivary	Indian honeybee
+Venom or Salivary	Giant honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	Honeybee
+Venom or Salivary	European pigeon tick
+Venom or Salivary	Farmyyard midge
+Venom or Salivary	Tsetse fly
+Venom or Salivary	Jumper ant
+Venom or Salivary	wasp
+Venom or Salivary	wasp
+Venom or Salivary	Wasp
+Venom or Salivary	mite
+Venom or Salivary	Scabies mite
+Venom or Salivary	Scabies mite
+Venom or Salivary	Scabies mite
+Venom or Salivary	Scabies mite
+Venom or Salivary	Tall fescue
+Venom or Salivary	black fly
+Venom or Salivary	Red fire ant
+Venom or Salivary	Brazilian fire ant
+Venom or Salivary	Lesser banded hornet
+Venom or Salivary	Hornet
+Venom or Salivary	Hornet
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	European hornet
+Venom or Salivary	European hornet
+Venom or Salivary	European hornet
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Wasp
+Venom or Salivary	Yellow jacket
+Venom or Salivary	Jumper ant
+Venom or Salivary	Tropical Fire Ant
+Venom or Salivary	Red fire ant
+Venom or Salivary	Wasp
+Parasite	Parasitic roundworm
+Parasite	Parasitic roundworm
+Parasite	Parasitic roundworm
+Parasite	Parasitic roundworm
+Parasite	Parasitic roundworm
+Parasite	Parasitic roundworm
+Parasite	Parasitic nematode
+Parasite	Parasitic nematode
+Animal	Cat
+Fungi	Fungus
+Insect	American cockroach
+Insect	American cockroach
+Plant	Date palm
+Plant	Thistle
+Contact	Para rubber tree
+Food	Bovine
+Venom or Salivary	biting midges
