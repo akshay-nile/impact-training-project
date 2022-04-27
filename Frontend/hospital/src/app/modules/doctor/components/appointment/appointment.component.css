@@ -30,6 +30,11 @@ mat-toolbar {
   
     overflow: auto;
   }
+
+
+  mat-paginator {
+    font-size: 11.5pt;
+  }
   
   mat-sidenav-container {
     height: calc(100vh - 100px);

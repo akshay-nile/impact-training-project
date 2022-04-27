@@ -2,59 +2,21 @@ package com.citiustech.models;
 
 import java.time.LocalDate;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-import org.hibernate.annotations.GenericGenerator;
-
 import com.citiustech.models.constants.Status;
 import com.citiustech.models.constants.Title;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-@Entity
-@Table(name = "patients")
 public class Patient {
 
-	@Id
-	@GenericGenerator(name = "patient_seq_gen", strategy = "com.citiustech.generators.PatientGenerator")
-	@GeneratedValue(generator = "patient_seq_gen")
 	private String patientId;
-
-	@Column
 	private Title title;
-
-	@Column
 	private String firstName;
-
-	@Column
 	private String lastName;
-
-	@Column(unique = true)
 	private String email;
-
-	@Column(unique = true)
 	private String phone;
-
-	@Column
 	private LocalDate birthdate;
-
-	@Column(nullable = false)
 	private int password;
-
-	@Column
 	private Status status = Status.ACTIVE;
-
-	@OneToOne(mappedBy="patient", cascade = CascadeType.ALL)
-	@JsonManagedReference
 	private Nominee nominee;
-
-	@OneToOne(mappedBy="patient", cascade = CascadeType.ALL)
-	@JsonManagedReference
 	private Demographics demographics;
 
 	public Nominee getNominee() {

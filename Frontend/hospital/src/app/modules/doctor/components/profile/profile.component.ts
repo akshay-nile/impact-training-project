@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { confirmPassword, passwordValidator } from 'src/app/validators/password.validator';
 import { UtilityService } from 'src/app/services/utility.service';
 import { UserCredential } from 'src/app/models/UserCredential';
-import { AdminService } from 'src/app/modules/admin/services/admin.service';
+import { AdminService } from 'src/app/services/admin.service';
 import { formatDate } from '@angular/common';
 import { Employee } from 'src/app/models/Employee';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -103,7 +103,7 @@ constructor(private snackbar: MatSnackBar,
   // }
 
   editEmployee() {
-    this.adminService.updateEmployee(this.form.value).subscribe(res => {
+    this.adminService.updateEmployee(this.form.value, "update").subscribe(res => {
       if (res != null && res.employeeId === this.form.value.employeeId) {
         this.snackbar.open("Profile details successfully updated", "", { duration: 3000 });
         for (let field of 'title firstName lastName birthdate specialization'.split(' ')) {

@@ -44,8 +44,8 @@ public class Employee {
 	@Column
 	private String specialization;
 
-	@Column(nullable = false)
-	private int password = "Password@123".hashCode();
+	@Column
+	private int password;
 
 	@Column
 	private Status status = Status.ACTIVE;

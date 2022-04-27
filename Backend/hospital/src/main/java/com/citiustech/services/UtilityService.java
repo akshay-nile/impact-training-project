@@ -97,4 +97,8 @@ public class UtilityService {
 		return patientRepo.findById(patientId).orElse(null);
 	}
 
+	public Employee updateEmployee(Employee employee) {
+		return employeeRepo.save(employee);
+	}
+
 }

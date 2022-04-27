@@ -1,0 +1,88 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col col-md-12 col-sm-12">
+      <div class="card shadow">
+        <div class="card-body">
+          <form [formGroup]="form">
+            <div class="row">
+              <div class="form-group col col-md-2 col-sm-12">
+                <label class="col-form-label">Title:</label> <br />
+                <select class="dropdown-toggle" formControlName="title">
+                  <option [value]="''"></option>
+                  <option *ngFor="let title of 'Mr Ms Mrs Dr'.split(' ')" [value]="title">
+                    {{ title | titlecase }}
+                  </option>
+                </select>
+                <small *ngIf="f('title').touched && f('title').value === ''" class="text-danger">Please select
+                  title</small>
+              </div>
+              <div class="form-group col col-md-5 col-sm-12">
+                <label class="col-form-label">First Name:</label>
+                <input formControlName="firstName" type="text" class="form-control" />
+                <small *ngIf="f('firstName').touched && f('firstName').errors?.required" class="text-danger">First name
+                  is required</small>
+              </div>
+              <div class="form-group col col-md-5 col-sm-12">
+                <label class="col-form-label">Last Name:</label>
+                <input formControlName="lastName" type="text" class="form-control" />
+                <small *ngIf="f('lastName').touched && f('lastName').errors?.required" class="text-danger">Last name is
+                  required</small>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col col-md-12 col-sm-12">
+                <label for="email" class="col-form-label">Email ID:</label>
+                <input type="text" formControlName="email" id="email" class="form-control" (blur)="onEmailEntered()" />
+              </div>
+              <div *ngIf="f('email').touched && f('email')?.errors">
+                <small *ngIf="f('email').errors?.required" class="text-danger">Email is required</small>
+                <small *ngIf="f('email').errors?.email" class="text-danger">Not a valid email id</small>
+              </div>
+              <small *ngIf="f('email').dirty && !f('email').errors && emailExists" class="text-danger">Email is already
+                used</small>
+            </div>
+
+            <div class="row">
+              <div class="form-group col col-md-4 col-sm-12">
+                <label class="col-form-label">Role:</label>
+                <select class="dropdown-toggle" formControlName="role" #selectRole
+                  (change)="selectRole.value !== 'DOCTOR' ? f('specialization').disable() : f('specialization').enable()">
+                  <option [value]="''">Select Role</option>
+                  <option *ngFor="let role of 'NURSE DOCTOR ADMIN'.split(' ')" [value]="role">
+                    {{ role | titlecase }}
+                  </option>
+                </select>
+                <small *ngIf="f('role').touched && f('role').value === ''" class="text-danger">Please select
+                  role</small>
+              </div>
+              <div class="form-group col col-md-8 col-sm-12">
+                <label class="col-form-label">Specialization:</label>
+                <input formControlName="specialization" type="text" class="form-control">
+                <small *ngIf="f('specialization').touched && f('specialization').errors"
+                  class="text-danger">Specialization is required</small>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col col-md-12 col-sm-12">
+                <label class="col-form-label">Date of Birth:</label>
+                <input formControlName="birthdate" type="date" class="form-control" max="{{ today }}" />
+                <small *ngIf="f('birthdate').touched && f('birthdate').errors?.required" class="text-danger">Date of
+                  Birth is required</small>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 text-center">
+                <button [disabled]="form?.invalid" class="btn btn-success me-3"
+                  (click)="registerEmployee()">Register</button>
+                <button class="btn btn-warning ms-3" (click)="close()">Close</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,13 +3,12 @@
         <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
         <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
     </button>
-    <a *ngIf="showProfile" style="margin-left: 20%;text-decoration: none;" routerLink="/admin/dashboard/user-management"
-        routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Manage User</a>
-    <a *ngIf="showProfile" style="margin-left: 5%;text-decoration: none;"
-        routerLink="/admin/dashboard/patient-management" routerLinkActive="activeRouting"
-        [routerLinkActiveOptions]="{ exact: true }">Manage Patient</a>
-    <a *ngIf="showProfile" style="margin-left: 5%;text-decoration: none;" routerLink="/admin/dashboard/data-management"
-        routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Manage Data</a>
+    <a *ngIf="showProfile" style="margin-left: 20%;text-decoration: none;" routerLink="/admin/dashboard/staff"
+        routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Staff Management</a>
+    <a *ngIf="showProfile" style="margin-left: 5%;text-decoration: none;" routerLink="/admin/dashboard/patients"
+        routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Patient Management</a>
+    <a *ngIf="showProfile" style="margin-left: 5%;text-decoration: none;" routerLink="/admin/dashboard/data"
+        routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Data Management</a>
     <a *ngIf="!showProfile" style="margin-left: 20%;text-decoration: none;" routerLink="/admin/dashboard/profile"
         routerLinkActive="activeRouting" [routerLinkActiveOptions]="{ exact: true }">Profile</a>
     <span class="flexExpand"></span>
@@ -21,17 +20,18 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
         <img class="avatar mat-elevation-z8" src="assets/profileImg.png" />
-        <h4 class="name" style="margin-bottom:0; margin-top: 1em;">{{user.title + '. ' + user.firstName + ' ' +
-            user.lastName}}
+        <h4 class="name" style="margin-bottom:0; margin-top: 1em;">{{userName}}
         </h4>
         <p class="designation">(Admin)</p>
+
         <mat-divider></mat-divider>
+        
         <button *ngIf="showProfile" mat-button class="menu-button" routerLink="/admin/dashboard/profile"
             (click)="updateProfile()">
             <mat-icon style="margin-right: 0.5em;">account_circle</mat-icon>
             <span>Profile</span>
         </button>
-        <button *ngIf="!showProfile" mat-button class="menu-button" routerLink="/admin/dashboard/user-management"
+        <button *ngIf="!showProfile" mat-button class="menu-button" routerLink="/admin/dashboard"
             (click)="updateProfile()">
             <mat-icon style="margin-right: 0.5em;">home</mat-icon>
             <span>Home</span>
@@ -39,11 +39,12 @@
 
         <mat-divider></mat-divider>
 
-        <button mat-button class="menu-button" routerLink="/help">
+        <button mat-button class="menu-button" routerLink="/admin/dashboard" (click)="showProfile = true">
             <mat-icon style="margin-right: 0.5em;">help</mat-icon>
             <span>Help</span>
         </button>
     </mat-sidenav>
+
     <mat-sidenav-content>
         <router-outlet></router-outlet>
     </mat-sidenav-content>

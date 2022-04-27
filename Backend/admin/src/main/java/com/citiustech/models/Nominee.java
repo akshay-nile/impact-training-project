@@ -1,52 +1,18 @@
 package com.citiustech.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
 import com.citiustech.models.constants.Relation;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
-@Entity
-@Table(name = "nominees")
 public class Nominee {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int nomineeId;
-
-	@OneToOne
-	@JoinColumn(name = "patient_id")
-	@JsonBackReference
 	private Patient patient;
-
-	@Column
 	private String title;
-
-	@Column
 	private String firstName;
-
-	@Column
 	private String lastName;
-
-	@Column
 	private Relation relation;
-
-	@Column(unique = true)
 	private String email;
-
-	@Column(unique = true)
 	private String phone;
-
-	@Column
 	private String address;
-
-	@Column(name = "access_allowed")
 	private boolean isAccessAllowed;
 
 	public int getNomineeId() {

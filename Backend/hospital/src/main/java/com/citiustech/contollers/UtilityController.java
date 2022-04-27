@@ -90,17 +90,26 @@ public class UtilityController {
 		Map<String, String> info = utilityService.mapEmailsToIds(map);
 		return new ResponseEntity<>(info, HttpStatus.OK);
 	}
-
+	
+	@GetMapping("/get-patient/{patientId}")
+	public ResponseEntity<?> getPatientById(@PathVariable String patientId) {
+		Patient patient = utilityService.getPatientById(patientId);
+		return new ResponseEntity<>(patient, HttpStatus.OK);
+	}
+	
+	
+	// -------------------- Employee Management ---------------------- //
+	
 	@GetMapping("/get-all-employees")
 	public ResponseEntity<?> getAllEmployees() {
 		List<Employee> employees = utilityService.getAllEmployees();
 		return new ResponseEntity<>(employees, HttpStatus.OK);
 	}
 	
-	@GetMapping("/get-patient/{patientId}")
-	public ResponseEntity<?> getPatientById(@PathVariable String patientId) {
-		Patient patient = utilityService.getPatientById(patientId);
-		return new ResponseEntity<>(patient, HttpStatus.OK);
+	@PutMapping("/update-employee")
+	public ResponseEntity<?> updateEmployee(@RequestBody Employee employee) {
+		Employee updatedEmployees = utilityService.updateEmployee(employee);
+		return new ResponseEntity<>(updatedEmployees, HttpStatus.OK);
 	}
 
 }

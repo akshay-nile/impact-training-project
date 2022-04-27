@@ -9,6 +9,10 @@ table {
   padding: 0;
 }
 
+mat-paginator {
+  font-size: 11.5pt;
+}
+
 mat-sidenav {
   margin: 16px;
   width: 200px;

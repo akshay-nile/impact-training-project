@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { confirmPassword, passwordValidator } from 'src/app/validators/password.validator';
 import { UtilityService } from 'src/app/services/utility.service';
 import { UserCredential } from 'src/app/models/UserCredential';
-import { AdminService } from 'src/app/modules/admin/services/admin.service';
+import { AdminService } from 'src/app/services/admin.service';
 import { formatDate } from '@angular/common';
 import { Employee } from 'src/app/models/Employee';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -80,7 +80,7 @@ export class ProfileComponent implements OnInit {
   editEmployee() {
     this.buttonLabel = "Updating..."
     console.log(this.employee);
-    this.adminService.updateEmployee(this.employee).subscribe(res => {
+    this.adminService.updateEmployee(this.employee, "update").subscribe(res => {
       this.buttonLabel = 'Edit';
       if (res != null && res.employeeId > 0) {
         this.snackbar.open("Profile details successfully updated", "", { duration: 3000 });

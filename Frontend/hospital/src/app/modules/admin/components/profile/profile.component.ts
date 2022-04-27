@@ -1,14 +1,10 @@
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { confirmPassword, passwordValidator } from 'src/app/validators/password.validator';
-import { UtilityService } from 'src/app/services/utility.service';
-import { UserCredential } from 'src/app/models/UserCredential';
-import { AdminService } from 'src/app/modules/admin/services/admin.service';
 import { formatDate } from '@angular/common';
 import { Employee } from 'src/app/models/Employee';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { LoginService } from 'src/app/services/login.service';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-profile',
@@ -25,13 +21,13 @@ export class ProfileComponent implements OnInit {
   roles = 'ADMIN NURSE DOCTOR'.split(' ');
   employee = new Employee();
   isDisable = true;
-  
-  constructor(private snackbar: MatSnackBar,
+
+  constructor(
     private router: Router,
-    private loginService: LoginService,
-    private utilityService: UtilityService,
+    private snackbar: MatSnackBar,
     private adminService: AdminService,
-    @Inject(LOCALE_ID) private locale: string,) {
+    @Inject(LOCALE_ID) private locale: string
+  ) {
     this.employee = JSON.parse(sessionStorage.getItem('user'));
     this.userId = this.employee.employeeId;
   }
@@ -79,10 +75,9 @@ export class ProfileComponent implements OnInit {
 
   editEmployee() {
     this.buttonLabel = "Updating..."
-    console.log(this.employee);
-    this.adminService.updateEmployee(this.employee).subscribe(res => {
+    this.adminService.updateEmployee(this.employee, "update").subscribe(res => {
       this.buttonLabel = 'Edit';
-      if (res != null && res.employeeId > 0) {
+      if (res) {
         this.snackbar.open("Profile details successfully updated", "", { duration: 3000 });
       }
     });
