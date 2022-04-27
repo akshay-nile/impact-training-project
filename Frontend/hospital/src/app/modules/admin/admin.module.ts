@@ -3,67 +3,41 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatBadgeModule } from '@angular/material/badge';
-import { MatCardModule } from '@angular/material/card';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatDialogModule } from "@angular/material/dialog";
-import { FullCalendarModule } from '@fullcalendar/angular';
-import { ScheduleModule} from '@syncfusion/ej2-angular-schedule';
-import { MatFormFieldModule } from '@angular/material/form-field'; MatInputModule
-import { MatSelectModule } from '@angular/material/select';
-import { MatInputModule } from '@angular/material/input';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PatientManagementComponent } from './components/patient-management/patient-management.component';
 import { DataManagementComponent } from './components/data-management/data-management.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { ChangePasswordComponent } from './components/profile/change-password/change-password.component';
 import { StaffManagementComponent } from './components/staff-management/staff-management.component';
 import { EmployeeEditDialogComponent } from './components/staff-management/employee-edit-dialog/employee-edit-dialog.component';
 import { EmployeeRegisterDialogComponent } from './components/staff-management/employee-register-dialog/employee-register-dialog.component';
+import { MaterialModule } from 'src/app/material.module';
+import { SharedModule } from 'src/app/components/shared/shared.module';
+import { PatientManagementComponent } from './components/patient-management/patient-management.component';
+import { PatientViewDialogComponent } from './components/patient-management/patient-view-dialog/patient-view-dialog.component';
+import { PatientProfileViewComponent } from './components/patient-management/patient-view-dialog/patient-profile-view/patient-profile-view.component';
+import { PatientNomineeViewComponent } from './components/patient-management/patient-view-dialog/patient-nominee-view/patient-nominee-view.component';
+import { PatientDemographicViewComponent } from './components/patient-management/patient-view-dialog/patient-demographic-view/patient-demographic-view.component';
+import { PatientAllergyViewComponent } from './components/patient-management/patient-view-dialog/patient-allergy-view/patient-allergy-view.component';
 
 
 @NgModule({
   declarations: [
-    DashboardComponent, 
-    ProfileComponent,
+    DashboardComponent,
     StaffManagementComponent,
-    PatientManagementComponent,
     DataManagementComponent,
-    ChangePasswordComponent,
     EmployeeEditDialogComponent,
-    EmployeeRegisterDialogComponent
+    EmployeeRegisterDialogComponent,
+    PatientManagementComponent,
+    PatientViewDialogComponent,
+    PatientProfileViewComponent,
+    PatientNomineeViewComponent,
+    PatientDemographicViewComponent,
+    PatientAllergyViewComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    MatBadgeModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule,
-    MatIconModule,
-    MatCardModule,
-    MatTabsModule,
-    MatDialogModule,
-    FullCalendarModule,
-    ScheduleModule,
-    MatSnackBarModule,
-    MatBadgeModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    MatPaginatorModule,
-    MatTableModule,
+    MaterialModule,
     ReactiveFormsModule,
-    MatInputModule
+    SharedModule
   ]
 })
 export class AdminModule { }

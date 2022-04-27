@@ -1,0 +1,36 @@
+<div class="container-fluid mt-2">
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="form-group col col-md-4 col-sm-12">
+        <label class="col-form-label">Age (Years):</label>
+        <input formControlName="age" type="text" class="form-control" readonly>
+      </div>
+      <div class="form-group col col-md-4 col-sm-12">
+        <label class="col-form-label">Gender:</label>
+        <input formControlName="gender" type="text" class="form-control" readonly>
+      </div>
+      <div class="form-group col col-md-4 col-sm-12">
+        <label class="col-form-label">Language:</label>
+        <input formControlName="language" type="text" class="form-control" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col col-md-6 col-sm-12">
+        <label class="col-form-label">Race:</label>
+        <input formControlName="race" type="text" class="form-control">
+      </div>
+      <div class="form-group col col-md-6 col-sm-12">
+        <label class="col-form-label">Ethnicity:</label>
+        <input formControlName="ethnicity" type="text" class="form-control">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col col-md-12 col-sm-12">
+        <label class="col-form-label">Address:</label>
+        <textarea formControlName="address" type="text" class="form-control" rows="5"></textarea>
+      </div>
+    </div>
+  </form>
+</div>

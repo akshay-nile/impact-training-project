@@ -81,25 +81,50 @@ mat-divider {
   background-color: lightgoldenrodyellow;
 }
 
+
 td, th {
   font-size: 12pt;
   vertical-align: middle;
+  text-align: left;
   user-select: none;
 }
 
 th {
-  text-align: center;
   font-weight: bold;
 }
 
-td:nth-child(2), td:nth-child(3), th:nth-child(2), th:nth-child(3) {
-  text-align: left;
-} 
+th:nth-child(5), td:nth-child(5), th:nth-child(6), td:nth-child(6) {
+  text-align: center;
+}
+
+th:nth-child(4), td:nth-child(4) {
+  padding-right: 2em;
+}
 
 th:nth-child(6), td:nth-child(6) {
-  text-align: right;
+  padding-left: 1.6em;
 }
 
 ::ng-deep .mat-tab-label .mat-tab-label-content {
 font-size: medium;
+}
+
+
+mat-select {
+  padding: 0.4em;
+  margin: 0em;
+  border: 1px solid lightgray;
+  border-radius: 0.25em;
+}
+
+.bg-active {
+  background-color: #a0ffa0;
+}
+
+.bg-blocked {
+  background-color: #ffbebe;
+}
+
+.bg-inactive {
+  background-color: #e0e0e0;
 }

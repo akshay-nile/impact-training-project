@@ -13,7 +13,7 @@ export class RegistrationService {
     baseUrl: string = environment.baseUrl + '/hospital';
 
     public registerPatient(user: any): Observable<any> {
-        return this.http.post<any>(this.baseUrl + '/register', user).pipe(catchError(this.handleError));
+        return this.http.post<any>(this.baseUrl + '/register-patient', user).pipe(catchError(this.handleError));
     }
 
     private handleError(errorResponse: HttpErrorResponse) {

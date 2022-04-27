@@ -40,11 +40,10 @@ export class StaffManagementComponent implements OnInit {
 
   loadDataSource() {
     let results = this.allEmployees.map(e => {
-      let row = {
+      return {
         employeeId: e.employeeId, status: e.status, role: e.role, email: e.email,
         name: e.title + '. ' + e.firstName + ' ' + e.lastName
       };
-      return row;
     });
     this.dataSource = new MatTableDataSource(results);
     if (this.dataSource != null) {
@@ -55,9 +54,9 @@ export class StaffManagementComponent implements OnInit {
 
   getStatusColor(status: string) {
     return {
-      'text-success': status === 'ACTIVE',
-      'text-danger': status === 'BLOCKED',
-      'text-secondary': status === 'INACTIVE',
+      'bg-active': status === 'ACTIVE',
+      'bg-blocked': status === 'BLOCKED',
+      'bg-inactive': status === 'INACTIVE',
     };
   }
 
@@ -69,15 +68,30 @@ export class StaffManagementComponent implements OnInit {
     }
   }
 
+  updateEmployeeStatus(employeeId: number, status: string) {
+    let employee = this.allEmployees.find(e => e.employeeId === employeeId);
+    let oldStatus = employee.status;
+    employee.status = status;
+    this.adminService.updateEmployee(employee, "status").subscribe(res => {
+      if (res) {
+        this.snackbar.open("Employee Status Successfully Updated !", "", { duration: 3000 });
+      } else {
+        employee.status = oldStatus;
+        alert(res);
+      }
+      this.loadDataSource();
+    });
+  }
+
   openViewEmployeeDialog(employeeId: any) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     const dialogRef = this.dialog.open(EmployeeEditDialogComponent, {
-      width: '50%',
+      minWidth: '60vw', minHeight: '90vh',
       data: { employee: this.allEmployees.find(e => e.employeeId === employeeId) }
     });
     dialogRef.afterClosed().subscribe(updatedEmployee => {
-      if(!updatedEmployee) return;
+      if (!updatedEmployee) return;
       for (let i = 0; i < this.allEmployees.length; i++) {
         if (this.allEmployees[i].employeeId === updatedEmployee.employeeId) {
           this.allEmployees[i] = updatedEmployee;
@@ -91,7 +105,9 @@ export class StaffManagementComponent implements OnInit {
   openRegisterEmployeeDialog() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
-    const dialogRef = this.dialog.open(EmployeeRegisterDialogComponent, { width: '50%' });
+    const dialogRef = this.dialog.open(EmployeeRegisterDialogComponent, {
+      minWidth: '60vw', minHeight: '90vh'
+    });
     dialogRef.afterClosed().subscribe(newEmployee => {
       if (newEmployee) {
         this.allEmployees.push(newEmployee);

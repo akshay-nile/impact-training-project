@@ -17,8 +17,18 @@ export class AdminService {
       .pipe(catchError(this.handleError));
   }
 
+  getAllPatients(): Observable<any[]> {
+    return this.http.get<any[]>(this.adminUrl + '/get-patients')
+      .pipe(catchError(this.handleError));
+  }
+
   updateEmployee(employee: any, action: string): Observable<any> {
     return this.http.put<any>(this.adminUrl + '/update-employee?action=' + action, employee)
+      .pipe(catchError(this.handleError));
+  }
+
+  updatePatient(patient: any): Observable<any> {
+    return this.http.put<any>(this.adminUrl + '/update-patient', patient)
       .pipe(catchError(this.handleError));
   }
 

@@ -1,0 +1,27 @@
+<div class="content mat-elevation-z8">
+  <div class="card-wrapper">
+    <mat-tab-group>
+      <mat-tab label="Patient Details">
+        <patient-profile-view [user]="data.patient"></patient-profile-view>
+      </mat-tab>
+
+      <mat-tab label="Demographic Details" [disabled]="!data.patient.demographics">
+        <patient-demographic-view [user]="data.patient"></patient-demographic-view>
+      </mat-tab>
+
+      <mat-tab label="Nominee Details" [disabled]="!data.patient.nominee">
+        <patient-nominee-view [user]="data.patient"></patient-nominee-view>
+      </mat-tab>
+
+      <mat-tab label="Allergy Details" [disabled]="data.patient.allergies === null">
+        <patient-allergy-view [user]="data.patient"></patient-allergy-view>
+      </mat-tab>
+    </mat-tab-group>
+
+    <div class="row">
+      <div class="col col-md-12 col-sm-12 text-center">
+        <button class="btn btn-warning w-auto" (click)="close()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

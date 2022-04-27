@@ -1,0 +1,97 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col col-md-12 col-sm-12">
+      <div class="card shadow">
+        <div class="card-body">
+          <form [formGroup]="form">
+            <div class="row">
+              <div class="form-group col col-md-4 col-sm-12">
+                <label class="col-form-label">Employee ID:</label>
+                <input formControlName="employeeId" type="text" class="form-control" readonly>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col col-md-2 col-sm-12">
+                <label class="col-form-label">Title:</label> <br>
+                <select class="dropdown-toggle" formControlName="title">
+                  <option *ngFor="let title of 'Mr Ms Mrs Dr'.split(' ')" [value]="title">
+                    {{ title | titlecase }}
+                  </option>
+                </select>
+                <small *ngIf="f('title').touched && f('title').value == ''" class="text-danger">Please select
+                  title</small>
+              </div>
+              <div class="form-group col col-md-5 col-sm-12">
+                <label class="col-form-label">First Name:</label>
+                <input formControlName="firstName" type="text" class="form-control">
+                <small *ngIf="f('firstName').touched && f('firstName').errors?.required" class="text-danger">First
+                  name is required</small>
+              </div>
+              <div class="form-group col col-md-5 col-sm-12">
+                <label class="col-form-label">Last Name:</label>
+                <input formControlName="lastName" type="text" class="form-control">
+                <small *ngIf="f('lastName').touched && f('lastName').errors?.required" class="text-danger">Last name
+                  is required</small>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col col-md-12 col-sm-12">
+                <label for="email" class="col-form-label">Email ID:</label>
+                <input type="text" formControlName="email" id="email" class="form-control" readonly>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col col-md-6 col-sm-12">
+                <label for="role" class="col-form-label">Role:</label>
+                <input type="text" formControlName="role" id="role" class="form-control" readonly>
+              </div>
+              <div class="form-group col col-md-6 col-sm-12" *ngIf="user.role === 'DOCTOR'">
+                <label class="col-form-label">Specialization:</label>
+                <input formControlName="specialization" type="text" class="form-control">
+                <small *ngIf="f('specialization').touched && f('specialization').errors" class="text-danger">
+                  Specialization is required
+                </small>
+              </div>
+              <div class="form-group col col-md-6 col-sm-12" *ngIf="user.role !== 'DOCTOR'">
+                <label class="col-form-label">Date of Birth:</label>
+                <input formControlName="birthdate" type="date" class="form-control" max="{{today}}">
+                <small *ngIf="f('birthdate').touched && f('birthdate').errors?.required" class="text-danger">Date of
+                  Birth is
+                  required</small>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col col-md-12 col-sm-12" *ngIf="user.role === 'DOCTOR'">
+                <label class="col-form-label">Date of Birth:</label>
+                <input formControlName="birthdate" type="date" class="form-control" max="{{today}}">
+                <small *ngIf="f('birthdate').touched && f('birthdate').errors?.required" class="text-danger">Date of
+                  Birth is
+                  required</small>
+              </div>
+            </div>
+
+            <div class="row" *ngIf="!editMode">
+              <div class="col-md-12 col-sm-12 text-center">
+                <button class="btn btn-primary" (click)="setEditMode(true)">
+                  Edit Details
+                </button>
+              </div>
+            </div>
+
+            <div class="row" *ngIf="editMode">
+              <div class="col-md-12 col-sm-12 text-center">
+                <button [disabled]="form.invalid" class="btn btn-success"
+                  (click)="updateProfileDetails()">Update</button>
+                <button class="btn btn-danger" (click)="setEditMode(false)">Cancel</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 package com.citiustech.models;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 import com.citiustech.models.constants.Status;
 import com.citiustech.models.constants.Title;
@@ -18,6 +19,15 @@ public class Patient {
 	private Status status = Status.ACTIVE;
 	private Nominee nominee;
 	private Demographics demographics;
+	private Set<String> allergies;
+
+	public Set<String> getAllergies() {
+		return allergies;
+	}
+
+	public void setAllergies(Set<String> allergies) {
+		this.allergies = allergies;
+	}
 
 	public Nominee getNominee() {
 		return nominee;

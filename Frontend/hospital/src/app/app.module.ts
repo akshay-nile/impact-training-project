@@ -17,10 +17,10 @@ import { RegisterPatientComponent } from './components/register-patient/register
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UtilityService } from './services/utility.service';
-import {  DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { NoteService } from './services/notes.service';
 import { FullCalendarModule } from '@fullcalendar/angular';
-import { ChangePasswordComponent } from './components/change-password/change-password.component'; 
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { AppointmentService } from './services/appointment.service';
 import { VitalService } from './services/vital.service';
 
@@ -48,7 +48,7 @@ import { VitalService } from './services/vital.service';
     FullCalendarModule,
     FormsModule
   ],
-  providers: [DatePipe,ForgotPasswordService, LoginService,UtilityService,NoteService,AppointmentService,VitalService],
+  providers: [DatePipe, ForgotPasswordService, LoginService, UtilityService, NoteService, AppointmentService, VitalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

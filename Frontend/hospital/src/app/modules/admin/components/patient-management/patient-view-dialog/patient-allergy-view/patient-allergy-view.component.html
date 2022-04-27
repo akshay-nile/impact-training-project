@@ -1,0 +1,27 @@
+<div class="container-fluid mt-2">
+  <div class="row text-center">
+    <div class="col-md-12 col-sm-12 text-center">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">SN.</th>
+            <th scope="col">Allergy Type</th>
+            <th scope="col">Allergy Name</th>
+            <th scope="col">Is Fatal?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="allergies.length == 0" class="text-danger">
+            <td colspan="4">No Allergies Given !</td>
+          </tr>
+          <tr *ngFor="let a of allergies; let i=index;" [class.bg-warn]="a.isFatal">
+            <td>{{i + 1}}</td>
+            <td>{{a.allergyType}}</td>
+            <td>{{a.allergyName}}</td>
+            <td>{{a.isFatal ? "Yes" : "No"}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

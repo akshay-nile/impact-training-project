@@ -70,7 +70,7 @@ public class UtilityController {
 	}
 
 	@PutMapping("/patientDetails")
-	private ResponseEntity<?> updatePatient(@RequestBody Patient patient) {
+	private ResponseEntity<?> updatePatient_Old(@RequestBody Patient patient) {
 		Patient registeredPatient = utilityService.updatePatient(patient);
 		return new ResponseEntity<>(registeredPatient, HttpStatus.OK);
 	}
@@ -90,26 +90,39 @@ public class UtilityController {
 		Map<String, String> info = utilityService.mapEmailsToIds(map);
 		return new ResponseEntity<>(info, HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/get-patient/{patientId}")
 	public ResponseEntity<?> getPatientById(@PathVariable String patientId) {
 		Patient patient = utilityService.getPatientById(patientId);
 		return new ResponseEntity<>(patient, HttpStatus.OK);
 	}
-	
-	
+
 	// -------------------- Employee Management ---------------------- //
-	
-	@GetMapping("/get-all-employees")
+
+	@GetMapping("/get-employees")
 	public ResponseEntity<?> getAllEmployees() {
 		List<Employee> employees = utilityService.getAllEmployees();
 		return new ResponseEntity<>(employees, HttpStatus.OK);
 	}
-	
+
 	@PutMapping("/update-employee")
 	public ResponseEntity<?> updateEmployee(@RequestBody Employee employee) {
 		Employee updatedEmployees = utilityService.updateEmployee(employee);
 		return new ResponseEntity<>(updatedEmployees, HttpStatus.OK);
+	}
+
+	// -------------------- Patient Management ---------------------- //
+
+	@GetMapping("/get-patients")
+	public ResponseEntity<?> getAllPatients() {
+		List<Patient> patients = utilityService.getAllPatients();
+		return new ResponseEntity<>(patients, HttpStatus.OK);
+	}
+
+	@PutMapping("/update-patient")
+	public ResponseEntity<?> updatePatient(@RequestBody Patient patient) {
+		Patient updatedPatient = utilityService.updatePatient(patient);
+		return new ResponseEntity<>(updatedPatient, HttpStatus.OK);
 	}
 
 }

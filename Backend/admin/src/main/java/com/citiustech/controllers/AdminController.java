@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.citiustech.models.Employee;
+import com.citiustech.models.Patient;
 import com.citiustech.services.AdminService;
 
 @RestController
@@ -45,16 +46,16 @@ public class AdminController {
 
 	// -------------------- Patient Management --------------------- //
 
-//	@GetMapping("/get-patients")
-//	public ResponseEntity<?> getAllPatients() {
-//		List<Patient> patients = adminService.getAllPatients();
-//		return new ResponseEntity<>(patients, HttpStatus.OK);
-//	}
-//
-//	@PutMapping("/update-patient")
-//	public ResponseEntity<?> updatePatient(@RequestBody Patient patient) {
-//		Patient updatedPatient = adminService.update(patient);
-//		return new ResponseEntity<>(updatedPatient, HttpStatus.CREATED);
-//	}
+	@GetMapping("/get-patients")
+	public ResponseEntity<?> getAllPatients() {
+		List<Patient> patients = adminService.getAllPatients();
+		return new ResponseEntity<>(patients, HttpStatus.OK);
+	}
+
+	@PutMapping("/update-patient")
+	public ResponseEntity<?> updatePatient(@RequestBody Patient patient) {
+		Patient updatedPatient = adminService.update(patient);
+		return new ResponseEntity<>(updatedPatient, HttpStatus.CREATED);
+	}
 
 }

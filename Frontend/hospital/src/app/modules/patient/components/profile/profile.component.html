@@ -7,7 +7,8 @@
       </mat-tab>
 
       <mat-tab label="Demographic Details">
-        <patient-demographic-details [user]="user" (update)="updateDemographicDetails($event)"></patient-demographic-details>
+        <patient-demographic-details [user]="user" (update)="updateDemographicDetails($event)">
+        </patient-demographic-details>
       </mat-tab>
 
       <mat-tab label="Nominee Details">
@@ -19,7 +20,7 @@
       </mat-tab>
 
       <mat-tab label="Change Password">
-        <patient-change-password [user]="user"></patient-change-password>
+        <change-password [user]="user"></change-password>
       </mat-tab>
     </mat-tab-group>
   </div>

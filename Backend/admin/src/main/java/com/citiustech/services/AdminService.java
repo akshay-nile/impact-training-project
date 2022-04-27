@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.citiustech.models.Employee;
+import com.citiustech.models.Patient;
 
 @Service
 public class AdminService {
@@ -24,7 +25,7 @@ public class AdminService {
 	private EmailSenderService emailSender;
 
 	public List<Employee> getAllEmployees(String adminId) {
-		String url = "http://localhost:8080/hospital/get-all-employees";
+		String url = "http://localhost:8080/hospital/get-employees";
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
@@ -57,7 +58,7 @@ public class AdminService {
 				text += "\n\nNow your login password is Password@123";
 				text += "\n\nPlease change this password immediately as soon as you login for the next time.";
 				emailSender.sendEmail(updatedEmployee.getEmail(), "Login Password Reset", text);
-			} else if(action.equalsIgnoreCase("status")) {
+			} else if (action.equalsIgnoreCase("status")) {
 				String text = "Hi " + employee.getFirstName() + "!";
 				text += "\nYour account status has been set to " + updatedEmployee.getStatus();
 				emailSender.sendEmail(updatedEmployee.getEmail(), "Account Status Changed", text);
@@ -85,6 +86,37 @@ public class AdminService {
 			emailSender.sendEmail(registeredEmployee.getEmail(), "Registration Successfull", text);
 		}
 		return registeredEmployee;
+	}
+
+	public List<Patient> getAllPatients() {
+		String url = "http://localhost:8080/hospital/get-patients";
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		List<Patient> patients = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(headers),
+				new ParameterizedTypeReference<List<Patient>>() {
+				}).getBody();
+
+		return patients;
+	}
+
+	public Patient update(Patient patient) {
+		String url = "http://localhost:8080/hospital/update-patient";
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		Patient updatedPatient = restTemplate.exchange(url, HttpMethod.PUT, new HttpEntity<>(patient, headers),
+				new ParameterizedTypeReference<Patient>() {
+				}).getBody();
+
+		if (updatedPatient != null) {
+			String text = "Hello " + patient.getFirstName() + "!";
+			text += "\nYour account status has been set to " + updatedPatient.getStatus();
+			emailSender.sendEmail(updatedPatient.getEmail(), "Account Status Changed", text);
+		}
+		return updatedPatient;
 	}
 
 }

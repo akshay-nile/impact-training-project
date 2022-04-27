@@ -74,6 +74,13 @@ public class UtilityService {
 		}
 		return patientRepo.save(patient);
 	}
+	
+	public Employee updateEmployee(Employee employee) {
+		if (!employeeRepo.findById(employee.getEmployeeId()).isPresent()) {
+			throw new CustomException("Employee does not exists", HttpStatus.NOT_FOUND);
+		}
+		return employeeRepo.save(employee);
+	}
 
 	public Patient getPatientByEmail(String email) {
 		return patientRepo.findByEmail(email);
@@ -93,12 +100,11 @@ public class UtilityService {
 		return employeeRepo.findAll();
 	}
 
+	public List<Patient> getAllPatients() {
+		return patientRepo.findAll();
+	}
+
 	public Patient getPatientById(String patientId) {
 		return patientRepo.findById(patientId).orElse(null);
 	}
-
-	public Employee updateEmployee(Employee employee) {
-		return employeeRepo.save(employee);
-	}
-
 }

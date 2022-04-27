@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProfileComponent } from 'src/app/components/shared/profile/profile.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DataManagementComponent } from './components/data-management/data-management.component';
 import { PatientManagementComponent } from './components/patient-management/patient-management.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { StaffManagementComponent } from './components/staff-management/staff-management.component';
 
 const routes: Routes = [
@@ -15,7 +15,7 @@ const routes: Routes = [
       { path: 'staff', component: StaffManagementComponent },
       { path: 'patients', component: PatientManagementComponent },
       { path: 'data', component: DataManagementComponent },
-      { path: 'profile', component: ProfileComponent }
+      { path: 'profile', component:  ProfileComponent}
     ]
   }
 ];
