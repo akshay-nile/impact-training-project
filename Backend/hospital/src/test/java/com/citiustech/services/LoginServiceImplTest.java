@@ -23,7 +23,7 @@ import com.citiustech.repositories.EmployeeRepository;
 import com.citiustech.repositories.PatientRepository;
 
 @ExtendWith(MockitoExtension.class)
-class LoginServiceTest {
+class LoginServiceImplTest {
 
 	@Mock
 	private PatientRepository patientRepo;
@@ -32,7 +32,7 @@ class LoginServiceTest {
 	private EmployeeRepository employeeRepo;
 
 	@InjectMocks
-	private LoginService loginService;
+	private LoginServiceImpl loginService;
 
 	private String email;
 	private Map<String, String> credential;

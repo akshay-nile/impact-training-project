@@ -31,7 +31,7 @@ import com.citiustech.repositories.EmployeeRepository;
 import com.citiustech.repositories.PatientRepository;
 
 @ExtendWith(MockitoExtension.class)
-class UtilityServiceTest {
+class UtilityServiceImplTest {
 	@Mock
 	private PatientRepository patientRepo;
 
@@ -39,7 +39,7 @@ class UtilityServiceTest {
 	private EmployeeRepository employeeRepo;
 
 	@InjectMocks
-	private UtilityService utilityService;
+	private UtilityServiceImpl utilityService;
 
 	private String email;
 	private String phone;
@@ -188,14 +188,6 @@ class UtilityServiceTest {
 		assertNotNull(utilityService.getPatientByEmail(email));
 	}
 
-	@Test
-	@DisplayName("Test Method to throw custom exception for Invalid Patient Email")
-	public void givenPatiendEmailThenShouldThrowException() {
-		when(patientRepo.findByEmail(any())).thenReturn(null);
-		Assertions.assertThrows(CustomException.class, () -> {
-			utilityService.getPatientByEmail(email);
-		});
-	}
 
 	@Test
 	@DisplayName("Test Method to get Employee by Email")
@@ -204,13 +196,4 @@ class UtilityServiceTest {
 		assertNotNull(utilityService.getEmployeeByEmail(email));
 	}
 
-	@Test
-	@DisplayName("Test Method to throw custom exception for Invalid Employee Email")
-	public void givenEmailThenShouldThrowException() {
-		when(employeeRepo.findByEmail(any())).thenReturn(null);
-		Assertions.assertThrows(CustomException.class, () -> {
-			utilityService.getEmployeeByEmail(email);
-		});
-
-	}
 }
