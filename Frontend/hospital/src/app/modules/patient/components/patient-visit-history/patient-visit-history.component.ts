@@ -1,13 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Appointment } from 'src/app/models/Appointment';
-import jspdf from 'jspdf';
-import html2canvas from 'html2canvas';
 import { AppointmentService } from 'src/app/services/appointment.service';
 import { Employee } from 'src/app/models/Employee';
 import { Patient } from 'src/app/models/Patient';
@@ -49,8 +46,7 @@ export class PatientVisitHistoryComponent implements OnInit {
     private appointmentService: AppointmentService,
     private patientVisitService: PatientVisitService,
     private router: Router,
-    private utilityService: UtilityService,
-    private dialog: MatDialog
+    private utilityService: UtilityService
   ) {
     this.user = JSON.parse(sessionStorage.getItem('user'));
     this.date = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
@@ -104,17 +100,7 @@ export class PatientVisitHistoryComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  downloadReport() {
-    var element = document.getElementById("report");
-    html2canvas(element).then((canvas) => {
-      var imgData = canvas.toDataURL("image/png");
-      var doc = new jspdf();
-      var imgHeight = canvas.height * 208 / canvas.width;
-      doc.addImage(imgData, 0, 0, 208, 250);
-      doc.save("Report_"+Date.now()+".pdf");
-    });
-    this.showReport = false;
-  }
+
   logout() {
     sessionStorage.clear();
     this.router.navigate(['/login']);

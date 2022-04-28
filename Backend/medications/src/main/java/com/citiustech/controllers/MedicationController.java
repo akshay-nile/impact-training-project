@@ -56,7 +56,7 @@ public class MedicationController {
 		return new ResponseEntity<>(newMedication, HttpStatus.OK);
 	}
 
-	// ----------------- for AppointmentDiagnosis ---------------------- //
+	// ----------------- for AppointmentMedications ---------------------- //
 
 	@GetMapping("/appointment-medications/{appointmentId}")
 	public ResponseEntity<?> getMedicationsByAppointmentId(@PathVariable int appointmentId) {

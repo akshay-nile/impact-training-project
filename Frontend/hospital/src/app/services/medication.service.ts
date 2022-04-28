@@ -35,8 +35,7 @@ export class MedicationService {
     private handleError(errorResponse: HttpErrorResponse) {
         if (errorResponse.error instanceof ErrorEvent) {
             console.error("Client Side Error", errorResponse.error.message)
-        }
-        else {
+        } else {
             console.error("Server Side Error", errorResponse);
         }
         return throwError("There is problem with service. Please try again");

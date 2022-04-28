@@ -9,10 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthenticationService {
 
-    constructor(
-        private http: HttpClient,
-        private  router: Router
-    ) { }
+    constructor(private http: HttpClient) { }
 
     baseUrl: string = environment.baseUrl + '/authenticate';
 

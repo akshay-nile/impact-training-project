@@ -1,0 +1,145 @@
+<div class="content mat-elevation-z8">
+    <div class="card-wrapper">
+        <div class="row">
+            <div style="display: flex; justify-content: flex-end; gap: 1.2em; margin: 1em 0em; padding: 0.25em;">
+                <button class="btn btn-danger" (click)="emitButtonClickEvent('close')">Close</button>
+                <button class="btn btn-success" (click)="downloadReport()">Download Report</button>
+            </div>
+
+            <div id="report" style="border: 2px solid black;">
+                <h1 style="text-align: center;font-weight: bolder;margin-top: 5%; margin-bottom: 5%;">CT General
+                    Hospital</h1>
+
+                <h2 style="background-color: lightgray; font-weight: bold; padding: 0.25em 1em 0.25em 0.5em">
+                    Visit Report
+                    <span style="float: right; font-size: medium; font-weight: 600;">
+                        Appointment Date: {{reportData.appointment?.date}}
+                    </span>
+                </h2>
+
+                <h4 style="font-weight: 600;">Patient Details:</h4>
+                <table class="mb-2">
+                    <tr>
+                        <th scope="col" style="width: 20%;">Patient Name:</th>
+                        <td>{{reportData.patient?.title}}. {{reportData.patient?.firstName}}
+                            {{reportData.patient?.lastName}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col" style="width: 20%;">Contact No:</th>
+                        <td>{{reportData.patient?.phone}} </td>
+                    </tr>
+                    <tr>
+                        <th scope="col" style="width: 20%;">Email ID:</th>
+                        <td>{{reportData.patient?.email}}</td>
+                    </tr>
+                </table>
+
+                <hr>
+
+                <h4 style="font-weight: 600;margin-top: 3%;">Physician Details:</h4>
+                <table class="mb-2">
+                    <tr>
+                        <th scope="col" style="width: 20%;">Physician Name:</th>
+                        <td>{{reportData.physician?.title}}. {{reportData.physician?.firstName}}
+                            {{reportData.physician?.lastName}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col" style="width: 20%;">Email ID:</th>
+                        <td>{{reportData.physician?.email}}</td>
+                    </tr>
+                </table>
+
+                <hr>
+
+                <h4 class="d-inline-block" style="font-weight: 600;margin-top: 3%;">Vital Details:</h4>
+                <div class="d-inline-block ms-3" *ngIf="reportData.vitals == null">Not Available</div> <br>
+                <table *ngIf="reportData.vitals != null" class="table table-striped mb-2">
+                    <thead>
+                        <tr>
+                            <th scope="col">Height (cm)</th>
+                            <th scope="col">Weight (Kg)</th>
+                            <th scope="col">Blood Pressure (mmHg)</th>
+                            <th scope="col">Body Temperature (F)</th>
+                            <th scope="col">Respiration Rate (BPM)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{reportData.vitals?.height}}</td>
+                            <td>{{reportData.vitals?.weight}}</td>
+                            <td>{{reportData.vitals?.bloodPressure}}</td>
+                            <td>{{reportData.vitals?.bodyTemperature}}</td>
+                            <td>{{reportData.vitals?.respirationRate}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+
+                <h4 class="d-inline-block" style="font-weight: 600;margin-top: 3%;">Diagnosis Details:</h4>
+                <div class="d-inline-block ms-3" *ngIf="reportData.diagnosis.length == 0">Not Applicable</div> <br>
+                <table *ngIf="reportData.diagnosis.length > 0" class="table table-striped mb-2">
+                    <thead>
+                        <tr>
+                            <th scope="col">Diagnosis Id</th>
+                            <th scope="col">Title</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let diagnosis of reportData.diagnosis">
+                            <td>{{diagnosis?.diagnosisId}}</td>
+                            <td>{{diagnosis?.title}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+
+                <h4 class="d-inline-block" style="font-weight: 600;margin-top: 3%;">Procedure Details:</h4>
+                <div class="d-inline-block ms-3" *ngIf="reportData.procedures.length == 0">Not Applicable</div> <br>
+                <table *ngIf="reportData.procedures.length > 0" class="table table-striped mb-2">
+                    <thead>
+                        <tr>
+                            <th scope="col">Procedure Id</th>
+                            <th scope="col">Procedure Name</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let procedure of reportData.procedures">
+                            <td>{{procedure?.procedureId}}</td>
+                            <td>{{procedure?.procedureName}}</td>
+                            <td>{{procedure?.description}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+
+                <h4 class="d-inline-block" style="font-weight: 600;margin-top: 3%;">Medication Details:</h4>
+                <div class="d-inline-block ms-3" *ngIf="reportData.medications.length == 0"> Not Applicable</div> <br>
+                <table *ngIf="reportData.medications.length > 0" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Drug Id</th>
+                            <th scope="col">Drug Name</th>
+                            <th scope="col">Dosage</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let medication of reportData.medications">
+                            <td>{{medication?.medicationId}}</td>
+                            <td>{{medication?.medicationName}}</td>
+                            <td>{{medication?.dosage}}</td>
+                            <td>{{medication?.description}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <img style="margin: 3% 2% 5% 0%; width: 180px; height: 135px; float: right;"
+                    src="assets/hospital-stamp.jpg" alt="healthcare logo">
+            </div>
+        </div>
+    </div>
+</div>

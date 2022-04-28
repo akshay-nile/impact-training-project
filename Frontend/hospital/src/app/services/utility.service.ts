@@ -58,7 +58,7 @@ export class UtilityService {
     }
 
     getAllEmployees(): Observable<any[]> {
-        return this.http.get<any[]>(this.baseUrl + '/get-all-employees')
+        return this.http.get<any[]>(this.baseUrl + '/get-employees')
             .pipe(catchError(this.handleError));
     }
 

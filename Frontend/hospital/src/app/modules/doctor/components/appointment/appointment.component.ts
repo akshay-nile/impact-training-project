@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Appointment } from 'src/app/models/Appointment';
 
@@ -42,7 +41,6 @@ export class AppointmentComponent implements OnInit {
     private datePipe: DatePipe,
     private appointmentService: AppointmentService,
     private utilityService: UtilityService,
-    private router: Router,
     private dialog: MatDialog
   ) {
     this.user = JSON.parse(sessionStorage.getItem('user'));

@@ -6,12 +6,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileDetailsComponent } from './profile/profile-details/profile-details.component';
 import { MaterialModule } from 'src/app/material.module';
 import { ProfileComponent } from './profile/profile.component';
+import { ReportComponent } from './report/report.component';
 
 const shared = [
   AskReasonComponent,
   ChangePasswordComponent,
   ProfileDetailsComponent,
-  ProfileComponent
+  ProfileComponent,
+  ReportComponent
 ];
 
 

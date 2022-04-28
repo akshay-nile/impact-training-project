@@ -6,8 +6,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Appointment } from 'src/app/models/Appointment';
-import jspdf from 'jspdf';
-import html2canvas from 'html2canvas';
 import { AppointmentService } from 'src/app/services/appointment.service';
 import { Employee } from 'src/app/models/Employee';
 import { Patient } from 'src/app/models/Patient';
@@ -58,12 +56,6 @@ export class PatientVisitHistoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // if (this.user.password == 'Password@123'. || this.user.nominee == null) {
-    //   setTimeout(() => {
-    //     alert("Please complete your profile first !")
-    //     this.router.navigate(['patient', 'dashboard', 'profile']);
-    //   }, 500);
-    // }
     this.getAllAppointments();
   }
 
@@ -74,7 +66,7 @@ export class PatientVisitHistoryComponent implements OnInit {
     })
   }
 
-  getAllPatients(appts:any) {
+  getAllPatients(appts: any) {
     this.utilityService.getAllPatientNames().subscribe(
       patients => {
         this.allPatientNames = patients;
@@ -99,6 +91,7 @@ export class PatientVisitHistoryComponent implements OnInit {
       }
     });
   }
+
   viewDetails(appointment: any) {
     this.showReport = true;
     this.patientVisitService.getVisitReportDetails(appointment).subscribe((result) => {
@@ -119,17 +112,7 @@ export class PatientVisitHistoryComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  downloadReport() {
-    var element = document.getElementById("report");
-    html2canvas(element).then((canvas) => {
-      var imgData = canvas.toDataURL("image/png");
-      var doc = new jspdf();
-      var imgHeight = canvas.height * 208 / canvas.width;
-      doc.addImage(imgData, 0, 0, 208, 250);
-      doc.save("Report_"+Date.now()+".pdf");
-    });
-    this.showReport = false;
-  }
+
   logout() {
     sessionStorage.clear();
     this.router.navigate(['/login']);
