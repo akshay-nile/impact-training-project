@@ -12,8 +12,18 @@ export class ProcedureService {
 
     constructor(private http: HttpClient) { }
 
-    getAllProcedures(start: number, count: number): Observable<any[]> {
-        return this.http.get<any[]>(this.procedureUrl + '/get-procedure-details?start=' + start + "&count=" + count)
+    getAllProcedures(): Observable<any[]> {
+        return this.http.get<any[]>(this.procedureUrl + '/get-procedure-details')
+            .pipe(catchError(this.handleError));
+    }
+
+    deleteProcedureById(procedureId: number): Observable<void> {
+        return this.http.delete<void>(this.procedureUrl + '/delete-procedure/' + procedureId)
+            .pipe(catchError(this.handleError));
+    }
+
+    addNewProcedure(procedure: any): Observable<any> {
+        return this.http.post<any>(this.procedureUrl + '/add-procedure', procedure)
             .pipe(catchError(this.handleError));
     }
 
@@ -27,16 +37,10 @@ export class ProcedureService {
             .pipe(catchError(this.handleError));
     }
 
-    deleteProcedureById(id: number): Observable<void> {
-        return this.http.delete<void>(this.procedureUrl + '/deleteProcedureById' + '/' + id)
-            .pipe(catchError(this.handleError));
-    }
-
     private handleError(errorResponse: HttpErrorResponse) {
         if (errorResponse.error instanceof ErrorEvent) {
             console.error("Client Side Error", errorResponse.error.message)
-        }
-        else {
+        } else {
             console.error("Server Side Error", errorResponse);
         }
         return throwError("There is problem with service. Please try again");

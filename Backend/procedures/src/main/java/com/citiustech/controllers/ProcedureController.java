@@ -27,35 +27,21 @@ public class ProcedureController {
 	private ProcedureService procedureService;
 
 	@GetMapping("/get-procedure-details")
-	public ResponseEntity<?> getAllProcedureDetails(@RequestParam int start, @RequestParam int count) {
-		List<Procedure> procedures = procedureService.getProcedureDetails(start, count);
+	public ResponseEntity<?> getAllProcedureDetails() {
+		List<Procedure> procedures = procedureService.getProcedureDetails();
 		return new ResponseEntity<>(procedures, HttpStatus.OK);
 	}
 
-	@GetMapping("/procedureId/{procedureId}")
-	public ResponseEntity<?> getProceduresDetailsById(@PathVariable int procedureId) {
-		Procedure procedure = procedureService.getProcedureDetailsByProcedureId(procedureId);
-		if (procedure != null) {
-			return new ResponseEntity<>(procedure, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
-	}
-
-	@PostMapping("/addProcedure")
-	private ResponseEntity<?> addProcedure(@RequestBody Procedure procedure) {
-		Procedure newProcedure = procedureService.addProcedure(procedure);
+	@PostMapping({ "/add-procedure", "/addNewProcedure" })
+	private ResponseEntity<?> addNewProcedure(@RequestBody Procedure procedure) {
+		Procedure newProcedure = procedureService.addNewProcedure(procedure);
 		return new ResponseEntity<>(newProcedure, HttpStatus.CREATED);
 	}
 
-	@DeleteMapping(value = "/deleteProcedureById/{id}")
-	public ResponseEntity<?> deleteProcedureById(@PathVariable int id) {
-		procedureService.deleteProcedureById(id);
+	@DeleteMapping(value = "/delete-procedure/{procedureId}")
+	public ResponseEntity<?> deleteProcedureById(@PathVariable int procedureId) {
+		procedureService.deleteProcedureById(procedureId);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
-	@PostMapping("/addNewProcedure")
-	public ResponseEntity<?> addNewProcedure(@RequestBody Procedure procedure) {
-		Procedure newProcedure = procedureService.addNewProcedure(procedure);
-		return new ResponseEntity<>(newProcedure, HttpStatus.OK);
-	}
 }

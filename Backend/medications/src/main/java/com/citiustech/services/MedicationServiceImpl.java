@@ -21,11 +21,6 @@ public class MedicationServiceImpl implements MedicationService {
 	private AppointmentMedicationsRepository apptMedicationsRepo;
 
 	@Override
-	public Medication getMedicationDetailsById(int medicationId) {
-		return medicationRepo.findById(medicationId).get();
-	}
-
-	@Override
 	public List<Medication> getMedicationDetails() {
 		return ((List<Medication>) medicationRepo.findAll()).stream().limit(100).collect(Collectors.toList());
 	}

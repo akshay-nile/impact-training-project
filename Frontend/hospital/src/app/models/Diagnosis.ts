@@ -1,4 +1,4 @@
-export class Diagnosis{
-    diagnosisId:number;
-    title:string;
+export class Diagnosis {
+    diagnosisId: number;
+    title: string;
 }

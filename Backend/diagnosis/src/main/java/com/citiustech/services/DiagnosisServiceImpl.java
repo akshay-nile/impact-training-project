@@ -21,13 +21,8 @@ public class DiagnosisServiceImpl implements DiagnosisService {
 	private AppointmentDiagnosisRepository apptDiagnosisRepo;
 
 	@Override
-	public Diagnosis getDiagnosisDetailsByDiagnosisId(int diagnosisId) {
-		return diagnosisRepo.findById(diagnosisId).get();
-	}
-
-	@Override
 	public List<Diagnosis> getDiagnosisDetails() {
-		return ((List<Diagnosis>) diagnosisRepo.findAll()).stream().limit(50).collect(Collectors.toList());
+		return ((List<Diagnosis>) diagnosisRepo.findAll()).stream().limit(100).collect(Collectors.toList());
 	}
 
 	@Override

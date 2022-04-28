@@ -16,19 +16,24 @@ export class MedicationService {
         return this.http.get<any[]>(this.medicationUrl + '/get-medication-details')
             .pipe(catchError(this.handleError));
     }
-    
+
+    deleteMedicationById(medicationId: number): Observable<void> {
+        return this.http.delete<void>(this.medicationUrl + '/delete-medication/' + medicationId)
+            .pipe(catchError(this.handleError));
+    }
+
+    addNewMedication(medication: any): Observable<any> {
+        return this.http.post<any>(this.medicationUrl + '/add-medication/', medication)
+            .pipe(catchError(this.handleError));
+    }
+
     getMedicationByAptId(appointmentId: number): Observable<any[]> {
         return this.http.get<any>(this.medicationUrl + '/appointment-medications/' + appointmentId)
             .pipe(catchError(this.handleError));
     }
 
     addMedicationByAptId(medications: any): Observable<any> {
-        return this.http.post<any>(this.medicationUrl +  '/appointment-medications', medications)
-            .pipe(catchError(this.handleError));
-    }
-
-    deleteMedicationById(id: number): Observable<void> {
-        return this.http.delete<void>(this.medicationUrl + '/deleteMedicationById' + '/' + id)
+        return this.http.post<any>(this.medicationUrl + '/appointment-medications', medications)
             .pipe(catchError(this.handleError));
     }
 

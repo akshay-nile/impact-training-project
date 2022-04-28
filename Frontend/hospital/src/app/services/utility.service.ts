@@ -14,8 +14,6 @@ export class UtilityService {
     baseUrl: string = environment.baseUrl + '/hospital';
     vitalsUrl = environment.baseUrl + '/patient-visits/vitals';
     apptUrl = environment.baseUrl + '/appointments/api';
-    allergyUrl = environment.baseUrl + '/allergy/api';
-
 
     getRelations(): Observable<string[]> {
         return this.http.get<string[]>(this.baseUrl + '/enums/relations')
@@ -66,6 +64,7 @@ export class UtilityService {
         return this.http.get<any[]>(this.baseUrl + '/patient/names')
             .pipe(catchError(this.handleError));
     }
+
     getPatientByEmail(email: string): Observable<any> {
         return this.http.get<any>(this.baseUrl + `/patientByEmail/${email}`)
             .pipe(catchError(this.handleError));
@@ -78,11 +77,6 @@ export class UtilityService {
 
     checkOldPassword(userId: any, password: any): Observable<any> {
         return this.http.get<any>(this.baseUrl + `/api/change-password/${userId}/${password}`)
-            .pipe(catchError(this.handleError));
-    }
-
-    getAllergyNamesAndTypes(): Observable<any> {
-        return this.http.get<any>(this.allergyUrl + '/names-and-types')
             .pipe(catchError(this.handleError));
     }
 

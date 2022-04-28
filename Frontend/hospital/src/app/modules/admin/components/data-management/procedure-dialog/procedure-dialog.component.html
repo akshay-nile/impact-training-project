@@ -1,0 +1,36 @@
+<div class="card mb-4" style="padding: 1em; border: none;">
+    <form autofocus="off" [formGroup]="form">
+        <div class="row form-group mt-2">
+            <div class="col col-md-12 col-sm-12">
+                <label for="procedureName" class="form-label">Procedure Name</label>
+                <input type="text" formControlName="procedureName" class="form-control" id="procedureName">
+                <div *ngIf="form.controls['procedureName'].dirty && form.controls['procedureName'].invalid">
+                    <small *ngIf="form.controls['procedureName'].errors?.['required']" class="text-danger">
+                        Procedure Name cannot be blank</small>
+                    <small *ngIf="form.controls['procedureName'].errors?.isEmpty" class="text-danger">Blank spaces are
+                        not allowed</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row form-group mt-4">
+            <div class="col col-md-12 col-sm-12">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" formControlName="description" class="form-control" id="description">
+                <div *ngIf="form.controls['description'].touched && form.controls['description'].invalid">
+                    <small *ngIf="form.controls['description'].errors?.['required']" class="text-danger">
+                        Description cannot be blank</small>
+                    <small *ngIf="form.controls['description'].errors?.isEmpty" class="text-danger">Blank spaces are not
+                        allowed</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row form-group mt-4 mb-3">
+            <div class="col col-md-12 col-sm-12 text-center">
+                <button class="btn btn-success me-3" (click)="addNewProcedure()" [disabled]="form.invalid">Save</button>
+                <button class="btn btn-warning ms-3" (click)="close()">Close</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -9,8 +9,6 @@ public interface MedicationService {
 
 	public List<Medication> getMedicationDetails();
 
-	public Medication getMedicationDetailsById(int medicationId);
-
 	public void deleteMedicationById(int id);
 
 	public Medication addNewMedication(Medication medication);

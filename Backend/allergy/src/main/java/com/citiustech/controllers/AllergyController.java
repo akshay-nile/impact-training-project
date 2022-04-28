@@ -26,22 +26,10 @@ public class AllergyController {
 	@Autowired
 	private AllergyService allergyService;
 
-	@GetMapping("/getAllAllergyDetails")
+	@GetMapping({"/get-allergy-details", "/getAllAllergyDetails"})
 	public ResponseEntity<?> getAllAllergyDetails() {
 		List<Allergy> allergies = allergyService.getAllergyDetails();
-		if (allergies.size() != 0) {
-			return new ResponseEntity<>(allergies, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
-	}
-
-	@GetMapping("/allergyId/{allergyId}")
-	public ResponseEntity<?> getAllAllergyDetailsById(@PathVariable int allergyId) {
-		Allergy allergy = allergyService.getAllergyDetailsById(allergyId);
-		if (allergy != null) {
-			return new ResponseEntity<>(allergy, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
+		return new ResponseEntity<>(allergies, HttpStatus.OK);
 	}
 
 	@GetMapping({ "/names-and-types", "/types-and-names" })
@@ -50,13 +38,13 @@ public class AllergyController {
 		return new ResponseEntity<>(typesAndNames, HttpStatus.OK);
 	}
 
-	@DeleteMapping("/deleteAllergyById/{id}")
-	public ResponseEntity<?> deleteAllergyById(@PathVariable int id) {
-		allergyService.deleteAllergyById(id);
+	@DeleteMapping("/delete-allergy/{allergyId}")
+	public ResponseEntity<?> deleteAllergyById(@PathVariable int allergyId) {
+		allergyService.deleteAllergyById(allergyId);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
-	@PostMapping("/addNewAllergy")
+	@PostMapping("/add-allergy")
 	public ResponseEntity<?> addNewAllergy(@RequestBody Allergy allergy) {
 		Allergy newAllergy = allergyService.addNewAllergy(allergy);
 		return new ResponseEntity<>(newAllergy, HttpStatus.OK);

@@ -9,8 +9,6 @@ public interface DiagnosisService {
 
 	public List<Diagnosis> getDiagnosisDetails();
 
-	public Diagnosis getDiagnosisDetailsByDiagnosisId(int diagnosisId);
-
 	public void deleteDiagnosisById(int id);
 
 	public Diagnosis addNewDiagnosis(Diagnosis diagnosis);

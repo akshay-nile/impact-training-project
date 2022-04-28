@@ -1,7 +1,5 @@
-export class Allergy{
+export class Allergy {
+    allergyId: number;
     allergyType:string;
     allergyName:string;
-    allergySource:string;
-    allergySequence:string;
-    allerginicity:string;
 }

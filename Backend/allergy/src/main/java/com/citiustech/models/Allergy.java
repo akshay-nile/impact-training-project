@@ -10,17 +10,17 @@ public class Allergy {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String allergyId;
+	private int allergyId;
 
 	private String allergyType;
 
 	private String allergyName;
 
-	public String getAllergyId() {
+	public int getAllergyId() {
 		return allergyId;
 	}
 
-	public void setAllergyId(String allergyId) {
+	public void setAllergyId(int allergyId) {
 		this.allergyId = allergyId;
 	}
 

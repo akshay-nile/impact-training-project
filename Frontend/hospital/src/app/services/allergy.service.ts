@@ -6,34 +6,29 @@ import { environment } from 'src/environments/environment';
 @Injectable({
     providedIn: 'root'
 })
-export class DiagnosisService {
+export class AllergyService {
 
-    diagnosisUrl = environment.baseUrl + '/diagnosis/api';
+    allergyUrl = environment.baseUrl + '/allergy/api';
 
     constructor(private http: HttpClient) { }
 
-    getAllDiagnosis(): Observable<any[]> {
-        return this.http.get<any[]>(this.diagnosisUrl + '/get-diagnosis-details')
+    getAllAllergies(): Observable<any[]> {
+        return this.http.get<any[]>(this.allergyUrl + '/get-allergy-details')
             .pipe(catchError(this.handleError));
     }
 
-    deleteDiagnosisById(diagnosisId: number): Observable<void> {
-        return this.http.delete<void>(this.diagnosisUrl + '/delete-diagnosis/' + diagnosisId)
+    deleteAllergyById(allergyId: number): Observable<void> {
+        return this.http.delete<void>(this.allergyUrl + '/delete-allergy/' + allergyId)
             .pipe(catchError(this.handleError));
     }
 
-    addNewDiagnosis(diagnosis: any): Observable<any> {
-        return this.http.post<any>(this.diagnosisUrl + '/add-diagnosis', diagnosis)
+    addNewAllergy(allergy: any): Observable<any> {
+        return this.http.post<any>(this.allergyUrl + '/add-allergy', allergy)
             .pipe(catchError(this.handleError));
     }
 
-    getDiagnosisByAptId(appointmentId: number): Observable<any[]> {
-        return this.http.get<any>(this.diagnosisUrl + '/appointment-diagnosis/' + appointmentId)
-            .pipe(catchError(this.handleError));
-    }
-
-    addDiagnosisByAptId(diagnosis: any): Observable<any> {
-        return this.http.post<any>(this.diagnosisUrl + '/appointment-diagnosis', diagnosis)
+    getAllergyNamesAndTypes(): Observable<any> {
+        return this.http.get<any>(this.allergyUrl + '/names-and-types')
             .pipe(catchError(this.handleError));
     }
 

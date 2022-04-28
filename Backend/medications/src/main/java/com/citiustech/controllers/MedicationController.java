@@ -29,28 +29,16 @@ public class MedicationController {
 	@GetMapping("/get-medication-details")
 	public ResponseEntity<?> getAllMedicationDetails() {
 		List<Medication> medications = medicationService.getMedicationDetails();
-		if (medications.size() != 0) {
-			return new ResponseEntity<>(medications, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
+		return new ResponseEntity<>(medications, HttpStatus.OK);
 	}
 
-	@GetMapping("/medicationId/{medicationId}")
-	public ResponseEntity<?> getMedicationDetailsById(@PathVariable int medicationId) {
-		Medication medication = medicationService.getMedicationDetailsById(medicationId);
-		if (medication != null) {
-			return new ResponseEntity<>(medication, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
-	}
-
-	@DeleteMapping(value = "/deleteMedicationById/{id}")
-	public ResponseEntity<?> deleteMedicationById(@PathVariable int id) {
-		medicationService.deleteMedicationById(id);
+	@DeleteMapping("/delete-medication/{medicationId}")
+	public ResponseEntity<?> deleteMedicationById(@PathVariable int medicationId) {
+		medicationService.deleteMedicationById(medicationId);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
-	@PostMapping("/addNewMedication")
+	@PostMapping("/add-medication")
 	public ResponseEntity<?> addNewMedication(@RequestBody Medication medication) {
 		Medication newMedication = medicationService.addNewMedication(medication);
 		return new ResponseEntity<>(newMedication, HttpStatus.OK);

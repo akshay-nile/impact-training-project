@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-data-management',
+  selector: 'app-master-tables',
   templateUrl: './data-management.component.html',
   styleUrls: ['./data-management.component.css']
 })

@@ -1,5 +1,22 @@
 <div class="content mat-elevation-z8">
-    <div class="card-wrapper">
-        <p>data-management works!</p>
-    </div>
+  <div class="card-wrapper">
+    <div class="row"></div>
+    <mat-tab-group>
+      <mat-tab label="Medication Data">
+        <master-medication-tab></master-medication-tab>
+      </mat-tab>
+
+      <mat-tab label="Procedure Data">
+        <master-procedure-tab></master-procedure-tab>
+      </mat-tab>
+
+      <mat-tab label="Diagnosis Data">
+        <master-diagnosis-tab></master-diagnosis-tab>
+      </mat-tab>
+
+      <mat-tab label="Allergy Data">
+        <master-allergy-tab></master-allergy-tab>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
 </div>

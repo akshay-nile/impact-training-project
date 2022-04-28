@@ -21,16 +21,20 @@ public class AllergyServiceImpl implements AllergyService {
 	public List<Allergy> getAllergyDetails() {
 		return (List<Allergy>) allergyRepo.findAll();
 	}
+	
+	@Override
+	public void deleteAllergyById(int id) {
+		allergyRepo.deleteById(id);
+	}
 
 	@Override
-	public Allergy getAllergyDetailsById(int allergyId) {
-		return allergyRepo.findById(allergyId).get();
+	public Allergy addNewAllergy(Allergy allergy) {
+		return allergyRepo.save(allergy);
 	}
 
 	@Override
 	public Map<String, List<String>> getNamesAndTypes() {
 		List<Allergy> allergies = (List<Allergy>) allergyRepo.findAll();
-		System.out.println(allergies);
 		Map<String, List<Allergy>> typeAndAllergies = allergies.stream()
 				.collect(Collectors.groupingBy(Allergy::getAllergyType));
 		Map<String, List<String>> typeAndNames = new HashMap<>();
@@ -41,13 +45,4 @@ public class AllergyServiceImpl implements AllergyService {
 		return typeAndNames;
 	}
 
-	@Override
-	public void deleteAllergyById(int id) {
-		allergyRepo.deleteById(id);
-	}
-
-	@Override
-	public Allergy addNewAllergy(Allergy allergy) {
-		return allergyRepo.save(allergy);
-	}
 }

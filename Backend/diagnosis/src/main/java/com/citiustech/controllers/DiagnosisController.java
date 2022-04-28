@@ -26,32 +26,19 @@ public class DiagnosisController {
 	@Autowired
 	private DiagnosisService diagnosisService;
 	
-	@GetMapping("/getAllDiagnosisDetails")
+	@GetMapping("/get-diagnosis-details")
 	public ResponseEntity<?> getAllDiagnosisDetails() {
 		List<Diagnosis> diagnosis = diagnosisService.getDiagnosisDetails();
-		if (diagnosis.size() != 0) {
-			return new ResponseEntity<>(diagnosis, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
+		return new ResponseEntity<>(diagnosis, HttpStatus.OK);
 	}
-	
-	@GetMapping("/diagnosisId/{diagnosisId}")
-	public ResponseEntity<?> getDiagnosisDetailsById(@PathVariable int diagnosisId) {
-		Diagnosis diagnosis = diagnosisService.getDiagnosisDetailsByDiagnosisId(diagnosisId);
-		if (diagnosis != null) {
-			return new ResponseEntity<>(diagnosis, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
-	}
-	
 
-	@DeleteMapping(value = "/deleteDiagnosisById/{id}")
-    public ResponseEntity<?> deleteDiagnosisById(@PathVariable int id) {
-		diagnosisService.deleteDiagnosisById(id);
+	@DeleteMapping(value = "/delete-diagnosis/{diagnosisId}")
+    public ResponseEntity<?> deleteDiagnosisById(@PathVariable int diagnosisId) {
+		diagnosisService.deleteDiagnosisById(diagnosisId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 	
-	@PostMapping("/addNewDiagnosis")
+	@PostMapping("/add-diagnosis")
 	public ResponseEntity<?> addNewDiagnosis(@RequestBody Diagnosis diagnosis){
 		Diagnosis newDiagnosis = diagnosisService.addNewDiagnosis(diagnosis);
 		return new ResponseEntity<>(newDiagnosis, HttpStatus.OK);
@@ -71,6 +58,5 @@ public class DiagnosisController {
 		AppointmentDiagnosis addedAppointmentDiagnosis = diagnosisService.addDiagnosisForAppointment(appointmentDiagnosis);
 		return new ResponseEntity<>(addedAppointmentDiagnosis, HttpStatus.OK);
 	}
-	
 	
 }

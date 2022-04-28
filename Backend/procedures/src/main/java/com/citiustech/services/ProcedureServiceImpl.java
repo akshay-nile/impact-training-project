@@ -21,24 +21,13 @@ public class ProcedureServiceImpl implements ProcedureService {
 	private AppointmentProceduresRepository apptProceduresRepo;
 
 	@Override
-	public Procedure getProcedureDetailsByProcedureId(int procedureId) {
-		return procedureRepo.findById(procedureId).get();
+	public List<Procedure> getProcedureDetails() {
+		return ((List<Procedure>) procedureRepo.findAll()).stream().limit(100).collect(Collectors.toList());
 	}
 
 	@Override
-	public List<Procedure> getProcedureDetails(int start, int count) {
-		List<Procedure> list = (List<Procedure>) procedureRepo.findAll();
-		return list.stream().limit(count).collect(Collectors.toList());
-	}
-
-	@Override
-	public void deleteProcedureById(int id) {
-		procedureRepo.deleteById(id);
-	}
-
-	@Override
-	public Procedure addProcedure(Procedure procedure) {
-		return procedureRepo.save(procedure);
+	public void deleteProcedureById(int procedureId) {
+		procedureRepo.deleteById(procedureId);
 	}
 
 	@Override
@@ -49,15 +38,14 @@ public class ProcedureServiceImpl implements ProcedureService {
 	@Override
 	public List<Procedure> getProceduresByAppointmentId(int appointmentId) {
 		AppointmentProcedures apptProcedures = apptProceduresRepo.findById(appointmentId).orElse(null);
-		
-		if(apptProcedures == null) {
+
+		if (apptProcedures == null) {
 			return List.of();
 		}
-		
+
 		return apptProcedures.getProcedureIds().stream()
 				.map(procedureId -> procedureRepo.findById(procedureId).orElse(null))
-				.filter(procedure -> procedure != null)
-				.collect(Collectors.toList());
+				.filter(procedure -> procedure != null).collect(Collectors.toList());
 	}
 
 	@Override

@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UtilityService } from 'src/app/services/utility.service';
-import { noSpaceValidator } from 'src/app/validators/text-field.validator';
+import { AllergyService } from 'src/app/services/allergy.service';
 
 @Component({
   selector: 'patient-allergy-details',
@@ -19,10 +18,10 @@ export class AllergyDetailsComponent implements OnInit {
   allergies: any[] = [];
   changesMade = false;
 
-  constructor(private utilityService: UtilityService) { }
+  constructor(private allergyService: AllergyService) { }
 
   ngOnInit(): void {
-    this.utilityService.getAllergyNamesAndTypes().subscribe(res => {
+    this.allergyService.getAllergyNamesAndTypes().subscribe(res => {
       this.allergyTypesAndNames = res;
       this.allergyTypes = Object.keys(res);
     });

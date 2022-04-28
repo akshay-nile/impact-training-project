@@ -7,13 +7,9 @@ import com.citiustech.models.Procedure;
 
 public interface ProcedureService {
 	
-	public Procedure getProcedureDetailsByProcedureId(int procedureId);
-
-	public List<Procedure> getProcedureDetails(int start, int count);
+	public List<Procedure> getProcedureDetails();
 
 	public void deleteProcedureById(int id);
-
-	public Procedure addProcedure(Procedure procedure);
 
 	public Procedure addNewProcedure(Procedure procedure);
 

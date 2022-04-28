@@ -33,7 +33,7 @@ export class AddProceduresComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.procedureService.getAllProcedures(0, 100).subscribe(res => this.proceduresData = res);
+    this.procedureService.getAllProcedures().subscribe(res => this.proceduresData = res);
     this.procedureService.getProcedureByAptId(this.appointmentId).subscribe(res => this.selectedProcedures = res);
   }
 
