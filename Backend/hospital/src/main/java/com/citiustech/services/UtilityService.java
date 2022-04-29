@@ -29,5 +29,9 @@ public interface UtilityService {
 	public Map<String, String> mapEmailsToIds(Map<String, String> map);
 
 	public List<Employee> getAllEmployees();
+	
+	public List<Patient> getAllPatients();
+	
+	public Employee updateEmployee(Employee employee);
 
 }

@@ -1,5 +1,6 @@
 package com.citiustech.services;
 
+import com.citiustech.models.Employee;
 import com.citiustech.models.Patient;
 
 public interface RegistrationService {

@@ -91,7 +91,6 @@ public class UtilityController {
 		return new ResponseEntity<>(info, HttpStatus.OK);
 	}
 
-
 	// -------------------- Employee Management ---------------------- //
 
 	@GetMapping("/get-employees")

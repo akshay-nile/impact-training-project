@@ -16,8 +16,8 @@ import com.citiustech.repositories.EmployeeRepository;
 import com.citiustech.repositories.PatientRepository;
 
 @Service
-public class UtilityServiceImpl implements UtilityService{
-@Autowired
+public class UtilityServiceImpl implements UtilityService {
+	@Autowired
 	private PatientRepository patientRepo;
 
 	@Autowired
@@ -73,7 +73,7 @@ public class UtilityServiceImpl implements UtilityService{
 		}
 		return patientRepo.save(patient);
 	}
-	
+
 	public Employee updateEmployee(Employee employee) {
 		if (!employeeRepo.findById(employee.getEmployeeId()).isPresent()) {
 			throw new CustomException("Employee does not exists", HttpStatus.NOT_FOUND);

@@ -5,16 +5,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.citiustech.exceptions.CustomException;
+import com.citiustech.models.Employee;
 import com.citiustech.models.Patient;
+import com.citiustech.repositories.EmployeeRepository;
 import com.citiustech.repositories.PatientRepository;
 
 @Service
-public class RegistrationServiceImpl implements RegistrationService{
-
+public class RegistrationServiceImpl implements RegistrationService {
 
 	@Autowired
 	private PatientRepository patientRepo;
-	
+
 	@Autowired
 	private EmployeeRepository employeeRepo;
 
@@ -29,7 +30,7 @@ public class RegistrationServiceImpl implements RegistrationService{
 		}
 		return patientRepo.save(patient);
 	}
-	
+
 	public Employee register(Employee employee) {
 		if (employee.getEmployeeId() != null) {
 			if (employeeRepo.findById(employee.getEmployeeId()).isPresent()) {
