@@ -1,11 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Appointment } from 'src/app/models/Appointment';
-
 import { DatePipe } from '@angular/common';
 import { CalendarOptions } from '@fullcalendar/angular';
-import { HttpClient } from '@angular/common/http';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -113,8 +110,12 @@ export class AppointmentComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     const dialogRef = this.dialog.open(VisitDetailsComponent, {
-      width: '50%',
-      data: { appointment: appointment, user: this.user, employeeNames: this.allEmployeeNames, patientNames: this.allPatientNames }
+      minWidth: '60vw', minHeight: '70vh',
+      data: { 
+        appointment: appointment, user: this.user, 
+        employeeNames: this.allEmployeeNames, 
+        patientNames: this.allPatientNames 
+      }
     });
     dialogRef.afterClosed().subscribe(result => {
       this.getAllAppointments();
@@ -125,7 +126,6 @@ export class AppointmentComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
@@ -136,7 +136,7 @@ export class AppointmentComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     const dialogRef = this.dialog.open(AppointmentDialogComponent, {
-      width: '50%',
+      minWidth: '60vw', minHeight: '70vh',
       data: { user: this.user, employeeNames: this.allEmployeeNames, patientNames: this.allPatientNames }
     });
     dialogRef.afterClosed().subscribe(result => {

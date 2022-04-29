@@ -117,8 +117,7 @@ export class VisitDetailsComponent implements OnInit {
   }
 
   getPatientByEmail() {
-    let patientEmail = this.data.patientNames.find(p => p.patientId === this.data.appointment.patientId).email;
-    this.utilityService.getPatientByEmail(patientEmail).subscribe((result) => {
+    this.utilityService.getPatientById(this.data.appointment.patientId).subscribe((result) => {
       this.patient = result;
       this.patientId = this.patient.patientId;
       this.demographics = result.demographics;

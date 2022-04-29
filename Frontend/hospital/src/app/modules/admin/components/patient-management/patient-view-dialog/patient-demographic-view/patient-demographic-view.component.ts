@@ -27,6 +27,7 @@ export class PatientDemographicViewComponent implements OnInit {
       language: new FormControl(!this.d ? '' : this.d.language),
       address: new FormControl(!this.d ? '' : this.d.address.replaceAll('$$','\n'))
     });
+    this.form.disable();
   }
 
 }

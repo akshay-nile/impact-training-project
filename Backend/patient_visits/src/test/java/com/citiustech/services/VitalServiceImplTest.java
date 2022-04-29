@@ -19,7 +19,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.citiustech.models.Patient;
 import com.citiustech.models.Vital;
 import com.citiustech.repositories.VitalRepository;
 import com.citiustech.utils.RestUtil;
@@ -87,8 +86,8 @@ class VitalServiceImplTest {
 	@Test
 	@DisplayName("Test Method to get vital details By Patient Id")
 	public void testMethodToGetVitalDetailsByPatientId() {
-		when(vitalRepo.getVitalDetailsByPatientId(1)).thenReturn(vital);
-		assertNotNull(vitalServiceImpl.getVitalDetailsByPatientId(1).getBloodPressure());
+		when(vitalRepo.getVitalDetailsByAppointmentId(1)).thenReturn(vital);
+		assertNotNull(vitalServiceImpl.getVitalDetailsByAppointmentId(1).getBloodPressure());
 	}
 
 	@Test

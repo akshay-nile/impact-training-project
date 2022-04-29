@@ -82,12 +82,12 @@ public class UtilityService {
 		return employeeRepo.save(employee);
 	}
 
-	public Patient getPatientByEmail(String email) {
-		return patientRepo.findByEmail(email);
+	public Patient getPatientById(String patientId) {
+		return patientRepo.findById(patientId).orElse(null);
 	}
 
-	public Employee getEmployeeByEmail(String email) {
-		return employeeRepo.findByEmail(email);
+	public Employee getEmployeeById(String employeeId) {
+		return employeeRepo.findById(employeeId).orElse(null);
 	}
 
 	public Map<String, String> mapEmailsToIds(Map<String, String> map) {
@@ -102,9 +102,5 @@ public class UtilityService {
 
 	public List<Patient> getAllPatients() {
 		return patientRepo.findAll();
-	}
-
-	public Patient getPatientById(String patientId) {
-		return patientRepo.findById(patientId).orElse(null);
 	}
 }

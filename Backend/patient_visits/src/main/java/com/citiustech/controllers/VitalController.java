@@ -20,6 +20,7 @@ import com.citiustech.services.VitalService;
 @RestController
 @RequestMapping("/patient-visits/vitals")
 public class VitalController {
+	
 	@Autowired
 	private VitalService vitalService;
 
@@ -32,16 +33,11 @@ public class VitalController {
 		return new ResponseEntity<>(null, HttpStatus.OK);
 	}
 	
-	@GetMapping("/aptId/{aptId}")
-	public ResponseEntity<?> getVitalDetailsByAptId(@PathVariable int aptId) {
-		System.out.println(aptId);
-		Vital vital = vitalService.getVitalDetailsByPatientId(aptId);
-		if (vital != null) {
-			return new ResponseEntity<>(vital, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
+	@GetMapping("/appointment/{appointmentId}")
+	public ResponseEntity<?> getVitalDetailsByAppointmentId(@PathVariable int appointmentId) {
+		Vital vital = vitalService.getVitalDetailsByAppointmentId(appointmentId);
+		return new ResponseEntity<>(vital, HttpStatus.OK);
 	}
-	
 
 	@PostMapping("")
 	public ResponseEntity<?> saveVitalDetails(@RequestBody Vital vital) {

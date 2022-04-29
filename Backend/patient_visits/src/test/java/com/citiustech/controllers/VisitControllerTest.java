@@ -49,7 +49,7 @@ class VisitControllerTest {
 	@Test
 	@DisplayName("Test Method to get Visit Report")
 	public void testMethodToGetVisitReport() throws Exception {
-		mockMvc.perform(post("/patient-visits/visit/getVisitReport").contentType(MediaType.APPLICATION_JSON)
+		mockMvc.perform(post("/patient-visits/visit/report").contentType(MediaType.APPLICATION_JSON)
 				.content(asJsonString(appointment))).andExpect(status().isOk())
 				.andDo(MockMvcResultHandlers.print());
 	}

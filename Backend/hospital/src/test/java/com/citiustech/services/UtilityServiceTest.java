@@ -182,35 +182,17 @@ class UtilityServiceTest {
 	}
 
 	@Test
-	@DisplayName("Test Method to get Patient by Email")
+	@DisplayName("Test Method to get Patient by Id")
 	public void givenPatiendEmailThenShouldReturnPatient() {
-		when(patientRepo.findByEmail(any())).thenReturn(patient);
-		assertNotNull(utilityService.getPatientByEmail(email));
+		when(patientRepo.findById(any())).thenReturn(Optional.of(patient));
+		assertNotNull(utilityService.getPatientById("P0001"));
 	}
 
 	@Test
-	@DisplayName("Test Method to throw custom exception for Invalid Patient Email")
-	public void givenPatiendEmailThenShouldThrowException() {
-		when(patientRepo.findByEmail(any())).thenReturn(null);
-		Assertions.assertThrows(CustomException.class, () -> {
-			utilityService.getPatientByEmail(email);
-		});
-	}
-
-	@Test
-	@DisplayName("Test Method to get Employee by Email")
+	@DisplayName("Test Method to get Employee by Id")
 	public void givenEmployeeEmailThenShouldReturnEmployee() {
-		when(employeeRepo.findByEmail(any())).thenReturn(employee);
-		assertNotNull(utilityService.getEmployeeByEmail(email));
+		when(employeeRepo.findById(any())).thenReturn(Optional.of(employee));
+		assertNotNull(utilityService.getEmployeeById("E0002"));
 	}
 
-	@Test
-	@DisplayName("Test Method to throw custom exception for Invalid Employee Email")
-	public void givenEmailThenShouldThrowException() {
-		when(employeeRepo.findByEmail(any())).thenReturn(null);
-		Assertions.assertThrows(CustomException.class, () -> {
-			utilityService.getEmployeeByEmail(email);
-		});
-
-	}
 }

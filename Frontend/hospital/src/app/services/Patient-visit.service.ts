@@ -13,7 +13,7 @@ export class PatientVisitService {
     visitUrl = environment.baseUrl + '/patient-visits/visit';
     
     getVisitReportDetails(appointment: any): Observable<any> {
-        return this.http.post<any>(this.visitUrl+'/getVisitReport',appointment)
+        return this.http.post<any>(this.visitUrl+'/report',appointment)
             .pipe(catchError(this.handleError));
     }
    

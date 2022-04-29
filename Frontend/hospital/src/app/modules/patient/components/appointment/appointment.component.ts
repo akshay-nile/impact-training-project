@@ -115,7 +115,7 @@ export class AppointmentComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     const dialogRef = this.dialog.open(AppointmentDetailsComponent, {
-      width: '50%',
+      minWidth: '60vw', minHeight: '70vh',
       data: { appointment: appointment, user: this.user, employeeNames: this.allEmployeeNames }
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -137,7 +137,7 @@ export class AppointmentComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     const dialogRef = this.dialog.open(AppointmentDialogComponent, {
-      width: '50%',
+      minWidth: '60vw', minHeight: '70vh',
       data: { user: this.user, employeeNames: this.allEmployeeNames }
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -152,7 +152,8 @@ export class AppointmentComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     const dialogRef = this.dialog.open(DataCollectionAppointmentComponent, {
-      width: '50%', data: { user: this.user, employeeNames: this.allEmployeeNames }
+      minWidth: '60vw', minHeight: '70vh', 
+      data: { user: this.user, employeeNames: this.allEmployeeNames }
     });
     dialogRef.afterClosed().subscribe(result => {
       this.appointment = result;

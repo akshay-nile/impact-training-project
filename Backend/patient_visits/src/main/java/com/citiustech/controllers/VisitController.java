@@ -20,13 +20,10 @@ public class VisitController {
 	@Autowired
 	private VisitService visitService;
 
-	@PostMapping("/getVisitReport")
-	public ResponseEntity<?> getVisitReport(@RequestBody Appointment apt) {
-		VisitReport report = visitService.getVisitReport(apt);
-		if (report!= null) {
-			return new ResponseEntity<>(report, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
+	@PostMapping("/report")
+	public ResponseEntity<?> getVisitReport(@RequestBody Appointment appointment) {
+		VisitReport report = visitService.getVisitReport(appointment);
+		return new ResponseEntity<>(report, HttpStatus.OK);
 	}
 
 }

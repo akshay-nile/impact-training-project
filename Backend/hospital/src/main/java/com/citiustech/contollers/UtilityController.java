@@ -75,14 +75,14 @@ public class UtilityController {
 		return new ResponseEntity<>(registeredPatient, HttpStatus.OK);
 	}
 
-	@GetMapping("/patientByEmail/{email}")
-	public Patient getPatientByEmail(@PathVariable String email) {
-		return utilityService.getPatientByEmail(email);
+	@GetMapping("/get-patient/{patientId}")
+	public Patient getPatientById(@PathVariable String patientId) {
+		return utilityService.getPatientById(patientId);
 	}
 
-	@GetMapping("/employeeByEmail/{email}")
-	public Employee getEmployeeByEmail(@PathVariable String email) {
-		return utilityService.getEmployeeByEmail(email);
+	@GetMapping("/get-employee/{employeeId}")
+	public Employee getEmployeeById(@PathVariable String employeeId) {
+		return utilityService.getEmployeeById(employeeId);
 	}
 
 	@PostMapping("/get-emails-from-ids")
@@ -91,11 +91,6 @@ public class UtilityController {
 		return new ResponseEntity<>(info, HttpStatus.OK);
 	}
 
-	@GetMapping("/get-patient/{patientId}")
-	public ResponseEntity<?> getPatientById(@PathVariable String patientId) {
-		Patient patient = utilityService.getPatientById(patientId);
-		return new ResponseEntity<>(patient, HttpStatus.OK);
-	}
 
 	// -------------------- Employee Management ---------------------- //
 

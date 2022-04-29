@@ -14,7 +14,7 @@ public interface VitalService {
 
 	public Vital deleteVitalDetails(int vitalId);
 	
-	public Vital getVitalDetailsByPatientId(int aptId);
+	public Vital getVitalDetailsByAppointmentId(int appointmentId);
 	
 	public Vital getVitalDetails(String url);
 

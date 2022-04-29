@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { duration } from 'html2canvas/dist/types/css/property-descriptors/duration';
 import { ProcedureService } from 'src/app/services/procedure.service';
 import { PrescriptionDetailsDialogComponent } from '../prescription-details-dialog.component';
 
@@ -22,6 +24,7 @@ export class AddProceduresComponent implements OnInit {
   hasAnythingChanged = false;
 
   constructor(
+    private snackbar: MatSnackBar,
     public dialogRef: MatDialogRef<PrescriptionDetailsDialogComponent>,
     private procedureService: ProcedureService,
     private formBuilder: FormBuilder
@@ -67,7 +70,7 @@ export class AddProceduresComponent implements OnInit {
     this.procedureService.addProcedureByAptId(apptProcedures).subscribe(res => {
       if (res) {
         this.updateEvent.emit();
-        alert("Changes Succesfully Saved !");
+        this.snackbar.open("Changes Succesfully Saved !", "", {duration: 3000});
         this.hasAnythingChanged = false;
       } else alert(res);
     });

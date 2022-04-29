@@ -65,11 +65,6 @@ export class UtilityService {
             .pipe(catchError(this.handleError));
     }
 
-    getPatientByEmail(email: string): Observable<any> {
-        return this.http.get<any>(this.baseUrl + `/patientByEmail/${email}`)
-            .pipe(catchError(this.handleError));
-    }
-
     changeUserPassword(userCredentials: any): Observable<any> {
         return this.http.post<any>(this.baseUrl + '/api/change-password', userCredentials)
             .pipe(catchError(this.handleError));
@@ -83,8 +78,7 @@ export class UtilityService {
     private handleError(errorResponse: HttpErrorResponse) {
         if (errorResponse.error instanceof ErrorEvent) {
             console.error("Client Side Error", errorResponse.error.message)
-        }
-        else {
+        } else {
             console.error("Server Side Error", errorResponse);
         }
         return throwError("There is problem with service. Please try again");

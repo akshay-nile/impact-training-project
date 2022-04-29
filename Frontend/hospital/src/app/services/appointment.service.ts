@@ -28,8 +28,8 @@ export class AppointmentService {
       .pipe(catchError(this.handleError));
   }
 
-  getPastAppointmentByPatientId(patientId: string): Observable<any[]> {
-    return this.http.get<any[]>(this.apptUrl + '/past-appointments/' + patientId)
+  getPastAppointmentByUserId(userId: string): Observable<any[]> {
+    return this.http.get<any[]>(this.apptUrl + '/past-appointments/' + userId)
       .pipe(catchError(this.handleError));
   }
   

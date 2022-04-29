@@ -10,6 +10,6 @@ import com.citiustech.models.Vital;
 public interface VitalRepository extends CrudRepository<Vital, Integer> {
 	
 	@Query("SELECT v FROM Vital v WHERE v.aptId = ?1")
-	public Vital getVitalDetailsByPatientId(int aptId);
+	public Vital getVitalDetailsByAppointmentId(int appointmentId);
 	
 }

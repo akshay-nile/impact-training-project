@@ -30,7 +30,7 @@ export class VitalService {
   }
 
   getVitalByApptId(appointmentId: any): Observable<Vitals> {
-    return this.http.get<Vitals>(this.vitalsUrl + '/aptId/' + appointmentId)
+    return this.http.get<Vitals>(this.vitalsUrl + '/appointment/' + appointmentId)
       .pipe(catchError(this.handleError));
   }
 

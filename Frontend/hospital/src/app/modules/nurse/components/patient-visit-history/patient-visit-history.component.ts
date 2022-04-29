@@ -14,6 +14,7 @@ import { Vitals } from 'src/app/models/Vitals';
 import { VisitReport } from 'src/app/models/VisitReport';
 import { Procedure } from 'src/app/models/Procedure';
 import { UtilityService } from 'src/app/services/utility.service';
+import { VitalService } from 'src/app/services/vital.service';
 
 @Component({
   selector: 'app-patient-visit-history',
@@ -23,91 +24,70 @@ import { UtilityService } from 'src/app/services/utility.service';
 export class PatientVisitHistoryComponent implements OnInit {
 
   displayedColumns: string[] = ['title', 'employeeName', 'patientName', 'date', 'time', 'action'];
-  dataSource: MatTableDataSource<Appointment>;
+  dataSource: MatTableDataSource<any>;
   date: string;
   todaysAppointment = "todaysAppointment";
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  appointment = new Appointment();
-  appointments: Appointment[] = [];
-  patientId1: number;
-  showReport: boolean;
+
   user: any;
   report = new VisitReport();
-  patient = new Patient();
-  physician = new Employee();
-  vital = new Vitals();
-  apt = new Appointment();
-  procedures: Procedure[];
+  showReport: boolean;
+
+  allPastAppointments = [];
   allEmployeeNames = [];
   allPatientNames = [];
 
   constructor(
-    private datePipe: DatePipe,
-    private appointmentService: AppointmentService,
-    private patientVisitService: PatientVisitService,
     private router: Router,
-    private utilityService: UtilityService,
-    private dialog: MatDialog
+    private datePipe: DatePipe,
+    private patientVisitService: PatientVisitService,
+    private appointmentService: AppointmentService,
+    private utilityService: UtilityService
   ) {
     this.user = JSON.parse(sessionStorage.getItem('user'));
     this.date = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
   }
 
   ngOnInit(): void {
-    this.getAllAppointments();
-  }
-
-  getAllAppointments() {
     this.appointmentService.getAllPastAppointments().subscribe(appts => {
-      this.getAllPatients(appts);
-
+      this.allPastAppointments = appts;
+      this.utilityService.getAllPhysicians().subscribe(employees => {
+        this.allEmployeeNames = employees;
+        this.utilityService.getAllPatientNames().subscribe(patients => {
+          this.allPatientNames = patients;
+          this.loadDataSource();
+        });
+      });
     })
   }
 
-  getAllPatients(appts: any) {
-    this.utilityService.getAllPatientNames().subscribe(
-      patients => {
-        this.allPatientNames = patients;
-        this.getAllPhysicians(appts);
-      }
-    );
-  }
-
-  getAllPhysicians(appts: any) {
-    this.utilityService.getAllPhysicians().subscribe(employees => {
-      this.allEmployeeNames = employees;
-      for (let a of appts) {
-        a['employeeName'] = this.allEmployeeNames.find(e => e.employeeId == a.employeeId).name
-        a['employeeEmail'] = this.allEmployeeNames.find(e => e.employeeId == a.employeeId).email;
-        a['patientName'] = this.allPatientNames.find(p => p.patientId == a.patientId).name;
-        a['patientEmail'] = this.allPatientNames.find(p => p.patientId == a.patientId).email;
-      }
-      this.dataSource = new MatTableDataSource(appts);
-      if (this.dataSource != null) {
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-      }
+  loadDataSource() {
+    let results = this.allPastAppointments.map(a => {
+      return {
+        appointment: a, title: a.title, date: a.date, time: a.time,
+        employeeName: this.allEmployeeNames.find(e => e.employeeId == a.employeeId)?.name,
+        patientName: this.allPatientNames.find(p => p.patientId == a.patientId)?.name
+      };
     });
+    this.dataSource = new MatTableDataSource(results);
+    if (this.dataSource != null) {
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    }
   }
 
   viewDetails(appointment: any) {
     this.showReport = true;
     this.patientVisitService.getVisitReportDetails(appointment).subscribe((result) => {
       this.report = result;
-      this.patient = this.report.patient;
-      this.physician = this.report.physician;
-      this.apt = this.report.appointment;
-      this.vital = this.report.vitals;
-      this.procedures = this.report.procedures;
     });
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }

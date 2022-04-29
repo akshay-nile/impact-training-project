@@ -110,17 +110,17 @@ class UtilityControllerTest {
 	}
 
 	@Test
-	@DisplayName("Test method to get Patient By Email")
+	@DisplayName("Test method to get Patient By Id")
 	public void testMethodToGetPatientByEmail() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/hospital/patientByEmail/patient@gmail.com")
+		mockMvc.perform(MockMvcRequestBuilders.get("/hospital/get-patient/1")
 				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
 				.andDo(MockMvcResultHandlers.print());
 	}
 
 	@Test
-	@DisplayName("Test method to get Employee By Email")
+	@DisplayName("Test method to get Employee By Id")
 	public void testMethodToGetEmployeeByEmail() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/hospital/employeeByEmail/employee@gmail.com")
+		mockMvc.perform(MockMvcRequestBuilders.get("/hospital/get-employee/1")
 				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
 				.andDo(MockMvcResultHandlers.print());
 	}

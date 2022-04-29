@@ -4,14 +4,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Appointment } from 'src/app/models/Appointment';
 import { AppointmentService } from 'src/app/services/appointment.service';
-import { Employee } from 'src/app/models/Employee';
-import { Patient } from 'src/app/models/Patient';
 import { PatientVisitService } from 'src/app/services/Patient-visit.service';
-import { Vitals } from 'src/app/models/Vitals';
 import { VisitReport } from 'src/app/models/VisitReport';
-import { Procedure } from 'src/app/models/Procedure';
 import { UtilityService } from 'src/app/services/utility.service';
 
 @Component({
@@ -21,26 +16,21 @@ import { UtilityService } from 'src/app/services/utility.service';
 })
 export class PatientVisitHistoryComponent implements OnInit {
 
-  displayedColumns: string[] = ['title', 'employeeName', 'patientName', 'date', 'time', 'action'];
-  dataSource: MatTableDataSource<Appointment>;
+  displayedColumns: string[] = ['title', 'patientName', 'date', 'time', 'action'];
+  dataSource: MatTableDataSource<any>;
   date: string;
   todaysAppointment = "todaysAppointment";
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  appointment = new Appointment();
-  appointments: Appointment[] = [];
-  patientId1: number;
-  showReport: boolean;
+
   user: any;
+  
+  showReport: boolean;
   report = new VisitReport();
-  patient = new Patient();
-  physician = new Employee();
-  vital = new Vitals();
-  apt = new Appointment();
-  procedures: Procedure[];
-  allEmployeeNames = [];
+  
   allPatientNames = [];
+  allPastAppointments = []
 
   constructor(
     private datePipe: DatePipe,
@@ -54,50 +44,35 @@ export class PatientVisitHistoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAllAppointments();
-  }
-
-  getAllAppointments() {
-    this.appointmentService.getAllPastAppointments().subscribe(appts => {
-      this.getAllPatients(appts);
-    })
-  }
-
-  getAllPatients(appts: any) {
-    this.utilityService.getAllPatientNames().subscribe(
-      patients => {
+    this.appointmentService.getPastAppointmentByUserId(this.user.employeeId).subscribe(appts => {
+      this.allPastAppointments = appts;
+      this.utilityService.getAllPatientNames().subscribe(patients => {
         this.allPatientNames = patients;
-        this.getAllPhysicians(appts);
-      }
-    );
+        this.loadDataSource();
+      });
+    });
   }
 
-  getAllPhysicians(appts: any) {
-    this.utilityService.getAllPhysicians().subscribe(employees => {
-      this.allEmployeeNames = employees;
-      for (let a of appts) {
-        a['employeeName'] = this.allEmployeeNames.find(e => e.employeeId == a.employeeId).name
-        a['employeeEmail'] = this.allEmployeeNames.find(e => e.employeeId == a.employeeId).email;
-        a['patientName'] = this.allPatientNames.find(p => p.patientId == a.patientId).name;
-        a['patientEmail'] = this.allPatientNames.find(p => p.patientId == a.patientId).email;
-      }
-      this.dataSource = new MatTableDataSource(appts);
-      if (this.dataSource != null) {
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-      }
+  loadDataSource() {
+    let results = this.allPastAppointments.map(a => {
+      return {
+        appointment: a, title: a.title, date: a.date, time: a.time,
+        patientName: this.allPatientNames.find(p => p.patientId === a.patientId)?.name
+      };
     });
+    this.dataSource = new MatTableDataSource(results);
+    if (this.dataSource != null) {
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    }
   }
 
   viewDetails(appointment: any) {
     this.showReport = true;
-    this.patientVisitService.getVisitReportDetails(appointment).subscribe((result) => {
+    this.patientVisitService.getVisitReportDetails(appointment).subscribe(result => {
       this.report = result;
-      this.patient = this.report.patient;
-      this.physician = this.report.physician;
-      this.apt = this.report.appointment;
-      this.vital = this.report.vitals;
-      this.procedures = this.report.procedures;
+      console.log(this.report);
+      
     });
   }
 
@@ -111,7 +86,7 @@ export class PatientVisitHistoryComponent implements OnInit {
 
   logout() {
     sessionStorage.clear();
-    this.router.navigate(['/login']);
+    this.router.navigate(['login']);
   }
 
 }

@@ -103,7 +103,6 @@ class VisitServiceImplTest {
 	public void testMethodToGetVisitReport() {
 		when(patientService.getPatientDetails(any())).thenReturn(patient);
 		when(employeeService.getEmployeeDetails(any())).thenReturn(employee);
-		when(vitalService.getVitalDetails(any())).thenReturn(vital);
 		when(diagnosisServiceImpl.diagnosisDetails(any())).thenReturn(diagnosisList);
 		when(procedureService.procedureDetails(any())).thenReturn(procedureList);
 		when(medicationService.medicationDetails(any())).thenReturn(medicationList);

@@ -96,7 +96,7 @@ class RegistrationControllerTest {
 	@DisplayName("Test Method to register new patient")
 	public void testMethodToRegisterNewPatient() throws Exception {
 		mockMvc.perform(
-				post("/hospital/register").contentType(MediaType.APPLICATION_JSON).content(asJsonString(patient)))
+				post("/hospital/register-patient").contentType(MediaType.APPLICATION_JSON).content(asJsonString(patient)))
 				.andExpect(status().isCreated()).andDo(MockMvcResultHandlers.print());
 	}
 

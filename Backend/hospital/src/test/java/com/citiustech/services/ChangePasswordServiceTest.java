@@ -80,7 +80,6 @@ class ChangePasswordServiceTest {
 	@DisplayName("Test Method to change employee password")
 	public void testMetodToChangeEmployeePassword() {
 		when(employeeRepo.findByEmail(any())).thenReturn(employee);
-		when(emailSenderService.sendEmail(any(), any(), any())).thenReturn(any());
 		when(employeeRepo.save(any())).thenReturn(employee);
 		assertTrue(changePasswordService.changePassword(credential));
 		verify(employeeRepo, times(1)).findByEmail(credential.get("email"));
@@ -98,7 +97,6 @@ class ChangePasswordServiceTest {
 	@DisplayName("Test Method to change Patient password")
 	public void testMetodToChangePatientPassword() {
 		when(patientRepo.findByEmail(any())).thenReturn(patient);
-		when(emailSenderService.sendEmail(any(), any(), any())).thenReturn(any());
 		when(patientRepo.save(any())).thenReturn(patient);
 		assertTrue(changePasswordService.changePassword(credential));
 		verify(patientRepo, times(1)).findByEmail(credential.get("email"));

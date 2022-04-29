@@ -44,8 +44,8 @@ public class VitalServiceImpl implements VitalService {
 	}
 
 	@Override
-	public Vital getVitalDetailsByPatientId(int aptId) {
-		return vitalRepo.getVitalDetailsByPatientId(aptId);
+	public Vital getVitalDetailsByAppointmentId(int appointmentId) {
+		return vitalRepo.getVitalDetailsByAppointmentId(appointmentId);
 	}
 
 	@Override

@@ -58,7 +58,7 @@ class VitalControllerTest {
 	@DisplayName("Test Method to get vitals Details By Appointment Id")
 	public void testMethodToGetVisitDetailsByAppointmentId() throws Exception {
 		mockMvc.perform(
-				MockMvcRequestBuilders.get("/patient-visits/vitals/aptId/1").contentType(MediaType.APPLICATION_JSON))
+				MockMvcRequestBuilders.get("/patient-visits/vitals/appointment/1").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 	}
 

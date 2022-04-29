@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MedicationService } from 'src/app/services/medication.service';
 import { PrescriptionDetailsDialogComponent } from '../prescription-details-dialog.component';
 
@@ -24,6 +25,7 @@ export class AddMedicationsComponent implements OnInit {
   hasAnythingChanged = false;
 
   constructor(
+    private snackbar: MatSnackBar,
     public dialogRef: MatDialogRef<PrescriptionDetailsDialogComponent>,
     private medicationService: MedicationService,
     private formBuilder: FormBuilder
@@ -88,7 +90,7 @@ export class AddMedicationsComponent implements OnInit {
     this.medicationService.addMedicationByAptId(apptMedications).subscribe(res => {
       if (res) {
         this.updateEvent.emit();
-        alert("Changes Succesfully Saved !");
+        this.snackbar.open("Changes Succesfully Saved !", "", {duration: 3000});
         this.hasAnythingChanged = false;
       } else alert(res);
     });

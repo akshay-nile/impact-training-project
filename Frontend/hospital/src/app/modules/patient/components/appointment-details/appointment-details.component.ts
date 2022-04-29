@@ -65,7 +65,6 @@ export class AppointmentDetailsComponent implements OnInit {
       this.appointmentForm.controls.startsAt.setValue(0);
       this.endTimes = [times[1]];
       this.appointmentForm.controls.endsAt.setValue(0);
-      console.log(times);
     }
   }
 
