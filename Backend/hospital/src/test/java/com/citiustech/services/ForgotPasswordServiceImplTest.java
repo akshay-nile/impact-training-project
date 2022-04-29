@@ -28,12 +28,12 @@ import com.citiustech.repositories.PatientRepository;
 import com.citiustech.repositories.VerificationRepository;
 
 @ExtendWith(MockitoExtension.class)
-class ForgotPasswordServiceTest {
+class ForgotPasswordServiceImplTest {
 	@Mock
 	private EmailSenderService emailSenderService;
 
 	@Mock
-	private LoginService loginService;
+	private LoginServiceImpl loginService;
 
 	@Mock
 	private VerificationRepository verifyRepo;
@@ -45,7 +45,7 @@ class ForgotPasswordServiceTest {
 	private EmployeeRepository employeeRepo;
 
 	@InjectMocks
-	private ForgotPasswordService forgotPasswordService;
+	private ForgotPasswordServiceImpl forgotPasswordService;
 
 	private String email;
 	private Patient patient;

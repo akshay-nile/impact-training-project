@@ -31,3 +31,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-drawer-inner-container {
 overflow: hidden !important;
 }
+
+.fc .fc-toolbar-title {
+    font-size: small !important;
+}

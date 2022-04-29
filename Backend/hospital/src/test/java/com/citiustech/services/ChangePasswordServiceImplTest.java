@@ -26,7 +26,7 @@ import com.citiustech.repositories.EmployeeRepository;
 import com.citiustech.repositories.PatientRepository;
 
 @ExtendWith(MockitoExtension.class)
-class ChangePasswordServiceTest {
+class ChangePasswordServiceImplTest {
 
 	@Mock
 	private PatientRepository patientRepo;
@@ -38,7 +38,7 @@ class ChangePasswordServiceTest {
 	private EmailSenderService emailSenderService;
 
 	@InjectMocks
-	private ChangePasswordService changePasswordService;
+	private ChangePasswordServiceImpl changePasswordService;
 
 	private Map<String, String> credential;
 

@@ -93,3 +93,28 @@ font-weight: bold;
 ::ng-deep .mat-tab-label .mat-tab-label-content {
 font-size: medium;
 }
+
+@media only screen and (max-width: 576px) {
+  a{
+    font-size: small;
+    margin: 0% !important;
+  }
+  .appointment{
+    font-size: medium !important;
+  }
+  mat-raised-button{
+    font-size: medium;
+  }
+  th,td{
+    font-size: x-small !important ;
+  }
+  .btn-success{
+    font-size: x-small;
+  }
+ }
+ 
+ @media only screen and (min-width: 577px) {
+   a{
+     font-size: large;
+   }
+  }

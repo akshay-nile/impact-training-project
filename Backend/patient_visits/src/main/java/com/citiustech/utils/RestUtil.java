@@ -24,8 +24,8 @@ public class RestUtil {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		HttpEntity entity = new HttpEntity(headers);
-		ResponseEntity<T> employee = restTemplate.exchange(url, HttpMethod.GET, entity, type);
-		return employee.getBody();
+		ResponseEntity<T> response = restTemplate.exchange(url, HttpMethod.GET, entity, type);
+		return response.getBody();
 	}
 	
 	public <T> T fallbackPerformGetRequest(String url, Class<T> type,Throwable t) {

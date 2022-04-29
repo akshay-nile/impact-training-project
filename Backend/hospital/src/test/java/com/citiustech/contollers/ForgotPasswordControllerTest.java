@@ -24,7 +24,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.citiustech.services.ForgotPasswordService;
-import com.citiustech.services.LoginService;
+import com.citiustech.services.LoginServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @ExtendWith(MockitoExtension.class)
@@ -36,7 +36,7 @@ class ForgotPasswordControllerTest {
 	private ForgotPasswordService forgotPasswordService;
 
 	@Mock
-	private LoginService loginService;
+	private LoginServiceImpl loginService;
 
 	@InjectMocks
 	private ForgotPasswordController forgotPasswordController;
