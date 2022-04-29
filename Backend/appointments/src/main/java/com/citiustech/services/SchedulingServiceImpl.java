@@ -16,7 +16,7 @@ import com.citiustech.models.constants.Status;
 import com.citiustech.repositories.AppointmentRepository;
 
 @Service
-public class SchedulingServiceImpl {
+public class SchedulingServiceImpl implements SchedulingService {
 
 	@Autowired
 	private AppointmentRepository appointmentRepo;
@@ -30,7 +30,8 @@ public class SchedulingServiceImpl {
 		} else {
 			return null;
 		}
-		return appointments.stream().filter(a -> a.getAppointmentId() != skip
+		return appointments.stream()
+				.filter(a -> a.getAppointmentId() != skip
 						&& (a.getStatus().equals(Status.ACCEPTED) || a.getStatus().equals(Status.PENDING)))
 				.map(Appointment::getTime).map(TimeSlot::fromString).collect(Collectors.toList());
 	}

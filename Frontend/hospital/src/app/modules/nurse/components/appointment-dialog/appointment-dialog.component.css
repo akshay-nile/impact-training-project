@@ -1,0 +1,27 @@
+@media only screen and (max-width: 576px) {
+    a{
+        font-size: small;
+        margin: 0% !important;
+    }
+    .appointment{
+        font-size: medium !important;
+    }
+    mat-raised-button{
+        font-size: medium;
+    }
+    .appointmentTitle {
+        font-size: small ;
+    }
+    .btn-success{
+        margin: 0% !important;
+    }
+    .btn-warning{
+        margin: 5% !important;
+    }
+}
+   
+@media only screen and (min-width: 577px) {
+     a{
+       font-size: large;
+     }
+}
