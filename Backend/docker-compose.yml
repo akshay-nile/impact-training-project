@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  eureka-server:
+    image: akshaynile8849/eureka-server
+    ports: 
+      - 8761:8761
+    environment:
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka
+
+  # config-server:
+  #   image: akshaynile8849/config-server
+  #   restart: always
+  #   depends_on:
+  #     - eureka-server
+  #   ports: 
+  #     - 8091:8091
+  #   environment:
+  #     - eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+
+  # gateway-microservice:
+  #   image: akshaynile8849/gateway-microservice
+  #   restart: always
+  #   depends_on:
+  #     - eureka-server
+  #     - config-server
+  #   ports:
+  #     - 8080:8080
+  #   environment:
+  #     - eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+      
+  # authentication-microservice:
+  #   image: akshaynile8849/authentication-microservice
+  #   restart: always
+  #   depends_on:
+  #     - eureka-server
+  #     - config-server
+  #     - gateway-microservice
+  #   ports:
+  #     - 8088:8088
+  #   environment:
+  #     - eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+
