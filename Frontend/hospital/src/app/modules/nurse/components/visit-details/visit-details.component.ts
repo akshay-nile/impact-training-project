@@ -154,7 +154,6 @@ export class VisitDetailsComponent implements OnInit {
     this.vitalDetailsForm.value.vitalId = this.result.vitalId;
     this.vitalDetailsForm.value.patientId = this.data.appointment.patientId;
     this.vitalDetailsForm.value.aptId = this.data.appointment.appointmentId;
-    console.log(this.vitalDetailsForm.value);
     this.vitalService.updateVitals(this.vitalDetailsForm.value).subscribe((result) => {
       this.data.appointment.status = "ATTENDED";
       this.apptService.updateAppointment(this.data.appointment).subscribe(res => {

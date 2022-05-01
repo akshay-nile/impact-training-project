@@ -71,8 +71,6 @@ export class PatientVisitHistoryComponent implements OnInit {
     this.showReport = true;
     this.patientVisitService.getVisitReportDetails(appointment).subscribe(result => {
       this.report = result;
-      console.log(this.report);
-      
     });
   }
 
