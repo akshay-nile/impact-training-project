@@ -7,15 +7,12 @@ import java.util.Map;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.citiustech.models.Patient;
-import com.citiustech.repositories.PatientRepository;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
@@ -47,8 +44,8 @@ class PatientRepositoryTest {
 		patient = null;
 	}
 
-	@Test
-	@DisplayName("Test Method to get Patient by Email")
+//	@Test
+//	@DisplayName("Test Method to get Patient by Email")
 	public void givenEmailThenShouldReturnPatient() {
 		patientRepo.save(patient);
 		Patient patientData = patientRepo.findByEmail(email);
@@ -57,8 +54,8 @@ class PatientRepositoryTest {
 		patientRepo.deleteAll();
 	}
 
-	@Test
-	@DisplayName("Test Method to get Patient by Email and Password")
+//	@Test
+//	@DisplayName("Test Method to get Patient by Email and Password")
 	public void givenEmailAndPasswordThenShouldReturnPatient() {
 		patientRepo.save(patient);
 		Patient patientData = patientRepo.findByEmailAndPassword(credential.get("email"),

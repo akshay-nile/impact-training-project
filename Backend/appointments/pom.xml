@@ -12,9 +12,9 @@
 	</parent>
 
 	<groupId>com.citiustech</groupId>
-	<artifactId>AppointmentService</artifactId>
+	<artifactId>appointment</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>appointments</name>
+	<name>appointment</name>
 	<description>Appointment Service</description>
 
 	<properties>
@@ -61,10 +61,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>

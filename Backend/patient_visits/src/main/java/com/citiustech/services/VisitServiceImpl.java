@@ -38,14 +38,14 @@ public class VisitServiceImpl implements VisitService {
 	@Override
 	public VisitReport getVisitReport(Appointment appointment) {
 
-		String patientUrl = "http://localhost:8080/hospital/get-patient/" + appointment.getPatientId();
-		String employeeUrl = "http://localhost:8080/hospital/get-employee/" + appointment.getEmployeeId();
+		String patientUrl = "http://gateway-microservice:8080/hospital/get-patient/" + appointment.getPatientId();
+		String employeeUrl = "http://gateway-microservice:8080/hospital/get-employee/" + appointment.getEmployeeId();
 
-		String diagnosisUrl = "http://localhost:8080/diagnosis/api/appointment-diagnosis/"
+		String diagnosisUrl = "http://gateway-microservice:8080/diagnosis/api/appointment-diagnosis/"
 				+ appointment.getAppointmentId();
-		String medicationUrl = "http://localhost:8080/medications/api/appointment-medications/"
+		String medicationUrl = "http://gateway-microservice:8080/medications/api/appointment-medications/"
 				+ appointment.getAppointmentId();
-		String procedureUrl = "http://localhost:8080/procedures/api/appointment-procedures/"
+		String procedureUrl = "http://gateway-microservice:8080/procedures/api/appointment-procedures/"
 				+ appointment.getAppointmentId();
 
 		Patient patient = patientService.getPatientDetails(patientUrl);

@@ -25,7 +25,7 @@ public class AdminService {
 	private EmailSenderService emailSender;
 
 	public List<Employee> getAllEmployees(String adminId) {
-		String url = "http://localhost:8080/hospital/get-employees";
+		String url = "http://gateway-microservice:8080/hospital/get-employees";
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
@@ -38,7 +38,7 @@ public class AdminService {
 	}
 
 	public Employee update(Employee employee, String action) {
-		String url = "http://localhost:8080/hospital/update-employee";
+		String url = "http://gateway-microservice:8080/hospital/update-employee";
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
@@ -68,7 +68,7 @@ public class AdminService {
 	}
 
 	public Employee register(Employee employee) {
-		String url = "http://localhost:8080/hospital/register-employee";
+		String url = "http://gateway-microservice:8080/hospital/register-employee";
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
@@ -89,7 +89,7 @@ public class AdminService {
 	}
 
 	public List<Patient> getAllPatients() {
-		String url = "http://localhost:8080/hospital/get-patients";
+		String url = "http://gateway-microservice:8080/hospital/get-patients";
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
@@ -102,7 +102,7 @@ public class AdminService {
 	}
 
 	public Patient update(Patient patient) {
-		String url = "http://localhost:8080/hospital/update-patient";
+		String url = "http://gateway-microservice:8080/hospital/update-patient";
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);

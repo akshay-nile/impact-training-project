@@ -76,7 +76,7 @@ public class EmailSenderService implements Runnable {
 		HttpEntity<Map<String, String>> entity = new HttpEntity<>(map, headers);
 
 		// Calling hospital microservice api and storing response
-		String url = "http://localhost:8082/hospital/get-emails-from-ids";
+		String url = "http://gateway-microservice:8080/hospital/get-emails-from-ids";
 		map = restTemplate
 				.exchange(url, HttpMethod.POST, entity, new ParameterizedTypeReference<Map<String, String>>() {
 				}).getBody();
