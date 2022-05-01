@@ -27,18 +27,6 @@ public class Vital {
 		super();
 	}
 
-	public Vital(int vitalId, int height, String weight, String bloodPressure, String bodyTemperature,
-			String respirationRate, int aptId) {
-		super();
-		this.vitalId = vitalId;
-		this.height = height;
-		this.weight = weight;
-		this.bloodPressure = bloodPressure;
-		this.bodyTemperature = bodyTemperature;
-		this.respirationRate = respirationRate;
-		this.aptId = aptId;
-	}
-
 	public int getVitalId() {
 		return vitalId;
 	}

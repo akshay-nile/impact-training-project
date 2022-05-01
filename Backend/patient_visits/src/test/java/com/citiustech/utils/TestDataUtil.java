@@ -2,9 +2,9 @@ package com.citiustech.utils;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 import com.citiustech.models.Appointment;
+import com.citiustech.models.Diagnosis;
 import com.citiustech.models.Employee;
 import com.citiustech.models.Medication;
 import com.citiustech.models.Patient;
@@ -34,6 +34,34 @@ public class TestDataUtil {
 		ObjectMapper objectMapper = new ObjectMapper();
 		File file = new File(".\\src\\test\\resources\\data\\Appointment.json");
 		return objectMapper.readValue(file, Appointment.class);
+
+	}
+
+	public Medication getMedication() throws StreamReadException, DatabindException, IOException {
+		ObjectMapper objectMapper = new ObjectMapper();
+		File file = new File(".\\src\\test\\resources\\data\\Medication.json");
+		return objectMapper.readValue(file, Medication.class);
+
+	}
+
+	public Procedure getProcedure() throws StreamReadException, DatabindException, IOException {
+		ObjectMapper objectMapper = new ObjectMapper();
+		File file = new File(".\\src\\test\\resources\\data\\Procedure.json");
+		return objectMapper.readValue(file, Procedure.class);
+
+	}
+
+	public Vital getVitals() throws StreamReadException, DatabindException, IOException {
+		ObjectMapper objectMapper = new ObjectMapper();
+		File file = new File(".\\src\\test\\resources\\data\\Vital.json");
+		return objectMapper.readValue(file, Vital.class);
+
+	}
+
+	public Diagnosis getDiagnosis() throws StreamReadException, DatabindException, IOException {
+		ObjectMapper objectMapper = new ObjectMapper();
+		File file = new File(".\\src\\test\\resources\\data\\Diagnosis.json");
+		return objectMapper.readValue(file, Diagnosis.class);
 
 	}
 

@@ -93,4 +93,20 @@ class LoginServiceImplTest {
 		verify(employeeRepo, times(1)).findByEmail(email);
 		verify(employeeRepo, times(1)).save(employee);
 	}
+
+	@Test
+	@DisplayName("Test Method to check if patient email exist")
+	public void testMethodToCheckIfPatientEmailExist() {
+		when(patientRepo.findByEmail(any())).thenReturn(patient);
+		loginService.isEmailExist(email);
+		verify(patientRepo, times(1)).findByEmail(email);
+	}
+
+	@Test
+	@DisplayName("Test Method to check if Employee email exist")
+	public void testMethodToCheckIfEmployeeEmailExist() {
+		when(employeeRepo.findByEmail(any())).thenReturn(employee);
+		loginService.isEmailExist(email);
+		verify(employeeRepo, times(1)).findByEmail(email);
+	}
 }

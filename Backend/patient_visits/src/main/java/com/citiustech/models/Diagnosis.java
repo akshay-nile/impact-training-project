@@ -9,12 +9,6 @@ public class Diagnosis {
 	public Diagnosis() {
 		super();
 	}
-	
-	public Diagnosis(int diagnosisId, String title) {
-		super();
-		this.diagnosisId = diagnosisId;
-		this.title = title;
-	}
 
 	public int getDiagnosisId() {
 		return diagnosisId;

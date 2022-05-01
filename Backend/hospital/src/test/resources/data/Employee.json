@@ -1,0 +1,11 @@
+{
+	"email": "tom@gmail.com",
+	"employeeId": "E0002",
+	"firstName": "Tom",
+	"lastName": "Williams",
+	"password": 898716845,
+	"role": "DOCTOR",
+	"specialization": "heart",
+	"status": "ACTIVE",
+	"title": "Mr"
+}

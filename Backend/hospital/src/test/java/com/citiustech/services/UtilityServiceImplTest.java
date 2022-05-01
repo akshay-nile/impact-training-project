@@ -195,4 +195,34 @@ class UtilityServiceImplTest {
 		assertNotNull(utilityService.getEmployeeById("E0002"));
 	}
 
+	@Test
+	@DisplayName("Test Method to map Emails to Ids")
+	public void testMethodToMapEmailsToIds() {
+		when(employeeRepo.findById(any())).thenReturn(Optional.of(employee));
+		when(patientRepo.findById(any())).thenReturn(Optional.of(patient));
+		assertNotNull(utilityService.mapEmailsToIds(new HashMap<String, String>()));
+	}
+
+	@Test
+	@DisplayName("Test Method to get All Employees")
+	public void testMethodToGetAllEmployees() {
+		when(employeeRepo.findAll()).thenReturn(empList);
+		assertNotNull(utilityService.getAllEmployees());
+	}
+
+	@Test
+	@DisplayName("Test Method to get All Patients")
+	public void testMethodToGetAllPatients() {
+		when(patientRepo.findAll()).thenReturn(patientList);
+		assertNotNull(utilityService.getAllPatients());
+	}
+
+	@Test
+	@DisplayName("Test Method to update Employee")
+	public void testMethodToUpdateEmployee() {
+		when(employeeRepo.findById(any())).thenReturn(Optional.of(employee));
+		when(employeeRepo.save(any())).thenReturn(employee);
+		assertNotNull(utilityService.updateEmployee(employee));
+	}
+
 }

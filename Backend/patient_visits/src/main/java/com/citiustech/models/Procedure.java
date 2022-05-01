@@ -10,14 +10,6 @@ public class Procedure {
 
 	public Procedure() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Procedure(int procedureId, String procedureName, String description) {
-		super();
-		this.procedureId = procedureId;
-		this.procedureName = procedureName;
-		this.description = description;
 	}
 
 	public int getProcedureId() {

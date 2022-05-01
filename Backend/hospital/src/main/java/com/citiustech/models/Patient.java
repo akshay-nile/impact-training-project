@@ -165,11 +165,4 @@ public class Patient {
 		this.demographics = demographics;
 	}
 
-	@Override
-	public String toString() {
-		return "Patient [patientId=" + patientId + ", title=" + title + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", email=" + email + ", phone=" + phone + ", birthdate=" + birthdate + ", password="
-				+ password + ", status=" + status + ", nominee=" + nominee + ", demographics=" + demographics + "]";
-	}
-
 }

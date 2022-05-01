@@ -6,6 +6,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +21,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.citiustech.models.Procedure;
 import com.citiustech.utils.RestUtil;
+import com.citiustech.utils.TestDataUtil;
+import com.fasterxml.jackson.core.exc.StreamReadException;
+import com.fasterxml.jackson.databind.DatabindException;
 
 @ExtendWith(MockitoExtension.class)
 class ProcedureServiceImplTest {
@@ -33,13 +37,14 @@ class ProcedureServiceImplTest {
 	private String url;
 	private List<Procedure> procedureList;
 	private Procedure procedure;
+	private TestDataUtil testDataUtil;
 
 	@BeforeEach
-	public void setUp() {
+	public void setUp() throws StreamReadException, DatabindException, IOException {
 		url = "http://localhost:8089/procedure/api/procedureByAptId/1";
 		procedureList = new ArrayList<>();
-		procedure = new Procedure();
-		procedure.setDescription("Procedure 1");
+		testDataUtil=new TestDataUtil();
+		procedure = testDataUtil.getProcedure();
 		procedureList.add(procedure);
 	}
 
@@ -54,7 +59,10 @@ class ProcedureServiceImplTest {
 	@DisplayName("Test Method to get procedure details")
 	public void testMethodToGetProcedureDetails() {
 		when(restUtil.performGetRequest(any(), any())).thenReturn(procedureList);
-		assertNotNull(procedureServiceImpl.procedureDetails(url).get(0).getDescription());
+		Procedure procedure=procedureServiceImpl.procedureDetails(url).get(0);
+		assertNotNull(procedure.getProcedureId());
+		assertNotNull(procedure.getDescription());
+		assertNotNull(procedure.getProcedureName());
 		verify(restUtil, times(1)).performGetRequest(any(), any());
 	}
 

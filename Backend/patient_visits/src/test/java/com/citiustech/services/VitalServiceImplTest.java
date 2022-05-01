@@ -6,6 +6,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -22,6 +23,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import com.citiustech.models.Vital;
 import com.citiustech.repositories.VitalRepository;
 import com.citiustech.utils.RestUtil;
+import com.citiustech.utils.TestDataUtil;
+import com.fasterxml.jackson.core.exc.StreamReadException;
+import com.fasterxml.jackson.databind.DatabindException;
 
 @ExtendWith(MockitoExtension.class)
 class VitalServiceImplTest {
@@ -36,15 +40,14 @@ class VitalServiceImplTest {
 	private String url;
 	private Vital vital;
 	private List<Vital> vitalList;
+	private TestDataUtil testDataUtil;
 
 	@BeforeEach
-	public void setUp() {
+	public void setUp() throws StreamReadException, DatabindException, IOException {
 		url = "http://localhost:8082/hospital/patientByEmail/tejas@gmail.com";
 		vitalList = new ArrayList<>();
-		vital = new Vital();
-		vital.setBloodPressure("110");
-		vital.setAptId(1);
-		vital.setVitalId(1);
+		testDataUtil=new TestDataUtil();
+		vital = testDataUtil.getVitals();
 		vitalList.add(vital);
 	}
 
@@ -66,7 +69,12 @@ class VitalServiceImplTest {
 	@DisplayName("Test Method to get all vital details")
 	public void testMethodToGetAllVitalDetails() {
 		when(vitalRepo.findAll()).thenReturn(vitalList);
-		assertNotNull(vitalServiceImpl.getVitalDetails().get(0).getBloodPressure());
+		Vital vital=vitalServiceImpl.getVitalDetails().get(0);
+		assertNotNull(vital.getAptId());
+		assertNotNull(vital.getBodyTemperature());
+		assertNotNull(vital.getHeight());
+		assertNotNull(vital.getRespirationRate());
+		assertNotNull(vital.getWeight());
 	}
 
 	@Test
