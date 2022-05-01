@@ -10,15 +10,12 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
-import com.citiustech.data.AppointmentDTO;
 import com.citiustech.models.Appointment;
 import com.citiustech.models.TimeSlot;
 import com.citiustech.models.constants.Status;
 import com.citiustech.repositories.AppointmentRepository;
-import com.google.gson.Gson;
 
 @Service
 public class AppointmentServiceImpl implements AppointmentService {
@@ -29,13 +26,7 @@ public class AppointmentServiceImpl implements AppointmentService {
 	@Autowired
 	private EmailSenderService emailSender;
 
-	@Autowired
-	private KafkaTemplate<String, String> kafkaTemplate;
-
 	public static final String topic = "appointment-data";
-
-	@Autowired
-	private Gson gson;
 
 	@Override
 	public List<Appointment> getAppointments() {
@@ -64,7 +55,6 @@ public class AppointmentServiceImpl implements AppointmentService {
 		if (appointmentRepo.existsById(appointment.getAppointmentId())) {
 			Appointment updatedAppointment = appointmentRepo.save(appointment);
 			emailSender.sendNotificationEmail(updatedAppointment);
-			kafkaTemplate.send(topic, gson.toJson(getAppointmentStats(appointment)));
 			return updatedAppointment;
 		}
 		return null;
@@ -172,14 +162,4 @@ public class AppointmentServiceImpl implements AppointmentService {
 				false, true);
 	}
 
-	private AppointmentDTO getAppointmentStats(Appointment appointment) {
-		AppointmentDTO aptDto = new AppointmentDTO();
-		aptDto.setAppointmentId(appointment.getAppointmentId());
-		aptDto.setDate(appointment.getDate().toString());
-		aptDto.setEditedBy(appointment.getEditedBy());
-		aptDto.setEditHistory(appointment.getEditHistory());
-		aptDto.setStatus(appointment.getStatus());
-		aptDto.setTime(appointment.getTime());
-		return aptDto;
-	}
 }

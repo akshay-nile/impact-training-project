@@ -48,7 +48,7 @@ public class AppointmentController {
 		}
 		return new ResponseEntity<>(appointments, HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/get-appointments/{id}")
 	public ResponseEntity<?> getAppointmentsById(@PathVariable String id) {
 		List<Appointment> appointments = List.of();
@@ -76,7 +76,7 @@ public class AppointmentController {
 		}
 		return new ResponseEntity<>(appointments, HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/past-appointments")
 	public ResponseEntity<?> getAllPastAppointments() {
 		List<Appointment> appointments = appointmentService.getAllPastAppointments();

@@ -33,7 +33,7 @@ public class AuthenticationController {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 
-		Object user = restTemplate.exchange("http://localhost:8082/hospital/login", HttpMethod.POST, 
+		Object user = restTemplate.exchange("http://gateway-microservice:8080/hospital/login", HttpMethod.POST, 
 				new HttpEntity<>(credentials, headers),
 				new ParameterizedTypeReference<Object>() {}).getBody();
 		
