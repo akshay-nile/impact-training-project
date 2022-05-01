@@ -17,25 +17,23 @@ services:
     environment:
       - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka
 
-  config-server:
-    image: akshaynile8849/config-server
-    restart: always
-    depends_on:
-      - eureka-server
-    ports: 
-      - 8091:8091
-    environment:
-      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka
+  # config-server:
+  #   image: akshaynile8849/config-server
+  #   restart: always
+  #   depends_on:
+  #     - eureka-server
+  #   ports: 
+  #     - 8091:8091
+  #   environment:
+  #     - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka
 
   gateway-microservice:
     image: akshaynile8849/gateway-microservice
     restart: always
     depends_on:
-      - config-server
+      - eureka-server
     ports:
       - 8080:8080
-    environment:
-      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka
       
   authentication-microservice:
     image: akshaynile8849/authentication-microservice
@@ -44,8 +42,6 @@ services:
       - eureka-server
     ports:
       - 8088:8088
-    environment:
-      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka
 
   procedure-microservice:
     image: akshaynile8849/procedure-microservice
@@ -55,5 +51,39 @@ services:
       - eureka-server
     ports:
       - 8089:8089
-    environment:
-      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka
+
+  medication-microservice:
+    image: akshaynile8849/medication-microservice
+    restart: always
+    depends_on:
+      - postgres-db
+      - eureka-server
+    ports:
+      - 8087:8087
+
+  diagnosis-microservice:
+    image: akshaynile8849/diagnosis-microservice
+    restart: always
+    depends_on:
+      - postgres-db
+      - eureka-server
+    ports:
+      - 8086:8086
+
+  allergy-microservice:
+    image: akshaynile8849/allergy-microservice
+    restart: always
+    depends_on:
+      - postgres-db
+      - eureka-server
+    ports:
+      - 8090:8090
+
+  notes-microservice:
+    image: akshaynile8849/notes-microservice
+    restart: always
+    depends_on:
+      - postgres-db
+      - eureka-server
+    ports:
+      - 8084:8084
