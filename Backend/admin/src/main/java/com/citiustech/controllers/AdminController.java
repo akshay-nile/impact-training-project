@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -14,12 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.citiustech.models.AppointmentStatistics;
 import com.citiustech.models.Employee;
 import com.citiustech.models.Patient;
 import com.citiustech.services.AdminService;
-import com.citiustech.services.AppointmentStatisticsService;
-import com.google.gson.Gson;
 
 @RestController
 @RequestMapping("/admin/api")
@@ -27,12 +23,6 @@ public class AdminController {
 
 	@Autowired
 	private AdminService adminService;
-
-	@Autowired
-	private AppointmentStatisticsService appointmentStatisticsService;
-
-	@Autowired
-	private Gson gson;
 
 	@GetMapping("/get-employees")
 	public ResponseEntity<?> getAllEmployees(@RequestParam(required = false) String adminId) {
@@ -64,12 +54,6 @@ public class AdminController {
 	public ResponseEntity<?> updatePatient(@RequestBody Patient patient) {
 		Patient updatedPatient = adminService.update(patient);
 		return new ResponseEntity<>(updatedPatient, HttpStatus.CREATED);
-	}
-
-	@KafkaListener(topics = "appointment-data", groupId = "appointment")
-	public void consumeAppointment(@RequestBody String request) {
-		AppointmentStatistics apptStats = gson.fromJson(request, AppointmentStatistics.class);
-		appointmentStatisticsService.saveStatistics(apptStats);
 	}
 
 }

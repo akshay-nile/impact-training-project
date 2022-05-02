@@ -29,14 +29,16 @@ public class HospitalApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(HospitalApplication.class, args);
 		EmployeeRepository repo = context.getBean(EmployeeRepository.class);
-
-		if (repo.findByEmail("thirupathi.vemireddy@citiustech.com") == null) {
+		
+		String adminEmail = "avinash.kumar@citiustech.com";
+		
+		if (repo.findByEmail(adminEmail) == null) {
 			Employee admin = new Employee();
 			admin.setTitle(Title.Mr);
 			admin.setBirthdate(LocalDate.of(2000, Month.JANUARY, 1));
-			admin.setFirstName("Thirupathi");
-			admin.setLastName("Vemireddy");
-			admin.setEmail("thirupathi.vemireddy@citiustech.com");
+			admin.setFirstName("Avinash");
+			admin.setLastName("Kumar");
+			admin.setEmail(adminEmail);
 			admin.setRole(Role.ADMIN);
 			admin.setStatus(Status.ACTIVE);
 			admin.setPassword("Admin123".hashCode());
