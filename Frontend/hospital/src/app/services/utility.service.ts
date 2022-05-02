@@ -11,7 +11,7 @@ export class UtilityService {
 
     constructor(private http: HttpClient) { }
 
-    baseUrl: string = environment.baseUrl + '/hospital';
+    baseUrl = environment.baseUrl + '/hospital';
     vitalsUrl = environment.baseUrl + '/patient-visits/vitals';
     apptUrl = environment.baseUrl + '/appointments/api';
 
