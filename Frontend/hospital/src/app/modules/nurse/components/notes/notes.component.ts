@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Note } from 'src/app/models/Note';
 import { NoteViewComponent } from '../note-view/note-view.component';
@@ -19,7 +18,6 @@ export class NotesComponent implements OnInit {
   allEmployeeNames = [];
 
   constructor(
-    private router: Router,
     private dialog: MatDialog,
     private noteService: NoteService,
     private utilityService: UtilityService
@@ -49,14 +47,14 @@ export class NotesComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     const dialogRef = this.dialog.open(NoteViewComponent, {
-      width: '50%', data: { note: note, sendToName: this.getSentToNameByEmail(note) }
+      minWidth: '50%',
+      data: { note: note, sendToName: this.getSentToNameByEmail(note) }
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result != null) {
         this.notes.push(result);
       }
     });
-
   }
 
   getAllNotes() {
@@ -72,7 +70,8 @@ export class NotesComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     const dialogRef = this.dialog.open(NoteDialogComponent, {
-      width: '50%', data: { user: this.user, employeeNames: this.allEmployeeNames }
+      minWidth: '50%', 
+      data: { user: this.user, employeeNames: this.allEmployeeNames }
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result != null) {

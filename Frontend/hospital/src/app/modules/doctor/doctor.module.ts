@@ -1,27 +1,29 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { ScheduleModule, DayService, WeekService, WorkWeekService, TimelineMonthService, MonthService, TimelineViewsService, MonthAgendaService, AgendaService } from '@syncfusion/ej2-angular-schedule';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import { AppointmentComponent } from './components/appointment/appointment.component';
+import { AgendaService, DayService, MonthAgendaService, MonthService, ScheduleModule, TimelineMonthService, TimelineViewsService, WeekService, WorkWeekService } from '@syncfusion/ej2-angular-schedule';
+
+import { SharedModule } from 'src/app/components/shared/shared.module';
+import { MaterialModule } from 'src/app/material.module';
 import { AppointmentBookDialogComponent } from './components/appointment-book-dialog/appointment-book-dialog.component';
-import { DoctorRoutingModule } from './doctor-routing.module';
-import { NoteDialogComponent } from './components/note-dialog/note-dialog.component';
-import { NotesComponent } from './components/notes/notes.component';
-import { NoteViewComponent } from './components/note-view/note-view.component';
-import { PrescriptionDetailsDialogComponent } from './components/prescription-details-dialog/prescription-details-dialog.component';
 import { AppointmentDetailsDialogComponent } from './components/appointment-details-dialog/appointment-details-dialog.component';
+import { AppointmentComponent } from './components/appointment/appointment.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NoteDialogComponent } from './components/note-dialog/note-dialog.component';
+import { NoteViewComponent } from './components/note-view/note-view.component';
+import { NotesComponent } from './components/notes/notes.component';
 import { PatientDetailsDialogComponent } from './components/patient-details-dialog/patient-details-dialog.component';
 import { PatientVisitHistoryComponent } from './components/patient-visit-history/patient-visit-history.component';
-import { AddProceduresComponent } from './components/prescription-details-dialog/add-procedures/add-procedures.component';
-import { AddMedicationsComponent } from './components/prescription-details-dialog/add-medications/add-medications.component';
 import { AddDiagnosisComponent } from './components/prescription-details-dialog/add-diagnosis/add-diagnosis.component';
-import { MaterialModule } from 'src/app/material.module';
-import { SharedModule } from 'src/app/components/shared/shared.module';
+import { AddMedicationsComponent } from './components/prescription-details-dialog/add-medications/add-medications.component';
+import { AddProceduresComponent } from './components/prescription-details-dialog/add-procedures/add-procedures.component';
+import { PrescriptionDetailsDialogComponent } from './components/prescription-details-dialog/prescription-details-dialog.component';
+import { DoctorRoutingModule } from './doctor-routing.module';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
